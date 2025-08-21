@@ -1,0 +1,60 @@
+.admin {
+    overflow: hidden;
+}
+
+img {
+    height: 200px;
+    width: 300px;
+}
+
+.admin .on-going-events {
+    padding: 0;
+    justify-content: center;
+    display: flex;
+    gap: 50px;
+}
+
+.on-going-events #d1 {
+    height: 250px;
+    width: 302px;
+    border: 2px solid black;
+}
+ a button{
+    height: 50px;
+    width: 100%;
+    background-color:lightgray;
+    color: #070101;
+}
+
+.admin .up-comming-events {
+    padding: 0;
+    justify-content: center;
+    display: flex;
+    gap: 50px;
+}
+
+.up-comming-events #d2 {
+    height: 250px;
+    width: 302px;
+    border: 2px solid black;
+}
+
+
+.faq {
+    height: 100vh;
+    width: 100vw;
+}
+
+.faq .text li {
+    position: relative;
+    list-style: none;
+    text-align: center;
+}
+
+.text .bi-caret-down-fill {
+    transition: transform 0.5s ease;
+}
+
+.text:hover .bi-caret-down-fill {
+    transform: rotate(180deg);
+}
