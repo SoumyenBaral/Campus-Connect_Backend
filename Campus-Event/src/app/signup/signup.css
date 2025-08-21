@@ -1,0 +1,33 @@
+.body {
+    margin: 0;
+    display: flex;
+    gap: 250px;
+
+}
+
+
+
+.body>.signup {
+    height: 500px;
+    width: 600px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 80px;
+}
+
+form>input {
+    border-radius: 10px;
+    width: 100%;
+    height: 6vh;
+    border-color: gray;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+form>button {
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+}
