@@ -12,11 +12,10 @@ import { ContactUs } from './contact-us/contact-us';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { Home } from './home/home';
 import { Helpcenter } from './helpcenter/helpcenter';
-import { Navbar } from './navbar/navbar';
 
 @Component({
   selector: 'app-root',
-  imports: [Herosection,Footer,RouterLink,RouterOutlet,Home,Admin,Host,Coordinator,Student,ContactUs,Login,Helpcenter,Navbar],
+  imports: [Herosection,Footer,RouterLink,RouterOutlet,Home,Admin,Host,Coordinator,Student,ContactUs,Login,Helpcenter],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

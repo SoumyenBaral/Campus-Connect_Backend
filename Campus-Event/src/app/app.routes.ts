@@ -8,7 +8,6 @@ import { ContactUs } from './contact-us/contact-us';
 import { Login } from './login/login';
 import { Profile } from './profile/profile';
 import { Helpcenter } from './helpcenter/helpcenter';
-import { Navbar } from './navbar/navbar';
 
 export const routes: Routes = [
 

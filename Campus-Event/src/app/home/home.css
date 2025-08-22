@@ -1,4 +1,4 @@
-.logo{
+/* .logo{
     color:white;
     background-color: orangered;
     font-style: italic;
@@ -22,9 +22,9 @@
 }
 .profile{
      position: relative;
-     margin-left:auto;  /*pushes profile to right*/
- 
-/* .dropdown-profile{
+     margin-left:auto;  pushes profile to right */
+/* }
+.dropdown-profile{
   display: none;
   position: absolute;
   top: 100%;
@@ -50,4 +50,4 @@
 }
 .profile:hover .dropdown-profile {
   display: block;
-}  */ 
+}  */

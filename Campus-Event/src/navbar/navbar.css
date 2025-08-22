@@ -24,7 +24,7 @@
      position: relative;
      margin-left:auto;  /*pushes profile to right*/
 }
- .dropdown-profile{
+.dropdown-profile{
   display: none;
   position: absolute;
   top: 100%;
@@ -50,4 +50,4 @@
 }
 .profile:hover .dropdown-profile {
   display: block;
-}  
+} 

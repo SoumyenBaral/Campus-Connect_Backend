@@ -10,10 +10,11 @@ import { Helpcenter } from '../helpcenter/helpcenter';
 import { ContactUs } from '../contact-us/contact-us';
 import { Footer } from '../footer/footer';
 import { Herosection } from '../herosection/herosection';
+import { Navbar } from '../../navbar/navbar';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink,RouterOutlet,Admin,Coordinator,Student,Host,Login,Profile,Helpcenter,ContactUs,Footer,Herosection,],
+  imports: [RouterLink,RouterOutlet,Admin,Coordinator,Student,Host,Login,Profile,Helpcenter,ContactUs,Footer,Herosection,Navbar],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
