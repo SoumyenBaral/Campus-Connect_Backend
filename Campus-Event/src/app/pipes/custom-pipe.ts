@@ -6,7 +6,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class CustomPipe implements PipeTransform {
 
   transform(value: string, ...args: unknown[]): unknown {
-    return 'Welcome '+" "+value;
+    return 'Welcome '+" "+value
+    
+    ;
   }
 
 }
