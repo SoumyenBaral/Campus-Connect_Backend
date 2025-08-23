@@ -15,4 +15,10 @@ import { CustomPipe } from '../pipes/custom-pipe';
 })
 export class Admin {
 name:string="Admin";
+sidebarOpen = false;
+
+  toggleSidebar() {
+    this.sidebarOpen = !this.sidebarOpen;
+
+}
 }
