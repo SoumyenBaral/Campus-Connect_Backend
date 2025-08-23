@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Footer } from '../footer/footer';
 
 @Component({
   selector: 'app-host',
-  imports: [RouterLink,RouterOutlet],
+  imports: [Footer],
   templateUrl: './host.html',
   styleUrl: './host.css'
 })

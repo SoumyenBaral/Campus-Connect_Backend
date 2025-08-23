@@ -6,11 +6,11 @@
 
 .nav-item{
   display: flex;
-  gap: 500px;
+  gap: 400px;
 }
 .navbar-center {
   display: flex;
-  gap: 38px;
+  gap: 55px;
   height: 25px;
 }
 
@@ -21,6 +21,7 @@
   padding: 10px;
   position: relative;
   z-index: 1000;
+  size:100vh;
 }
 
 .profile {
@@ -68,26 +69,4 @@
 /* Rotate the icon when hovering over the profile container */
 .profile:hover .arrow {
   transform: rotate(180deg);
-}
-
-
-
-#footer {
-  height: 800px;
-  width: 100%;
-  border-radius: 25px;
-  display: flex;
-  gap: 450px;
-  position: relative;
-  padding: 50px;
-}
-
-.d10 {
-  display: flex;
-  gap: 200px;
-  color: black;
-}
-
-iframe {
-  border-radius: 20px;
 }

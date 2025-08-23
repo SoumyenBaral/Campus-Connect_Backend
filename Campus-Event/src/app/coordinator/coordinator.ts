@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Footer } from '../footer/footer';
 
 @Component({
   selector: 'app-coordinator',
-  imports: [RouterOutlet,RouterLink],
+  imports: [Footer],
   templateUrl: './coordinator.html',
   styleUrl: './coordinator.css'
 })

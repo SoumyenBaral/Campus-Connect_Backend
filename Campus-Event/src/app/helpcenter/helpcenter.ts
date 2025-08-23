@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Footer } from '../footer/footer';
 
 @Component({
   selector: 'app-helpcenter',
-  imports: [RouterOutlet,RouterLink],
+  imports: [Footer],
   templateUrl: './helpcenter.html',
   styleUrl: './helpcenter.css'
 })

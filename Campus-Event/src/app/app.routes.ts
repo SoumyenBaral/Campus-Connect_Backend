@@ -6,7 +6,6 @@ import { Coordinator } from './coordinator/coordinator';
 import { Student } from './student/student';
 import { ContactUs } from './contact-us/contact-us';
 import { Login } from './login/login';
-import { Profile } from './profile/profile';
 import { Helpcenter } from './helpcenter/helpcenter';
 
 export const routes: Routes = [
@@ -44,11 +43,7 @@ export const routes: Routes = [
         component:Login,
     },
     {
-        path:'profile',
-        component:Profile,
-    },
-    {
         path:'helpcenter',
         component:Helpcenter,
-    },
+    }, 
 ];
