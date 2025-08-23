@@ -13,10 +13,11 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { Home } from './home/home';
 import { Helpcenter } from './helpcenter/helpcenter';
 import { Navbar } from './navbar/navbar';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
-  imports: [Herosection,Footer,RouterLink,RouterOutlet,Home,Admin,Host,Coordinator,Student,ContactUs,Login,Helpcenter, Navbar],
+  imports: [Herosection,Footer,RouterLink,RouterOutlet,Home,Admin,Host,Coordinator,Student,ContactUs,Login,Helpcenter, Navbar,NgbModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
