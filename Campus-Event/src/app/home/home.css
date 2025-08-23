@@ -1,8 +1,12 @@
-/* .logo{
-    color:white;
-    background-color: orangered;
-    font-style: italic;
-    height:40px;    
+.logo{
+justify-content: left;
+  font-style: italic;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
+}
+.logo h2{
+  
+  font-weight: 700;
 }
 
 .navbar-center{
@@ -22,8 +26,8 @@
 }
 .profile{
      position: relative;
-     margin-left:auto;  pushes profile to right */
-/* }
+     margin-left:auto;  /*pushes profile to right*/
+}
 .dropdown-profile{
   display: none;
   position: absolute;
@@ -50,4 +54,4 @@
 }
 .profile:hover .dropdown-profile {
   display: block;
-}  */
+} 

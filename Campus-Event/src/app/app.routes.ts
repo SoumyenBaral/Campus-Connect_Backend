@@ -51,6 +51,5 @@ export const routes: Routes = [
     {
         path:'helpcenter',
         component:Helpcenter,
-    },
-    
+    }, 
 ];

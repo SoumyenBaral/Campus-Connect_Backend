@@ -13,9 +13,11 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { Home } from './home/home';
 import { Helpcenter } from './helpcenter/helpcenter';
 
+
 @Component({
   selector: 'app-root',
-  imports: [Herosection,Footer,RouterLink,RouterOutlet,Home,Admin,Host,Coordinator,Student,ContactUs,Login,Helpcenter],
+  imports: [RouterOutlet, Home, Footer,Admin,Host,Coordinator,Login,Signup,Helpcenter,ContactUs,Herosection],
+  standalone: true,
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
