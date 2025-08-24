@@ -1,17 +1,20 @@
 .logo {
-  font-style: italic;
+  height:50px;
   margin-left: 10px;
-  align-items: center;
-  }
+ align-content: center;
+ margin-top: 15px;
+  border: 2px ;
+  border-radius: 10px;
+  background-color:lightskyblue;
+  color: black;
+  padding: 10px;
+}
 
-.nav-item{
+.nav-item {
   display: flex;
   gap: 400px;
-}
-.navbar-center {
-  display: flex;
-  gap: 55px;
-  height: 25px;
+  height: 80px;
+  width: 100%;
 }
 
 .navbar {
@@ -21,7 +24,22 @@
   padding: 10px;
   position: relative;
   z-index: 1000;
-  size:100vh;
+  size: 100vh;
+}
+
+.navbar-center {
+  display: flex;
+  gap: 55px;
+  height: 25px;
+  align-items: center;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+
 }
 
 .profile {
