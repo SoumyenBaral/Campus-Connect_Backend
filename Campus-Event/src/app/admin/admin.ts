@@ -12,10 +12,11 @@ import { CustomPipe } from '../pipes/custom-pipe';
 })
 export class Admin {
 name:string="Admin";
-sidebarOpen = false;
+  menuOpen: boolean = false;
 
-  toggleSidebar() {
-    this.sidebarOpen = !this.sidebarOpen;
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
 
-}
+
 }
