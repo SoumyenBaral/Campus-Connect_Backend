@@ -1,19 +1,33 @@
 #footer {
-  height: 800px;
+  height: 350px;
   width: 100%;
-  border-radius: 25px;
-  display: flex;
-  gap: 450px;
-  position: relative;
-  padding: 50px;
-}
 
+}
+span{
+  border: 1px solid;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: lightskyblue;
+}
 .d10 {
   display: flex;
-  gap: 200px;
+  gap: 100px;
   color: black;
+   border-radius: 25px;
+  padding: 50px;
+  justify-content: center;
 }
 
-iframe {
-  border-radius: 20px;
+.social-media{
+margin-left: 100px;
+  display: flex;
+  gap: 100px;
+}
+.icon{
+  display: block;
+  justify-items: space-between;
+  cursor: pointer;
+}
+.icon:hover{
+  color: lightskyblue;
 }

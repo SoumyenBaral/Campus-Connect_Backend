@@ -16,7 +16,6 @@
     margin: 0;
     max-height: 0;
     opacity: 0;
-    background-color: #000;
     transition: all 0.4s ease;
 }
 
@@ -27,7 +26,6 @@
 
 .side-bar ul li {
     padding: 8px 0;
-    color: aliceblue;
     transition: padding-left 0.3s ease, color 0.3s ease;
 }
 
@@ -49,7 +47,7 @@
     border-radius: 20px;
     padding: 10px;
     text-align: center;
-box-shadow: 0px 4px 8px lightgrey;
+    box-shadow: 0px 4px 8px lightgrey;
 }
 
 .Insights h4 {
@@ -57,7 +55,34 @@ box-shadow: 0px 4px 8px lightgrey;
     gap: 20px;
     justify-content: center;
 }
-.Insights h4 svg{
-   margin-top: 10px;
-   color: blue;
+
+.Insights h4 svg {
+    margin-top: 10px;
+    color: blue;
+}
+
+.Event-Overview-Panel {
+    display: flex;
+    gap: 700px;
+    justify-content: center;
+}
+
+.quick-action {
+    height: 280px;
+    width: 300px;
+    border: 1px solid black;
+        box-shadow: 0px 4px 8px lightgrey;
+    text-align: center;
+    border-radius: 20px;
+}
+.c1{
+    justify-content: center;
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+}
+.c2{
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 20px;
 }
