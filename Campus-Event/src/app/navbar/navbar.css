@@ -88,3 +88,8 @@
 .profile:hover .arrow {
   transform: rotate(180deg);
 }
+.profile:hover{
+  background-color: rgb(148, 215, 242);
+  padding:10px 15px 10px 15px;
+  border-radius: 8px;
+}
