@@ -63,25 +63,46 @@
 
 .Event-Overview-Panel {
     display: flex;
-    gap: 700px;
+    gap: 400px;
     justify-content: center;
+    height: 500px;
+    width: 100%;
+    position: relative;
+}
+
+.text {
+    display: flex;
+    gap: 200px;
+}
+
+.d1 {
+    height: 80px;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 10px;
+    align-content: center;
+    padding: 15px;
 }
 
 .quick-action {
+    margin-top: 100px;
     height: 280px;
     width: 300px;
     border: 1px solid black;
-        box-shadow: 0px 4px 8px lightgrey;
+    box-shadow: 0px 4px 8px lightgrey;
     text-align: center;
     border-radius: 20px;
+    align-content: center;
 }
-.c1{
+
+.c1 {
     justify-content: center;
     display: flex;
     gap: 30px;
     padding: 20px;
 }
-.c2{
+
+.c2 {
     justify-content: center;
     border: 1px solid black;
     border-radius: 20px;
