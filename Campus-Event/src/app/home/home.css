@@ -19,6 +19,7 @@
 }
 .row1{
     display:flex;
+    padding:0;
 }
 .sponsor-items{
     color:orangered;
