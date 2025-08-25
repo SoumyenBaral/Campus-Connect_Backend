@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { Footer } from '../footer/footer';
 import { CustomPipe } from '../pipes/custom-pipe';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-admin',
-  imports: [CustomPipe,Footer],
+  imports: [CustomPipe, Footer, RouterLink],
 
   templateUrl: './admin.html',
   styleUrl: './admin.css'
