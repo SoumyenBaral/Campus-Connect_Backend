@@ -1,19 +1,12 @@
-.text-center{
-    background-color:black;
-    color:aliceblue;
-    margin-bottom:0;
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight: 700;
+nav {
+    justify-items: center;
 }
 
-.star-container{
-    color:white;
-    font-size:40px;
-    background-color: black;
-    padding-left: 680px;
+.star-container {
+    font-size: 40px;
 }
-.rate{
-    color:skyblue;
-    font-size:30px;
-    padding-left:50px;
+
+.rate {
+    font-size: 30px;
+    padding-left: 50px;
 }
