@@ -1,0 +1,27 @@
+.sponsers-sec{
+    background-color:rgb(215, 209, 209);
+}
+.intro-image{
+    background-image: url("https://media.istockphoto.com/id/1250665481/vector/cheerful-friends-having-fun-at-birthday-party.jpg?s=612x612&w=0&k=20&c=FZxJgRqG_zc0ys5XezQnw9IomsNzKrGo4Z55w4atYSM=");
+}
+.heading{
+    color:black;
+    font-size:23px;
+    font-weight: 700;
+    padding-left: 660px;
+    padding-bottom: 25px;
+    padding-top:15px;
+}
+.sub-line1{
+    color:black;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 420px;
+}
+.row1{
+    display:flex;
+    padding:0;
+}
+.sponsor-items{
+    color:orangered;
+    padding-left:200px;
+}
