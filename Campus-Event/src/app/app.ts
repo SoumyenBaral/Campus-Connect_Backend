@@ -17,7 +17,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
-  imports: [Herosection,Footer,RouterLink,RouterOutlet,Home,Admin,Host,Coordinator,Student,ContactUs,Login,Helpcenter, Navbar,NgbModule],
+  imports: [Herosection,Footer,RouterLink,RouterOutlet,Admin,Host,Coordinator,Student,ContactUs,Login,Helpcenter, Navbar,NgbModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
