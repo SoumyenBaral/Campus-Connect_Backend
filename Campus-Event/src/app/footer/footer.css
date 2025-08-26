@@ -32,3 +32,26 @@ span{
 .icon:hover{
   color: lightskyblue;
 }
+
+.copyright{
+  display:flex;
+  justify-content: center;
+  
+}
+.icons{
+  display:flex;
+  justify-content: end;
+}
+.icon-item{
+  padding-right:15px;
+  
+}
+#Inst-icon:hover{
+    color:rgb(210, 34, 101)
+}
+#icon:hover{
+    color:blue
+}
+#Y-icon:hover{
+  color:red;
+}
