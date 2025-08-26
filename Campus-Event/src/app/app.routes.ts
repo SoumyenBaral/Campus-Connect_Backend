@@ -7,7 +7,7 @@ import { Student } from './student/student';
 import { ContactUs } from './contact-us/contact-us';
 import { Login } from './login/login';
 import { Helpcenter } from './helpcenter/helpcenter';
-import { Gallery } from './gallery/gallery';
+import { HomeGallery } from './home-gallery/home-gallery';
 
 export const routes: Routes = [
 
@@ -49,6 +49,6 @@ export const routes: Routes = [
     }, 
     {
         path:'gallery',
-        component:Gallery
+        component:HomeGallery,
     }
 ];
