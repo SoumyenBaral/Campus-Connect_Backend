@@ -19,33 +19,55 @@
 }
 
 .text-line {
-      font-size: 40px;
-      opacity: 0;
-      animation: fadeLoop 3s infinite;
-    }
+    font-size: 40px;
+    opacity: 0;
+    animation: fadeLoop 3s infinite;
+}
 
 .text-line:nth-child(1) {
-      animation-delay: 0s;
+    animation-delay: 0s;
+}
+
+.text-line:nth-child(2) {
+    animation-delay: 3s;
+}
+
+@keyframes fadeLoop {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
     }
 
-    .text-line:nth-child(2) {
-      animation-delay: 3s;
+    10% {
+        opacity: 1;
+        transform: translateY(0);
     }
-    @keyframes fadeLoop {
-      0%   { opacity: 0; transform: translateY(20px); }
-      10%  { opacity: 1; transform: translateY(0); }
-      40%  { opacity: 1; transform: translateY(0); }
-      50%  { opacity: 0; transform: translateY(-20px); }
-      100% { opacity: 0; transform: translateY(-20px); }
+
+    40% {
+        opacity: 1;
+        transform: translateY(0);
     }
+
+    50% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
 
 .Event-gallery {
-    height: 100vh;
+    height: 90vh;
     width: 100%;
 }
-h2{
+
+h2 {
     text-align: center;
 }
+
 .Event-gallery h6 {
     text-align: center;
     color: gray;
@@ -137,9 +159,9 @@ img {
 
 
 
-.heading{
-    color:black;
-    font-size:23px;
+.heading {
+    color: black;
+    font-size: 23px;
     font-weight: 700;
 
 }
@@ -159,32 +181,35 @@ img {
     flex-direction: row;
     gap: 100px;
 }
-.row1{
-    display:flex;
-    flex-direction: row;
-    gap:50px;
-    
-}
-.row2{
+
+.row1 {
     display: flex;
     flex-direction: row;
-    gap:50px;
+    gap: 50px;
+
 }
-.row3{
+
+.row2 {
     display: flex;
     flex-direction: row;
-    gap:50px;
+    gap: 50px;
 }
-.sponsor-items{
-    color:orangered;
-    margin-left:200px;
+
+.row3 {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.sponsor-items {
+    color: orangered;
+    margin-left: 200px;
 }
 
 
 /* about section */
-.about-brief{
-    display:flex;
-    justify-content: center;
+.about-brief {
+    justify-items: center;
     font-size: 15px;
-    margin:20px 45px 20px 45px;
+   padding: 50px;
 }

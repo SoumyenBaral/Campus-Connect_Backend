@@ -6,11 +6,15 @@ import { CustomPipe } from '../pipes/custom-pipe';
 
 @Component({
   selector: 'app-student',
-  imports: [Footer, Feedback, CustomPipe],
+  imports: [Footer, Feedback, CustomPipe, RouterLink],
   templateUrl: './student.html',
   styleUrl: './student.css'
 })
 export class Student {
   name: string = "Student"
+  menuOpen: boolean = false;
 
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
 }
