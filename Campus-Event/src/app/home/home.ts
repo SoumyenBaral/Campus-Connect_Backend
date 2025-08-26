@@ -1,9 +1,13 @@
 
 import { Component} from '@angular/core';
 import { Footer } from "../footer/footer";
-import { Feedback } from "../feedback/feedback";
+
 import { HomeGallery } from "../home-gallery/home-gallery";
 
+
+@Component({
+  selector: 'app-home',
+  imports: [Footer, HomeGallery],
 import { Feedback } from "../feedback/feedback";
 import { HomeGallery } from "../home-gallery/home-gallery";
 
