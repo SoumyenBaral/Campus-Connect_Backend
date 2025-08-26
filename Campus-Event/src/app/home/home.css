@@ -7,24 +7,24 @@
     margin-left: 250px;
     color: white;
     border-radius: 10px;
-     text-align: center;
+    text-align: center;
 
 }
 
 .text-wrapper {
-      position: relative;
-      padding: 180px;
-      height: 60px;
-      overflow: hidden;
-    }
+    position: relative;
+    padding: 180px;
+    height: 60px;
+    overflow: hidden;
+}
 
-    .text-line {
+.text-line {
       font-size: 40px;
       opacity: 0;
       animation: fadeLoop 3s infinite;
     }
 
-    .text-line:nth-child(1) {
+.text-line:nth-child(1) {
       animation-delay: 0s;
     }
 
@@ -79,7 +79,7 @@ img {
 .row-2 {
     height: 250px;
     width: 300px;
- 
+
     border-radius: 15px;
 
 }
@@ -128,6 +128,8 @@ img {
 .heading {
     color: black;
     font-size: 23px;
+}
+
 /* home-main-poster */
 .intro-image{
     background-image: url("https://media.istockphoto.com/id/1250665481/vector/cheerful-friends-having-fun-at-birthday-party.jpg?s=612x612&w=0&k=20&c=FZxJgRqG_zc0ys5XezQnw9IomsNzKrGo4Z55w4atYSM=");
@@ -143,21 +145,24 @@ img {
     color:black;
     font-size:23px;
     font-weight: 700;
-  
+
 }
 
 .sub-line1 {
     color: gray;
     text-align: center;
 }
-.company{
+
+.company {
     justify-items: center;
 
 }
+
 .row1 {
     display: flex;
     flex-direction: row;
     gap: 100px;
+}
 .row1{
     display:flex;
     flex-direction: row;
