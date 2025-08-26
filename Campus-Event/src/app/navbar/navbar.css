@@ -50,7 +50,6 @@
 .dropdown-profile {
   display: none;
   position: absolute;
-  top: 100%;
   background: white;
   list-style: none;
   padding: 0;
