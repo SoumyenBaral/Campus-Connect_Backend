@@ -18,7 +18,10 @@
     opacity: 0;
     transition: all 0.4s ease;
 }
-
+.side-bar a{
+    text-decoration: none;
+    color: #000;
+}
 .side-bar ul.open {
     max-height: 300px;
     opacity: 1;
@@ -55,7 +58,9 @@
     gap: 20px;
     justify-content: center;
 }
-
+.Insights span{
+    color: blue;
+}
 .Insights h4 svg {
     margin-top: 10px;
     color: blue;
@@ -63,7 +68,7 @@
 
 .Event-Overview-Panel {
     display: flex;
-    gap: 400px;
+    gap: 200px;
     justify-content: center;
     height: 500px;
     width: 100%;
@@ -72,9 +77,16 @@
 
 .text {
     display: flex;
-    gap: 200px;
+    gap: 500px;
 }
-
+.text a{
+    text-decoration: none;
+    color: #000;
+}
+.text a:hover{
+    text-decoration: underline;
+    color: lightskyblue;
+}
 .d1 {
     height: 80px;
     width: 100%;

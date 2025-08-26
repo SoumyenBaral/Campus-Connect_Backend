@@ -7,6 +7,7 @@ import { Student } from './student/student';
 import { ContactUs } from './contact-us/contact-us';
 import { Login } from './login/login';
 import { Helpcenter } from './helpcenter/helpcenter';
+import { Gallery } from './gallery/gallery';
 
 export const routes: Routes = [
 
@@ -46,4 +47,8 @@ export const routes: Routes = [
         path:'helpcenter',
         component:Helpcenter,
     }, 
+    {
+        path:'gallery',
+        component:Gallery
+    }
 ];
