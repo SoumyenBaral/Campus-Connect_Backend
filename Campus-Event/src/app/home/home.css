@@ -1,3 +1,89 @@
+.background-img {
+    height: 80vh;
+    width: 70%;
+    background-image: url("https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 250px;
+    color: white;
+    border-radius: 10px;
+     text-align: center;
+
+}
+
+.text-wrapper {
+      position: relative;
+      padding: 180px;
+      height: 60px;
+      overflow: hidden;
+    }
+
+    .text-line {
+      font-size: 40px;
+      opacity: 0;
+      animation: fadeLoop 3s infinite;
+    }
+
+    .text-line:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .text-line:nth-child(2) {
+      animation-delay: 3s;
+    }
+    @keyframes fadeLoop {
+      0%   { opacity: 0; transform: translateY(20px); }
+      10%  { opacity: 1; transform: translateY(0); }
+      40%  { opacity: 1; transform: translateY(0); }
+      50%  { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 0; transform: translateY(-20px); }
+    }
+
+.Event-gallery {
+    height: 100vh;
+    width: 100%;
+}
+
+.Event-gallery h6 {
+    text-align: center;
+    color: gray;
+
+}
+
+.img-row-1 {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: center;
+}
+
+.row-1 {
+    height: 250px;
+    width: 300px;
+    border-radius: 15px;
+}
+
+img {
+    height: 230px;
+    width: 298px;
+    border-radius: 15px;
+}
+
+.img-row-2 {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: center;
+}
+
+.row-2 {
+    height: 250px;
+    width: 300px;
+ 
+    border-radius: 15px;
+
+}
+
 
 /* Feedback Section */
 .client-feedback {
@@ -37,6 +123,11 @@
     border-radius: 50%;
 }
 
+
+
+.heading {
+    color: black;
+    font-size: 23px;
 /* home-main-poster */
 .intro-image{
     background-image: url("https://media.istockphoto.com/id/1250665481/vector/cheerful-friends-having-fun-at-birthday-party.jpg?s=612x612&w=0&k=20&c=FZxJgRqG_zc0ys5XezQnw9IomsNzKrGo4Z55w4atYSM=");
@@ -52,15 +143,21 @@
     color:black;
     font-size:23px;
     font-weight: 700;
-    padding-left: 660px;
-    padding-bottom: 25px;
-    padding-top:15px;
+  
 }
-.sub-line1{
-    color:black;
-    font-family: Arial, Helvetica, sans-serif;
-    padding-left: 420px;
+
+.sub-line1 {
+    color: gray;
+    text-align: center;
 }
+.company{
+    justify-items: center;
+
+}
+.row1 {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
 .row1{
     display:flex;
     flex-direction: row;
