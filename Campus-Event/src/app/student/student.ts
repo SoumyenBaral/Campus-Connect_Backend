@@ -2,13 +2,15 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { Footer } from '../footer/footer';
 import { Feedback } from '../feedback/feedback';
+import { CustomPipe } from '../pipes/custom-pipe';
 
 @Component({
   selector: 'app-student',
-  imports: [Footer,Feedback],
+  imports: [Footer, Feedback, CustomPipe],
   templateUrl: './student.html',
   styleUrl: './student.css'
 })
 export class Student {
+  name: string = "Student"
 
 }
