@@ -2,11 +2,11 @@
 import { Component} from '@angular/core';
 import { Herosection } from "../herosection/herosection";
 import { Footer } from "../footer/footer";
-import { Feedback } from '../feedback/feedback';
+import { Gallery } from "../gallery/gallery";
 
 @Component({
   selector: 'app-home',
-  imports:[Herosection, Footer,Feedback],
+  imports: [Herosection, Footer, Gallery],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
