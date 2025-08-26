@@ -128,6 +128,7 @@ img {
 .heading {
     color: black;
     font-size: 23px;
+}
 /* home-main-poster */
 .intro-image{
     background-image: url("https://media.istockphoto.com/id/1250665481/vector/cheerful-friends-having-fun-at-birthday-party.jpg?s=612x612&w=0&k=20&c=FZxJgRqG_zc0ys5XezQnw9IomsNzKrGo4Z55w4atYSM=");
@@ -160,6 +161,7 @@ img {
     display: flex;
     flex-direction: row;
     gap: 100px;
+}
 .row1{
     display:flex;
     flex-direction: row;

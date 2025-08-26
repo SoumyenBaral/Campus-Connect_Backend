@@ -6,8 +6,7 @@ import { HomeGallery } from "../home-gallery/home-gallery";
 
 @Component({
   selector: 'app-home',
-  imports: [Footer],
-  imports: [Herosection, Footer,Feedback, HomeGallery],
+  imports: [Footer,Feedback, HomeGallery],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
