@@ -6,7 +6,7 @@ import { CustomPipe } from '../pipes/custom-pipe';
 
 @Component({
   selector: 'app-student',
-  imports: [Footer, Feedback, CustomPipe, RouterLink],
+  imports: [Footer, Feedback, CustomPipe, RouterLink,RouterOutlet],
   templateUrl: './student.html',
   styleUrl: './student.css'
 })
@@ -18,3 +18,4 @@ export class Student {
     this.menuOpen = !this.menuOpen;
   }
 }
+

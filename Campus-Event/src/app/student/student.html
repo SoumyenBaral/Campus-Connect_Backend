@@ -63,7 +63,7 @@
     </div>
     <br>
     <hr>
-    <div class="recent-upcomming-event">
+    <div class="recent-upcoming-event">
         <div class="recent-event">
 
             <h5><b>Recent Event</b></h5>
@@ -128,11 +128,11 @@
             </div>
             <br>
             <div>
-                <button><a routerLink=""><b>VIEW ALL RECENT-EVENT</b></a></button>
+                <button routerLink="/Ongoing-Events"><b>View All Ongoing Events</b></button>
             </div>
         </div>
-        <div class="upcomming-event">
-            <h5><b>Upcomming Event</b></h5>
+        <div class="upcoming-event">
+            <h5><b>Upcoming Event</b></h5>
             <div class="d2">
                 <h5><b>Tech Conference 2025</b></h5>
                 <h6><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -194,7 +194,7 @@
             </div>
             <br>
             <div>
-                <button><a routerLink=""><b>VIEW ALL UPCOMMING-EVENT</b></a></button>
+                <button routerLink="/Upcoming-Events"><b>Browse Upcoming Event</b></button>
             </div>
         </div>
 
@@ -204,3 +204,4 @@
     <app-feedback></app-feedback>
     <hr>
     <app-footer></app-footer>
+    <router-outlet></router-outlet>
