@@ -13,9 +13,7 @@ import { HomeGallery } from "../home-gallery/home-gallery";
   styleUrl: './home.css'
 })
 
-  templateUrl:'./home.html',
-    styleUrl: './home.css'
-  })
+  
 
 export class Home {
 
