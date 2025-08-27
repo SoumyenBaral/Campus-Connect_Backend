@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
 import { Footer } from '../footer/footer';
-import { OngoingEvents } from "../ongoing-events/ongoing-events";
+import { CustomPipe } from '../pipes/custom-pipe';
 
 @Component({
   selector: 'app-host',
-  imports: [Footer, OngoingEvents],
+  imports: [Footer,CustomPipe],
   templateUrl: './host.html',
   styleUrl: './host.css'
 })
 export class Host {
+name:string="Host";
+  menuOpen: boolean = false;
 
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
 }
