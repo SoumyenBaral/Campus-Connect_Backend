@@ -95,6 +95,8 @@
     border-radius: 10px;
     align-content: center;
     padding: 15px;
+    display: flex;
+    gap: 30px;
 }
 
 .quick-action {
