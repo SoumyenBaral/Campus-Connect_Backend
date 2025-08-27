@@ -1,0 +1,44 @@
+.text-center{
+    justify-content: center;
+    font-weight: 700;
+}
+.intro-line{
+    font-size: 17px;
+    color:rgb(165, 163, 163);
+    text-align: center;
+    padding-top:12px
+}
+.register{
+    color:white;
+    background-color: rgb(14, 18, 20);
+    border-radius: 7px;
+    height:30px;
+    width:197px;
+}
+.register:hover{
+    color:white;
+    background-color: orangered; 
+}
+
+.events{
+    display:flex;
+    flex-direction: row;
+
+}
+.event-item{
+    margin:50px 90px 5px 0px;
+    border: 2px solid black;
+    box-shadow:0 2px 6px rgba(0,0,0,0,0.1);
+    width:200px;
+    border-radius: 10px;
+    
+}
+.info{
+    margin:0px;
+    font-size: 15px;
+
+}
+.img{
+    border-radius: 10px;
+    
+}
