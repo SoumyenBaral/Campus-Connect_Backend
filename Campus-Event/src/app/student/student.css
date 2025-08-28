@@ -116,12 +116,16 @@
     padding: 20px;
     border-radius: 10px;
     border: 1px solid black;
-    background-color: orangered;
-    text-decoration-color: white;
+    background-color: #0c0b0b;
+color: whitesmoke;
 }
 button a{
 text-decoration: none;
-    color: black;
+    color: #eae4e4;
+}
+button:hover{
+    background-color: orangered;
+    
 }
 h6{
     color: gray;
