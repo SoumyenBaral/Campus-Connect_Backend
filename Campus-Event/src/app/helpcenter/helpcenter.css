@@ -1,0 +1,45 @@
+.heading {
+    text-align: center;
+}
+
+.started-guide {
+    height: 75vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.c1{
+    display: flex;
+    gap:20px;
+}
+.guide {
+    height: 70vh;
+    width: 80%;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.item {
+    height: 80px;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    gap: 650px;
+    align-items: center;
+    padding: 15px;
+
+}
+
+.item1 {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+}
+
+h6 {
+    color: gray;
+}
