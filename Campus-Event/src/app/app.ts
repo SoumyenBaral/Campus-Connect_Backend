@@ -7,7 +7,6 @@ import { Student } from './student/student';
 import { Login } from './login/login';
 import { Signup } from './signup/signup';
 import { Footer } from './footer/footer';
-import { Herosection } from './herosection/herosection';
 import { ContactUs } from './contact-us/contact-us';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { Home } from './home/home';
@@ -17,7 +16,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
-  imports: [Herosection,Footer,RouterLink,RouterOutlet,Admin,Host,Coordinator,Student,ContactUs,Login,Helpcenter, Navbar,NgbModule],
+  imports: [Footer,RouterLink,RouterOutlet,Admin,Host,Coordinator,Student,ContactUs,Login,Helpcenter, Navbar,NgbModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
