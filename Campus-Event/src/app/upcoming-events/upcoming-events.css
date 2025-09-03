@@ -1,0 +1,45 @@
+.container {
+    height: 250vh;
+    width: 100%;
+}
+
+.eve {
+    margin-top: 50px;
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    opacity: 0.6;
+}
+
+.events {
+    height: 500px;
+    width: 600px;
+    border: 1px solid gray;
+}
+
+img {
+    height: 250px;
+    width: 100%;
+}
+
+#d1 {
+    margin-left: 30px;
+
+}
+
+#d2 {
+    margin-left: 30px;
+    word-spacing: 5px;
+}
+
+button {
+    height: 45px;
+    width: 100%;
+    background-color: #100b0a;
+    color: aliceblue;
+}
+
+button:hover {
+    background-color: orangered;
+}
