@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './register-page.css'
 })
 export class RegisterPage {
-
+show(){
+  alert(`registration successfully`)
+}
 }
