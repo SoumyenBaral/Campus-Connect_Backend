@@ -87,14 +87,39 @@ h6 {
     text-align: center;
    
 }
-
 .actors-icon {
     height: 80px;
     width: 80px;
     padding: 20px;
     border: 1px solid gray;
-    border-radius: 20px;
-    justify-content: center;
-    align-items: center;
+    border-radius: 20px;    
+}
+
+
+.contact-sprt{
+    color:white;
+    background-color: black;
+    border-radius:7px;
+    margin-right:20px;
     
+}
+.demo{
+    color:black;
+    background-color: white;
+    border-radius:7px;
+    justify-content: center;
+    border-color: rgba(222, 219, 215, 0.858);
+}
+.need-help{
+    background-color: rgba(223, 221, 221, 0.722);
+    justify-items: center;
+    height:200px;
+}
+h3,h6{
+    padding-top:30px;
+}
+
+.buttons{
+    margin-top:20px;
+    height:20px;
 }
