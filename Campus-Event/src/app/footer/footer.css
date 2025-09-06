@@ -3,12 +3,14 @@
   width: 100%;
 
 }
-span{
+
+span {
   border: 1px solid;
   padding: 10px;
   border-radius: 10px;
   background-color: lightskyblue;
 }
+
 .d10 {
   display: flex;
   gap: 100px;
@@ -18,40 +20,30 @@ span{
   justify-content: center;
 }
 
-.social-media{
-  margin-left: 100px;
+
+
+.social-media {
+  justify-content: center;
+  align-items: center;
   display: flex;
   gap: 100px;
 }
-.icon{
-  display: block;
-  justify-items: space-between;
-  cursor: pointer;
-}
-
-.icon:hover{
-  color: lightskyblue;
-}
-
-.copyright{
-  display:flex;
-  justify-content: center;
-  
-}
 .icons{
-  display:flex;
-  justify-content: end;
+  display: flex;
+  gap: 15px;
 }
-.icon-item{
-  padding-right:15px;
-  
+
+
+
+
+#Inst-icon:hover {
+  color: rgb(210, 34, 101)
 }
-#Inst-icon:hover{
-    color:rgb(210, 34, 101)
+
+#icon:hover {
+  color: blue
 }
-#icon:hover{
-    color:blue
-}
-#Y-icon:hover{
-  color:red;
+
+#Y-icon:hover {
+  color: red;
 }
