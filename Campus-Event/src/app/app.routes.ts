@@ -11,6 +11,10 @@ import { HomeGallery } from './home-gallery/home-gallery';
 import { OngoingEvents } from './ongoing-events/ongoing-events';
 import { UpcomingEvents } from './upcoming-events/upcoming-events';
 import { RegisterPage } from './register-page/register-page';
+import { AdminGuide } from './admin-guide/admin-guide';
+import { CoordinatorGuide } from './coordinator-guide/coordinator-guide';
+import { UserGuide } from './user-guide/user-guide';
+import { HostGuide } from './host-guide/host-guide';
 
 export const routes: Routes = [
 
@@ -66,5 +70,21 @@ export const routes: Routes = [
     {
         path:'register',
         component:RegisterPage,
-    }
+    },
+    {
+        path:'admin-manual',
+        component:AdminGuide,
+    },
+    {
+        path:'coordinator-manual',
+        component:CoordinatorGuide,
+    },
+    {
+        path:'user-manual',
+        component:UserGuide,
+    },
+    {
+        path:'host-manual',
+        component:HostGuide,
+    },
 ];

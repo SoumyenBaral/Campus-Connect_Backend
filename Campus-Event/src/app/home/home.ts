@@ -2,13 +2,14 @@
 import { Component} from '@angular/core';
 import { Footer } from "../footer/footer";
 
-import { HomeGallery } from "../home-gallery/home-gallery";
+
+
+
 
 
 @Component({
   selector: 'app-home',
-  imports: [Footer, HomeGallery],
-
+  imports: [Footer,],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
