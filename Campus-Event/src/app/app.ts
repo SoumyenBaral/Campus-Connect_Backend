@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { Admin } from "./admin/admin";
 import { Host } from './host/host';
 import { Coordinator } from './coordinator/coordinator';
@@ -13,11 +13,14 @@ import { Home } from './home/home';
 import { Helpcenter } from './helpcenter/helpcenter';
 import { Navbar } from './navbar/navbar';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { RegisterPage } from './register-page/register-page';
+import { AdminGuide } from './admin-guide/admin-guide';
+import { UserGuide } from './user-guide/user-guide';
+import { HostGuide } from './host-guide/host-guide';
+import { CoordinatorGuide } from './coordinator-guide/coordinator-guide';
 
 @Component({
   selector: 'app-root',
-  imports: [Footer, RouterLink, RouterOutlet,Navbar, NgbModule,RegisterPage],
+  imports: [Footer, RouterLink, RouterOutlet,Navbar, NgbModule,AdminGuide,UserGuide,HostGuide,CoordinatorGuide],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
