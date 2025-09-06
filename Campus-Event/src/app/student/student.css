@@ -73,7 +73,7 @@
 }
 
 .recent-upcoming-event {
-    height: 100vh;
+    height: 8%;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -85,7 +85,7 @@
     height: 650px;
     width: 500px;
     border: 1px solid #121204;
-    margin-top: 50px;
+   
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0px 4px 8px lightgrey;
@@ -95,7 +95,7 @@
     height: 650px;
     width: 500px;
     border: 1px solid #0b0b07;
-    margin-top: 50px;
+  
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0px 4px 8px lightgrey;

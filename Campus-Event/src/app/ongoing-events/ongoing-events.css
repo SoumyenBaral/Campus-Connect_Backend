@@ -12,29 +12,30 @@
 }
 
 .events {
-    height: 500px;
+    height: 512px;
     width: 600px;
     border: 1px solid gray;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.events p {
+    font-size: large;
+    padding: 1rem;
 }
 
 img {
-    height: 250px;
+        border-radius: 10px;
+
+    height: 200px;
     width: 100%;
-}
-
-#d1 {
-    margin-left: 30px;
-
-}
-
-#d2 {
-    margin-left: 30px;
-    word-spacing: 5px;
 }
 
 button {
     height: 45px;
     width: 100%;
+        border-radius: 10px;
+
     background-color: #100b0a;
     color: aliceblue;
 }
