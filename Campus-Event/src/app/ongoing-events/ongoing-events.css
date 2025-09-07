@@ -1,22 +1,26 @@
 .container {
-    height: 250vh;
+    height: 220vh;
     width: 100%;
+   
+
 }
 
 .eve {
     margin-top: 50px;
-    height: 70vh;
-    width: 100%;
+    height: 60vh;
+    width: 80%;
     display: flex;
     gap: 40px;
+    margin-left: 100px;
 }
 
 .events {
-    height: 512px;
-    width: 600px;
-    border: 1px solid gray;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    height: 403px;
+    width:30%;
+  
+    box-shadow: 10px 10px 10px lightslategray;
     border-radius: 10px;
+    justify-content: center;
 }
 
 .events p {
@@ -25,17 +29,17 @@
 }
 
 img {
-        border-radius: 10px;
-
+    border-radius: 10px;
     height: 200px;
     width: 100%;
+    cursor: pointer;
 }
 
 button {
     height: 45px;
     width: 100%;
-        border-radius: 10px;
-
+    border-radius: 10px;
+    cursor: pointer;
     background-color: #100b0a;
     color: aliceblue;
 }
