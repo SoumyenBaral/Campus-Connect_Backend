@@ -69,11 +69,6 @@
 
 }
 
-.dropdown-profile li a:hover {
-  background: #f1f1f1;
-  color: red;
-
-}
 
 .profile:hover .dropdown-profile {
   display: block;
