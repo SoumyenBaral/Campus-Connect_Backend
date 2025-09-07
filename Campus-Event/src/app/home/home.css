@@ -124,23 +124,55 @@ img {
     border-radius: 15px;
 
 }
-
-
 /*sponser*/
+.sponsers-sec{
+    height:250px;
+    color:white;
+    background-color: black;
+}
 .company marquee span {
-    border: 1px solid gray;
+    
     border-radius: 10px;
     padding: 15px;
-    background-color: lightskyblue;
     display: inline-block;
     margin: 0 30px;
-    font-size: 18px;
+    font-size: 30px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .company marquee {
     word-spacing: 50px;
 }
 
+.avalanche{
+    color:rgb(43, 144, 226);
+}
+.starkware{
+    color:crimson;
+}
+.saber{
+    color:rgb(29, 173, 46);
+}
+.oasys{
+    color:rgb(43, 144, 226);
+}
+
+.evento{
+    color:crimson;
+}
+.aptos{
+   color:rgb(29, 173, 46);
+}
+.starknet{
+    color:orangered;
+}
+.supra{
+    color:rgb(43, 144, 226);
+}
+.berachain{
+   color:crimson;
+}
 /* Feedback Section */
 .client-feedback {
     height: 70vh;

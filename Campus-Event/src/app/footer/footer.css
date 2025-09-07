@@ -31,8 +31,10 @@ span {
 .icons{
   display: flex;
   gap: 15px;
+  margin-left:900px;
 }
-
+.Allrights{
+}
 
 
 
