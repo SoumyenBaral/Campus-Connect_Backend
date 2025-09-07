@@ -73,6 +73,22 @@
 }
 
 
+.about-us {
+  opacity: 0;
+  transform: translateX(100%); /* start from right */
+  animation: slideInRight 1.2s ease-out forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
 
 /*gallery section*/
