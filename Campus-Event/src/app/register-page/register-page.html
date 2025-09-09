@@ -1,42 +1,47 @@
 <div class="container">
     <div class="regis-form">
 
-        <h3><b>Event Registration</b></h3>
-        <h6>Register for events</h6>
+        <div style="padding: 30px;">
+            <h3><b>Event Registration</b></h3>
+            <h6>Register for events</h6>
+            <br>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Registration Details</legend>
+                    <h6>Please fill in your details to complete registration</h6>
 
-        <form action="#" method="post">
-            <fieldset>
-                <legend>Registration Details</legend>
-                <h6>Please fill in your details to complete registration</h6>
+                    <label for="First-name">First Name:</label>
+                    <input type="text" id="First-name" name="first-name" required placeholder=" Enter Your First Name">
 
-                <label for="First-name">First Name:</label>
-                <input type="text" id="First-name" name="first-name" required>
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="last-name" name="last-name" required placeholder=" Enter Your Last Name">
 
-                <label for="last-name">Last Name:</label>
-                <input type="text" id="last-name" name="last-name">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" placeholder="abc@gmail.com" required>
 
-                <label for="email">Email Address:</label>
-                <input type="email" id="email"  placeholder="abc@gmail.com" required>
+                    <label for="mobile">Mobile Number:</label>
+                    <input type="number" id="mobile" required placeholder="Enter Your Mobile Number">
 
-                <label for="mobile">Mobile Number:</label>
-                <input type="number" id="mobile"  required>
+                    <label for="organization">Organization/Institute/Company:</label>
+                    <input type="text" id="organization" required placeholder=" Enter Your organization">
+                    <br>
 
-                <label for="organization">Organization/Institute/Company:</label>
-                <input type="text" id="organization" >
 
-                <div class="checkbox-group">
-                    <input type="checkbox" id="terms"  required>
-                    <label for="terms">I agree to the <span style="text-decoration: underline;">Terms and Conditions</span></label>
-                </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">I agree to the <span style="text-decoration: underline;">Terms and
+                                Conditions</span></label>
+                    </div>
 
-                <div class="checkbox-group">
-                    <input type="checkbox" id="updates" >
-                    <label for="updates">I would like to receive updates for future events.</label>
-                </div>
-
-                <input type="submit"  class="submit">
-            </fieldset>
-        </form>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="updates">
+                        <label for="updates">I would like to receive updates for future events.</label>
+                    </div>
+                    <br>
+                    <input type="submit" class="submit">
+                </fieldset>
+            </form>
+        </div>
 
     </div>
 

@@ -1,46 +1,51 @@
 <div class="body">
- <div class="image">
+    <div class="image">
         <img src="https://img.freepik.com/free-vector/login-concept-illustration_114360-739.jpg" alt="">
     </div>
     <div class="signup">
-        <span >
-            <h4 ><b>Welcome👏</b></h4>
+        <span>
+            <h4><b>Welcome👏</b></h4>
         </span>
-        <span >
-            <p >Please fill out the form to register.</p>
+        <span>
+            <p>Please fill out the form to register.</p>
         </span>
         <form action="">
-            First Name:
-            <br>
-            <input type="text" placeholder="Enter Your First Name">
-            <br>
-            <br>
-            Last Name:
-            <br>
-            <input type="text" placeholder="Enter Your Last Name">
-            <br>
-            <br>
-            Email:
-            <br>
-            <input type="email" placeholder="Enter Your Email">
-            <br>
-            <br>
-            Password:
-            <br>
-            <input type="password" placeholder="Enter Your Password">
-            <br>
-            <br>
-            Phone:
-            <br>
-            <input type="number" placeholder="Enter Your Phone Number">
-            <br>
-            <br>
-            <button>Register</button>
+            <fieldset>
+                <label for="fname">First Name:</label>
+                <br>
+                <input type="text" placeholder="Enter Your First Name" name="fname" id="fname" required>
+                <br>
+                <br>
+                <label for="lname"> Last Name:</label>
+                <br>
+                <input type="text" placeholder="Enter Your Last Name" name="lname" id="lname" required>
+                <br>
+                <br>
+                <label for="email"> Email:</label>
+                <br>
+                <input type="email" placeholder="Enter Your Email" name="email" id="email" required>
+                <br>
+                <br>
+                <label for="password">Password:</label>
+                <br>
+                <input type="password" placeholder="Enter Your Password" name="password" id="password" required>
+                <br>
+                <br>
+                <label for="phone"> Phone:</label>
+                <br>
+                <input type="number" placeholder="Enter Your Phone Number" name="phone" id="phone" required>
+                <br>
+                <br>
+                <button>Register</button>
+
+
+            </fieldset>
         </form>
         <br>
-        <span>Already a user?<a href="" >Login</a></span>
+        <span><p id="d1">Already a user?<a routerLink="/login">Login</a></p></span>
     </div>
-   <div>
-    
-   </div>
+    <div>
+
+    </div>
 </div>
+<router-outlet></router-outlet>

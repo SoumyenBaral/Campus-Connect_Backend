@@ -15,76 +15,82 @@ import { AdminGuide } from './admin-guide/admin-guide';
 import { CoordinatorGuide } from './coordinator-guide/coordinator-guide';
 import { UserGuide } from './user-guide/user-guide';
 import { HostGuide } from './host-guide/host-guide';
+import { Signup } from './signup/signup';
 
 export const routes: Routes = [
 
     {
-        path:'',
-        component:Home,
+        path: '',
+        component: Home,
     },
     {
-        path:'home',
-        component:Home,
+        path: 'home',
+        component: Home,
     },
     {
-        path:'admin',
-        component:Admin,
+        path: 'admin',
+        component: Admin,
     },
     {
-        path:'coordinator',
-        component:Coordinator,
+        path: 'coordinator',
+        component: Coordinator,
     },
     {
-        path:'student',
-        component:Student,
+        path: 'student',
+        component: Student,
     },
     {
-        path:'host',
-        component:Host,
+        path: 'host',
+        component: Host,
     },
     {
-        path:'contact-us',
-        component:ContactUs,
+        path: 'contact-us',
+        component: ContactUs,
     },
     {
-        path:'login',
-        component:Login,
+        path: 'login',
+        component: Login,
+    },
+
+    {
+        path: 'signup',
+        component: Signup
     },
     {
-        path:'helpcenter',
-        component:Helpcenter,
-    }, 
-    {
-        path:'gallery',
-        component:HomeGallery,
+        path: 'helpcenter',
+        component: Helpcenter,
     },
     {
-        path:'Ongoing-Events',
-        component:OngoingEvents,
+        path: 'gallery',
+        component: HomeGallery,
+    },
+    {
+        path: 'Ongoing-Events',
+        component: OngoingEvents,
 
     },
     {
-        path:'Upcoming-Events',
-        component:UpcomingEvents,
+        path: 'Upcoming-Events',
+        component: UpcomingEvents,
     },
     {
-        path:'register',
-        component:RegisterPage,
+        path: 'register',
+        component: RegisterPage,
     },
     {
-        path:'admin-manual',
-        component:AdminGuide,
+        path: 'admin-manual',
+        component: AdminGuide,
     },
     {
-        path:'coordinator-manual',
-        component:CoordinatorGuide,
+        path: 'coordinator-manual',
+        component: CoordinatorGuide,
     },
     {
-        path:'user-manual',
-        component:UserGuide,
+        path: 'user-manual',
+        component: UserGuide,
     },
     {
-        path:'host-manual',
-        component:HostGuide,
+        path: 'host-manual',
+        component: HostGuide,
     },
 ];
