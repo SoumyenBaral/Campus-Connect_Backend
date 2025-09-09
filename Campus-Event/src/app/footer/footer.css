@@ -19,9 +19,6 @@ span {
   padding: 50px;
   justify-content: center;
 }
-
-
-
 .social-media {
   justify-content: center;
   align-items: center;
@@ -33,12 +30,8 @@ span {
   gap: 15px;
   margin-left:900px;
 }
-.Allrights{
-}
 
-
-
-#Int-icon:hover {
+#Inst-icon:hover {
   color: rgb(210, 34, 101)
 }
 

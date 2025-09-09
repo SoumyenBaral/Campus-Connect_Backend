@@ -1,96 +1,43 @@
-<div>
-    <h3><b>Event Registration</b></h3>
-    <h6>Register for events</h6>
-</div>
-<form action="#" method="post">
-    <fieldset>
-        <legend>Registration Details</legend>
-        <h6>Please fill'n your details to complete registration</h6>
+<div class="container">
+    <div class="regis-form">
 
-        <label for="First-name">First name:</label>
-        <input type="text" id="First-name" required>
+        <h3><b>Event Registration</b></h3>
+        <h6>Register for events</h6>
 
-        <label for="last-name">Last name:</label>
-        <input type="text" id="last-name">
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Registration Details</legend>
+                <h6>Please fill in your details to complete registration</h6>
 
-        
-    </fieldset>
-    
-</form>
-<!-- <br>
-<div class="registration">
-    
-    <div class="registration-details">
-        <h5><b>Registration Details</b></h5>
-        <h6>Please fill in your information to complete registration</h6>
-        <h5>Personal Information</h5>
+                <label for="First-name">First Name:</label>
+                <input type="text" id="First-name" name="first-name" required>
 
-        <b>First Name</b>
-        <br>
-        <input type="text">
-        <br>
-        <b>Last Name</b>
-        <br>
-        <input type="text">
-        <br>
-        <b>Email Address</b>
-        <br>
-        <input type="email">
-        <br>
-        <b>Phone Number</b>
-        <input type="number">
-        <br>
-        <b>Organization/Company</b>
-        <br>
-        <input type="text">
-        <br>
-        <br>
-        <div style="display: flex;gap: 10px; align-items: center;">
-            <input type="checkbox" style="width: 16px; height: 16px;"  required >
-            <b>I agree to the <span style="text-decoration: underline;">Terms and Conditions.</span></b>
-        </div>
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name">
 
-        <div style="display: flex;gap: 10px; align-items: center;">
-<input type="checkbox"   style="width: 16px; height: 16px;" required>
-<b>I would like to receive updates about future events.</b>
-</div>
-<br>
-<button (click)="show()"><b>Complete Registration</b></button>
-=======
-        <form action="">
-            <b>First Name</b>
-            <br>
-            <input type="text">
-            <br>
-            <b>Last Name</b>
-            <br>
-            <input type="text">
-            <br>
-            <b>Email Address</b>
-            <br>
-            <input type="email">
-            <br>
-            <b>Phone Number</b>
-            <input type="number">
-            <br>
-            <b>Organization/Company</b>
-            <br>
-            <input type="text">
-            <br>
-            <br>
-            <div style="display: flex;gap: 10px; align-items: center;">
-                <input type="checkbox" style="width: 16px; height: 16px;">
-                <b>I agree to the <span style="text-decoration: underline;">Terms and Conditions.</span></b>
-            </div>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email"  placeholder="abc@gmail.com" required>
 
-            <div style="display: flex;gap: 10px; align-items: center;">
-                <input type="checkbox" style="width: 16px; height: 16px;">
-                <b>I would like to receive updates about futer events.</b>
-            </div>
-            <br>
-            <button (click)="show()"><b>Complete Registration</b></button>
+                <label for="mobile">Mobile Number:</label>
+                <input type="number" id="mobile"  required>
+
+                <label for="organization">Organization/Institute/Company:</label>
+                <input type="text" id="organization" >
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms"  required>
+                    <label for="terms">I agree to the <span style="text-decoration: underline;">Terms and Conditions</span></label>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="updates" >
+                    <label for="updates">I would like to receive updates for future events.</label>
+                </div>
+
+                <input type="submit"  class="submit">
+            </fieldset>
         </form>
 
     </div>
-    
-</div> -->
+
+</div>
