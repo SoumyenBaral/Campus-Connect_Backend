@@ -4,25 +4,30 @@
     </div>
     <div class="login">
         <h4><b>Welcome Back 👋</b></h4>
-        <pre>Your personal data will be used to support your exprence throughout
-this website, to manage access to your account and for other purpose
-describe in our <span >privacy policy</span></pre>
+        <p>Your personal data will be used to support your exprence throughout
+            <br>
+         this website, to manage access to your account and for other purpose
+        describe in our <span >privacy policy</span></p>
         <br>
         <form action="">
-            Username or email address
+           <fieldset>
+            <label for="email"> Username or email address</label>
             <br>
-            <input type="email" placeholder="Example@email.com">
+            <input type="email" placeholder="Example@email.com"  name="email" id="email"    required>
             <br>
             <br>
-            Password
+            <label for="password">Password</label>
             <br>
-            <input type="password" placeholder="At least 8 characters">
+            <input type="password" placeholder="At least 8 characters"  name="password" id="password"    required>
             <br>
             <br>
             <button>Login</button>
             <br>
             <br>
-            <p style="text-align: center;">Do you have any account?<span><a href="">Register</a></span></p>
+            <p style="text-align: center;">Do you have any account?<span><a routerLink="/signup">Register</a></span></p>
+
+           </fieldset>
         </form>
     </div>
 </div>
+<router-outlet></router-outlet>

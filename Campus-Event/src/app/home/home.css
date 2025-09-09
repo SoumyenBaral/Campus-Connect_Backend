@@ -75,7 +75,7 @@
 
 .about-us {
   opacity: 0;
-  transform: translateX(100%); /* start from right */
+  transform: translateX(100%); 
   animation: slideInRight 1.2s ease-out forwards;
 }
 
@@ -209,7 +209,7 @@ img {
 }
 
 .c1 {
-    height: 250px;
+    height: 200px;
     width: 380px;
     border: 1px solid black;
     border-radius: 15px;
