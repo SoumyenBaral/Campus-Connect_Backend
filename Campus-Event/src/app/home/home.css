@@ -9,7 +9,8 @@ nav{
     /* background-image: url("https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg");
     background-repeat: no-repeat;
     background-size: cover; */
-    background-image: linear-gradient( 102.4deg,  rgba(253,189,85,1) 7.8%, rgba(249,131,255,1) 100.3% );
+  background: linear-gradient(to right, #7f7fd5,#86a8e7,#91eae4);
+
     color: white;
     border-radius: 10px;
     text-align: center;
@@ -33,22 +34,6 @@ nav{
 }
 
 
-.about-us {
-  opacity: 0;
-  transform: translateX(100%); 
-  animation: slideInRight 1.2s ease-out forwards;
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
 
 
 /*gallery section*/
