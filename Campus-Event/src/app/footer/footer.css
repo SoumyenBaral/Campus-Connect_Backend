@@ -1,20 +1,19 @@
 #footer {
   height: 350px;
   width: 100%;
-
+color: white;
 }
 
 span {
   border: 1px solid;
   padding: 10px;
   border-radius: 10px;
-  background-color: lightskyblue;
+background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
 }
 
 .d10 {
   display: flex;
   gap: 100px;
-  color: black;
   border-radius: 25px;
   padding: 50px;
   justify-content: center;
