@@ -1,3 +1,4 @@
+
 .container{
     height: 150vh;
     width: 100%;
@@ -11,6 +12,21 @@
     padding:30px;
     border-radius:8px;
     max-width:500px;
+
+.container {
+    /* background-image: url("https://woorise.com/wp-content/uploads/2021/03/Online-event-registration.png"); */
+    height: 150vh;
+    width: 80%;
+    background: linear-gradient(to right, #667eea, #764ba2, #f7971e, #ff6a88);
+    justify-items: center;
+    align-content: center;
+}
+
+.regis-form {
+    background-color: #fff;
+    border-radius: 8px;
+    max-width: 500px;
+
 }
 
 h3{
@@ -20,6 +36,7 @@ h3{
 
 h6{
     text-align: center;
+
     margin-bottom: 20px;
     color:#555;
 }
@@ -27,8 +44,11 @@ h6{
 fieldset{
     border:1px solid #ddd;
     padding:20px;
-    border-radius:5px;
+    border-radius:8px;
+    color: #555;
 }
+
+
 
 legend{
     font-weight: bold;
@@ -41,36 +61,45 @@ label{
     font-weight:bold;
 }
 
-input
- {
+input {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 10px;
     font-size: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
 }
 
-.checkbox-group{
+
+
+
+.checkbox-group {
+
+
     display: flex;
+    gap: 8px;
     align-items: center;
-    margin-top: 15px;
 }
 
 .checkbox-group input{
     width: 16px;
     height: 16px;
-    margin-right: 10px;
 }
 
-.submit{
-    display: block;
+.checkbox-group label {
+    margin-bottom: 10px;
+
+}
+
+/* .submit{
+    display: block; */
+.submit {
     width: 100%;
-    margin-top: 20px;
     padding: 12px;
     background-color: #4CAF50;
     color: white;
-    border: none;
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;

@@ -1,10 +1,15 @@
+nav{
+    background-color:#131313;
+    color: white;
+}
+
 .background-img {
     height: 80vh;
-    width: 70%;
-    background-image: url("https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg");
+    width: 100%;
+    /* background-image: url("https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg");
     background-repeat: no-repeat;
-    background-size: cover;
-    margin-left: 250px;
+    background-size: cover; */
+    background-image: linear-gradient( 102.4deg,  rgba(253,189,85,1) 7.8%, rgba(249,131,255,1) 100.3% );
     color: white;
     border-radius: 10px;
     text-align: center;
@@ -18,51 +23,6 @@
     overflow: hidden;
 }
 
-.text-line {
-    font-size: 40px;
-    opacity: 0;
-    animation: fadeLoop 3s infinite;
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-
-
-}
-
-.text-line:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.text-line:nth-child(2) {
-    animation-delay: 3s;
-}
-
-@keyframes fadeLoop {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    10% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    40% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    50% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-}
 
 
 /* about section */
@@ -73,6 +33,22 @@
 }
 
 
+.about-us {
+  opacity: 0;
+  transform: translateX(100%); 
+  animation: slideInRight 1.2s ease-out forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
 
 /*gallery section*/
@@ -175,7 +151,7 @@ img {
 }
 /* Feedback Section */
 .client-feedback {
-    height: 70vh;
+    height: 50vh;
     width: 100%;
 }
 
@@ -193,7 +169,7 @@ img {
 }
 
 .c1 {
-    height: 250px;
+    height: 200px;
     width: 380px;
     border: 1px solid black;
     border-radius: 15px;
@@ -201,4 +177,8 @@ img {
     justify-items: center;
     box-shadow: 0px 4px 8px lightgrey;
     text-align: center;
+    color: whitesmoke;
+}
+.c1:hover{
+    background-image: linear-gradient( 102.4deg,  rgba(253,189,85,1) 7.8%, rgba(249,131,255,1) 100.3% );
 }
