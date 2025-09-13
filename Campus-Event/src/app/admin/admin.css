@@ -1,5 +1,10 @@
 .side-bar {
     margin-left: 50px;
+    color:white;
+}
+
+.profile{
+    background-color: #000;
 }
 
 .side-bar h5 span {
@@ -20,7 +25,7 @@
 }
 .side-bar a{
     text-decoration: none;
-    color: #000;
+    color: white;
 }
 .side-bar ul.open {
     max-height: 300px;
@@ -34,7 +39,7 @@
 
 .side-bar ul li:hover {
     padding-left: 12px;
-    color: #000;
+    color: white;
     text-decoration: underline;
 }
 
@@ -42,38 +47,46 @@
     justify-content: center;
     display: flex;
     gap: 50px;
+    colors:white;
 }
 
 .Insights {
     height: 200px;
     width: 280px;
-    border: 1px solid black;
-    border-radius: 20px;
+    border-radius: 15px;
     padding: 10px;
     text-align: center;
-    box-shadow: 0px 4px 8px lightgrey;
+    color:white;
+     background: linear-gradient(135deg, #1e1b3a, #03343c);
 }
 
 .Insights h4 {
     display: flex;
     gap: 20px;
     justify-content: center;
+    color:white;
 }
 .Insights span{
-    color: blue;
+    color:white;
 }
 .Insights h4 svg {
     margin-top: 10px;
-    color: blue;
+    color: white;
 }
 
 .Event-Overview-Panel {
     display: flex;
-    gap: 200px;
-    justify-content: center;
+    border-radius:8px;
+    padding:30px;
+    justify-content: left;
+    margin-left:90px;
     height: 500px;
-    width: 100%;
+    width: 800px;
     position: relative;
+    color:white;
+    background-color: #010d0d;
+   margin-top:-30px;
+   
 }
 
 .text {
@@ -82,47 +95,77 @@
 }
 .text a{
     text-decoration: none;
-    color: #000;
+    color: white;
 }
 .text a:hover{
     text-decoration: underline;
-    color: lightskyblue;
+    color: white;
 }
 .d1 {
     height: 80px;
     width: 100%;
-    border: 1px solid black;
+    border: 1.5px solid black;
     border-radius: 10px;
     align-content: center;
     padding: 15px;
     display: flex;
     gap: 30px;
+    color:white;
+    background: linear-gradient(135deg, #1a1f2c, #222c38);
 }
-
+.d1:hover{
+    border:1px solid rgb(64, 17, 98);
+    background-color: rgb(72, 25, 105) ;
+}
+.bi-calendar{
+     background: linear-gradient(to right, #7f7fd5,#86a8e7,#91eae4);
+     
+     
+}
 .quick-action {
-    margin-top: 100px;
+    margin-top: 5x;
     height: 280px;
-    width: 300px;
-    border: 1px solid black;
-    box-shadow: 0px 4px 8px lightgrey;
+    width: 350px;
+    padding:10px;
     text-align: center;
-    border-radius: 20px;
+    border-radius: 10px;
     align-content: center;
+    color:white;
+    background-color: #02181c;
 }
-
 .c1 {
     justify-content: center;
-    display: flex;
-    gap: 30px;
-    padding: 20px;
+    padding: 10px;
 }
 
 .c2 {
     justify-content: center;
-    border: 1px solid black;
-    border-radius: 20px;
- 
+    height:75px;
+    width:300px;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:15px;
+    padding-bottom:25px;
+    border-radius:8px;
+    margin-bottom:30px;
+    background: linear-gradient(to right, #7f7fd5,#86a8e7,#91eae4);
+}
+.quick-elements{
+display:flex;
+gap:30px;
+}
+h5{
+
+}
+.quick-icon{
+    margin-top:20px;
+}
+.subline{
+    
 }
 .c2:hover{
-    background-color: deepskyblue;
+    
+}
+#c3{
+ background:linear-gradient(to right,#56ab2f, #a8e063);
 }

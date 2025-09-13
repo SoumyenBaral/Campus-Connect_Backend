@@ -10,6 +10,7 @@
   padding: 10px;
 }
 
+
 .nav-item {
   display: flex;
   gap: 400px;
@@ -18,6 +19,7 @@
   top: 0;
   position: sticky;
   background-color: hsl(0, 17%, 93%);
+  background: linear-gradient(to right, #7f7fd5,#86a8e7,#91eae4);
 }
 
 .navbar {
