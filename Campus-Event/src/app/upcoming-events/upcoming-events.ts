@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { Footer } from '../footer/footer';
+
 
 @Component({
   selector: 'app-upcoming-events',
-  imports: [RouterLink,Footer],
+  imports: [RouterLink, Footer, RouterOutlet],
   templateUrl: './upcoming-events.html',
   styleUrl: './upcoming-events.css'
 })
