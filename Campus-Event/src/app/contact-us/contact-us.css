@@ -1,3 +1,16 @@
+.container{
+    height: 150vh;
+    width: 100%;
+    padding: 90px;
+    background: linear-gradient(to right, rgb(82, 243, 76), rgb(255, 251, 0));
+    justify-items: center;
+}
+.contact-us{
+    background-color:#fff;
+    padding:30px;
+    border-radius:8px;
+    max-width:700px;
+}
 .c1 {
     margin-left: 100px;
     height: 100vh;

@@ -7,7 +7,7 @@ import { RegisterPage } from "../register-page/register-page";
 
 @Component({
   selector: 'app-home',
-  imports: [Footer, Navbar, RegisterPage],
+  imports: [Footer, Navbar],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
