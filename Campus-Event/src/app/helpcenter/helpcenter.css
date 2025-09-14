@@ -1,6 +1,8 @@
 .container {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    background-color: black;
+    color: white;
+    height: 160vh;
+    width: 100%;
 }
 
 .heading {
@@ -29,7 +31,6 @@
 .block {
     border: 1px solid #ddd;
     border-radius: 8px;
-    background: #fff;
     padding: 20px;
     max-width: 1200px;
     margin: auto;

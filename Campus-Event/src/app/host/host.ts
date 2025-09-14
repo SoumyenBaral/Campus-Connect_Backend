@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { Footer } from '../footer/footer';
-import { Login } from "../login/login";
 import { CustomPipe } from '../pipes/custom-pipe';
 
 @Component({
   selector: 'app-host',
-  imports: [Footer,CustomPipe,Login],
+  imports: [Footer,CustomPipe],
   templateUrl: './host.html',
   styleUrl: './host.css'
 })
