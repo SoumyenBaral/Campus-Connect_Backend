@@ -8,9 +8,8 @@ nav {
     width: 100%;
     background: linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4);
     color: white;
-    text-align: center;
     display: flex;
-    gap: 100px;
+    gap: 50px;
     justify-content: center;
 
 }
@@ -18,14 +17,29 @@ nav {
 .about {
     margin-top: 30px;
     height: 50vh;
-    width: 30%;
-    border: 2px solid black;
+    width: 50%;
     color: white;
+    text-align: center;
 }
 
 .about p {
     padding: 10px;
 }
+
+.about h1 {
+    padding: 10px;
+
+}
+
+#btn {
+    padding: 10px;
+    border-radius: 15px;
+    background: linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4);
+    border: 1px solid;
+}
+
+
+
 
 .text {
     height: 50vh;
@@ -208,10 +222,11 @@ img {
     justify-items: center;
     text-align: center;
     color: whitesmoke;
+    border-radius: 10px;
 }
 
 .c1:hover {
-    border-image: linear-gradient(#7f7fd5, #86a8e7, #91eae4)1;
+    /* border-image: linear-gradient(#7f7fd5, #86a8e7, #91eae4)1; */
     background: linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4);
 
 }
