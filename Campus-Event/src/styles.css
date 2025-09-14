@@ -1,6 +1,14 @@
-* {
+/* * {
     font-family: "Lato", sans-serif;
     font-weight: 600;
     font-style: normal;
    
+} */
+html, body {
+    background-color: black !important;
+    color: white !important; /* Ensure text is visible */
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    font-family: "Lato", sans-serif; /* Optional: set default font */
 }

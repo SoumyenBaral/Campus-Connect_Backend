@@ -50,12 +50,46 @@
 .Insights {
     height: 200px;
     width: 280px;
-    border: 1px solid black;
-    border-radius: 20px;
-    padding: 10px;
+    color:white;
+    border-radius: 15px;
+    padding: 20px;
     text-align: center;
-    box-shadow: 0px 4px 8px lightgrey;
+    /* box-shadow: 0px 4px 8px lightgrey; */
+    background: linear-gradient(135deg, #1e1b3a, #03343c);
 }
+.insights-heading{
+    color:whitesmoke;
+    font-size:18px;
+}
+.insight-subheading{
+    margin-top:-25px;
+    font-size:14px;
+    color:rgb(202, 198, 198);
+    font-weight: 300;
+}
+.percent{
+    background-color: #2eb055;
+    height:5px;
+    width:20px;
+    font-size:15px;
+    padding:7px;
+    border-radius:10px;
+}
+.count{
+    justify-items:flex-start;
+    font-size:36px;
+}
+.totalevent-icons{
+     background: linear-gradient(to right, #7f7fd5,#86a8e7,#91eae4);
+     padding:8px;
+     margin-left:45px;
+     color:white;
+     height:30px;
+     width:34px;
+     margin-top: -2px;
+     border-radius:8px;
+}
+
 
 .Insights h4 {
     display: flex;
@@ -64,12 +98,12 @@
 }
 
 .Insights span {
-    color: blue;
+    color: white;
 }
 
 .Insights h4 svg {
     margin-top: 10px;
-    color: blue;
+    color: white;
 }
 
 .recent-upcoming-event {

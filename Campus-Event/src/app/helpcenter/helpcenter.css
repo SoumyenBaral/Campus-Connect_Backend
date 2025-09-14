@@ -3,6 +3,7 @@
     color: white;
     height: 160vh;
     width: 100%;
+    margin-top: 50px;
 }
 
 .heading {
@@ -123,7 +124,7 @@ h6 {
 
 /* need-help section */
 .need-help {
-    background-color: rgba(223, 221, 221, 0.722);
+    background-color: rgb(21, 21, 21);
     justify-items: center;
     height: 200px;
     margin: auto;

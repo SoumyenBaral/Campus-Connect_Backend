@@ -1,4 +1,4 @@
-.side-bar {
+/* .side-bar {
     margin-left: 50px;
 }
 
@@ -121,4 +121,230 @@
     justify-content: center;
     border: 1px solid black;
     border-radius: 20px;
+} */
+
+.side-bar {
+    margin-left: 50px;
+    color:white;
+}
+
+.profile{
+    background-color: #000;
+}
+
+.side-bar h5 span {
+    cursor: pointer;
+    display: block;
+    gap: 8px;
+    transition: color 0.3s ease;
+}
+
+
+.side-bar ul {
+    list-style: none;
+    padding-left: 20px;
+    margin: 0;
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+.side-bar a{
+    text-decoration: none;
+    color: white;
+}
+.side-bar ul.open {
+    max-height: 300px;
+    opacity: 1;
+}
+
+.side-bar ul li {
+    padding: 8px 0;
+    transition: padding-left 0.3s ease, color 0.3s ease;
+}
+
+.side-bar ul li:hover {
+    padding-left: 12px;
+    color: white;
+    text-decoration: underline;   
+
+}
+
+.Event-Insights {
+    justify-content: center;
+    display: flex;
+    gap: 50px;
+    colors:white;
+}
+
+.Insights {
+    height: 200px;
+    width: 280px;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    color:white;
+     background: linear-gradient(135deg, #1e1b3a, #03343c);
+}
+.insights-heading{
+    color:whitesmoke;
+    font-size:18px;
+}
+.insight-subheading{
+    margin-top:-25px;
+    font-size:14px;
+    color:rgb(202, 198, 198);
+    font-weight: 300;
+}
+.percent{
+    background-color: #2eb055;
+    height:5px;
+    width:20px;
+    font-size:15px;
+    padding:7px;
+    border-radius:10px;
+}
+.count{
+    justify-items:flex-start;
+    font-size:36px;
+}
+.Insights h4 {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    color:white;
+}
+.Insights span{
+    color:white;
+}
+.Insights h4 svg {
+    margin-top: 10px;
+    color: white;
+}
+.totalevent-icons{
+     background: linear-gradient(to right, #7f7fd5,#86a8e7,#91eae4);
+     padding:8px;
+     margin-left:45px;
+     color:white;
+     height:30px;
+     width:34px;
+     margin-top: -2px;
+     border-radius:8px;
+}
+
+
+.Event-Overview-Panel {
+    display: +flex;
+    border-radius:8px;
+    padding:30px;
+    justify-content: left;
+    margin-left:90px;
+    height: 500px;
+    width: 800px;
+    color:white;
+    background-color: #010d0d;
+   margin-top:-30px;
+   
+}
+
+.text {
+    display: flex;
+    gap: 500px;
+}
+.text a{
+    text-decoration: none;
+    color: white;
+}
+.text a:hover{
+    text-decoration: underline;
+    color: white;
+}
+.d1 {
+    height: 80px;
+    width: 100%;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    align-content: center;
+    padding: 15px;
+    display: flex;
+    gap: 30px;
+    color:white;
+    background: linear-gradient(135deg, #1a1f2c, #222c38);
+}
+.d1:hover{
+    border:1px solid rgb(64, 17, 98);
+    background-color: rgb(72, 25, 105) ;
+}
+.bi-calendar{
+     background: linear-gradient(to right, #7f7fd5,#86a8e7,#91eae4);
+     padding:8px;
+     color:white;
+     height:40px;
+     width:42px;
+     border-radius:8px;
+}
+.bi-clock{
+margin-right:6px;
+margin-bottom:5px;
+color:rgb(148, 146, 146);
+}
+.bi-geo-alt{
+margin-left:15px;
+margin-right:6px;
+margin-bottom:5px;
+color:rgb(148, 146, 146);
+}
+.quick-action {
+    margin-top: 5x;
+    height: 280px;
+    width: 350px;
+    padding:10px;
+    text-align: center;
+    border-radius: 10px;
+    align-content: center;
+    color:white;
+    background-color: #02181c;
+}
+.c1 {
+    justify-content: center;
+    padding: 10px;
+}
+
+.c2 {
+    justify-content: center;
+    height:75px;
+    width:300px;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:15px;
+    padding-bottom:25px;
+    border-radius:8px;
+    margin-bottom:30px;
+    background: linear-gradient(to right, #7f7fd5,#86a8e7,#91eae4);
+}
+.quick-elements{
+display:flex;
+gap:30px;
+}
+.bi-lightning-charge-fill{
+    margin: 0px 10px 5px -10px;
+    color:rgb(251, 127, 26);
+}
+
+.timestamp{
+    font-size:13px;
+    color:rgb(182, 177, 177);
+    font-weight:400;
+
+}
+.quick-icon{
+    margin-top:20px;
+}
+.subline{
+    margin-top:-10px;
+}
+.c2:hover{
+    
+}
+#c3{
+ background:linear-gradient(to right,#56ab2f, #a8e063);
 }
