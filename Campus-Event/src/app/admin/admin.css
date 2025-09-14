@@ -55,12 +55,33 @@
     height: 200px;
     width: 280px;
     border-radius: 15px;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
     color:white;
      background: linear-gradient(135deg, #1e1b3a, #03343c);
 }
-
+.insights-heading{
+    color:whitesmoke;
+    font-size:18px;
+}
+.insight-subheading{
+    margin-top:-25px;
+    font-size:14px;
+    color:rgb(202, 198, 198);
+    font-weight: 300;
+}
+.percent{
+    background-color: #2eb055;
+    height:5px;
+    width:20px;
+    font-size:15px;
+    padding:7px;
+    border-radius:10px;
+}
+.count{
+    justify-items:flex-start;
+    font-size:36px;
+}
 .Insights h4 {
     display: flex;
     gap: 20px;
@@ -74,9 +95,20 @@
     margin-top: 10px;
     color: white;
 }
+.totalevent-icons{
+     background: linear-gradient(to right, #7f7fd5,#86a8e7,#91eae4);
+     padding:8px;
+     margin-left:45px;
+     color:white;
+     height:30px;
+     width:34px;
+     margin-top: -2px;
+     border-radius:8px;
+}
+
 
 .Event-Overview-Panel {
-    display: flex;
+    display: +flex;
     border-radius:8px;
     padding:30px;
     justify-content: left;
@@ -119,8 +151,22 @@
 }
 .bi-calendar{
      background: linear-gradient(to right, #7f7fd5,#86a8e7,#91eae4);
-     
-     
+     padding:8px;
+     color:white;
+     height:40px;
+     width:42px;
+     border-radius:8px;
+}
+.bi-clock{
+margin-right:6px;
+margin-bottom:5px;
+color:rgb(148, 146, 146);
+}
+.bi-geo-alt{
+margin-left:15px;
+margin-right:6px;
+margin-bottom:5px;
+color:rgb(148, 146, 146);
 }
 .quick-action {
     margin-top: 5x;
@@ -154,18 +200,24 @@
 display:flex;
 gap:30px;
 }
-h5{
+.bi-lightning-charge-fill{
+    margin: 0px 10px 5px -10px;
+    color:rgb(251, 127, 26);
+}
+
+.timestamp{
+    font-size:13px;
+    color:rgb(182, 177, 177);
+    font-weight:400;
 
 }
 .quick-icon{
     margin-top:20px;
 }
 .subline{
-    
+    margin-top:-10px;
 }
-.c2:hover{
-    
-}
+
 #c3{
  background:linear-gradient(to right,#56ab2f, #a8e063);
 }
