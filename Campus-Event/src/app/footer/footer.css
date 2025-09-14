@@ -1,14 +1,16 @@
 #footer {
   height: 350px;
   width: 100%;
-color: white;
+  color: white;
+  background-color: black;
 }
 
 span {
   border: 1px solid;
   padding: 10px;
   border-radius: 10px;
-background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+  background: linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4);
+
 }
 
 .d10 {
@@ -18,16 +20,18 @@ background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%,
   padding: 50px;
   justify-content: center;
 }
+
 .social-media {
   justify-content: center;
   align-items: center;
   display: flex;
   gap: 100px;
 }
-.icons{
+
+.icons {
   display: flex;
   gap: 15px;
-  margin-left:900px;
+  margin-left: 900px;
 }
 
 #Inst-icon:hover {

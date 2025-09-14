@@ -1,29 +1,35 @@
+<section>
 <div class="container">
-    <div class="contact-us">
-    <div class="c1">
-<h3><b>Contact us</b></h3>
-<h4><b>Get in <span>Touch</span></b></h4>
-<h6>Send us your message and we'll get back to you within 2-4 business hours.</h6>
-<form action="">
-            Name <span>*</span>
-            <input type="text" placeholder="Your Name">
-            <br>
-            <br>
-            Email<span>*</span>
-            <input type="email" placeholder="Your Email">
-            <br>
-            <br>
-            Comment or Massage<span>*</span>
-            <br>
-            <br>
-            <textarea placeholder="Your Message" minlength="30"></textarea>
-            <br>
-            <br>
-            <button><b>POST COMMENT</b></button>
+        <div class="text">
+        <h2><span>Contact</span>us
+            <br>Get in <span>Touch</span>
+        </h2>
+        <h6>Send us your Massege and we'll get back to you
+            <br>    
+            within 2-4 business hours.</h6>
+    </div>
+    <div class="registrationform">
+        <form action="">
+            <fieldset>
+                <label for="name">Name <span>*</span></label>
+                <br>
+                <input type="text" name="name" id="name" placeholder="Your Name" required>
+                <br>
+                <br>
+                <label for="email">Email <span>*</span></label>
+                <br>
+                <input type="email" name="email" id="email" placeholder="Your Email" required>
+                <br>
+                <br>
+                <label for="message">Comment or Massege <span>*</span></label><br>
+                <textarea name="message" id="message" placeholder="Your Message" required> </textarea>
+                <br>
+                <br>
+                <button><b>POST COMMENT</b></button>
+            </fieldset>
         </form>
     </div>
 </div>
-</div>
-
-
+</section>
 <app-footer></app-footer>
+<router-outlet></router-outlet>

@@ -40,7 +40,8 @@
 .side-bar ul li:hover {
     padding-left: 12px;
     color: white;
-    text-decoration: underline;
+    text-decoration: underline;   
+
 }
 
 .Event-Insights {
@@ -82,7 +83,6 @@
     margin-left:90px;
     height: 500px;
     width: 800px;
-    position: relative;
     color:white;
     background-color: #010d0d;
    margin-top:-30px;

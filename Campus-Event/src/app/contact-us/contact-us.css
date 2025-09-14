@@ -1,49 +1,40 @@
-.container{
-    height: 150vh;
+section {
+    background-color: black;
     width: 100%;
-    padding: 90px;
-    background: linear-gradient(to right, rgb(82, 243, 76), rgb(255, 251, 0));
-    justify-items: center;
-}
-/*  rgb(82, 243, 76), rgb(255, 251, 0) */
-.contact-us{
-    background-color:#fff;
-    padding:30px;
-    border-radius:8px;
-    max-width:700px;
-}
-.c1 {
-    margin-left: 100px;
     height: 100vh;
-    width: 50%;
+    justify-content: center;
+    align-content: center;
 }
 
-.c1>h3>b {
+.container {
+    height: 85vh;
+    width: 40%;
+    background-color: whitesmoke;
+    padding: 20px;
+}
+
+span {
     color: red;
 }
 
-.c1>h4>b>span {
-    color: red;
-}
-
-.c1>form>input {
-    height: 6vh;
+input {
+    height: 8vh;
     width: 100%;
     border-radius: 5px;
 }
 
-.c1>form>textarea {
-    height: 30vh;
+textarea {
+    height: 15vh;
     width: 100%;
     border-radius: 5px;
-
 
 }
 
-.c1>form>button {
-    width: 100%;
-    border-radius: 5px;
-    padding: 10px;
+button {
     background-color: red;
+    padding: 10px;
+    width: 100%;
     color: white;
+    border-radius: 5px;
+
 }
