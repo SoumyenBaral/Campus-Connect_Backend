@@ -1,5 +1,3 @@
-
-
 .content {
     height: 65vh;
     width: 100%;
@@ -72,14 +70,14 @@
 
 @keyframes slideInLeft {
     to {
-        opacity: 1;
+        /* opacity: 1; */
         transform: translateX(0);
     }
 }
 
 @keyframes slideInRight {
     to {
-        opacity: 1;
+        /* opacity: 1; */
         transform: translateX(0);
     }
 }
@@ -136,61 +134,15 @@ img {
 }
 
 /*sponser*/
-.sponsers-sec {
-    height: 250px;
-    color: white;
-    background-color: black;
+.sponsors {
+    height: 50vh;
+    width: 100%;
 }
 
-.company marquee span {
-
-    border-radius: 10px;
-    padding: 15px;
-    display: inline-block;
-    margin: 0 30px;
-    font-size: 30px;
-    font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.company marquee {
-    word-spacing: 50px;
-}
-
-.avalanche {
-    color: rgb(43, 144, 226);
-}
-
-.starkware {
-    color: crimson;
-}
-
-.saber {
-    color: rgb(29, 173, 46);
-}
-
-.oasys {
-    color: rgb(43, 144, 226);
-}
-
-.evento {
-    color: crimson;
-}
-
-.aptos {
-    color: rgb(29, 173, 46);
-}
-
-.starknet {
-    color: orangered;
-}
-
-.supra {
-    color: rgb(43, 144, 226);
-}
-
-.berachain {
-    color: crimson;
+.s1 {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
 }
 
 /* Feedback Section */
