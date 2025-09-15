@@ -21,7 +21,7 @@
 
 .side-bar a {
     text-decoration: none;
-    color: #000;
+    color: white;
 }
 
 .side-bar ul.open {
@@ -50,44 +50,49 @@
 .Insights {
     height: 200px;
     width: 280px;
-    color:white;
+    color: white;
     border-radius: 15px;
     padding: 20px;
     text-align: center;
     /* box-shadow: 0px 4px 8px lightgrey; */
     background: linear-gradient(135deg, #1e1b3a, #03343c);
 }
-.insights-heading{
-    color:whitesmoke;
-    font-size:18px;
+
+.insights-heading {
+    color: whitesmoke;
+    font-size: 18px;
 }
-.insight-subheading{
-    margin-top:-25px;
-    font-size:14px;
-    color:rgb(202, 198, 198);
+
+.insight-subheading {
+    margin-top: -25px;
+    font-size: 14px;
+    color: rgb(202, 198, 198);
     font-weight: 300;
 }
-.percent{
+
+.percent {
     background-color: #2eb055;
-    height:5px;
-    width:20px;
-    font-size:15px;
-    padding:7px;
-    border-radius:10px;
+    height: 5px;
+    width: 20px;
+    font-size: 15px;
+    padding: 7px;
+    border-radius: 10px;
 }
-.count{
-    justify-items:flex-start;
-    font-size:36px;
+
+.count {
+    justify-items: flex-start;
+    font-size: 36px;
 }
-.totalevent-icons{
-     background: linear-gradient(to right, #7f7fd5,#86a8e7,#91eae4);
-     padding:8px;
-     margin-left:45px;
-     color:white;
-     height:30px;
-     width:34px;
-     margin-top: -2px;
-     border-radius:8px;
+
+.totalevent-icons {
+    background: linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4);
+    padding: 8px;
+    margin-left: 45px;
+    color: white;
+    height: 30px;
+    width: 34px;
+    margin-top: -2px;
+    border-radius: 8px;
 }
 
 
@@ -118,56 +123,57 @@
 .recent-event {
     height: 650px;
     width: 500px;
-    border: 1px solid #121204;
-   
+    border: 1px solid #7f7fd5;
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0px 4px 8px lightgrey;
 }
 
 .upcoming-event {
     height: 650px;
     width: 500px;
-    border: 1px solid #0b0b07;
-  
+    border: 1px solid #7f7fd5;
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0px 4px 8px lightgrey;
 
 }
 
 .d1 {
     height: 100px;
     width: 100%;
-    border: 1px solid black;
+    border: 1px solid #86a8e7;
     border-radius: 10px;
     padding: 10px;
 
 }
- button{
+
+button {
     height: 70px;
     width: 100%;
     padding: 20px;
     border-radius: 10px;
-    border: 1px solid black;
+    border: 1px solid #91eae4;
     background-color: #0c0b0b;
-color: whitesmoke;
+    color: whitesmoke;
 }
-button a{
-text-decoration: none;
+
+button a {
+    text-decoration: none;
     color: #eae4e4;
 }
-button:hover{
+
+button:hover {
     background-color: orangered;
-    
+
 }
-h6{
+
+h6 {
     color: gray;
 }
+
 .d2 {
     height: 100px;
     width: 100%;
-    border: 1px solid black;
+    border: 1px solid #86a8e7;
     border-radius: 10px;
     padding: 10px;
 }
