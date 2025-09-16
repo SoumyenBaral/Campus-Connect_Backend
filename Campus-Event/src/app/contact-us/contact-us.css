@@ -3,14 +3,17 @@ section {
     height: 100vh;
     justify-content: center;
     align-content: center;
+    background: linear-gradient(135deg, #1e1b3a, #03343c);
+
 }
 
 .container {
+    border: 1.5px solid #7f7fd5;
     height: 85vh;
-    width: 40%;
-    background-color: whitesmoke;
-    padding: 20px;
+    width: 30%;
+    background-color: white;
     color: black;
+    padding: 20px;
     border-radius: 15px;
 }
 
@@ -32,10 +35,10 @@ textarea {
 }
 
 button {
-    background-color: red;
+    background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4);
     padding: 10px;
     width: 100%;
     color: white;
     border-radius: 5px;
-
+    border-color: white;
 }
