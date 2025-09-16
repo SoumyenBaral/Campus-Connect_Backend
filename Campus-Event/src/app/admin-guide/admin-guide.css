@@ -17,12 +17,13 @@ h3{
    width:22px;
 }
 .box1{
-    border: 1px solid #ddd;
     border-radius: 8px;
-    background:black;
+     background: linear-gradient(135deg, #1e1b3a, #03343c);
     padding:20px;
     max-width: 1200px;
     margin:auto;
+    border:1.5px solid  #7f7fd5;
+    
 }
 .symbol{
     display: flex;
@@ -46,17 +47,15 @@ summary:hover{
     text-decoration: underline;
 }
 .Guidelines{
-    border: 1px solid #ddd;
+    border:1.5px solid  #7f7fd5;
     border-radius: 8px;
     background: linear-gradient(135deg, #1e1b3a, #03343c);
-    /* background:black; */
     padding:20px;
     max-width: 1200px;
     margin:auto;
 }
 .practices{
     padding:20px 15px 20px 15px;
-    /* border: 1px solid #ddd; */
     border-radius: 8px;
     background-color: #1a1f2c;
     height:250px;
@@ -72,7 +71,7 @@ summary:hover{
 }
 .bi-book{
     margin-right:10px;
-    color:black;
+    color:white;
     margin-top:2px;
 }
 
@@ -111,6 +110,7 @@ background-color: rgb(138, 49, 183);
     color:white;
 }
 .need-help{
+    border:1.5px solid  #7f7fd5;
     padding:8px 0 8px 0;
     background-color:#1a1f2c;
     border-radius: 8px;;
