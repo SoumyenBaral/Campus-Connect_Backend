@@ -143,6 +143,13 @@ img {
     gap: 30px;
     justify-content: center;
 }
+.s1 h4{
+    transition: 2s ease;
+
+}
+.s1 h4:hover{
+      transform: scale(1.5); 
+}
 
 /* Feedback Section */
 .client-feedback {

@@ -1,26 +1,26 @@
 <nav>
 
- <div class="container">
-       <h4>We'd love your feedback 🙌</h4>
-    <h5>Help us improve by sharing your experience with us</h5>
-    <div class="star-container">
-        <h6><b>How would you rate your experience?</b></h6>
-        <ngb-rating [max]="5" [(rate)]="currentRate" [readonly]="false"></ngb-rating>
-        <!-- <p class="rate">Rate:{{currentRate}}</p> -->
-        @if(currentRate == 1){
-        <h6>bad😒</h6>
-        }@else if (currentRate == 2) {
-        <h6>Average😬</h6>
-        }@else if (currentRate == 3) {
-        <h6>Good🤗</h6>
-        }@else if (currentRate == 4) {
-        <h6>Very good😍😍😍😍</h6>
-        }@else if(currentRate == 5){
-        <h6>Excellent🤩🤩🤩🤩🤩</h6>
-        }@else {
+    <div class="container">
+        <h4>We'd love your feedback 🙌</h4>
+        <h5>Help us improve by sharing your experience with us</h5>
+        <div class="star-container">
+            <h6><b>How would you rate your experience?</b></h6>
+            <ngb-rating [max]="5" [(rate)]="currentRate" [readonly]="false"></ngb-rating>
+            <!-- <p class="rate">Rate:{{currentRate}}</p> -->
+            @if(currentRate == 1){
+            <h6>bad😒</h6>
+            }@else if (currentRate == 2) {
+            <h6>Average😬</h6>
+            }@else if (currentRate == 3) {
+            <h6>Good🤗</h6>
+            }@else if (currentRate == 4) {
+            <h6>Very good😍😍😍😍</h6>
+            }@else if(currentRate == 5){
+            <h6>Excellent🤩🤩🤩🤩🤩</h6>
+            }@else {
             <h6 style="color: red;">rate us</h6>
-        }
+            }
 
+        </div>
     </div>
- </div>
 </nav>

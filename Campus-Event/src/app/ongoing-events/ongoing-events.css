@@ -14,16 +14,16 @@
 
 .events {
     height: 403px;
-    width:30%;
-  
-    box-shadow: 10px 10px 10px lightslategray;
+    width: 30%;
     border-radius: 10px;
     justify-content: center;
+    border: 1.5px solid #7f7fd5;
+
 }
 
 .events p {
     font-size: large;
-    padding: 1rem;
+    padding: 16px;
 }
 
 img {
@@ -31,17 +31,19 @@ img {
     height: 200px;
     width: 100%;
     cursor: pointer;
+
 }
 
 button {
     height: 45px;
     width: 100%;
-    border-radius: 10px;
     cursor: pointer;
-    background-color: #100b0a;
+    background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4);
     color: aliceblue;
+    border-radius: 8px;
 }
 
 button:hover {
-    background-color: orangered;
+        background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4);
+
 }

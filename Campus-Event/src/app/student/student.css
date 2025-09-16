@@ -151,20 +151,17 @@ button {
     width: 100%;
     padding: 20px;
     border-radius: 10px;
-    border: 1px solid #91eae4;
-    background-color: #0c0b0b;
     color: whitesmoke;
-}
+    background: linear-gradient(135deg, #1e1b3a, #03343c);
 
-button a {
-    text-decoration: none;
-    color: #eae4e4;
 }
 
 button:hover {
-    background-color: orangered;
+    background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4);
 
+    text-decoration: underline;
 }
+
 
 h6 {
     color: gray;
