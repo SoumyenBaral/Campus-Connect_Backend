@@ -1,4 +1,4 @@
-.container{
+/* .container{
     margin-top:50px;
     margin-bottom:50px;
     
@@ -113,6 +113,128 @@ background-color: rgb(138, 49, 183);
 .need-help{
     padding:8px 0 8px 0;
     background-color:rgb(241, 238, 238);
+    border-radius: 8px;;
+    max-width:1200px;
+    margin:auto;
+    justify-items: center;
+    
+} */
+
+.container{
+    margin-top:50px;
+    margin-bottom:50px;
+    
+}
+.heading{
+      justify-items: center;
+      display:flex;
+}
+h3{
+    margin-top:4px;
+}
+.bi-book1{
+   margin-left:520px;
+   margin-right:5px;
+   height:48px;
+   width:22px;
+}
+.box1{
+    border:1.5px solid  #7f7fd5;
+    border-radius: 8px;
+     background: linear-gradient(135deg, #1e1b3a, #03343c);
+    padding:20px;
+    max-width: 1200px;
+    margin:auto;
+    
+}
+.symbol{
+    display: flex;
+}
+.sym-icon{
+    margin-right:8px;
+}
+
+p{
+    color:#bcbaba;
+    font-size:14px;
+}
+.subline{
+    color:#747070;
+    font-size:14px;
+}
+#sub{
+margin-left:290px;
+}
+summary:hover{
+    text-decoration: underline;
+}
+.Guidelines{
+    border:1.5px solid  #7f7fd5;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #1e1b3a, #03343c);
+    padding:20px;
+    max-width: 1200px;
+    margin:auto;
+}
+.practices{
+    padding:20px 15px 20px 15px;
+    border-radius: 8px;
+    background-color: #1a1f2c;
+    height:250px;
+    width:500px;
+    
+}
+.blocks{
+    display:flex;
+    gap:30px;
+    margin-bottom:30px;
+    justify-content: center;
+    margin-right:10px;
+}
+.bi-book{
+    margin-right:10px;
+    color:white;
+    margin-top:2px;
+}
+
+.guideline-symbols{
+    margin:2px 8px 0 8px;
+    padding:4px 4px 4px 4px;
+    border-radius:7px;
+    color:white;
+    height:25px;
+    width:25px;
+}
+#bi-shield{
+background-color: red;
+}
+
+
+#bi-gear{
+background-color:rgb(113, 250, 45);
+}
+
+#bi-question-circle{
+background-color: rgba(18, 101, 216, 0.916);
+}
+
+#bi-bar-chart{
+background-color: rgb(138, 49, 183);
+}
+
+.practices li{
+    font-size:14px;
+     color:#bcbaba;
+    
+}
+.topic{
+    font-size:15px;
+    color:white;
+}
+.need-help{
+    border:1.5px solid  #7f7fd5;
+    padding:8px 0 8px 0;
+    background-color:#1a1f2c;
     border-radius: 8px;;
     max-width:1200px;
     margin:auto;

@@ -30,11 +30,12 @@
 }
 
 .block {
-    border: 1px solid #ddd;
+    border:1.5px solid  #7f7fd5;
     border-radius: 8px;
     padding: 20px;
     max-width: 1200px;
     margin: auto;
+    background: linear-gradient(135deg, #1e1b3a,#03343c);
 }
 
 .faq {
@@ -70,6 +71,9 @@
     height: 200px;
     max-width: 200px;
     justify-items: center;
+}
+.manual:hover{
+     border: 1.5px solid  #7f7fd5;
 }
 
 .sentence {
@@ -117,13 +121,18 @@ h6 {
 }
 
 .view {
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    margin-left: 30px;
+    border-radius: 12px;
+    border: 1px solid black;
+    margin-left:15px;
+    width:170px;
+    height:40px;
+    padding:auto;
+    background: linear-gradient(to right, #7f7fd5,#86a8e7,#91eae4);
 }
 
 /* need-help section */
 .need-help {
+     border: 1px solid black;
     background-color: rgb(21, 21, 21);
     justify-items: center;
     height: 200px;
@@ -149,11 +158,14 @@ h6 {
 }
 
 #ct-sprt {
-    background-color: black;
-    color: white;
+    background: linear-gradient(to right, #7f7fd5,#86a8e7,#91eae4);;
+    color: black;
+     border: 1px black;
 }
 
 #sc-demo {
-    background-color: white;
+    background: linear-gradient(to right, #7f7fd5,#86a8e7,#91eae4);;
     color: black;
+    border: 1px black;
+
 }
