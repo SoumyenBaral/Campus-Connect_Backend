@@ -11,6 +11,7 @@ section {
     background-color: whitesmoke;
     padding: 20px;
     color: black;
+    border-radius: 15px;
 }
 
 span {

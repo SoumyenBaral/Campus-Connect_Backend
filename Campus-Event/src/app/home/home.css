@@ -57,8 +57,7 @@
 
 .text-line {
     padding: 5px;
-    opacity: 0;
-    transform: translateX(-50px);
+    transform: translateX(-100px);
     animation: slideInLeft 1s ease forwards;
 }
 
