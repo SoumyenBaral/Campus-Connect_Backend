@@ -19,7 +19,7 @@ h3{
 .box1{
     border: 1px solid #ddd;
     border-radius: 8px;
-    background:#fff;
+    background:black;
     padding:20px;
     max-width: 1200px;
     margin:auto;
@@ -32,7 +32,7 @@ h3{
 }
 
 p{
-    color:#5c5959;
+    color:#bcbaba;
     font-size:14px;
 }
 .subline{
@@ -48,20 +48,20 @@ summary:hover{
 .Guidelines{
     border: 1px solid #ddd;
     border-radius: 8px;
-    background:#fff;
+    background: linear-gradient(135deg, #1e1b3a, #03343c);
+    /* background:black; */
     padding:20px;
     max-width: 1200px;
     margin:auto;
 }
 .practices{
     padding:20px 15px 20px 15px;
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
     border-radius: 8px;
-    background:#fff;
-    box-shadow: #747070;
+    background-color: #1a1f2c;
     height:250px;
     width:500px;
-    box-shadow:10px 10px 10px lightslategray;
+    
 }
 .blocks{
     display:flex;
@@ -103,16 +103,16 @@ background-color: rgb(138, 49, 183);
 
 .practices li{
     font-size:14px;
-    color:#5c5959;
+     color:#bcbaba;
     
 }
 .topic{
     font-size:15px;
-    color:black;
+    color:white;
 }
 .need-help{
     padding:8px 0 8px 0;
-    background-color:rgb(241, 238, 238);
+    background-color:#1a1f2c;
     border-radius: 8px;;
     max-width:1200px;
     margin:auto;
