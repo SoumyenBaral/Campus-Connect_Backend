@@ -126,8 +126,10 @@
     height: 500px;
     width: 800px;
     color: white;
-    background-color: #010d0d;
+    background-color: #02181c;
+    /* background-color:black; */
     margin-top: -30px;
+    border: 1px solid  #86a8e7 ;
 
 
 }
