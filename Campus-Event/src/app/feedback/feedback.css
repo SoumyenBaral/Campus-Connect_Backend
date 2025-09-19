@@ -3,15 +3,16 @@ nav {
     text-align: center;
     margin-top: 100px;
 }
-.container{
-        background: linear-gradient(135deg, #1e1b3a, #03343c);
+
+.container {
+    background: linear-gradient(135deg, #1e1b3a, #03343c);
     border: 1px solid black;
     border-radius: 20px;
     height: 200px;
-    width:70%;
+    width: 78%;
     padding: 15px;
 }
+
 .star-container {
     font-size: 40px;
 }
-
