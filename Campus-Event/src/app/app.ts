@@ -18,6 +18,7 @@ import { UserGuide } from './user-guide/user-guide';
 import { HostGuide } from './host-guide/host-guide';
 import { CoordinatorGuide } from './coordinator-guide/coordinator-guide';
 
+
 @Component({
   selector: 'app-root',
   imports: [Footer, RouterLink, RouterOutlet, Navbar, NgbModule, AdminGuide, UserGuide, HostGuide, CoordinatorGuide],
