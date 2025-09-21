@@ -128,8 +128,7 @@
     color: white;
     background-color: #02181c;
     margin-top: -30px;
-    border: 1px solid  #86a8e7 ;
-
+    border: 1px solid #7f7fd5;
 
 }
 
@@ -161,8 +160,8 @@
     background: linear-gradient(135deg, #1a1f2c, #222c38);
 }
 
-.d1:hover {
-        border: 1.5px solid  #7f7fd5;
+.d1:hover { 
+     border: 1px solid #86a8e7;
 
 }
 

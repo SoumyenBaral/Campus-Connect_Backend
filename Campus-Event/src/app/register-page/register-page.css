@@ -1,34 +1,27 @@
 
-.container{
-    height: 150vh;
+section{
     width: 100%;
-    padding: 90px;
-    background: linear-gradient(to right, rgb(82, 243, 76), rgb(255, 251, 0));
-    justify-items: center;
+    height: 130vh;
+    justify-content: center;
+    align-content: center;
+    background: linear-gradient(135deg, #1e1b3a, #03343c);
 }
-
 .regis-form{
     background-color:#fff;
-    padding:30px;
+    padding:20px;
     border-radius:8px;
     max-width:500px;
-
-.container {
-    /* background-image: url("https://woorise.com/wp-content/uploads/2021/03/Online-event-registration.png"); */
-    height: 150vh;
-    width: 80%;
-    background: linear-gradient(to right, #667eea, #764ba2, #f7971e, #ff6a88);
-    justify-items: center;
-    align-content: center;
+    margin:auto;
+    margin-top:50px;
+  
 }
-
-.regis-form {
-    background-color: #fff;
-    border-radius: 8px;
-    max-width: 500px;
-
+legend{
+    color:#5796d9;
 }
-
+.head{
+    color:rgb(6, 24, 66);
+    align-items: center;
+}
 h3{
     text-align:center;
     margin-bottom:5px;
