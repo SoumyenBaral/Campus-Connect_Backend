@@ -18,7 +18,7 @@ section {
 }
 
 span {
-    color: red;
+    color:#5796d9;
 }
 
 input {
@@ -35,7 +35,7 @@ textarea {
 }
 
 button {
-    background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4);
+    background-color: rgb(15, 143, 15);
     padding: 10px;
     width: 100%;
     color: white;

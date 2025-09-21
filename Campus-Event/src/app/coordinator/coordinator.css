@@ -118,7 +118,7 @@
 
 
 .Event-Overview-Panel {
-    display: +flex;
+    display:flex;
     border-radius: 8px;
     padding: 30px;
     justify-content: left;
@@ -126,9 +126,9 @@
     height: 500px;
     width: 800px;
     color: white;
-    background-color: #010d0d;
+    background-color: #02181c;
     margin-top: -30px;
-    border: 1px solid #91eae4;
+    border: 1px solid #7f7fd5;
 
 
 }
@@ -197,7 +197,7 @@
     border-radius: 10px;
     align-content: center;
     color: white;
-    border: 1px solid #91eae4;
+    border: 1px solid #86a8e7;
     background-color: #02181c;
 }
 

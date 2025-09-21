@@ -1,6 +1,6 @@
 .logo {
   height: 50px;
-  margin-left: 10px;
+  margin-left: 20px;
   align-content: center;
   margin-top: 15px;
   border: 2px;
@@ -11,7 +11,7 @@
 
 .nav-item {
   display: flex;
-  gap: 300px;
+  gap: 330px;
   height: 80px;
   width: 100%;
   top: 0;
@@ -23,7 +23,7 @@
 
 .navbar {
   display: flex;
-  gap: 500px;
+  gap: 440px;
   justify-content: center;
   align-items: center;
   padding: 10px;
@@ -37,6 +37,7 @@
   gap: 55px;
   height: 25px;
   align-items: center;
+  padding-left:24px;
 }
 
 .profile {
