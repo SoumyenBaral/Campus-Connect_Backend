@@ -1,219 +1,64 @@
-.profile{
-    margin-bottom:50px;
-    
-}
-.side-bar {
-    margin-left: 50px;
-}
-
-.side-bar h5 span {
-    cursor: pointer;
-    display: block;
-    gap: 8px;
-    transition: color 0.3s ease;
-}
-
-
-.side-bar ul {
-    list-style: none;
-    padding-left: 20px;
-    margin: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: 1s ease;
-}
-
-.side-bar a {
-    text-decoration: none;
-    color: white;
-}
-
-.side-bar ul.open {
-    max-height: 300px;
-    opacity: 1;
-}
-
-.side-bar ul li {
-    padding: 8px 0;
-}
-
-.side-bar ul li:hover {
-    padding-left: 12px;
-    text-decoration: underline;
-    color: #000;
-}
-
-
-.Event-Insights {
-    justify-content: center;
+.container {
+    height: 300vh;
+    width: 100%;
     display: flex;
-    gap: 50px;
+    gap: 30px;
 }
 
-.Insights {
-    height: 200px;
-    width: 280px;
-    color: white;
+.Student-Dashboard {
+    margin-top: 50px;
+    height: 50vh;
+    width: 25%;
     border-radius: 15px;
-    padding: 20px;
-    text-align: center;
-    background: linear-gradient(135deg, #1e1b3a, #03343c);
-    transition: 2s ease;
-}
-.Insights:hover{
-    transform:scale(1.1);
-}
-.insights-heading {
-    color: whitesmoke;
-    font-size: 18px;
 }
 
-.insight-subheading {
-    margin-top: -25px;
-    font-size: 14px;
-    color: rgb(202, 198, 198);
-    font-weight: 300;
-}
-
-.percent {
-    background-color: #2eb055;
-    height: 5px;
-    width: 20px;
-    font-size: 15px;
-    padding: 7px;
-    border-radius: 10px;
-}
-
-.count {
-    justify-items: flex-start;
-    font-size: 36px;
-}
-
-.totalevent-icons {
-    background: linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4);
-    padding: 8px;
-    margin-left: 45px;
-    color: white;
-    height: 30px;
-    width: 34px;
-    margin-top: -2px;
-    border-radius: 8px;
-}
-
-
-.Insights h4 {
+.item {
     display: flex;
     gap: 20px;
-    justify-content: center;
-}
-
-.Insights span {
-    color: white;
-}
-
-.Insights h4 svg {
-    margin-top: 10px;
-    color: white;
-}
-
-.recent-upcoming-event {
-    height: 8%;
+    padding: 10px;
+    align-items: center;
+    height: 50px;
     width: 100%;
-    display: flex;
-    /* flex-direction: row; */
-    gap: 50px;
-    justify-content: center;
+    color: white;
+    transition: 0.5s ease;
 }
 
-.bi-calendar {
-    background: linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4);
-    padding: 8px;
-    color: white;
-    height: 40px;
-    width: 42px;
+.item:hover {
+    background-color: #7f7fd5;
+    border-radius: 10px;
+
+}
+
+.totalEvent-RecentEvent {
+    margin-top: 50px;
+    height: 100vh;
+    width: 40%;
+
+}
+
+.totalEvent {
+    height: 150px;
+    background-color: #7f7fd5;
     border-radius: 8px;
-}
-
-.bi-clock {
-    margin-right: 6px;
-    margin-bottom: 5px;
-    color: rgb(148, 146, 146);
-}
-
-.bi-geo-alt {
-    margin-left: 15px;
-    margin-right: 6px;
-    margin-bottom: 5px;
-    color: rgb(148, 146, 146);
-}
-.timestamp {
-    font-size: 13px;
-    color: rgb(182, 177, 177);
-    font-weight: 400;
-
-}
-
-.recent-event {
-    height: 650px;
-    width: 550px;
-    border: 1px solid #7f7fd5;
-    padding: 20px;
-    border-radius: 15px;
-    background-color: #02181c;
-    margin-right:30px;
-}
-.event-btn{
-    margin:20px 5px 20px 5px;
-}
-.event-btn:hover{
-    background: linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4);
-}
-
-.upcoming-event {
-    height: 650px;
-    width: 550px;
-    border: 1px solid #7f7fd5;
-    padding: 20px;
-    border-radius: 15px;
-    background-color: #02181c;
-}
-
-
-.d1 {
-    height: 80px;
-    width: 100%;
-    border: 1.5px solid black;
-    border-radius: 10px;
-    align-content:center;
-     display:flex;
-    margin-bottom:12px;
     padding: 15px;
-    gap:30px;
-    color:white;
-    background: linear-gradient(135deg, #1a1f2c, #222c38);
-}
-.d1:hover{
- border: 1px solid #86a8e7;
+    display: flex;
+    gap: 280px;
+    align-items: center;
 }
 
-button {
-    height: 70px;
-    width: 100%;
-    padding: 20px;
-    border-radius: 10px;
-    color: whitesmoke;
-    background: linear-gradient(135deg, #1e1b3a, #03343c);
+.totalEvent-upcommingEvent {
+    margin-top: 50px;
+    height: 100vh;
+    width: 40%;
+
 
 }
-
-button:hover {
-    background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4);
-
-    text-decoration: underline;
+.totalAttendance{
+        height: 150px;
+    background-color: #86a8e7;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    gap: 250px;
+    align-items: center;
 }
-
-
-h6 {
-    color: gray;
-}
-
