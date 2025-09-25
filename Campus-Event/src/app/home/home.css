@@ -14,6 +14,7 @@
     width: 50%;
     color: white;
     text-align: center;
+    animation: baral 1s ease forwards;
 }
 
 .about p {
@@ -23,6 +24,16 @@
 .about h1 {
     padding: 10px;
 
+}
+
+@keyframes baral {
+    0% {
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 #btn {
@@ -68,14 +79,12 @@
 
 @keyframes slideInLeft {
     to {
-        /* opacity: 1; */
         transform: translateX(0);
     }
 }
 
 @keyframes slideInRight {
     to {
-        /* opacity: 1; */
         transform: translateX(0);
     }
 }
@@ -182,10 +191,11 @@ img {
     text-align: center;
     color: whitesmoke;
     border-radius: 10px;
+    transition: 1s ease;
 }
 
 .c1:hover {
-    /* border-image: linear-gradient(#7f7fd5, #86a8e7, #91eae4)1; */
     background: linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4);
-
+    transform: translateY(-10px);
 }
+

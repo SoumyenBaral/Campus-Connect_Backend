@@ -5,5 +5,6 @@ html, body {
     padding: 0;
     min-height: 100%;
     font-family: "Lato", sans-serif; /* Optional: set default font */
+    scroll-behavior: smooth;
 }
 

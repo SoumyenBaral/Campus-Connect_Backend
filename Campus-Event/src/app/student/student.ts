@@ -12,7 +12,7 @@ import { NgbAccordionItem } from "@ng-bootstrap/ng-bootstrap";
   styleUrl: './student.css'
 })
 export class Student {
-  name: string = "Student"
+  name: string = "Student!"
   menuOpen: boolean = false;
 
   toggleMenu() {
