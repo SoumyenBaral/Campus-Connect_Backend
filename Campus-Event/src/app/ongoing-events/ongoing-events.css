@@ -17,10 +17,13 @@
     width: 30%;
     border-radius: 10px;
     justify-content: center;
-    border: 1.5px solid #7f7fd5;
+    border: 1.5px solid black;
+    background-color: #02181c;
 
 }
-
+.events:hover{
+     border: 1.5px solid #7f7fd5;
+}
 .events p {
     font-size: large;
     padding: 16px;
@@ -46,4 +49,15 @@ button {
 button:hover {
         background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4);
 
+}
+#d1{
+    font-size: 16px;
+    color: white;
+    font-weight: 400;
+}
+.icon{
+    font-size: 13px;
+    color: rgb(182, 177, 177);
+    font-weight: 400;
+    margin:7px;
 }

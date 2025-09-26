@@ -16,6 +16,10 @@ import { CoordinatorGuide } from './coordinator-guide/coordinator-guide';
 import { UserGuide } from './user-guide/user-guide';
 import { HostGuide } from './host-guide/host-guide';
 import { Signup } from './signup/signup';
+import { DanceGallery } from './dance-gallery/dance-gallery';
+import { MusicGallery } from './music-gallery/music-gallery';
+import { TechGallery } from './tech-gallery/tech-gallery';
+import { Gallery } from './gallery/gallery';
 
 export const routes: Routes = [
 
@@ -92,5 +96,21 @@ export const routes: Routes = [
     {
         path: 'host-manual',
         component: HostGuide,
+    },
+    {
+        path:'dance-gallery',
+        component:DanceGallery,
+    },
+    {
+        path:'music-gallery',
+        component:MusicGallery,
+    },
+    {
+        path:'tech-gallery',
+        component:TechGallery,
+    },
+    {
+        path:'gallery',
+        component:Gallery,
     },
 ];

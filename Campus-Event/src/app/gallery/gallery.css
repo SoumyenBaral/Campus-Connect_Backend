@@ -1,0 +1,20 @@
+nav{
+    margin-left:100px;
+    background-color: rgb(216, 210, 210);
+    margin:50px;
+    padding-left:50px;
+}
+.gallery{
+    margin:50px;
+}
+nav a{
+    margin-right:50px;
+}
+.images img{
+
+
+margin:15px;
+}
+.images img:hover{
+box-shadow: 5px 5px 5px white;
+}
