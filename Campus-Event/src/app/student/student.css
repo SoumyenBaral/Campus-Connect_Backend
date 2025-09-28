@@ -1,5 +1,5 @@
 .container {
-    height: 300vh;
+    height: 120vh;
     width: 100%;
     display: flex;
     gap: 30px;
@@ -46,6 +46,29 @@
     align-items: center;
 }
 
+.recentEvent {
+    height: 95vh;
+
+}
+
+.c1 {
+    display: flex;
+    gap: 30px;
+    padding: 10px;
+    align-items: center;
+}
+
+.recentEvent1 {
+    justify-content: center;
+    display: flex;
+    gap: 20px;
+    align-content: center;
+    background-color: white;
+    border-radius: 8px;
+    color: black;
+    padding: 10px;
+}
+
 .totalEvent-upcommingEvent {
     margin-top: 50px;
     height: 100vh;
@@ -53,8 +76,15 @@
 
 
 }
-.totalAttendance{
-        height: 150px;
+
+.upcommingEvent {
+    height: 95vh;
+   
+
+}
+
+.totalAttendance {
+    height: 150px;
     background-color: #86a8e7;
     border-radius: 8px;
     padding: 15px;
