@@ -91,17 +91,24 @@
 
 /*gallery section*/
 .Event-gallery {
-    height: 90vh;
+    height: 95vh;
     width: 100%;
 }
 
-h2 {
+.Event-gallery  h6{
     text-align: center;
+    height: 30px;
+    width: 250px;
+    justify-content: center;
+    padding: 5px;
+    margin-left: 600px;
+    background: linear-gradient(to right,blue,violet);
+    border-radius: 10px;
 }
 
-.Event-gallery h6 {
+.Event-gallery h2 {
     text-align: center;
-    color: gray;
+    color: white;
 
 }
 
@@ -198,4 +205,3 @@ img {
     background: linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4);
     transform: translateY(-10px);
 }
-
