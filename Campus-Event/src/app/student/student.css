@@ -17,15 +17,14 @@
     gap: 20px;
     padding: 10px;
     align-items: center;
-    height: 50px;
-    width: 100%;
     color: white;
-    transition: 0.5s ease;
+    border-radius: 10px;
+    transition: 2s ease;
 }
 
 .item:hover {
-    background-color: #7f7fd5;
-    border-radius: 10px;
+    background: linear-gradient(90deg, #7B68EE, #40E0D0);
+    transform: translateX(20px);
 
 }
 
@@ -79,7 +78,7 @@
 
 .upcommingEvent {
     height: 95vh;
-   
+
 
 }
 

@@ -16,11 +16,7 @@ import { Footer } from '../footer/footer';
 })
 export class Admin {
 name:string="Admin";
-  menuOpen: boolean = false;
 
-  toggleMenu() {
-    this.menuOpen = !this.menuOpen;
-  }
 
 
 }
