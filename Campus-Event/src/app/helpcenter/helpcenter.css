@@ -144,7 +144,7 @@ h6 {
 }
 
 .help {
-    margin-left: 150px;
+    margin-left: 143px;
     margin-top: 15px;
 }
 
@@ -160,12 +160,7 @@ h6 {
 #ct-sprt {
     background: linear-gradient(to right, #7f7fd5,#86a8e7,#91eae4);;
     color: black;
-     border: 1px black;
-}
-
-#sc-demo {
-    background: linear-gradient(to right, #7f7fd5,#86a8e7,#91eae4);;
-    color: black;
     border: 1px black;
-
+    margin-left:14px;
 }
+
