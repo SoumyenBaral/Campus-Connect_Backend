@@ -38,7 +38,7 @@ nav{
 #d2{
     height: 25vh;
     width: 150vh;
-    border: 2px solid;
+    border: 2px solid black;
     border-radius: 10px;
     display: flex;
     gap: 20px;
