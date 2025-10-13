@@ -11,6 +11,10 @@
     width: 25%;
     border-radius: 15px;
 }
+.dashboard-menu{
+    color:white;
+    text-decoration: none;
+}
 
 .item {
     display: flex;

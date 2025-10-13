@@ -1,14 +1,41 @@
 .Event-gallery {
     height: 100vh;
     width: 100%;
+    display:flex;
+    gap:30px;
 }
 
 .Event-gallery h6 {
     text-align: center;
     color: gray;
-
+}
+.Student-Dashboard {
+    margin-top: 20px;
+    height: 50vh;
+    width: 25%;
+    border-radius: 15px;
+    margin-left:20px;
+}
+.dashboard-menu{
+    color:white;
+    text-decoration: none;
+}
+.item {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    color: white;
+    transition: 0.5s ease;
 }
 
+.item:hover {
+    background-color: #7f7fd5;
+    border-radius: 10px;
+
+}
 .img-row-1 {
     display: flex;
     flex-direction: row;
@@ -22,7 +49,9 @@
     border: 2px solid black;
     border-radius: 15px;
 }
-
+.images{
+    margin-top: 50px;
+}
 img {
     height: 230px;
     width: 298px;
