@@ -25,7 +25,7 @@ nav{
     transform: translateX(20px);
 }
 .content{
-    height: 150vh;
+    height: 125vh;
     width: 70%;
 }
 .dashboard{
@@ -38,10 +38,31 @@ nav{
 #d2{
     height: 25vh;
     width: 150vh;
-    border: 2px solid;
+    border: 2px solid black;
     border-radius: 10px;
     display: flex;
     gap: 20px;
     padding: 15px;
     justify-content: center;
+}
+
+.recentEvent{
+    width: 60%;
+}
+.c1 {
+    display: flex;
+    gap: 30px;
+    padding: 10px;
+    align-items: center;
+}
+
+.recentEvent1 {
+    justify-content: center;
+    display: flex;
+    gap: 20px;
+    align-content: center;
+    background-color: white;
+    border-radius: 8px;
+    color: black;
+    padding: 10px;
 }

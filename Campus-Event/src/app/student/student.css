@@ -47,8 +47,11 @@
     display: flex;
     gap: 280px;
     align-items: center;
+    transition: 2s ease;
 }
-
+.totalEvent:hover{
+    transform:scale(1.1);
+}
 .recentEvent {
     height: 95vh;
 
@@ -70,8 +73,12 @@
     border-radius: 8px;
     color: black;
     padding: 10px;
+    transition: 2s ease;
 }
 
+.recentEvent1:hover{
+    transform: scale(1.1);
+}
 .totalEvent-upcommingEvent {
     margin-top: 50px;
     height: 100vh;
@@ -94,4 +101,8 @@
     display: flex;
     gap: 250px;
     align-items: center;
+    transition: 2s ease;
+}
+.totalAttendance:hover{
+    transform: scale(1.1);
 }

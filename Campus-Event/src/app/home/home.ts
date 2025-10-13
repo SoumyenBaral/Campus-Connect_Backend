@@ -3,6 +3,7 @@ import { Component} from '@angular/core';
 import { Footer } from "../footer/footer";
 import { Navbar } from "../navbar/navbar";
 import { RegisterPage } from "../register-page/register-page";
+import { Signup } from '../signup/signup';
 
 
 
