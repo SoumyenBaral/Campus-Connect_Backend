@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-tech-gallery',
-  imports: [],
+  imports: [RouterLink,RouterOutlet],
   templateUrl: './tech-gallery.html',
   styleUrl: './tech-gallery.css'
 })
