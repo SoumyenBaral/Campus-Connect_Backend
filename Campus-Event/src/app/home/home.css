@@ -9,21 +9,23 @@
 }
 
 .about {
-    margin-top: 30px;
+    margin-left:360px;
     height: 50vh;
     width: 50%;
-    color: white;
+    color: rgb(71, 71, 73);
     text-align: center;
+    font-size: 19px;
     animation: baral 1s ease forwards;
+    padding:15px;
 }
 
-.about p {
-    padding: 10px;
-}
 
 .about h1 {
     padding: 10px;
 
+}
+.oneplace{
+    color:#4b4b84;
 }
 
 @keyframes baral {
@@ -41,40 +43,6 @@
     border-radius: 15px;
     background: linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4);
     border: 1px solid;
-}
-
-
-
-
-.text {
-    height: 50vh;
-    width: 40%;
-    z-index: 100px;
-}
-
-.text #d1 {
-    background-color: azure;
-    color: black;
-    height: 18vh;
-    width: 80%;
-    display: flex;
-    gap: 80px;
-    align-items: center;
-    border: 1px solid;
-    border-radius: 10px;
-
-}
-
-.text-line {
-    padding: 5px;
-    transform: translateX(-100px);
-    animation: slideInLeft 1s ease forwards;
-}
-
-.text-line-right {
-    padding: 5px;
-    transform: translateX(100px);
-    animation: slideInRight 1s ease forwards;
 }
 
 @keyframes slideInLeft {
@@ -101,8 +69,8 @@
     width: 250px;
     justify-content: center;
     padding: 5px;
-    margin-left: 600px;
-    background: linear-gradient(to right,blue,violet);
+    margin-left: 610px;
+    background: linear-gradient(to right,rgb(43, 43, 140),rgb(211, 107, 211));
     border-radius: 10px;
 }
 
@@ -172,6 +140,9 @@ img {
 }
 
 /* Feedback Section */
+.Clients-feedback{
+    margin-left:610px;
+}
 .client-feedback {
     height: 50vh;
     width: 100%;
