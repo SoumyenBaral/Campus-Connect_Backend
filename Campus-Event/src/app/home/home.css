@@ -1,5 +1,5 @@
 .content {
-    height: 65vh;
+    height: 55vh;
     width: 100%;
     background: linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4);
     color: white;
@@ -10,9 +10,11 @@
 
 .about {
     margin-left:360px;
-    height: 50vh;
+    height: 48vh;
     width: 50%;
-    color: rgb(71, 71, 73);
+    color:#0D1B2A;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.2);
+    /* color: rgb(71, 71, 73); */
     text-align: center;
     font-size: 19px;
     animation: baral 1s ease forwards;

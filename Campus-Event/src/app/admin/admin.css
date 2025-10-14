@@ -11,6 +11,7 @@ nav{
 }
 .container{
     padding: 50px;
+    
 }
 #d1{
     padding: 15px;
@@ -45,7 +46,11 @@ nav{
     padding: 15px;
     justify-content: center;
 }
-
+.container1{
+        padding: 50px;
+display: flex;
+gap: 50px;
+}
 .recentEvent{
     width: 60%;
 }
@@ -65,4 +70,68 @@ nav{
     border-radius: 8px;
     color: black;
     padding: 10px;
+    transition: 2s ease;
+}
+.recentEvent1:hover{
+    transform: scale(1.1);
+}
+.quick-action {
+    margin-top: 150px;
+    height: 350px;
+    width: 350px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    align-content: center;
+    color: white;
+    border: 1px solid #86a8e7;
+    background-color: #02181c;
+}
+
+.c3 {
+    justify-content: center;
+    padding: 10px;
+}
+
+.c4 {
+    justify-content: center;
+    height: 75px;
+    width: 300px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    background: linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4);
+}
+
+.quick-elements {
+    display: flex;
+    gap: 30px;
+}
+
+.bi-lightning-charge-fill {
+    margin: 0px 10px 5px -10px;
+    color: rgb(251, 127, 26);
+}
+
+.timestamp {
+    font-size: 13px;
+    color: rgb(182, 177, 177);
+    font-weight: 400;
+
+}
+
+.quick-icon {
+    margin-top: 20px;
+}
+
+.subline {
+    margin-top: -10px;
+}
+
+
+#c5 {
+    background: linear-gradient(to right, #56ab2f, #a8e063);
 }

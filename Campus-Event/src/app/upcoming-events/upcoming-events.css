@@ -13,27 +13,25 @@
 }
 
 .events {
-    height: 403px;
+    height: 410px;
     width: 30%;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     justify-content: center;
     border: 1.5px solid black;
     background-color: #02181c;
-    
+
 
 }
-.events:hover{
-     border: 1.5px solid #7f7fd5;
-}
+
 
 .events p {
     font-size: large;
     padding: 16px;
-    
+
 }
 
 img {
-    border-radius: 10px;
+    /* border-radius: 10px; */
     height: 200px;
     width: 100%;
     cursor: pointer;
@@ -44,24 +42,25 @@ button {
     height: 45px;
     width: 100%;
     cursor: pointer;
-    background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4);
     color: aliceblue;
-    border-radius: 8px;
+    background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4);
+    border-radius: 5px;
 }
 
 button:hover {
-        background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4);
+    background: linear-gradient(135deg, #1e1b3a, #03343c);
 
 }
 
-#d1{
+#d1 {
     font-size: 16px;
     color: white;
     font-weight: 400;
 }
-.icon{
+
+.icon {
     font-size: 13px;
     color: rgb(182, 177, 177);
     font-weight: 400;
-    margin:7px;
+    margin: 7px;
 }
