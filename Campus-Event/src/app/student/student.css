@@ -11,9 +11,19 @@
     width: 25%;
     border-radius: 15px;
 }
-.dashboard-menu{
-    color:white;
+
+.dashboard-menu {
+    color: white;
     text-decoration: none;
+}
+
+.item1 {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    align-items: center;
+    color: white;
+    border-radius: 10px;
 }
 
 .item {
@@ -49,9 +59,11 @@
     align-items: center;
     transition: 2s ease;
 }
-.totalEvent:hover{
-    transform:scale(1.1);
+
+.totalEvent:hover {
+    transform: scale(1.1);
 }
+
 .recentEvent {
     height: 95vh;
 
@@ -76,9 +88,10 @@
     transition: 2s ease;
 }
 
-.recentEvent1:hover{
+.recentEvent1:hover {
     transform: scale(1.1);
 }
+
 .totalEvent-upcommingEvent {
     margin-top: 50px;
     height: 100vh;
@@ -103,6 +116,7 @@
     align-items: center;
     transition: 2s ease;
 }
-.totalAttendance:hover{
+
+.totalAttendance:hover {
     transform: scale(1.1);
 }
