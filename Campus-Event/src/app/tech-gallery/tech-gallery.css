@@ -9,17 +9,21 @@
     text-align: center;
     color: gray;
 }
-.Student-Dashboard {
+.Dashboard {
     margin-top: 20px;
     height: 50vh;
     width: 25%;
     border-radius: 15px;
-    margin-left:20px;
+    margin-left: 20px;
+    padding: 30px;
+    transition: 2s ease;
 }
-.dashboard-menu{
-    color:white;
+
+.dashboard-menu {
+    color: white;
     text-decoration: none;
 }
+
 .item {
     display: flex;
     gap: 20px;
@@ -28,13 +32,13 @@
     height: 50px;
     width: 100%;
     color: white;
-    transition: 0.5s ease;
+    border-radius: 10px;
+    transition: 2s ease;
 }
 
 .item:hover {
-    background-color: #7f7fd5;
-    border-radius: 10px;
-
+    background: linear-gradient(90deg, #7B68EE, #40E0D0);
+    transform: translateX(30px);
 }
 .img-row-1 {
     display: flex;
