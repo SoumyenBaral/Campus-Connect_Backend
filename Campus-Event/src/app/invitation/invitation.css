@@ -1,0 +1,55 @@
+nav {
+    height: 100vh;
+    width: 100%;
+    justify-items: center;
+    align-content: center;
+    background-color: cornsilk;
+}
+
+.container {
+    height: 80vh;
+    width: 50%;
+    border: 2px solid cornsilk;
+    background-color: white;
+    border-radius: 5px;
+    justify-items: center;
+    align-content: center;
+
+}
+
+.item {
+    height: 12vh;
+    width: 80%;
+
+}
+
+select {
+    height: 8vh;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+option{
+        transition: 3s ease;
+
+}
+input {
+    height: 8vh;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    height: 8vh;
+    width: 80%;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-left: 78px;
+}
