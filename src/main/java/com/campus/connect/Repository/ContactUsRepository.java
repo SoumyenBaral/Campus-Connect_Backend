@@ -1,5 +1,9 @@
 package com.campus.connect.Repository;
 
-public interface ContactUsRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.campus.connect.Entity.ContactUs;
+
+public interface ContactUsRepository extends JpaRepository<ContactUs,Long > {
 
 }

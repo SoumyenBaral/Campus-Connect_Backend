@@ -16,7 +16,7 @@ import jakarta.persistence.OneToMany;
 
 
 @Entity
-public class User {
+public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -37,16 +37,15 @@ public class User {
 
     // Relationships
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
-    private List<Registration> registrations;
+    private List<Registrations> registrations;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Feedback> feedbacks;
+    private List<Feedbacks> feedbacks;
 
     @OneToMany(mappedBy = "host", cascade = CascadeType.ALL)
-    private List<Event> hostedEvents;
+    private List<Events> hostedEvents;
 
-    @OneToMany(mappedBy = "coordinator", cascade = CascadeType.ALL)
-    private List<Invitation> sentInvitations;
+  
 
 	public Long getId() {
 		return id;
@@ -104,41 +103,34 @@ public class User {
 		this.createdAt = createdAt;
 	}
 
-	public List<Registration> getRegistrations() {
+	public List<Registrations> getRegistrations() {
 		return registrations;
 	}
 
-	public void setRegistrations(List<Registration> registrations) {
+	public void setRegistrations(List<Registrations> registrations) {
 		this.registrations = registrations;
 	}
 
-	public List<Feedback> getFeedbacks() {
+	public List<Feedbacks> getFeedbacks() {
 		return feedbacks;
 	}
 
-	public void setFeedbacks(List<Feedback> feedbacks) {
+	public void setFeedbacks(List<Feedbacks> feedbacks) {
 		this.feedbacks = feedbacks;
 	}
 
-	public List<Event> getHostedEvents() {
+	public List<Events> getHostedEvents() {
 		return hostedEvents;
 	}
 
-	public void setHostedEvents(List<Event> hostedEvents) {
+	public void setHostedEvents(List<Events> hostedEvents) {
 		this.hostedEvents = hostedEvents;
 	}
 
-	public List<Invitation> getSentInvitations() {
-		return sentInvitations;
-	}
-
-	public void setSentInvitations(List<Invitation> sentInvitations) {
-		this.sentInvitations = sentInvitations;
-	}
-
-	public User(Long id, String name, String email, String password, Role role, String contact, LocalDateTime createdAt,
-			List<Registration> registrations, List<Feedback> feedbacks, List<Event> hostedEvents,
-			List<Invitation> sentInvitations) {
+	
+	public Users(Long id, String name, String email, String password, Role role, String contact, LocalDateTime createdAt,
+			List<Registrations> registrations, List<Feedbacks> feedbacks, List<Events> hostedEvents,
+			List<Invitations> sentInvitations) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -150,10 +142,10 @@ public class User {
 		this.registrations = registrations;
 		this.feedbacks = feedbacks;
 		this.hostedEvents = hostedEvents;
-		this.sentInvitations = sentInvitations;
+	
 	}
 
-	public User() {
+	public Users() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -162,7 +154,7 @@ public class User {
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", role=" + role
 				+ ", contact=" + contact + ", createdAt=" + createdAt + ", registrations=" + registrations
-				+ ", feedbacks=" + feedbacks + ", hostedEvents=" + hostedEvents + ", sentInvitations=" + sentInvitations
+				+ ", feedbacks=" + feedbacks + ", hostedEvents=" + hostedEvents + ""
 				+ "]";
 	}
 

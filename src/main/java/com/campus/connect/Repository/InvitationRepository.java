@@ -1,5 +1,9 @@
 package com.campus.connect.Repository;
 
-public interface InvitationRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.campus.connect.Entity.Invitations;
+
+public interface InvitationRepository extends JpaRepository<Invitations, Long> {
 
 }

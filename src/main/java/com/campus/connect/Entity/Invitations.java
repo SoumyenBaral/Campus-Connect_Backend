@@ -7,18 +7,22 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-public class Invitation {
+public class Invitations {
 	 @Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Long id;
 
 	    private String receiverEmail;
+	    
+	    
+	    private String massage;
+	    
 
 	    @ManyToOne
-	    private Event event;
+	    private Events event;
 
 	    @ManyToOne
-	    private User user;  // sender
+	    private Users user;  // sender
 
 		public Long getId() {
 			return id;
@@ -36,42 +40,50 @@ public class Invitation {
 			this.receiverEmail = receiverEmail;
 		}
 
-		public Event getEvent() {
+		public String getMassage() {
+			return massage;
+		}
+
+		public void setMassage(String massage) {
+			this.massage = massage;
+		}
+
+		public Events getEvent() {
 			return event;
 		}
 
-		public void setEvent(Event event) {
+		public void setEvent(Events event) {
 			this.event = event;
 		}
 
-		public User getUser() {
+		public Users getUser() {
 			return user;
 		}
 
-		public void setUser(User user) {
+		public void setUser(Users user) {
 			this.user = user;
 		}
 
-		public Invitation(Long id, String receiverEmail, Event event, User user) {
+		public Invitations(Long id, String receiverEmail, String massage, Events event, Users user) {
 			super();
 			this.id = id;
 			this.receiverEmail = receiverEmail;
+			this.massage = massage;
 			this.event = event;
 			this.user = user;
 		}
 
-		public Invitation() {
+		public Invitations() {
 			super();
 			// TODO Auto-generated constructor stub
 		}
 
 		@Override
 		public String toString() {
-			return "Invitation [id=" + id + ", receiverEmail=" + receiverEmail + ", event=" + event + ", user=" + user
-					+ "]";
+			return "Invitations [id=" + id + ", receiverEmail=" + receiverEmail + ", massage=" + massage + ", event="
+					+ event + ", user=" + user + "]";
 		}
-	    
-	    
-	    
+
+	
 
 }

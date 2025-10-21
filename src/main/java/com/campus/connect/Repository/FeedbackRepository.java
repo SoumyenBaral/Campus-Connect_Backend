@@ -1,5 +1,9 @@
 package com.campus.connect.Repository;
 
-public interface FeedbackRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.campus.connect.Entity.Feedbacks;
+
+public interface FeedbackRepository extends JpaRepository<Feedbacks, Long> {
 
 }

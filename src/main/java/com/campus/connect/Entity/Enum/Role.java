@@ -1,8 +1,8 @@
 package com.campus.connect.Entity.Enum;
 
 public enum Role {
-    STUDENT,
-    HOST,
-    COORDINATOR,
-    ADMIN
+//    STUDENT,
+//    HOST,
+//    COORDINATOR,
+//    ADMIN
 }

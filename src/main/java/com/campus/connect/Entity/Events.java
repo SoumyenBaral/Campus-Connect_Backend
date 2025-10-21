@@ -9,19 +9,25 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 
 @Entity
-public class Event {
+public class Events {
 	
+	
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	 private int id;
 
 	    private String title;
 
 	    
-	    private String description;
-
+private  String location;
 	    private LocalDateTime eventDate;
 
 	    @Enumerated(EnumType.STRING)
@@ -30,13 +36,13 @@ public class Event {
 
 
 	    @ManyToOne
-	    private User host;
+	    private Users host;
 
 	    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
-	    private List<Registration> registrations;
+	    private List<Registrations> registrations;
 
 	    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
-	    private List<Invitation> invitations;
+	    private List<Invitations> invitations;
 
 		public int getId() {
 			return id;
@@ -54,12 +60,12 @@ public class Event {
 			this.title = title;
 		}
 
-		public String getDescription() {
-			return description;
+		public String getLocation() {
+			return location;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setLocation(String location) {
+			this.location = location;
 		}
 
 		public LocalDateTime getEventDate() {
@@ -78,36 +84,36 @@ public class Event {
 			this.status = status;
 		}
 
-		public User getHost() {
+		public Users getHost() {
 			return host;
 		}
 
-		public void setHost(User host) {
+		public void setHost(Users host) {
 			this.host = host;
 		}
 
-		public List<Registration> getRegistrations() {
+		public List<Registrations> getRegistrations() {
 			return registrations;
 		}
 
-		public void setRegistrations(List<Registration> registrations) {
+		public void setRegistrations(List<Registrations> registrations) {
 			this.registrations = registrations;
 		}
 
-		public List<Invitation> getInvitations() {
+		public List<Invitations> getInvitations() {
 			return invitations;
 		}
 
-		public void setInvitations(List<Invitation> invitations) {
+		public void setInvitations(List<Invitations> invitations) {
 			this.invitations = invitations;
 		}
 
-		public Event(int id, String title, String description, LocalDateTime eventDate, EventStatus status, User host,
-				List<Registration> registrations, List<Invitation> invitations) {
+		public Events(int id, String title, String location, LocalDateTime eventDate, EventStatus status, Users host,
+				List<Registrations> registrations, List<Invitations> invitations) {
 			super();
 			this.id = id;
 			this.title = title;
-			this.description = description;
+			this.location = location;
 			this.eventDate = eventDate;
 			this.status = status;
 			this.host = host;
@@ -115,18 +121,17 @@ public class Event {
 			this.invitations = invitations;
 		}
 
-		public Event() {
+		public Events() {
 			super();
 			// TODO Auto-generated constructor stub
 		}
 
 		@Override
 		public String toString() {
-			return "Event [id=" + id + ", title=" + title + ", description=" + description + ", eventDate=" + eventDate
+			return "Events [id=" + id + ", title=" + title + ", location=" + location + ", eventDate=" + eventDate
 					+ ", status=" + status + ", host=" + host + ", registrations=" + registrations + ", invitations="
 					+ invitations + "]";
 		}
-
 
 
     

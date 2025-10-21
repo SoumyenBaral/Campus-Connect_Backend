@@ -1,5 +1,5 @@
 package com.campus.connect.Service;
 
-public interface UserService {
+public class UsersServiceImpl {
 
 }
