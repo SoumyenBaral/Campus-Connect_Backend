@@ -7,3 +7,4 @@ import com.campus.connect.Entity.Registrations;
 public interface RegistrationsRepository extends JpaRepository<Registrations, Long>{
 
 }
+ 
