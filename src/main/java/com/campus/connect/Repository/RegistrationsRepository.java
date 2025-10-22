@@ -21,3 +21,4 @@ public interface RegistrationsRepository extends JpaRepository<Registrations, Lo
     Optional<Registrations> findByStudentAndEvent(Users student,Events events);
 
 }
+ 

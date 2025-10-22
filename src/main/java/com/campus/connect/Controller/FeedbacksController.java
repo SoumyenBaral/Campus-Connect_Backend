@@ -11,28 +11,27 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.campus.connect.Entity.Users;
-import com.campus.connect.Service.UsersService;
-
+import com.campus.connect.Entity.Feedbacks;
+import com.campus.connect.Service.FeedbacksService;
 @RestController
 @RequestMapping("/api")
-public class UsersController {
-	
-@Autowired 
-private UsersService usersService;
- 
-@PostMapping("/postuser")
-private String addUser(@RequestBody Users user) {
-	return usersService.saveUser(user);
+public class FeedbacksController {
+@Autowired
+	private FeedbacksService feedbacksService;
+
+@PostMapping("/postfeedback")
+	private String addFeedback(@RequestBody Feedbacks feedbacks) {
+	return feedbacksService.createFeedback(feedbacks);
 }
-@GetMapping("/getuser")
-private List<Users> getAllUsers(){
-	return usersService.getAllUsers();
+
+@GetMapping("/getfeedback")
+	private List<Feedbacks> getAllUserFeedbacks(){
+	return feedbacksService.getAllUserFeedback();
 }
-@DeleteMapping("/deleteuser/{id}")
-public String deleteUser(@PathVariable Long id) {
-	return usersService.deleteUser(id);
+@DeleteMapping("/deletefeedback/{id}")
+public String deleteFeedback(@PathVariable Long id) {
+	return feedbacksService.deleteFeedback(id);
 }
-	
+
 
 }
