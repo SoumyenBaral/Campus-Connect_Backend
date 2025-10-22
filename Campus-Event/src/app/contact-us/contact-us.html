@@ -9,23 +9,23 @@
             within 2-4 business hours.</h6>
     </div>
     <div class="registrationform">
-        <form action="">
+        <form action="" >
             <fieldset>
-                <label for="name">Name <span>*</span></label>
+                <label for="name">name </label>
                 <br>
-                <input type="text" name="name" id="name" placeholder="Your Name" required>
-                <br>
-                <br>
-                <label for="email">Email <span>*</span></label>
-                <br>
-                <input type="email" name="email" id="email" placeholder="Your Email" required>
+                <input type="text" name="name" id="name" placeholder="Your Name" required [(ngModel)]="userData.name">
                 <br>
                 <br>
-                <label for="message">Query<span>*</span></label><br>
-                <textarea name="message" id="message" placeholder="Your Message" required> </textarea>
+                <label for="email">email </label>
+                <br>
+                <input type="email" name="email" id="email" placeholder="Your Email" required [(ngModel)]="userData.email">
                 <br>
                 <br>
-                <button ><b>SUBMIT</b></button>
+                <label for="message">message</label><br>
+                <textarea name="message" id="message" placeholder="Your Message" required   [(ngModel)]="userData.message"> </textarea  >
+                <br>
+                <br>
+                <button (click)="adddata()" onclick="alert('Your request is submitted!')"><b>SUBMIT</b></button>
             </fieldset>
         </form>
     </div>
@@ -33,6 +33,3 @@
 </section>
 <app-footer></app-footer>
 <router-outlet></router-outlet>
-<br>
-<br>
-<app-invitation></app-invitation>
