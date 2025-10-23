@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { Home } from './home/home';
 import { Admin } from './admin/admin';
 import { Host } from './host/host';
@@ -15,14 +15,18 @@ import { AdminGuide } from './admin-guide/admin-guide';
 import { CoordinatorGuide } from './coordinator-guide/coordinator-guide';
 import { UserGuide } from './user-guide/user-guide';
 import { HostGuide } from './host-guide/host-guide';
-import { Signup } from './signup/signup';
 import { DanceGallery } from './dance-gallery/dance-gallery';
 import { MusicGallery } from './music-gallery/music-gallery';
 import { TechGallery } from './tech-gallery/tech-gallery';
+import { SignUp } from './signup/signup';
+import { AuthGuard } from './guards/auth.guard';
+import { NgModule } from '@angular/core';
 
 
 export const routes: Routes = [
-
+{ path: 'login', component: Login },
+  { path: '', redirectTo: '/login', pathMatch: 'full' }, // <-- This is the redirect
+  { path: '**', redirectTo: '/login' },
     {
         path: '',
         component: Home,
@@ -33,18 +37,22 @@ export const routes: Routes = [
     },
     {
         path: 'admin',
+        canActivate: [AuthGuard],
         component: Admin,
     },
     {
         path: 'coordinator',
+        canActivate: [AuthGuard],
         component: Coordinator,
     },
     {
         path: 'student',
+        canActivate: [AuthGuard],
         component: Student,
     },
     {
         path: 'host',
+        canActivate: [AuthGuard],
         component: Host,
     },
     {
@@ -52,13 +60,8 @@ export const routes: Routes = [
         component: ContactUs,
     },
     {
-        path: 'login',
-        component: Login,
-    },
-
-    {
-        path: 'signup',
-        component: Signup
+        path: 'SignUp',
+        component: SignUp,
     },
     {
         path: 'helpcenter',
@@ -111,3 +114,10 @@ export const routes: Routes = [
     },
     
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+
+export class AppRoutingModule {}

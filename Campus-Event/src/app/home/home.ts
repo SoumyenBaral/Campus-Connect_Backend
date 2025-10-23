@@ -2,14 +2,16 @@
 import { Component} from '@angular/core';
 import { Footer } from "../footer/footer";
 import { Navbar } from "../navbar/navbar";
-import { Signup } from '../signup/signup';
+import { SignUp} from '../signup/signup';
+import { RouterOutlet } from '@angular/router';
+
 
 
 
 
 @Component({
   selector: 'app-home',
-  imports: [Footer, Navbar,Signup],
+  imports: [Footer, Navbar, SignUp, RouterOutlet],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
