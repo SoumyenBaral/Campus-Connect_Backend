@@ -27,23 +27,28 @@ contactUsRepository.save(contactUs);
 
 	}
 
-//	@Override
-//	public List<ContactUs> getAllSubmissions() {
-//		// TODO Auto-generated method stub
-//
-//		return contactUsRepository.findAll();
-//
-//	}
+	@Override
+	public List<ContactUs> getAllSubmissions() {
+		// TODO Auto-generated method stub
 
-//	@Override
-//	public ContactUs getSubmissionById(Long id) {
-//		// TODO Auto-generated method stub
-//	Optional<ContactUs> submission = contactUsRepository.findById(id);
-//		
-//		// Return the entity if present, otherwise return null or throw an exception
-//		// For simplicity, we return the entity or null.
-//		return submission.orElse(null);
-//	}
+		return contactUsRepository.findAll();
+
+	}
+
+	@Override
+	public String deleteContactus(Long id) {
+		// TODO Auto-generated method stub
+		if(contactUsRepository.existsById(id)) {
+			contactUsRepository.deleteById(id);
+			return "contactus data deleted";
+		}
+		else {
+			return "User contactus data not found";
+		}
+	
+	}
+
+
 	
 
 	

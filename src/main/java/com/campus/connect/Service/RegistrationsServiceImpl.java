@@ -12,14 +12,20 @@ public class RegistrationsServiceImpl  implements RegistrationsService{
 
 	
 	@Autowired
-private RegistrationsRepository registrationsRepository;	
-	
+private RegistrationsRepository registrationsRepository;
+
 	@Override
 	public String CreateRegistration(Registrations registration) {
 		// TODO Auto-generated method stub
-		
-registrationsRepository.save(registration);
-		return "registration successfull";
-	}
+		registrationsRepository.save(registration);
+		return "registrations successfull";
+	}	
+	
+	
+	
+	
+	
+	
+	
 
 }

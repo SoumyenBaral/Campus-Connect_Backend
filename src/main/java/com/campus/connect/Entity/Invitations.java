@@ -48,29 +48,29 @@ public class Invitations {
 			this.massage = massage;
 		}
 
-		public Events getEvent() {
-			return event;
-		}
+//		public Events getEvent() {
+//			return event;
+//		}
+//
+//		public void setEvent(Events event) {
+//			this.event = event;
+//		}
 
-		public void setEvent(Events event) {
-			this.event = event;
-		}
+//		public Users getUser() {
+//			return user;
+//		}
+//
+//		public void setUser(Users user) {
+//			this.user = user;
+//		}
 
-		public Users getUser() {
-			return user;
-		}
-
-		public void setUser(Users user) {
-			this.user = user;
-		}
-
-		public Invitations(Long id, String receiverEmail, String massage, Events event, Users user) {
+		public Invitations(Long id, String receiverEmail, String massage) {
 			super();
 			this.id = id;
 			this.receiverEmail = receiverEmail;
 			this.massage = massage;
-			this.event = event;
-			this.user = user;
+//			this.event = event;
+//			this.user = user;
 		}
 
 		public Invitations() {
@@ -80,8 +80,7 @@ public class Invitations {
 
 		@Override
 		public String toString() {
-			return "Invitations [id=" + id + ", receiverEmail=" + receiverEmail + ", massage=" + massage + ", event="
-					+ event + ", user=" + user + "]";
+			return "Invitations [id=" + id + ", receiverEmail=" + receiverEmail + ", massage=" + massage + "]";
 		}
 
 	

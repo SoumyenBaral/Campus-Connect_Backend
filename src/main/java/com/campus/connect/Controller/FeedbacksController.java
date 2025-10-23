@@ -16,7 +16,10 @@ import com.campus.connect.Entity.Feedbacks;
 import com.campus.connect.Service.FeedbacksService;
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins ="http://localhost:4200")
+
+@CrossOrigin(origins = "http://localhost:4200/")
+
+
 public class FeedbacksController {
 @Autowired
 	private FeedbacksService feedbacksService;
