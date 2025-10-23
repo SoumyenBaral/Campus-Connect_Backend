@@ -19,12 +19,14 @@ import { HostGuide } from './host-guide/host-guide';
 import { CoordinatorGuide } from './coordinator-guide/coordinator-guide';
 
 
+
 @Component({
   selector: 'app-root',
   imports: [Footer, RouterLink, RouterOutlet, Navbar, NgbModule, AdminGuide, UserGuide, HostGuide, CoordinatorGuide],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
+
 export class App {
   protected title = 'Campus-Event';
 }
