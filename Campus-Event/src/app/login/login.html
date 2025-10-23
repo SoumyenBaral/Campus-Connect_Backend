@@ -13,18 +13,18 @@
            <fieldset>
             <label for="email"> Username or email address</label>
             <br>
-            <input type="email" placeholder="Example@email.com"  name="email" id="email"    required>
+            <input type="email" placeholder="Example@email.com"  name="email" id="email"    required   [(ngModel)]="loginData.email">
             <br>
             <br>
             <label for="password">Password</label>
             <br>
-            <input type="password" placeholder="At least 8 characters"  name="password" id="password"    required>
+            <input type="password" placeholder="At least 8 characters"  name="password" id="password"    required [(ngModel)]="loginData.password">
             <br>
             <br>
             <button>Login</button>
             <br>
             <br>
-            <p style="text-align: center;">Do you have any account?<span><a routerLink="/SignUp">SignUp</a></span></p>
+            <p style="text-align: center;">Do you have any account?<span><a [routerLink]="['/SignUp']">signUp</a></span></p>
 
            </fieldset>
         </form>
