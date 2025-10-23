@@ -9,30 +9,30 @@
         <span>
             <p>Please fill out the form to register.</p>
         </span>
-        <form action="">
+        <form action="/SignUp" #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)" method="POST">
             <fieldset>
                 <label for="name">Name:</label>
                 <br>
-                <input type="text" placeholder="Enter Your First Name" name="name" id="fname" required>
+                <input type="text" placeholder="Enter Your First Name" name="name" [(ngModel)]="user.name" id="fname" required>
                 <br>
                 <br>
                 <label for="email"> Email:</label>
                 <br>
-                <input type="email" placeholder="Enter Your Email" name="email" id="email" required>
+                <input type="email" placeholder="Enter Your Email" name="email" [(ngModel)]="user.email" id="email" required>
                 <br>
                 <br>
                 <label for="password">Password:</label>
                 <br>
-                <input type="password" placeholder="Enter Your Password" name="password" id="password" required>
+                <input type="password" placeholder="Enter Your Password" name="password" [(ngModel)]="user.password" id="password" required>
                 <br>
                 <br>
                 <label for="contact"> Phone:</label>
                 <br>
-                <input type="number" placeholder="Enter Your Phone Number" name="contact" id="contact" required>
+                <input type="number" placeholder="Enter Your Phone Number" name="contact" [(ngModel)]="user.contact" id="contact" required>
                 <br>
                 <br>
                 <label for="role">Role</label>
-                <select id="role" name="role">
+                <select id="role"  name="role" [(ngModel)]="user.role">
                     <option value="ADMIN">ADMIN</option>
                     <option value="COORDINATOR">COORDINATOR</option>
                     <option value="HOST">HOST</option>
@@ -40,7 +40,7 @@
                 </select>
                 <br>
                 <br>
-                <button>Sign up</button>
+                <button type="submit" [disabled]="!signupForm.valid">Sign up</button>
 
 
             </fieldset>

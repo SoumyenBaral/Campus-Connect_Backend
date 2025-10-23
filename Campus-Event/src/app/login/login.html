@@ -9,7 +9,7 @@
          this website, to manage access to your account and for other purpose
         describe in our <span >privacy policy</span></p>
         <br>
-        <form action="">
+        <form action="/login"   #loginForm="ngForm" (ngSubmit)="onLoginSubmit(loginForm)" method="POST">
            <fieldset>
             <label for="email"> Username or email address</label>
             <br>
@@ -24,7 +24,7 @@
             <button>Login</button>
             <br>
             <br>
-            <p style="text-align: center;">Do you have any account?<span><a routerLink="/signup">SignUp</a></span></p>
+            <p style="text-align: center;">Do you have any account?<span><a routerLink="/SignUp">SignUp</a></span></p>
 
            </fieldset>
         </form>
