@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.campus.connect.Entity.ContactUs;
 import com.campus.connect.Service.ContactUsService;
 
-@CrossOrigin(origins="http://localhost:4200")
+
 @RestController
 @RequestMapping("/api") 
 

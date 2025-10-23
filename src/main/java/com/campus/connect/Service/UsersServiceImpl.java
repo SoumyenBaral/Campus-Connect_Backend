@@ -34,5 +34,36 @@ public class UsersServiceImpl implements UsersService {
 		}
 	}
 	
+	// Assuming you have a method in your repository to find by email (e.g., in UsersRepository)
+	// public interface UsersRepository extends JpaRepository<Users, Long> {
+//	     Optional<Users> findByEmail(String email);
+	// }
+
+	@Override
+	public Users getUserByEmail(String email) {
+	    // Use findByEmail and handle the Optional if necessary
+	    return usersRepository.findByEmail(email).orElse(null);
+	}
+
+	// NOTE: Password validation (e.g., using BCrypt) should happen here
+	// For simplicity without DTOs:
+	
+	public Users validateUser(String email, String password) {
+		Users user = getUserByEmail(email);
+		List<Users> userList= findUserByEmail(email);
+	    
+	    // BASIC check (MUST be replaced by secure password hashing/checking)
+	    if (user.getPassword() != null && user.getPassword().equals(password)) {
+	        return user;
+	    }
+	    return null;
+	}
+	@Override
+	public List<Users> findUserByEmail(String email) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
 
 }

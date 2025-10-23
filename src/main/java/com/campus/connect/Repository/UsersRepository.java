@@ -12,6 +12,6 @@ public interface UsersRepository extends JpaRepository<Users, Long> {
 	Optional<Users> findByEmail(String email);
     
     // Custom finder method for checking if a user exists by name (optional)
-    Optional<Users> findByName(String name);
+//    Optional<Users> findByName(String name);
 
 }
