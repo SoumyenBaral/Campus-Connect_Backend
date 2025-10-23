@@ -17,7 +17,7 @@ private RegistrationsRepository registrationsRepository;
 	@Override
 	public String CreateRegistration(Registrations registration) {
 		// TODO Auto-generated method stub
-		
+		registrationsRepository.save(registration);
 		return "registrations successfull";
 	}	
 	
