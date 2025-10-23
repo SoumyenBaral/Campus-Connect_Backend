@@ -3,6 +3,7 @@ import { Component} from '@angular/core';
 import { Footer } from "../footer/footer";
 import { Navbar } from "../navbar/navbar";
 import { CreateEvent } from '../create-event/create-event';
+import { Invitation } from '../invitation/invitation';
 
 
 
