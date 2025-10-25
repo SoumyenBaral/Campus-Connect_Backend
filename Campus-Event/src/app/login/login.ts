@@ -21,7 +21,9 @@ export class Login {
 
         this.userService.login(this.loginData).subscribe({
             next: (role: string) => {
+                console.log('1. LOGIN SUCCESS. ROLE RECEIVED:', role);
                 this.userService.storeUserRole(role);
+                console.log('2. ROLE STORED IN LOCAL STORAGE:', this.userService.getUserRole());
                 this.redirectToDashboard(role);
             },
             error: (err) => {
