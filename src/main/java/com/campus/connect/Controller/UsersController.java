@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -28,31 +29,33 @@ import com.campus.connect.Service.UsersService;
 @RestController
 @RequestMapping("/api")
 public class UsersController {
-	
-@Autowired 
-private UsersService usersService;
 
-@Autowired
-private AuthenticationManager authenticationManager;
-
-@Autowired
-private JwtService jwtService;
-
-@Autowired
-private UserDetailsService userDetailsService;
+private final  UsersService usersService;
+private  final AuthenticationManager authenticationManager;
+private  final JwtService jwtService;
+private final  UserDetailsService userDetailsService;
  
+
+public UsersController(
+		
+		 @Lazy UsersService usersService,
+		 AuthenticationManager authenticationManager,
+		 JwtService jwtService,
+		 UserDetailsService userDetailsService) {
+	
+	this.usersService = usersService;
+    this.authenticationManager = authenticationManager;
+    this.jwtService = jwtService;
+    this.userDetailsService = userDetailsService;
+}
+
+
+
 @PostMapping("/postuser")
 private String addUser(@RequestBody Users user) {
 	return usersService.saveUser(user);
 }
-@GetMapping("/getuser")
-private List<Users> getAllUsers(){
-	return usersService.getAllUsers();
-}
-@DeleteMapping("/deleteuser/{id}")
-public String deleteUser(@PathVariable Long id) {
-	return usersService.deleteUser(id);
-}
+
 @PostMapping("/login")
 public ResponseEntity<?> loginUser(@RequestBody Map<String, String> loginRequest) {
     String email = loginRequest.get("email");
@@ -63,11 +66,11 @@ public ResponseEntity<?> loginUser(@RequestBody Map<String, String> loginRequest
         authenticationManager.authenticate(
             new UsernamePasswordAuthenticationToken(email, password)
         );
-
-        // 2. Load UserDetails object after successful authentication
+     // ...
         final UserDetails userDetails = userDetailsService.loadUserByUsername(email);
-        // 3. Generate the JWT
-        final String jwt = jwtService.generateToken(userDetailsService);
+        // Pass the userDetails (the user) to the now-functional JwtService
+        final String jwt = jwtService.generateToken(userDetails); // <-- Ensure this is calling the implemented method
+        // ...
      // 4. Return the JWT and role
         Map<String, Object> response = new HashMap<>();
         response.put("token", jwt);
@@ -81,5 +84,16 @@ public ResponseEntity<?> loginUser(@RequestBody Map<String, String> loginRequest
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password.");
     }
 }
+
+
+@GetMapping("/getuser")
+public  List<Users> getAllUsers(){
+	return usersService.getAllUsers();
+}
+@DeleteMapping("/deleteuser/{id}")
+public String deleteUser(@PathVariable Long id) {
+	return usersService.deleteUser(id);
+}
+
 
 }

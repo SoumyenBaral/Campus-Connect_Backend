@@ -1,8 +1,7 @@
 package com.campus.connect.Service;
 
 import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Autowired; // <-- You can remove this import if not used elsewhere
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -10,72 +9,54 @@ import org.springframework.stereotype.Service;
 
 import com.campus.connect.Entity.Users;
 import com.campus.connect.Repository.UsersRepository;
+
 @Service
 public class UsersServiceImpl implements UsersService {
-@Autowired
-	private UsersRepository usersRepository;
+    
+    // Make fields final
+    private final UsersRepository usersRepository;
+    private final PasswordEncoder passwordEncoder;
 
+    // FIX: Inject ALL dependencies via constructor. 
+    // This is required for Spring Boot 3+ best practices and circular dependency resolution.
+    // The @Autowired is often optional here, but good for clarity.
+    public UsersServiceImpl(UsersRepository usersRepository, PasswordEncoder passwordEncoder) {
+        this.usersRepository = usersRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
 
-@Autowired 
-private PasswordEncoder passwordEncoder;
+	@Override
+	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+		return usersRepository.findByEmail(email)
+	    .orElseThrow(() -> new UsernameNotFoundException("User not found with email: " + email));
+		
+	}
 
-
-//post
 	@Override
 	public String saveUser(Users user) {
-		// TODO Auto-generated method stub
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
-		usersRepository.save(user);
-		return "User registration success";
+	    usersRepository.save(user);
+	    return "User registration success";
+		
 	}
-	
-	
-	//get all user
+
 	@Override
 	public List<Users> getAllUsers() {
-		// TODO Auto-generated method stub
 		return usersRepository.findAll();
 	}
-	
-	//delete
+
 	@Override
 	public String deleteUser(Long id) {
-		// TODO Auto-generated method stub
 		if(usersRepository.existsById(id)) {
 			usersRepository.deleteById(id);
 			return "user data deleted successfully";
 		}
-		else {
-			return "user not found ";
-		}
-	}
-
-	public Users getUserByEmail(String email) {
-	    // Use findByEmail and handle the Optional if necessary
-	    return usersRepository.findByEmail(email).orElse(null);
-	}
-
-	
-	@Override
-	public Users validateUser(String email, String password) {
-		Users user = getUserByEmail(email);
-	    
-		if(user != null) {
-			if (user.getPassword() != null && user.getPassword().equals(password)) {
-		        return user; //success
-		    }
-		}
-	   
-	    return null;
-	}
-
-
-	@Override
-	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
+		return "User not found for deletion.";
 	}
 
 	
 
+    // REMOVE all original field-based @Autowired annotations from this class!
+
+    // ... rest of the implementation methods (saveUser, loadUserByUsername, etc.)
 }
