@@ -19,7 +19,7 @@ import com.campus.connect.Service.ContactUsService;
 
 @RestController
 @RequestMapping("/api") 
-@CrossOrigin(origins = "http://localhost:4200/")
+@CrossOrigin(origins = "http://localhost:4200")
 public class ContactUsController {
 	
 	@Autowired

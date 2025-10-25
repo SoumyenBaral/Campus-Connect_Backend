@@ -1,7 +1,12 @@
 package com.campus.connect.Entity;
 
 import java.time.LocalDateTime;
+import java.util.Collection;
 import java.util.List;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import com.campus.connect.Entity.Enum.Role;
 
@@ -16,7 +21,7 @@ import jakarta.persistence.OneToMany;
 
 
 @Entity
-public class Users {
+public class Users implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -46,6 +51,35 @@ public class Users {
     private List<Events> hostedEvents;
 
   
+
+	
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        // Returns the role as a Spring Security GrantedAuthority
+        return List.of(new SimpleGrantedAuthority(role.name()));
+    }
+
+    public String getUsername() {
+        // Use email for the Spring Security 'username' field
+        return email; 
+    }
+    
+    
+    
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+    
+    public boolean isEnabled() {
+        return true;
+    }
 
 	public Long getId() {
 		return id;
@@ -127,10 +161,9 @@ public class Users {
 		this.hostedEvents = hostedEvents;
 	}
 
-	
-	public Users(Long id, String name, String email, String password, Role role, String contact, LocalDateTime createdAt,
-			List<Registrations> registrations, List<Feedbacks> feedbacks, List<Events> hostedEvents,
-			List<Invitations> sentInvitations) {
+	public Users(Long id, String name, String email, String password, Role role, String contact,
+			LocalDateTime createdAt, List<Registrations> registrations, List<Feedbacks> feedbacks,
+			List<Events> hostedEvents) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -142,7 +175,6 @@ public class Users {
 		this.registrations = registrations;
 		this.feedbacks = feedbacks;
 		this.hostedEvents = hostedEvents;
-	
 	}
 
 	public Users() {
@@ -152,11 +184,11 @@ public class Users {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", role=" + role
+		return "Users [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", role=" + role
 				+ ", contact=" + contact + ", createdAt=" + createdAt + ", registrations=" + registrations
-				+ ", feedbacks=" + feedbacks + ", hostedEvents=" + hostedEvents + ""
-				+ "]";
+				+ ", feedbacks=" + feedbacks + ", hostedEvents=" + hostedEvents + "]";
 	}
+	
 
     
     

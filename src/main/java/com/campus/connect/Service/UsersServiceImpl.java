@@ -3,6 +3,9 @@ package com.campus.connect.Service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.campus.connect.Entity.Users;
@@ -11,17 +14,30 @@ import com.campus.connect.Repository.UsersRepository;
 public class UsersServiceImpl implements UsersService {
 @Autowired
 	private UsersRepository usersRepository;
+
+
+@Autowired 
+private PasswordEncoder passwordEncoder;
+
+
+//post
 	@Override
 	public String saveUser(Users user) {
 		// TODO Auto-generated method stub
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		usersRepository.save(user);
 		return "User registration success";
 	}
+	
+	
+	//get all user
 	@Override
 	public List<Users> getAllUsers() {
 		// TODO Auto-generated method stub
 		return usersRepository.findAll();
 	}
+	
+	//delete
 	@Override
 	public String deleteUser(Long id) {
 		// TODO Auto-generated method stub
@@ -33,11 +49,6 @@ public class UsersServiceImpl implements UsersService {
 			return "user not found ";
 		}
 	}
-	
-	// Assuming you have a method in your repository to find by email (e.g., in UsersRepository)
-	// public interface UsersRepository extends JpaRepository<Users, Long> {
-//	     Optional<Users> findByEmail(String email);
-	// }
 
 	@Override
 	public Users getUserByEmail(String email) {
@@ -45,25 +56,27 @@ public class UsersServiceImpl implements UsersService {
 	    return usersRepository.findByEmail(email).orElse(null);
 	}
 
-	// NOTE: Password validation (e.g., using BCrypt) should happen here
-	// For simplicity without DTOs:
 	
+	@Override
 	public Users validateUser(String email, String password) {
 		Users user = getUserByEmail(email);
-		List<Users> userList= findUserByEmail(email);
 	    
-	    // BASIC check (MUST be replaced by secure password hashing/checking)
-	    if (user.getPassword() != null && user.getPassword().equals(password)) {
-	        return user;
-	    }
+		if(user != null) {
+			if (user.getPassword() != null && user.getPassword().equals(password)) {
+		        return user; //success
+		    }
+		}
+	   
 	    return null;
 	}
+
+
 	@Override
-	public List<Users> findUserByEmail(String email) {
+	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
 	
 
 }

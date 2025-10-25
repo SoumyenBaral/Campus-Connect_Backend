@@ -2,6 +2,9 @@ package com.campus.connect.Service;
 
 import java.util.List;
 
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
 import com.campus.connect.Entity.Users;
 
 public interface UsersService {
@@ -14,20 +17,25 @@ public interface UsersService {
 	
 	// ... existing methods for login ...
 	    Users getUserByEmail(String email); // Add this for login lookup
-	    List<Users> findUserByEmail(String email);
-	    Users validateUser(String email, String password);
-	
 	    
+	    Users validateUser(String email, String password);
+		
+
+	    
+	  //read
+	    List<Users> getAllUsers();
+	    
+
+	    /** Deletes a user by their ID. */
+	    String deleteUser(Long id);
+
+
+		UserDetails loadUserByUsername(String email) throws UsernameNotFoundException;
+
 	    
 	    
 	/** Retrieves a user by their ID. */
 //    List<Users> getUserById(Long id);
-
-    /** Retrieves all users. */
-    List<Users> getAllUsers();
-
-    /** Deletes a user by their ID. */
-    String deleteUser(Long id);
 
 
 
