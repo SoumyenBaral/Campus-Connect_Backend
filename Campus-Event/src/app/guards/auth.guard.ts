@@ -1,4 +1,4 @@
-// src/app/guards/auth.guard.ts
+
 
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, Router, UrlTree } from '@angular/router';
@@ -47,5 +47,9 @@ export class AuthGuard implements CanActivate {
         case 'STUDENT': 
         default: return this.router.createUrlTree(['/student']);
     }
+
+    
+    // Redirect the denied user back to the login page as a failsafe
+  //   return this.router.createUrlTree(['/login']);
   }
 }
