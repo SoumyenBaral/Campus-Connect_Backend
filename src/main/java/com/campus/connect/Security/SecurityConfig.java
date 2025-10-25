@@ -30,7 +30,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .csrf(csrf -> csrf.disable()) // Disable CSRF for stateless API
-            .cors(cors -> {}) // Enable CORS 
+            .cors(cors -> {})  
             .authorizeHttpRequests(auth -> auth
                 // Allow public access to registration and login
                 .requestMatchers("/api/login", "/api/postuser").permitAll() 
@@ -38,7 +38,6 @@ public class SecurityConfig {
                 .anyRequest().authenticated() 
             )
             .sessionManagement(session -> session
-                    // Use stateless sessions (essential for JWT)
                     .sessionCreationPolicy(SessionCreationPolicy.STATELESS) 
                 )
                 .authenticationProvider(authenticationProvider())
