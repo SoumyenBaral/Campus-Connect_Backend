@@ -39,7 +39,6 @@ public class UsersServiceImpl implements UsersService {
 //	     Optional<Users> findByEmail(String email);
 	// }
 
-	@Override
 	public Users getUserByEmail(String email) {
 	    // Use findByEmail and handle the Optional if necessary
 	    return usersRepository.findByEmail(email).orElse(null);
