@@ -3,31 +3,22 @@
     <div class="registrationform">
         <form action="">
             <fieldset>
-                <label for="Eventname">Event Name <span>*</span></label>
+                <label for="title">Title<span>*</span></label>
                 <br>
-                <input type="text" name="name" id="name" placeholder="Enter event name" required>
+                <input type="text" name="title" id="title" placeholder="Enter event name" required [(ngModel)]="eventData.title">
                 <br>
                 <br>
                 <label for="date">Date</label>
                 <br>
-                <input type="date" name="date" id="date" placeholder="Select date">
-                <br>
-                <br>
-                <label for="time">Time</label>
-                <br>
-                <input type="time" name="time" id="time" placeholder="Select time">
+                <input type="datetime-local" name="date" id="date" placeholder="Select date" [(ngModel)]="eventData.eventDate">
                 <br>
                 <br>
                 <label for="location">Location <span>*</span></label>
                 <br>
-                <input type="text" name="location" id="location" placeholder="Enter your location" required>
+                <input type="text" name="location" id="location" placeholder="Enter your location" required [(ngModel)]="eventData.location">
                 <br>
                 <br>
-                <label for="message">Description<span>*</span></label><br>
-                <textarea name="message" id="message" placeholder="Ex: topics,schedule,etc" required> </textarea>
-                <br>
-                <br>
-                <button ><b>Create Event</b></button>
+                <button (click)="addevent()" type="submit"><b>Create Event</b></button>
             </fieldset>
         </form>
     </div>
