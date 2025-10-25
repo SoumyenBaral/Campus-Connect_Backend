@@ -25,13 +25,14 @@ import { SignUp} from './signup/signup';
 
 
 
-
 @Component({
   selector: 'app-root',
   imports: [Footer, RouterLink, RouterOutlet, Navbar, NgbModule, AdminGuide, UserGuide, HostGuide, CoordinatorGuide,FormsModule, HttpClientModule,Login,SignUp],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
+
+
 
 export class App {
   protected title = 'Campus-Event';

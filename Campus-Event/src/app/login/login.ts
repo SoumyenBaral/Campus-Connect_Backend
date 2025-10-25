@@ -20,9 +20,17 @@ export class Login {
         if (!form.valid) { return; }
 
         this.userService.login(this.loginData).subscribe({
+
             next: (userRole: string) => {
                 this.userService.storeUserRole(userRole);
                 this.redirectToDashboard(userRole);
+
+            next: (role: string) => {
+                console.log('1. LOGIN SUCCESS. ROLE RECEIVED:', role);
+                this.userService.storeUserRole(role);
+                console.log('2. ROLE STORED IN LOCAL STORAGE:', this.userService.getUserRole());
+                this.redirectToDashboard(role);
+
             },
             error: (err) => {
                 alert('Login failed. Invalid credentials or server error.');
