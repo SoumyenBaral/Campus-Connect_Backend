@@ -20,9 +20,9 @@ export class Login {
         if (!form.valid) { return; }
 
         this.userService.login(this.loginData).subscribe({
-            next: (role: string) => {
-                this.userService.storeUserRole(role);
-                this.redirectToDashboard(role);
+            next: (userRole: string) => {
+                this.userService.storeUserRole(userRole);
+                this.redirectToDashboard(userRole);
             },
             error: (err) => {
                 alert('Login failed. Invalid credentials or server error.');
@@ -31,8 +31,8 @@ export class Login {
         });
     }
 
-    redirectToDashboard(role: string): void {
-        switch (role.toUpperCase()) {
+    redirectToDashboard(userRole: string): void {
+        switch (userRole.toUpperCase()) {
             case 'ADMIN':
                 this.router.navigate(['/admin']);
                 break;

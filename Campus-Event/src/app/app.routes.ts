@@ -24,8 +24,8 @@ import { NgModule } from '@angular/core';
 
 
 export const routes: Routes = [
-{ path: 'login', component: Login },
-  { path: '', redirectTo: '/login', pathMatch: 'full' }, // <-- This is the redirect
+// { path: 'login', component: Login },
+//   { path: '', redirectTo: '/login', pathMatch: 'full' }, // <-- This is the redirect
     {
         path: '',
         component: Home,
