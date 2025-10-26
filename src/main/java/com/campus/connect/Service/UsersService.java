@@ -20,10 +20,5 @@ public interface UsersService extends UserDetailsService {
 	    List<Users> getAllUsers();
 	    
 	//Deletes a user by their ID.
-	    String deleteUser(Long id);
-
-	    
-	    
-	    
-	    
+	    String deleteUser(Long id);    
 }

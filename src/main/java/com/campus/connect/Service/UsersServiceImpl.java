@@ -1,7 +1,6 @@
 package com.campus.connect.Service;
 
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired; // <-- You can remove this import if not used elsewhere
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -56,7 +55,4 @@ public class UsersServiceImpl implements UsersService {
 
 	
 
-    // REMOVE all original field-based @Autowired annotations from this class!
-
-    // ... rest of the implementation methods (saveUser, loadUserByUsername, etc.)
 }
