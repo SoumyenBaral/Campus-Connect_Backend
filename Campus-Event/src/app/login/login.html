@@ -9,16 +9,16 @@
          this website, to manage access to your account and for other purpose
         describe in our <span >privacy policy</span></p>
         <br>
-        <form action="/login"   #loginForm="ngForm" (ngSubmit)="onLoginSubmit(loginForm)" method="POST">
+        <form action="/login"    method="POST">
            <fieldset>
             <label for="email"> Username or email address</label>
             <br>
-            <input type="email" placeholder="Example@email.com"  name="email" id="email"    required   [(ngModel)]="loginData.email">
+            <input type="email" placeholder="Example@email.com"  name="email" id="email"    required   >
             <br>
             <br>
             <label for="password">Password</label>
             <br>
-            <input type="password" placeholder="At least 8 characters"  name="password" id="password"    required [(ngModel)]="loginData.password">
+            <input type="password" placeholder="At least 8 characters"  name="password" id="password"    required >
             <br>
             <br>
             <button>Login</button>
