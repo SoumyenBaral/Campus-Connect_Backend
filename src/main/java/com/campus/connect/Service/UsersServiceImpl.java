@@ -1,7 +1,7 @@
 package com.campus.connect.Service;
 
 import java.util.List;
-
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,6 +33,27 @@ public List<Users> getAllUsers() {
 //	// TODO Auto-generated method stub
 //	return null;
 //}
+//NEW: findByEmail implementation
+@Override
+public Optional<Users> findByEmail(String email) {
+    return usersRepository.findByEmail(email);
+}
 
+// NEW: Login implementation
+@Override
+public Users loginUser(String email, String password) {
+    Optional<Users> userOptional = usersRepository.findByEmail(email);
+
+    if (userOptional.isPresent()) {
+        Users user = userOptional.get();
+        
+        // WARNING: This is a simple string comparison. 
+        // Replace with passwordEncoder.matches(password, user.getPassword()) in production.
+        if (user.getPassword().equals(password)) {
+            return user; // Login successful
+        }
+    }
+    return null; // User not found or password incorrect
+}
 
 }
