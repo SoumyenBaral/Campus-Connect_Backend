@@ -19,7 +19,6 @@ import { DanceGallery } from './dance-gallery/dance-gallery';
 import { MusicGallery } from './music-gallery/music-gallery';
 import { TechGallery } from './tech-gallery/tech-gallery';
 import { SignUp } from './signup/signup';
-import { AuthGuard } from './guards/auth.guard';
 import { NgModule } from '@angular/core';
 
 
@@ -36,22 +35,18 @@ export const routes: Routes = [
     },
     {
         path: 'admin',
-        canActivate: [AuthGuard],
         component: Admin,
     },
     {
         path: 'coordinator',
-        canActivate: [AuthGuard],
         component: Coordinator,
     },
     {
         path: 'student',
-        canActivate: [AuthGuard],
         component: Student,
     },
     {
         path: 'host',
-        canActivate: [AuthGuard],
         component: Host,
     },
     {

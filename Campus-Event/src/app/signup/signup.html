@@ -1,3 +1,4 @@
+
 <div class="body">
     <div class="image">
         <img src="https://img.freepik.com/free-vector/login-concept-illustration_114360-739.jpg" alt="">
@@ -9,7 +10,7 @@
         <span>
             <p>Please fill out the form to register.</p>
         </span>
-        <form action="/SignUp" #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)" method="POST">
+        <form action="/submit-SignUp-form"  method="POST">
             <fieldset>
                 <label for="name">Name:</label>
                 <br>
@@ -40,7 +41,7 @@
                 </select>
                 <br>
                 <br>
-                <button type="submit" [disabled]="!signupForm.valid">Sign up</button>
+                <button type="submit" (click)="adddata()">Sign up</button>
 
 
             </fieldset>
