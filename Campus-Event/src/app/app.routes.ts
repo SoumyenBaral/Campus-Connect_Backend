@@ -20,14 +20,16 @@ import { MusicGallery } from './music-gallery/music-gallery';
 import { TechGallery } from './tech-gallery/tech-gallery';
 import { SignUp } from './signup/signup';
 import { NgModule } from '@angular/core';
+import { AuthGuard } from './guards/auth-guard';
+import { RoleGuard } from './guards/role/role-guard';
 
 
 export const routes: Routes = [
-// { path: 'login', component: Login },
-//   { path: '', redirectTo: '/login', pathMatch: 'full' }, // <-- This is the redirect
+    
     {
         path: '',
         component: Home,
+        pathMatch:'full',
     },
     {
         path: 'home',
@@ -36,18 +38,26 @@ export const routes: Routes = [
     {
         path: 'admin',
         component: Admin,
+        canActivate: [RoleGuard],
+        data: { expectedRole: 'ADMIN' }
     },
     {
         path: 'coordinator',
         component: Coordinator,
+        canActivate: [RoleGuard],
+        data: { expectedRole: 'COORDINATOR' }
     },
     {
         path: 'student',
         component: Student,
+        canActivate: [RoleGuard],
+        data: { expectedRole: 'STUDENT' }
     },
     {
         path: 'host',
         component: Host,
+        canActivate: [RoleGuard],
+        data: { expectedRole: 'HOST' }
     },
     {
         path: 'contact-us',
@@ -106,6 +116,10 @@ export const routes: Routes = [
         path:'tech-gallery',
         component:TechGallery,
     },
+    {
+        path:'login',
+        component:Login
+    }
     
 ];
 

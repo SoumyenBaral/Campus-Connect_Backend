@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { routes } from './app.routes';
 import { SignUp} from './signup/signup';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 
