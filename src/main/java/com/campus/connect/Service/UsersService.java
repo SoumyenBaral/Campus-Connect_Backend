@@ -2,13 +2,10 @@ package com.campus.connect.Service;
 
 import java.util.List;
 
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import com.campus.connect.Entity.Users;
 
-public interface UsersService extends UserDetailsService {
+public interface UsersService{
 	
 //	Users validateUser = null;
 
@@ -20,5 +17,5 @@ public interface UsersService extends UserDetailsService {
 	    List<Users> getAllUsers();
 	    
 	//Deletes a user by their ID.
-	    String deleteUser(Long id);    
+//	    String deleteUser(Long id);    
 }

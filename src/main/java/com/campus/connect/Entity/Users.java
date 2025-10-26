@@ -4,9 +4,6 @@ import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import com.campus.connect.Entity.Enum.Role;
 
@@ -21,7 +18,7 @@ import jakarta.persistence.OneToMany;
 
 
 @Entity
-public class Users implements UserDetails {
+public class Users{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -49,14 +46,6 @@ public class Users implements UserDetails {
 
     @OneToMany(mappedBy = "host", cascade = CascadeType.ALL)
     private List<Events> hostedEvents;
-
-  
-
-	
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        // Returns the role as a Spring Security GrantedAuthority
-        return List.of(new SimpleGrantedAuthority(role.name()));
-    }
 
     public String getUsername() {
         // Use email for the Spring Security 'username' field

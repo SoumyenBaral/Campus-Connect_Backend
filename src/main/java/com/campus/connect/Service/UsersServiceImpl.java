@@ -1,9 +1,9 @@
 package com.campus.connect.Service;
 
 import java.util.List;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.password.PasswordEncoder;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.campus.connect.Entity.Users;
@@ -12,47 +12,27 @@ import com.campus.connect.Repository.UsersRepository;
 @Service
 public class UsersServiceImpl implements UsersService {
     
-    // Make fields final
-    private final UsersRepository usersRepository;
-    private final PasswordEncoder passwordEncoder;
+@Autowired
+    private UsersRepository usersRepository;
 
-    // FIX: Inject ALL dependencies via constructor. 
-    // This is required for Spring Boot 3+ best practices and circular dependency resolution.
-    // The @Autowired is often optional here, but good for clarity.
-    public UsersServiceImpl(UsersRepository usersRepository, PasswordEncoder passwordEncoder) {
-        this.usersRepository = usersRepository;
-        this.passwordEncoder = passwordEncoder;
-    }
+@Override
+public String saveUser(Users user) {
+	// TODO Auto-generated method stub
+	usersRepository.save(user);
+	return "created success";
+}
 
-	@Override
-	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-		return usersRepository.findByEmail(email)
-	    .orElseThrow(() -> new UsernameNotFoundException("User not found with email: " + email));
-		
-	}
+@Override
+public List<Users> getAllUsers() {
+	// TODO Auto-generated method stub
+	return usersRepository.findAll();
+}
 
-	@Override
-	public String saveUser(Users user) {
-		user.setPassword(passwordEncoder.encode(user.getPassword()));
-	    usersRepository.save(user);
-	    return "User registration success";
-		
-	}
+//@Override
+//public String deleteUser(Long id) {
+//	// TODO Auto-generated method stub
+//	return null;
+//}
 
-	@Override
-	public List<Users> getAllUsers() {
-		return usersRepository.findAll();
-	}
-
-	@Override
-	public String deleteUser(Long id) {
-		if(usersRepository.existsById(id)) {
-			usersRepository.deleteById(id);
-			return "user data deleted successfully";
-		}
-		return "User not found for deletion.";
-	}
-
-	
 
 }
