@@ -22,6 +22,7 @@ import { SignUp } from './signup/signup';
 import { NgModule } from '@angular/core';
 import { AuthGuard } from './guards/auth-guard';
 import { RoleGuard } from './guards/role/role-guard';
+import { CreateEvent } from './create-event/create-event';
 
 
 export const routes: Routes = [
@@ -119,6 +120,10 @@ export const routes: Routes = [
     {
         path:'login',
         component:Login
+    },
+    {
+        path:'event',
+        component:CreateEvent
     }
     
 ];

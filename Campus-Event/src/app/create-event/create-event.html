@@ -1,26 +1,20 @@
 <section>
-<div class="container">
+  <div class="container">
     <div class="registrationform">
-        <form action="">
-            <fieldset>
-                <label for="title">Title<span>*</span></label>
-                <br>
-                <input type="text" name="title" id="title" placeholder="Enter event name" required [(ngModel)]="eventData.title">
-                <br>
-                <br>
-                <label for="date">Date</label>
-                <br>
-                <input type="datetime-local" name="date" id="date" placeholder="Select date" [(ngModel)]="eventData.eventDate">
-                <br>
-                <br>
-                <label for="location">Location <span>*</span></label>
-                <br>
-                <input type="text" name="location" id="location" placeholder="Enter your location" required [(ngModel)]="eventData.location">
-                <br>
-                <br>
-                <button (click)="addevent()" type="submit"><b>Create Event</b></button>
-            </fieldset>
-        </form>
+      <form>
+        <fieldset>
+          <label for="title">Title<span>*</span></label><br>
+          <input type="text" name="title" id="title" placeholder="Enter event name" required [(ngModel)]="eventData.title"><br><br>
+
+          <label for="date">Date</label><br>
+          <input type="datetime-local" name="date" id="date" placeholder="Select date" [(ngModel)]="eventData.eventDate"><br><br>
+
+          <label for="location">Location <span>*</span></label><br>
+          <input type="text" name="location" id="location" placeholder="Enter your location" required [(ngModel)]="eventData.location"><br><br>
+
+          <button type="submit" (click)="addevent()"><b>Create Event</b></button>
+        </fieldset>
+      </form>
     </div>
-</div>
+  </div>
 </section>
