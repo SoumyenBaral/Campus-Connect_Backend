@@ -49,37 +49,6 @@
   position: relative;
 }
 
-.dropdown-profile {
-  position: absolute;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  width: 0;
-  top: 30px;
-  right: 100%;
-  overflow: hidden;
-  word-wrap: nowrap;
-  transition: width 1s ease;
-  z-index: 5000;
-  background-color: black;
-  border-radius: 10px;
-
-}
-
-.dropdown-profile li a {
-  display: block;
-  padding: 10px;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-
-}
-
-
-.profile:hover .dropdown-profile {
-  width: 200px;
-}
-
 .profile .arrow {
   transition: transform 0.5s ease;
 }
