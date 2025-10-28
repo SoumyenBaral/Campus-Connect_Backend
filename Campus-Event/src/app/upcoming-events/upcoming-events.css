@@ -1,6 +1,7 @@
 .container {
     height: 220vh;
     width: 100%;
+    margin-bottom: 50px;
 }
 .line{
     color:whitesmoke;
