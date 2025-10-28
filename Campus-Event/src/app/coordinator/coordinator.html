@@ -1,200 +1,99 @@
-<div class="profile">
-    <div class="side-bar">
-        <h5 (click)="toggleMenu()"><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                    fill="currentColor" class="bi bi-sliders2" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                        d="M10.5 1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4H1.5a.5.5 0 0 1 0-1H10V1.5a.5.5 0 0 1 .5-.5M12 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m-6.5 2A.5.5 0 0 1 6 6v1.5h8.5a.5.5 0 0 1 0 1H6V10a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5M1 8a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 1 8m9.5 2a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V13H1.5a.5.5 0 0 1 0-1H10v-1.5a.5.5 0 0 1 .5-.5m1.5 2.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5" />
-                </svg>Dashboard</span>
-            <i>{{name |custom}}! Here what's happening with your events.</i>
-            <ul [class.open]="menuOpen">
-                <li><a routerLink="">Event</a></li>
-                <li><a routerLink="">Gallery</a></li>
-                <li><a routerLink="">Reports</a></li>
-            </ul>
-        </h5>
-    </div>
-    <div>
-        <div class="Event-Insights">
-            <div class="Insights">
-                <p class="insights-heading">Total Events <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18"
-                        fill="currentColor" id="bi-calendar-event" class="totalevent-icons" viewBox="0 0 16 16">
-                        <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
-                        <path
-                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-                    </svg></p>
-                <br>
-                <br>
-                <p class="insight-subheading" style="float: left;"><span class="count">24</span>
-                    <br>
-                    <span class="percent">+18%</span> From last month.
-                </p>
-            </div>
-            <div class="Insights">
-                <p class="insights-heading">Total Attendance<svg xmlns="http://www.w3.org/2000/svg" width="20"
-                        height="18" fill="currentColor" id="bi-people" class="totalevent-icons" viewBox="0 0 16 16">
-                        <path
-                            d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4" />
-                    </svg></p>
-                <br>
-                <br>
-                <p class="insight-subheading" style="float: left;"><span class="count">1,247</span>
-                    <br>
-                    <span class="percent">+23%</span> From last month.
-                </p>
-            </div>
-
-            <div class="Insights">
-                <p class="insights-heading">Upcoming Events<svg xmlns="http://www.w3.org/2000/svg" width="20"
-                        height="18" fill="currentColor" id="bi-clock-fill" class="totalevent-icons" viewBox="0 0 16 16">
-                        <path
-                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
-                    </svg>
-                <p>
-                    <br>
-                    <br>
-                <p class="insight-subheading" id="upcoming" style="float:left;"><span class="count">8</span>
-                    <br>
-                    <span class="percent">+12%</span> From last month.
-                </p>
-            </div>
-
-            <div class="quick-action">
-                <h5 style="margin-top: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                        fill="currentColor" class="bi-lightning-charge-fill" viewBox="0 0 16 16">
-                        <path
-                            d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z" />
-                    </svg> <b>Quick Actions</b></h5>
-                <div class="c1">
-                    <div class="c2">
-                        <div class="quick-elements">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                                class="quick-icon" viewBox="0 0 16 16">
-                                <path
-                                    d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z" />
-                            </svg>
-                            <h5>Invite Attendees</h5>
-                        </div>
-                        <p class="subline">Send Invitation</p>
-                    </div>
-                    <div class="c2" id="c3">
-                        <div class="quick-elements">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                                class="quick-icon" viewBox="0 0 16 16">
-                                <path
-                                    d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5z" />
-                            </svg>
-                            <h5>Generate Reports</h5>
-                        </div>
-                        <p class="subline">Event Analytics</p>
-                    </div>
-                </div>
-            </div>
+ <div class="dashboard-container">
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            
+            <div class="title-text">Dashboard</div>
         </div>
-    </div>
-    <div class=" Event-Overview-Panel">
-        <div class="Recent-Event">
-            <div class="text">
-                <h5><b>Recent Events</b></h5>
-                <a routerLink="/Ongoing-Events">
-                    <h6 style="color: rgb(17, 232, 232);">View all</h6>
-                </a>
-            </div>
-            <br>
-            <div style="width: 100%;">
-
-                <div class="d1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                        class="bi-calendar" viewBox="0 0 16 16">
-                        <path
-                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-                    </svg>
-                    <div style="margin-bottom: 10px;">
-                        <h5>Summer Beats Concert</h5>
-                        <p class="timestamp"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                fill="currentColor" class="bi-clock" viewBox="0 0 16 16">
-                                <path
-                                    d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
-                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
-                            </svg> 7:30pm , Sept 7-10,2025 <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                height="16" fill="currentColor" class="bi-geo-alt" viewBox="0 0 16 16">
-                                <path
-                                    d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
-                                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                            </svg>Mumbai</p>
-                    </div>
-                </div>
-                <br>
-                <div class="d1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                        class="bi-calendar" viewBox="0 0 16 16">
-                        <path
-                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-                    </svg>
-                    <div style="margin-bottom: 10px;">
-                        <h5>Classical Dance Festival</h5>
-                        <p class="timestamp"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                fill="currentColor" class="bi-clock" viewBox="0 0 16 16">
-                                <path
-                                    d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
-                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
-                            </svg>11:00am , Sept 10-13,2025 <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                height="16" fill="currentColor" class="bi-geo-alt" viewBox="0 0 16 16">
-                                <path
-                                    d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
-                                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                            </svg>Bhubaneswar</p>
-                    </div>
-                </div>
-                <br>
-                <div class="d1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                        class="bi-calendar" viewBox="0 0 16 16">
-                        <path
-                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-                    </svg>
-                    <div style="margin-bottom: 10px;">
-                        <h5>AI $ Future Tech Summit</h5>
-                        <p class="timestamp"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                fill="currentColor" class="bi-clock" viewBox="0 0 16 16">
-                                <path
-                                    d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
-                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
-                            </svg>1:00pm , Nov 8-11,2025<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                fill="currentColor" class="bi-geo-alt" viewBox="0 0 16 16">
-                                <path
-                                    d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
-                                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                            </svg>Bengaluru</p>
-                    </div>
-                </div>
-                <br>
-                <div class="d1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                        class="bi-calendar" viewBox="0 0 16 16">
-                        <path
-                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-                    </svg>
-                    <div style="margin-bottom: 10px;">
-                        <h5>Acoustic Nights</h5>
-                        <p class="timestamp"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                fill="currentColor" class="bi-clock" viewBox="0 0 16 16">
-                                <path
-                                    d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
-                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
-                            </svg>7:00pm , Sept 24,2025 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                fill="currentColor" class="bi-geo-alt" viewBox="0 0 16 16">
-                                <path
-                                    d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
-                                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                            </svg> Delhi</p>
-                    </div>
-                </div>
-            </div>
+        <div class="sidebar-welcome">
+            Welcome! Here's what's happening with your events.
         </div>
+        <ul class="nav-links">
+            <li class="nav-item"><a routerLink="/Ongoing-Events"><b>Events</b></a></li>
+            <li class="nav-item"><a routerLink="gallery"><b>Gallery</b></a></li>
+            <li class="nav-item"><a routerLink=""><b>Reports</b></a></li>
+        </ul>
+    </nav>
 
+    <div class="main-content">
+        <section class="quick-actions">
+            <h3><b>Quick Actions</b></h3>
+            <div class="actions-grid">
+                <div class="action-card pink-purple">
+                    <span class="icon">✉️</span>
+                    <div class="action-text">
+                        <strong>Invite Attendees</strong>
+                        <span>Send Invitation</span>
+                    </div>
+                </div>
+                <div class="action-card blue-purple">
+                    <span class="icon">📈</span>
+                    <div class="action-text">
+                        <strong>Generate Reports</strong>
+                        <span>Event Analytics</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="recent-events">
+            <h3><b>Recent Events</b></h3>
+            <a routerLink="/Ongoing-Events" class="view-all">View all →</a>
+            <div class="events-grid">
+                <div class="event-card">
+                    <span class="calendar-icon">🗓️</span>
+                    <div class="event-details">
+                        <div class="event-title">Summer Beats Concert</div>
+                        <div class="event-time">
+                            <span class="icon">🕖</span> 7:30PM, Sept 7-10, 2025
+                        </div>
+                        <div class="event-location">
+                            <span class="icon">📍</span> Mumbai
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <span class="calendar-icon">🗓️</span>
+                    <div class="event-details">
+                        <div class="event-title">Classical Dance Festival</div>
+                        <div class="event-time">
+                            <span class="icon">🕦</span> 11:00AM, Sept 10-13, 2025
+                        </div>
+                        <div class="event-location">
+                            <span class="icon">📍</span> Bhubaneswar
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <span class="preview-tag">Preview</span>
+                    <span class="calendar-icon">🗓️</span>
+                    <div class="event-details">
+                        <div class="event-title">AI & Future Tech Summit</div>
+                        <div class="event-time">
+                            <span class="icon">🕐</span> 1:00PM, Nov 8-11, 2025
+                        </div>
+                        <div class="event-location">
+                            <span class="icon">📍</span> Bengaluru
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <span class="calendar-icon">🗓️</span>
+                    <div class="event-details">
+                        <div class="event-title">Acoustic Nights</div>
+                        <div class="event-time">
+                            <span class="icon">🕖</span> 7:00PM, Sept 24, 2025
+                        </div>
+                        <div class="event-location">
+                            <span class="icon">📍</span> Delhi
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </div>
-
 <app-footer></app-footer>
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> 

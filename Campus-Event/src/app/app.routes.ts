@@ -51,7 +51,7 @@ export const routes: Routes = [
     {
         path: 'student',
         component: Student,
-        canActivate: [RoleGuard],
+        canActivate: [AuthGuard],
         data: { expectedRole: 'STUDENT' }
     },
     {

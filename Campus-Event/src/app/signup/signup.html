@@ -10,7 +10,7 @@
         <span>
             <p>Please fill out the form to register.</p>
         </span>
-        <form action="/submit-SignUp-form"  method="POST">
+        <form (ngSubmit)="adddata()" >
             <fieldset>
                 <label for="name">Name:</label>
                 <br>
@@ -41,7 +41,7 @@
                 </select>
                 <br>
                 <br>
-                <button type="submit" (click)="adddata()">Sign up</button>
+                <button type="submit" >Sign up</button>
 
 
             </fieldset>

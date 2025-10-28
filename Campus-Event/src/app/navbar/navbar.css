@@ -15,10 +15,10 @@
   height: 80px;
   width: 100%;
   top: 0;
-  background: linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4);
+  background: linear-gradient(to right, rgb(43, 43, 140), rgb(211, 107, 211));
   color: aliceblue;
   position: sticky;
-  z-index:1000;
+  z-index: 1000;
 
 }
 
@@ -38,22 +38,17 @@
   gap: 55px;
   height: 25px;
   align-items: center;
-  padding-left:24px;
+  padding-left: 24px;
 }
 
 .profile {
-  border: 1px solid;
+  border: 2px solid;
   padding: 10px;
   border-radius: 10px;
-  color: black;
+  color: whitesmoke;
   position: relative;
+  
 }
-
-.profile .arrow {
-  transition: transform 0.5s ease;
-}
-
-/* Rotate the icon when hovering over the profile container */
-.profile:hover .arrow {
-  transform: rotate(180deg);
+.profile:hover{
+  opacity: 0.5;
 }
