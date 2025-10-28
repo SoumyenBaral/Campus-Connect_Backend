@@ -8,7 +8,7 @@ import { User } from '../User.interface';
   providedIn: 'root'
 })
 export class AuthService {
-  // Base URL of your Spring Boot Backend
+  // Base URL of Spring Boot Backend
   private apiUrl = 'http://localhost:8080/api';  
   
   // Standard HTTP headers for JSON content
@@ -24,7 +24,6 @@ export class AuthService {
     return userJson ? JSON.parse(userJson) : null;
   }
 
-  // FIX 2: Move the isLoggedIn method definition inside the class body
   public isLoggedIn(): boolean {
     return !!this.getCurrentUser();
   }
@@ -55,7 +54,6 @@ export class AuthService {
    * Connects to the POST /api/postuser endpoint for user registration (Sign Up).
    */
   signup(user: User): Observable<string> {
-    // FIX 3: Ensure template literal syntax uses backticks (`)
     const signupUrl = `${this.apiUrl}/postuser`; 
     return this.http.post<string>(signupUrl, user, this.httpOptions);
   }
