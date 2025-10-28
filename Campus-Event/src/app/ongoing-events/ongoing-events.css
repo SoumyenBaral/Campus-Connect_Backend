@@ -16,7 +16,6 @@
     height: 410px;
     width: 30%;
     border-radius: 10px;
-    /* justify-content: center; */
     border: 1.5px solid black;
     background-color: #02181c;
 
@@ -28,7 +27,6 @@
 }
 
 img {
-    /* border-radius: 10px; */
     height: 200px;
     width: 100%;
     cursor: pointer;

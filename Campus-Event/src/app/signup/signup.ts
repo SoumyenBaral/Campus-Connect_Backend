@@ -13,6 +13,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   styleUrl: './signup.css',
 })
 export class SignUp {
+  router: any;
 submitEvent() {
 throw new Error('Method not implemented.');
 }
@@ -29,12 +30,15 @@ throw new Error('Method not implemented.');
   };
 adddata() {
     this.http.post("http://localhost:8080/api/postuser", this.user).subscribe({
-      next: (res) => console.log('Contact submitted:', res),
+      next: (res) => {
+        console.log('Signup Successful:', res);
+        // 2. Redirect to login page on success
+        this.router.navigate(['/login']); 
+      },
       error: (err) => console.error('Submission failed:', err)
     });
   }
  
 
-  // 3. The onSubmit function receives the NgForm object
  
 }

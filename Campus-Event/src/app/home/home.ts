@@ -6,10 +6,6 @@ import { RouterOutlet } from '@angular/router';
 import { CreateEvent } from '../create-event/create-event';
 import { SignUp } from '../signup/signup';
 
-
-
-
-
 @Component({
   selector: 'app-home',
   imports: [Footer, Navbar, CreateEvent, RouterOutlet,SignUp],

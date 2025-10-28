@@ -63,13 +63,7 @@ input {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 
 }
-
-
-
-
 .checkbox-group {
-
-
     display: flex;
     gap: 8px;
     align-items: center;
@@ -85,8 +79,6 @@ input {
 
 }
 
-/* .submit{
-    display: block; */
 .submit {
     width: 100%;
     padding: 12px;
