@@ -1,7 +1,7 @@
 .content {
     height: 55vh;
     width: 100%;
-    background: linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4);
+background-color:black ;
     color: white;
     display: flex;
     gap: 10px;
@@ -12,7 +12,7 @@
     margin-left:360px;
     height: 48vh;
     width: 50%;
-    color:#0D1B2A;
+    color:white;
     text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.2);
     /* color: rgb(71, 71, 73); */
     text-align: center;
@@ -43,7 +43,7 @@
 #btn {
     padding: 10px;
     border-radius: 15px;
-    background: linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4);
+    background: linear-gradient(to right,rgb(43, 43, 140),rgb(211, 107, 211));
     border: 1px solid;
 }
 
@@ -175,6 +175,7 @@ img {
 }
 
 .c1:hover {
-    background: linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4);
+
+    background: linear-gradient(to right,rgb(43, 43, 140),rgb(211, 107, 211));
     transform: translateY(-10px);
 }

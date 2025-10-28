@@ -13,8 +13,6 @@ export class Coordinator {
 name:string="Co-ordinator";
   menuOpen: boolean = false;
 
-  toggleMenu() {
-    this.menuOpen = !this.menuOpen;
-  }
+ 
 
 }

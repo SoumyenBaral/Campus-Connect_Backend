@@ -14,7 +14,4 @@ export class Host {
 name:string="Host";
   menuOpen: boolean = false;
 
-  toggleMenu() {
-    this.menuOpen = !this.menuOpen;
-  }
 }
