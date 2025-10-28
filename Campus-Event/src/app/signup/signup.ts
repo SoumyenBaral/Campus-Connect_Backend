@@ -18,15 +18,13 @@ submitEvent() {
 throw new Error('Method not implemented.');
 }
   constructor(private http: HttpClient) {
-    // this.getdata();
   }
-  // 2. Initialize the User object. Angular will fill this object automatically.
   user: User = {
     name: '',
     email: '',
     password: '',
     contact: '',
-    role: 'STUDENT' as Role // Default value for the dropdown
+    role: 'STUDENT' as Role 
   };
 adddata() {
     this.http.post("http://localhost:8080/api/postuser", this.user).subscribe({
