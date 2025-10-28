@@ -10,10 +10,6 @@ import { Host } from "../host/host";
 import { OngoingEvents } from "../ongoing-events/ongoing-events";
 import { UpcomingEvents } from "../upcoming-events/upcoming-events";
 
-
-
-
-
 @Component({
   selector: 'app-home',
   imports: [Footer, Navbar, CreateEvent, RouterOutlet, SignUp, Coordinator, Host, OngoingEvents, UpcomingEvents],

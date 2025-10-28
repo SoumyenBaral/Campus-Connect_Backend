@@ -4,5 +4,4 @@ export interface User {
   email: string;
   role: 'STUDENT' | 'ADMIN' | 'COORDINATOR' | 'HOST';
   contact: string;
-  // Note: Do NOT include 'password' in this interface for security
 }
