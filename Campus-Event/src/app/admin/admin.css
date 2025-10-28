@@ -9,6 +9,11 @@ nav{
     width: 25%;
     color: aliceblue;
 }
+
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
 .container{
     padding: 50px;
     
@@ -20,6 +25,13 @@ nav{
     gap: 30px;
     align-items: center;
     transition: 2s ease-out;
+}
+#e1{
+      padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
 }
 #d1:hover{
     background:linear-gradient(90deg, #7B68EE, #40E0D0);
