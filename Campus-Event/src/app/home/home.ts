@@ -9,6 +9,7 @@ import { Coordinator } from '../coordinator/coordinator';
 import { Host } from "../host/host";
 import { OngoingEvents } from "../ongoing-events/ongoing-events";
 import { UpcomingEvents } from "../upcoming-events/upcoming-events";
+import { Feedback } from "../feedback/feedback";
 
 @Component({
   selector: 'app-home',
