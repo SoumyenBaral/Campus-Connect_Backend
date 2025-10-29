@@ -8,17 +8,14 @@ import { User } from '../User.interface';
   providedIn: 'root'
 })
 export class AuthService {
-  // Base URL of Spring Boot Backend
   private apiUrl = 'http://localhost:8080/api';  
   
-  // Standard HTTP headers for JSON content
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
   constructor(private http: HttpClient) { }
 
-  // Helper function to get the current user object from localStorage
   private getCurrentUser(): User | null {
     const userJson = localStorage.getItem('currentUser');
     return userJson ? JSON.parse(userJson) : null;
@@ -32,7 +29,7 @@ export class AuthService {
     const user = this.getCurrentUser();
     
     if (!user || !user.role) {
-      return '/login'; // Default back to login if no user or role is found
+      return '/login'; 
     }
     
     // Map the Spring Boot Role enum strings to Angular paths

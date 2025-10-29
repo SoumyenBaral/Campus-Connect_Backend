@@ -2,14 +2,17 @@ nav {
     justify-items: center;
     text-align: center;
     margin-top: 100px;
+width: 100%;
 }
 
+
 .container {
-    background: linear-gradient(135deg, #1e1b3a, #03343c);
+
+    background: linear-gradient(to left,rgb(43, 43, 140),rgb(211, 107, 211));
     border: 1px solid black;
     border-radius: 20px;
-    height: 200px;
-    width: 78%;
+    height: 280px;
+    width: 100%;
     padding: 15px;
 }
 

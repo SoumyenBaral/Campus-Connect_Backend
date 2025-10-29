@@ -1,7 +1,7 @@
 .content {
     height: 55vh;
     width: 100%;
-background-color:black ;
+    background-color: black;
     color: white;
     display: flex;
     gap: 10px;
@@ -9,15 +9,15 @@ background-color:black ;
 }
 
 .about {
-    margin-left:360px;
+    margin-left: 360px;
     height: 48vh;
     width: 50%;
-    color:white;
+    color: white;
     text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.2);
     text-align: center;
     font-size: 19px;
-    animation: baral 1s ease forwards;
-    padding:15px;
+    animation: projectanim 1s ease forwards;
+    padding: 15px;
 }
 
 
@@ -25,8 +25,9 @@ background-color:black ;
     padding: 10px;
 
 }
-.oneplace{
-    color:#4b4b84;
+
+.oneplace {
+    color: #4b4b84;
 }
 
 @keyframes projectanim {
@@ -42,7 +43,7 @@ background-color:black ;
 #btn {
     padding: 10px;
     border-radius: 15px;
-    background: linear-gradient(to right,rgb(43, 43, 140),rgb(211, 107, 211));
+    background: linear-gradient(to right, rgb(43, 43, 140), rgb(211, 107, 211));
     border: 1px solid;
 }
 
@@ -64,14 +65,14 @@ background-color:black ;
     width: 100%;
 }
 
-.Event-gallery  h6{
+.Event-gallery h6 {
     text-align: center;
     height: 30px;
     width: 250px;
     justify-content: center;
     padding: 5px;
     margin-left: 610px;
-    background: linear-gradient(to right,rgb(43, 43, 140),rgb(211, 107, 211));
+    background: linear-gradient(to right, rgb(43, 43, 140), rgb(211, 107, 211));
     border-radius: 10px;
 }
 
@@ -141,11 +142,12 @@ img {
 }
 
 /* Feedback Section */
-.Clients-feedback{
-    margin-left:610px;
+.Clients-feedback {
+    margin-left: 610px;
 }
+
 .client-feedback {
-    height: 50vh;
+    height: 35vh;
     width: 100%;
 }
 
@@ -175,6 +177,6 @@ img {
 
 .c1:hover {
 
-    background: linear-gradient(to right,rgb(43, 43, 140),rgb(211, 107, 211));
+    background: linear-gradient(to right, rgb(43, 43, 140), rgb(211, 107, 211));
     transform: translateY(-10px);
 }
