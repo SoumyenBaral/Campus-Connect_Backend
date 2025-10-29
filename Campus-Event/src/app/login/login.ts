@@ -13,7 +13,6 @@ import { Router } from '@angular/router';
   styleUrl: './login.css'
 })
 export class Login {
-// Data model for the form inputs (email and password)
     
        loginData: LoginRequest = { email: '', password: '' };
   errorMessage: string = '';
@@ -23,20 +22,15 @@ export class Login {
   onSubmit(): void {
     this.authService.login(this.loginData).subscribe({
       next: (user: User) => {
-        // Handle successful login
         console.log('Login Successful:', user);
         localStorage.setItem('currentUser',JSON.stringify(user));
 
-        // 2. Get the role-specific route
         const redirectRoute = this.authService.getDashboardRoute();
         
-        // 3. Redirect the user
         this.router.navigate([redirectRoute]);
         this.errorMessage = '';
-        // TODO: Store user info (e.g., in localStorage) and navigate to dashboard
       },
       error: (err: any) => {
-        // Handle login failure (e.g., 401 Unauthorized)
         console.error('Login Failed:', err);
         this.errorMessage = 'Invalid email or password. Please try again.';
       }

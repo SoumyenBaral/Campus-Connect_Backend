@@ -1,24 +1,27 @@
-nav{
+nav {
 
     width: 100%;
     display: flex;
     gap: 8px;
 }
-.sidebar{
+
+.sidebar {
     height: 80vh;
     width: 25%;
     color: aliceblue;
 }
 
-a{
+a {
     text-decoration: none;
     color: aliceblue;
 }
-.container{
+
+.container {
     padding: 50px;
-    
+
 }
-#d1{
+
+#d1 {
     padding: 15px;
     border-radius: 10px;
     display: flex;
@@ -26,29 +29,34 @@ a{
     align-items: center;
     transition: 2s ease-out;
 }
-#e1{
-      padding: 15px;
+
+#e1 {
+    padding: 15px;
     border-radius: 10px;
     display: flex;
     gap: 30px;
     align-items: center;
 }
-#d1:hover{
-    background:linear-gradient(90deg, #7B68EE, #40E0D0);
+
+#d1:hover {
+    background: linear-gradient(90deg, #7B68EE, #40E0D0);
     transform: translateX(20px);
 }
-.content{
+
+.content {
     height: 125vh;
     width: 70%;
 }
-.dashboard{
+
+.dashboard {
     height: 150px;
     display: flex;
     gap: 30px;
     padding: 50px;
 
 }
-#d2{
+
+#d2 {
     height: 25vh;
     width: 150vh;
     border: 2px solid black;
@@ -58,14 +66,17 @@ a{
     padding: 15px;
     justify-content: center;
 }
-.container1{
-        padding: 50px;
-display: flex;
-gap: 50px;
+
+.container1 {
+    padding: 50px;
+    display: flex;
+    gap: 50px;
 }
-.recentEvent{
+
+.recentEvent {
     width: 60%;
 }
+
 .c1 {
     display: flex;
     gap: 30px;
@@ -84,9 +95,11 @@ gap: 50px;
     padding: 10px;
     transition: 2s ease;
 }
-.recentEvent1:hover{
+
+.recentEvent1:hover {
     transform: scale(1.1);
 }
+
 .quick-action {
     margin-top: 150px;
     height: 200px;

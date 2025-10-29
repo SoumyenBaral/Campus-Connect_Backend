@@ -18,15 +18,17 @@ export class CreateEvent {
   //   host: { id: 4}
   // };
 
-  // constructor(private http: HttpClient) {
-  //   const loggedInUserId = localStorage.getItem('userId');
-  //   if (loggedInUserId) {
-  //     this.eventData.host.id = Number(loggedInUserId);
-  //   } else {
-  //     console.warn('User ID not found in localStorage');
-  //     alert('Please log in to create an event.');
-  //   }
-  // }
+  constructor(private http: HttpClient) {
+
+  }
+
+
+
+
+
+// eventData={
+//   "title":
+// }
 
   // addevent() {
   //   this.http.post('http://localhost:8080/api/postevent', this.eventData).subscribe({
