@@ -1,4 +1,4 @@
-.body {
+/* .body {
     margin: 0;
     display: flex;
     gap: 20px;
@@ -33,4 +33,143 @@ button {
 }
 #d1{
     text-align: center;
+} */
+
+
+/* Container Layout */
+.signup-container {
+  display: flex;
+  height: 100vh;
+  width: 80%;
+  justify-content:center;
+  margin:auto;
+  background: radial-gradient(circle at 20% 50%, #0b0b14, #000);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Left Side */
+.signup-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 6rem;
+}
+
+.signup-left h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.signup-left p {
+  color: #b5b5b5;
+  margin-bottom: 2rem;
+}
+
+/* Input fields */
+.input-group {
+  position: relative;
+  width: 350px;
+  background: #111;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.3rem;
+}
+
+.input-group .icon {
+  color: #a855f7;
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.input-group input,
+.select-group select {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.select-group select option {
+  color: black;
+}
+
+.toggle-eye {
+  position: absolute;
+  right: 15px;
+  color: #999;
+  cursor: pointer;
+}
+
+/* Signup Button */
+.signup-btn {
+  width: 350px;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right, #007bff, #7f00ff);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.signup-btn:hover {
+  opacity: 0.9;
+}
+
+/* Sign In Link */
+.signin-link {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.signin-link a {
+  color: #ff007f;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signin-link a:hover {
+  text-decoration: underline;
+}
+
+/* Right Side */
+.signup-right {
+  flex: 1.2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-card {
+  background: rgba(20, 10, 30, 0.9);
+  padding: 2.5rem;
+  border-radius: 20px;
+  text-align: left;
+  box-shadow: 0 0 30px rgba(255, 0, 128, 0.15);
+  width: 80%;
+}
+
+.welcome-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.welcome-card p {
+  color: #ccc;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.welcome-card img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
 }

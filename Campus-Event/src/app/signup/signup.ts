@@ -13,11 +13,11 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   styleUrl: './signup.css',
 })
 export class SignUp {
-  router: any;
+  
 submitEvent() {
 throw new Error('Method not implemented.');
 }
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
   }
   user: User = {
     name: '',
@@ -27,7 +27,7 @@ throw new Error('Method not implemented.');
     role: 'STUDENT' as Role 
   };
 adddata() {
-    this.http.post("http://localhost:8080/api/postuser", this.user).subscribe({
+    this.http.post("http://localhost:8080/api/postuser", this.user, {responseType: 'text'}).subscribe({
       next: (res) => {
         console.log('Signup Successful:', res);
         // 2. Redirect to login page on success

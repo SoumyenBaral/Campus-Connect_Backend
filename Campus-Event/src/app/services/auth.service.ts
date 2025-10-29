@@ -8,6 +8,7 @@ import { User } from '../User.interface';
   providedIn: 'root'
 })
 export class AuthService {
+  
   private apiUrl = 'http://localhost:8080/api';  
   
   private httpOptions = {
@@ -20,11 +21,9 @@ export class AuthService {
     const userJson = localStorage.getItem('currentUser');
     return userJson ? JSON.parse(userJson) : null;
   }
-
   public isLoggedIn(): boolean {
     return !!this.getCurrentUser();
   }
-
   getDashboardRoute(): string {
     const user = this.getCurrentUser();
     
@@ -32,7 +31,6 @@ export class AuthService {
       return '/login'; 
     }
     
-    // Map the Spring Boot Role enum strings to Angular paths
     switch (user.role) {
       case 'STUDENT':
         return '/student';
@@ -47,21 +45,17 @@ export class AuthService {
     }
   }
 
-  /**
-   * Connects to the POST /api/postuser endpoint for user registration (Sign Up).
-   */
+ 
   signup(user: User): Observable<string> {
     const signupUrl = `${this.apiUrl}/postuser`; 
     return this.http.post<string>(signupUrl, user, this.httpOptions);
   }
 
-  /**
-   * Connects to the POST /api/login endpoint for user authentication.
-   */
+ 
   login(credentials: LoginRequest): Observable<User> {
-    // FIX 4: Ensure template literal syntax uses backticks (`)
+    
     const loginUrl = `${this.apiUrl}/login`; 
-    // The response is the User object upon success, or an error.
+    
     return this.http.post<User>(loginUrl, credentials, this.httpOptions);
   }
   

@@ -10,7 +10,6 @@ import {  AuthService } from '../services/auth.service';
 })
 export class AuthGuard implements CanActivate {
   
-  // FIX: Inject the AuthService with a consistent name (authService)
   constructor(
     private authService: AuthService, 
     private router: Router
@@ -18,13 +17,9 @@ export class AuthGuard implements CanActivate {
 
   canActivate(): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     
-    // Check if the user is currently logged in via the service
     if (this.authService.isLoggedIn()) {
-      return true; // User is logged in, grant access to the requested route
+      return true; 
     }
-    
-    // User is NOT logged in. Redirect them to the login page.
-    // The createUrlTree method is used to return a redirect command.
     return this.router.createUrlTree(['/login']); 
   }
 }

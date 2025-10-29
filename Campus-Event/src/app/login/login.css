@@ -1,4 +1,4 @@
-.body {
+/* .body {
     margin: 0;
     display: flex;
     gap: 200px;
@@ -36,4 +36,304 @@ button {
     border-radius: 5px;
     cursor: pointer;
 
+} */
+
+/* .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1a1a2e; 
+    color: #ffffff; 
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.login-box {
+    
+    display: flex;
+    max-width: 900px; 
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #0d0d19;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.form-section {
+    flex: 1; 
+    padding: 40px;
+    background-color: #121223;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 350px;
+}
+
+.greeting {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.subtitle {
+    margin-bottom: 30px;
+    color: #aaaaaa;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    background-color: #22223b;
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+
+.input-group input {
+    flex-grow: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    padding: 5px 10px;
+    font-size: 1rem;
+}
+
+.input-group .icon {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    color: #ff69b4;
+}
+
+.password-toggle {
+    cursor: pointer;
+    color: #aaaaaa;
+    font-size: 0.9rem;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.forgot-password {
+    color: #ff69b4;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.sign-in-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(to right, #ff1493, #8a2be2);
+    transition: transform 0.2s ease;
+}
+
+.sign-in-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(138, 43, 226, 0.5);
+}
+
+.signup-prompt {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.create-link {
+    color: #ff69b4;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.create-link:hover {
+    text-decoration: underline;
+}
+
+.welcome-section {
+    flex: 1; 
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    min-width: 350px; 
+}
+
+.welcome-section h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.welcome-section p {
+    color: #cccccc;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.image-placeholder {
+    height: 60%;
+    background: url('https://img.freepik.com/premium-vector/mobile-login-concept-illustration_114360-135.jpg') no-repeat center center/cover;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    min-height: 250px;
+    background-color: #333;
+}
+ */
+
+
+ /* Page Layout */
+.login-container {
+  display: flex;
+  height: 100vh;
+  width: 80%;
+  justify-content:center;
+  margin:auto;
+  background: radial-gradient(circle at 20% 50%, #0b0b14, #000);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Left Side */
+.login-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 6rem;
+}
+
+.login-left h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.login-left p {
+  color: #b5b5b5;
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  position: relative;
+  width: 350px;
+  background: #111;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.input-group .icon {
+  color: #ff2cc3;
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.input-group input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.toggle-eye {
+  position: absolute;
+  right: 15px;
+  color: #999;
+  cursor: pointer;
+}
+
+/* Sign In Button */
+.signin-btn {
+  width: 350px;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right, #ff007f, #b100ff);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.signin-btn:hover {
+  opacity: 0.9;
+}
+
+/* Create account link */
+.create-account {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.create-account a {
+  color: #00aaff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.create-account a:hover {
+  text-decoration: underline;
+}
+
+/* Right Side */
+.login-right {
+  flex: 1.2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-card {
+  background: rgba(20, 10, 30, 0.9);
+  padding: 2.5rem;
+  border-radius: 20px;
+  text-align: left;
+  box-shadow: 0 0 30px rgba(255, 0, 128, 0.15);
+  width: 80%;
+}
+
+.welcome-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.welcome-card p {
+  color: #ccc;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.welcome-card img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
 }

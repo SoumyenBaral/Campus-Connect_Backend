@@ -13,7 +13,7 @@ import { Feedback } from "../feedback/feedback";
 
 @Component({
   selector: 'app-home',
-  imports: [Footer, Navbar, CreateEvent, RouterOutlet, SignUp, Coordinator, Host, OngoingEvents, UpcomingEvents, Feedback],
+  imports: [Footer, Navbar, CreateEvent, RouterOutlet, SignUp, Coordinator, Host, OngoingEvents, UpcomingEvents,Navbar],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
