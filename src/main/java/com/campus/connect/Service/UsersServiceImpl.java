@@ -27,11 +27,7 @@ public List<Users> getAllUsers() {
 	return usersRepository.findAll();
 }
 
-//@Override
-//public String deleteUser(Long id) {
-//	// TODO Auto-generated method stub
-//	return null;
-//}
+
 //NEW: findByEmail implementation
 @Override
 public Optional<Users> findByEmail(String email) {
@@ -46,8 +42,6 @@ public Users loginUser(String email, String password) {
     if (userOptional.isPresent()) {
         Users user = userOptional.get();
         
-        // WARNING: This is a simple string comparison. 
-        // Replace with passwordEncoder.matches(password, user.getPassword()) in production.
         if (user.getPassword().equals(password)) {
             return user; // Login successful
         }

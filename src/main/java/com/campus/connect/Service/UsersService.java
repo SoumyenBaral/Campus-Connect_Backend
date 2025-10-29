@@ -7,7 +7,6 @@ import com.campus.connect.Entity.Users;
 
 public interface UsersService{
 	
-//	Users validateUser = null;
 
 	//Post
 	String saveUser(Users user);
