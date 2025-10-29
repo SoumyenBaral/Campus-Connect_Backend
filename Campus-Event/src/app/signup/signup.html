@@ -1,58 +1,57 @@
+<div class="signup-container">
+  <div class="signup-left">
+    <h2>Create Account</h2>
+    <p>Join us today</p>
 
-<div class="body">
-    <div class="image">
-        <img src="https://img.freepik.com/free-vector/login-concept-illustration_114360-739.jpg" alt="">
+    <form (ngSubmit)="adddata()">
+      <div class="input-group">
+        <span class="icon"><i class="fa fa-user"></i></span>
+        <input type="text" placeholder="Full Name" name="name" [(ngModel)]="user.name" required />
+      </div>
+
+      <div class="input-group">
+        <span class="icon"><i class="fa fa-envelope"></i></span>
+        <input type="email" placeholder="E-mail" name="email" [(ngModel)]="user.email" id="email" required />
+      </div>
+
+      <div class="input-group">
+        <span class="icon"><i class="fa fa-lock"></i></span>
+        <input type="password" placeholder="Password" name="password" [(ngModel)]="user.password" required />
+        <span class="toggle-eye"><i class="fa fa-eye"></i></span>
+      </div>
+
+      <div class="input-group">
+        <span class="icon"><i class="fa fa-phone"></i></span>
+        <input type="Tel" pattern="[0-9]{10}" maxlength="10" placeholder="Contact Number" name="contact" [(ngModel)]="user.contact" required />
+      </div>
+
+      <div class="input-group select-group" >
+        <select    name="role" [(ngModel)]="user.role"required>
+          <option value="" disabled selected>Select Role</option>
+          <option value="STUDENT">Student</option>
+          <option value="HOST">Host</option>
+          <option value="COORDINATOR">Coordinator</option>
+          <option value="ADMIN">Admin</option>
+        </select>
+      </div>
+
+      <button type="submit" class="signup-btn">SIGN UP</button>
+    </form>
+
+    <p class="signin-link">
+      Already have an account? <a routerLink="/login">Sign In</a>
+    </p>
+  </div>
+
+  <div class="signup-right">
+    <div class="welcome-card">
+      <h3>Welcome!</h3>
+      <p>
+        Join our community today and unlock exclusive features. Create your account to get started with
+        a personalized experience tailored just for you. We're excited to have you on board!
+      </p>
+      <img src="https://img.freepik.com/free-vector/group-people-jeans-shirts_52683-34818.jpg" alt="Welcome Image" />
     </div>
-    <div class="signup">
-        <span>
-            <h4><b>Welcome👏</b></h4>
-        </span>
-        <span>
-            <p>Please fill out the form to register.</p>
-        </span>
-        <form (ngSubmit)="adddata()" >
-            <fieldset>
-                <label for="name">Name:</label>
-                <br>
-                <input type="text" placeholder="Enter Your First Name" name="name" [(ngModel)]="user.name" id="fname" required>
-                <br>
-                <br>
-                <label for="email"> Email:</label>
-                <br>
-                <input type="email" placeholder="Enter Your Email" name="email" [(ngModel)]="user.email" id="email" required>
-                <br>
-                <br>
-                <label for="password">Password:</label>
-                <br>
-                <input type="password" placeholder="Enter Your Password" name="password" [(ngModel)]="user.password" id="password" required>
-                <br>
-                <br>
-                <label for="contact"> Phone:</label>
-                <br>
-                <input type="number" placeholder="Enter Your Phone Number" name="contact" [(ngModel)]="user.contact" id="contact" required>
-                <br>
-                <br>
-                <label for="role">Role</label>
-                <select id="role"  name="role" [(ngModel)]="user.role">
-                    <option value="ADMIN">ADMIN</option>
-                    <option value="COORDINATOR">COORDINATOR</option>
-                    <option value="HOST">HOST</option>
-                    <option value="STUDENT">STUDENT</option>
-                </select>
-                <br>
-                <br>
-                <button type="submit" >Sign up</button>
-
-
-            </fieldset>
-        </form>
-        <br>
-        <span>
-            <p id="d1">Already a user?<a routerLink="/login">Login</a></p>
-        </span>
-    </div>
-    <div>
-
-    </div>
+  </div>
 </div>
 <router-outlet></router-outlet>

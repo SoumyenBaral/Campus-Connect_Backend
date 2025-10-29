@@ -4,11 +4,10 @@ import { User } from '../User.interface';
 import {  AuthService } from '../services/auth.service';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
-  imports: [RouterLink,RouterOutlet,FormsModule,CommonModule ],
+  imports: [RouterLink,RouterOutlet,FormsModule ],
   templateUrl: './login.html',
   styleUrl: './login.css'
 })
@@ -16,7 +15,7 @@ export class Login {
 // Data model for the form inputs (email and password)
     
        loginData: LoginRequest = { email: '', password: '' };
-  errorMessage: string = '';
+        errorMessage: string = '';
 
   constructor(private authService: AuthService,private router:Router) { }
 
@@ -33,7 +32,6 @@ export class Login {
         // 3. Redirect the user
         this.router.navigate([redirectRoute]);
         this.errorMessage = '';
-        // TODO: Store user info (e.g., in localStorage) and navigate to dashboard
       },
       error: (err: any) => {
         // Handle login failure (e.g., 401 Unauthorized)

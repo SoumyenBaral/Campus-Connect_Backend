@@ -1,4 +1,4 @@
-<div class="body">
+<!-- <div class="body">
     <div class="image">
         <img src="https://img.freepik.com/free-vector/login-concept-illustration_114360-739.jpg" alt="">
     </div>
@@ -30,5 +30,43 @@
            </fieldset>
         </form>
     </div>
+</div>
+<router-outlet></router-outlet> -->
+
+<div class="login-container">
+  <div class="login-left">
+    <h2>Hello!</h2>
+    <p>Sign in to your account</p>
+
+    <form (ngSubmit)="onSubmit()">
+      <div class="input-group">
+        <span class="icon"><i class="fa fa-envelope"></i></span>
+        <input type="email" placeholder="E-mail"  name="email" [(ngModel)]="loginData.email"  required />
+      </div>
+
+      <div class="input-group">
+        <span class="icon"><i class="fa fa-lock"></i></span>
+        <input type="password" placeholder="Password"  name="password"  [(ngModel)]="loginData.password" required />
+        <span class="toggle-eye"><i class="fa fa-eye"></i></span>
+      </div>
+
+      <button type="submit" class="signin-btn">SIGN IN</button>
+    </form>
+
+    <p class="create-account">
+      Don’t have an account? <a routerLink="/SignUp">Create</a>
+    </p>
+  </div>
+
+  <div class="login-right">
+    <div class="welcome-card">
+      <h3>Welcome Back!</h3>
+      <p>
+        We're glad to see you again. Sign in to access your personalized dashboard,
+        track your progress, and continue where you left off. Your journey continues here.
+      </p>
+      <img src="https://img.freepik.com/premium-vector/mobile-login-concept-illustration_114360-135.jpg" alt="Welcome Image" />
+    </div>
+  </div>
 </div>
 <router-outlet></router-outlet>
