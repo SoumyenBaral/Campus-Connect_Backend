@@ -1,16 +1,15 @@
 import { Component } from '@angular/core';
-
 import { CustomPipe } from '../pipes/custom-pipe';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { HomeGallery } from '../home-gallery/home-gallery';
 import { Footer } from '../footer/footer';
-import { Feedback } from '../feedback/feedback';
+import { Navbar } from '../navbar/navbar';
 
 
 
 @Component({
   selector: 'app-admin',
-  imports: [CustomPipe, RouterLink, HomeGallery,RouterOutlet ,Footer,Feedback],
+  imports: [CustomPipe, RouterLink, HomeGallery,RouterOutlet ,Footer,Navbar],
 
   templateUrl: './admin.html',
   styleUrl: './admin.css'
