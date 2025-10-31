@@ -17,7 +17,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  private getCurrentUser(): User | null {
+  public getCurrentUser(): User | null {
     const userJson = localStorage.getItem('currentUser');
     return userJson ? JSON.parse(userJson) : null;
   }
