@@ -3,11 +3,10 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { Footer } from '../footer/footer';
 import { Feedback } from '../feedback/feedback';
 import { CustomPipe } from '../pipes/custom-pipe';
-import { NgbAccordionItem } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-student',
-  imports: [Footer, Feedback, CustomPipe, RouterLink, RouterOutlet, NgbAccordionItem],
+  imports: [Footer, Feedback, CustomPipe, RouterLink, RouterOutlet,],
   templateUrl: './student.html',
   styleUrl: './student.css'
 })

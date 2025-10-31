@@ -23,6 +23,7 @@ import { NgModule } from '@angular/core';
 import { AuthGuard } from './guards/auth-guard';
 import { RoleGuard } from './guards/role/role-guard';
 import { CreateEvent } from './create-event/create-event';
+import { Feedback } from './feedback/feedback';
 
 
 export const routes: Routes = [
@@ -88,6 +89,10 @@ export const routes: Routes = [
     {
         path: 'register',
         component: RegisterPage,
+    },
+    {
+        path:'feedback',
+        component: Feedback,
     },
     {
         path: 'admin-manual',
