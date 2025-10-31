@@ -39,7 +39,7 @@ a {
 }
 
 #d1:hover {
-    background: linear-gradient(90deg, #7B68EE, #40E0D0);
+    background-color: #4a148c;
     transform: translateX(20px);
 }
 

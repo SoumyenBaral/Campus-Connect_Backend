@@ -59,4 +59,4 @@ export class AuthService {
     return this.http.post<User>(loginUrl, credentials, this.httpOptions);
   }
   
-} 
+}

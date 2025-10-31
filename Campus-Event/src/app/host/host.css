@@ -1,10 +1,8 @@
-
-
-*{
-    --dark-bg: #110c1a; 
-    --sidebar-bg: #1a0f28; 
-    --card-bg: #1e142c; 
-    --text-color: #f0f0f0; 
+* {
+    --dark-bg: #110c1a;
+    --sidebar-bg: #1a0f28;
+    --card-bg: #1e142c;
+    --text-color: #f0f0f0;
     --light-text: #b0a0c0;
     --pink-gradient: linear-gradient(90deg, #ff4081, #9c27b0);
     --blue-gradient: linear-gradient(90deg, #2196f3, #673ab7);
@@ -17,17 +15,17 @@
 /* Main Layout: Dashboard Container */
 .dashboard-container {
     display: flex;
-    min-height: 100vh;
-    background-color: var(--dark-bg); 
+    min-height: 95vh;
+    background-color: var(--dark-bg);
     color: var(--text-color);
     font-family: Arial, sans-serif;
     line-height: 1.6;
 }
 
-a{
+a {
     text-decoration: none;
     color: white;
-    margin-left:20px;
+    margin-left: 20px;
 }
 
 /* --- Sidebar Styling (Similar to previous, but kept for context) --- */
@@ -50,18 +48,18 @@ a{
 .sidebar-header .icon {
     font-size: 1.2em;
     margin-right: 8px;
-    color: white; 
+    color: white;
 }
 
 .sidebar-header .title-text {
-     color: #bc74ea; 
-        margin-left:15px;
+    color: #bc74ea;
+    margin-left: 15px;
 }
 
 .sidebar-welcome {
     padding: 10px 20px 30px 20px;
     font-size: 0.9em;
-    color: var(--light-text); 
+    color: var(--light-text);
 }
 
 .nav-links {
@@ -77,11 +75,13 @@ a{
     cursor: pointer;
     font-size: 1.1em;
     color: #e0e0e0;
+    transition: 1s ease-out;
 }
 
-.nav-item:hover{
-    background-color: #4a148c; 
-position: relative;
+.nav-item:hover {
+    background-color: #4a148c;
+    transform: translateX(20px);
+    border-radius: 5px;
 
 }
 
@@ -92,7 +92,8 @@ position: relative;
 
 .main-content {
     flex-grow: 1;
-    padding: 30px 40px; /* Reduced top padding to fit the banner */
+    padding: 30px 40px;
+    /* Reduced top padding to fit the banner */
 }
 
 /* --- Create New Event Banner --- */
@@ -158,7 +159,7 @@ position: relative;
     display: flex;
     align-items: center;
     color: white;
-    min-height: 50px; 
+    min-height: 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
@@ -222,7 +223,7 @@ position: relative;
     border-radius: 12px;
     display: flex;
     align-items: center;
-    border-left: 5px solid transparent; 
+    border-left: 5px solid transparent;
     transition: border-left-color 0.2s;
 }
 
@@ -263,7 +264,7 @@ position: relative;
     color: var(--light-text);
     display: flex;
     align-items: center;
-    gap: 15px; 
+    gap: 15px;
 }
 
 .event-meta .icon {
@@ -273,5 +274,5 @@ position: relative;
 }
 
 .event-meta .location-icon {
-    margin-left: 0px; 
+    margin-left: 0px;
 }
