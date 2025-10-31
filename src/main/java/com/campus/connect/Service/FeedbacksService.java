@@ -10,4 +10,5 @@ public interface FeedbacksService {
 	List<Feedbacks> getAllUserFeedback();
 	String deleteFeedback(Long id);
 	
+	
 }
