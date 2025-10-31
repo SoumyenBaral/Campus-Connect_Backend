@@ -26,11 +26,13 @@ import { SignUp } from './signup/signup';
 import { AuthGuard } from './guards/auth-guard';
 import { RoleGuard } from './guards/role/role-guard';
 import { CreateEvent } from './create-event/create-event';
+
 import { AdminComponent } from './admin/admin';
 // 💡 ADDITION: Import a component for 404 handling
 // 💡 ADDITION: Import for routing module and decorator (already present but good to confirm)
 // import { RouterModule, Routes } from '@angular/router'; 
 import { NgModule } from '@angular/core'; 
+import { Feedback } from './feedback/feedback';
 
 
 export const routes: Routes = [
@@ -98,7 +100,6 @@ export const routes: Routes = [
     {
         path: 'Ongoing-Events',
         component: OngoingEvents,
-
     },
     {
         path: 'Upcoming-Events',
@@ -140,7 +141,56 @@ export const routes: Routes = [
         path:'login',
         component:Login
     }
-    
+ 
+    },
+    {
+        path: 'Upcoming-Events',
+        component: UpcomingEvents,
+    },
+    {
+        path: 'register',
+        component: RegisterPage,
+    },
+    {
+        path:'feedback',
+        component: Feedback,
+    },
+    {
+        path: 'admin-manual',
+        component: AdminGuide,
+    },
+    {
+        path: 'coordinator-manual',
+        component: CoordinatorGuide,
+    },
+    {
+        path: 'user-manual',
+        component: UserGuide,
+    },
+    {
+        path: 'host-manual',
+        component: HostGuide,
+    },
+    {
+        path:'dance-gallery',
+        component:DanceGallery,
+    },
+    {
+        path:'music-gallery',
+        component:MusicGallery,
+    },
+    {
+        path:'tech-gallery',
+        component:TechGallery,
+    },
+    {
+        path:'login',
+        component:Login
+    },
+    {
+        path:'event',
+        component:CreateEvent
+
 ];
 
 // Note: If you are using Angular 17+ and the functional router setup in main.ts, 
