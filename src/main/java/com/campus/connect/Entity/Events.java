@@ -22,7 +22,7 @@ public class Events {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	 private int id;
+	 private Long id;
 
 	    private String title;
 
@@ -33,8 +33,6 @@ private  String location;
 	    @Enumerated(EnumType.STRING)
 	    private EventStatus status;
 	    
-
-
 	    @ManyToOne
 	    private Users host;
 
@@ -44,11 +42,11 @@ private  String location;
 	    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
 	    private List<Invitations> invitations;
 
-		public int getId() {
+		public Long getId() {
 			return id;
 		}
 
-		public void setId(int id) {
+		public void setId(Long id) {
 			this.id = id;
 		}
 
@@ -108,7 +106,7 @@ private  String location;
 			this.invitations = invitations;
 		}
 
-		public Events(int id, String title, String location, LocalDateTime eventDate, EventStatus status, Users host,
+		public Events(Long id, String title, String location, LocalDateTime eventDate, EventStatus status, Users host,
 				List<Registrations> registrations, List<Invitations> invitations) {
 			super();
 			this.id = id;
