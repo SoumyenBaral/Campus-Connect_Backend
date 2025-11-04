@@ -142,54 +142,54 @@ export const routes: Routes = [
         component:Login
     }
  
-    },
-    {
-        path: 'Upcoming-Events',
-        component: UpcomingEvents,
-    },
-    {
-        path: 'register',
-        component: RegisterPage,
-    },
-    {
-        path:'feedback',
-        component: Feedback,
-    },
-    {
-        path: 'admin-manual',
-        component: AdminGuide,
-    },
-    {
-        path: 'coordinator-manual',
-        component: CoordinatorGuide,
-    },
-    {
-        path: 'user-manual',
-        component: UserGuide,
-    },
-    {
-        path: 'host-manual',
-        component: HostGuide,
-    },
-    {
-        path:'dance-gallery',
-        component:DanceGallery,
-    },
-    {
-        path:'music-gallery',
-        component:MusicGallery,
-    },
-    {
-        path:'tech-gallery',
-        component:TechGallery,
-    },
-    {
-        path:'login',
-        component:Login
-    },
-    {
-        path:'event',
-        component:CreateEvent
+    // },
+    // {
+    //     path: 'Upcoming-Events',
+    //     component: UpcomingEvents,
+    // },
+    // {
+    //     path: 'register',
+    //     component: RegisterPage,
+    // },
+    // {
+    //     path:'feedback',
+    //     component: Feedback,
+    // },
+    // {
+    //     path: 'admin-manual',
+    //     component: AdminGuide,
+    // },
+    // {
+    //     path: 'coordinator-manual',
+    //     component: CoordinatorGuide,
+    // },
+    // {
+    //     path: 'user-manual',
+    //     component: UserGuide,
+    // },
+    // {
+    //     path: 'host-manual',
+    //     component: HostGuide,
+    // },
+    // {
+    //     path:'dance-gallery',
+    //     component:DanceGallery,
+    // },
+    // {
+    //     path:'music-gallery',
+    //     component:MusicGallery,
+    // },
+    // {
+    //     path:'tech-gallery',
+    //     component:TechGallery,
+    // },
+    // {
+    //     path:'login',
+    //     component:Login
+    // },
+    // {
+    //     path:'event',
+    //     component:CreateEvent
 
 ];
 
