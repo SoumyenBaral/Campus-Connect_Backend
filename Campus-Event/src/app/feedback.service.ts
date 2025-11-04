@@ -31,4 +31,12 @@ export class FeedbackService {
       }
     ) as Observable<string>;
   }
+
+// <<< NEW METHOD TO FETCH ALL FEEDBACKS
+  getAllFeedbacks(): Observable<any[]> {
+    const url = `${this.apiUrl}/getfeedback`;
+    // Assuming the backend returns an array of JSON objects (Feedbacks)
+    return this.http.get<any[]>(url); 
+  }
+
 }

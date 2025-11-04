@@ -19,7 +19,18 @@ export class AuthService {
 
   public getCurrentUser(): User | null {
     const userJson = localStorage.getItem('currentUser');
-    return userJson ? JSON.parse(userJson) : null;
+
+    if (!userJson) {
+        return null;
+    }
+    try {
+        return JSON.parse(userJson) as User; 
+    } catch (e) {
+        // If the data is corrupted (e.g., set to "User feedback success"), clear it.
+        console.error("Corrupt user data found in localStorage. Forcing logout.", e);
+        this.logout(); 
+        return null;
+    }
   }
   public isLoggedIn(): boolean {
     return !!this.getCurrentUser();
@@ -56,7 +67,22 @@ export class AuthService {
     
     const loginUrl = `${this.apiUrl}/login`; 
     
-    return this.http.post<User>(loginUrl, credentials, this.httpOptions);
-  }
+    // Pass the standard headers but crucially add responseType: 'json'
+    return this.http.post<User>(loginUrl, credentials, { 
+        headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+        responseType: 'json' as 'json' // <<< FIX: Forces parsing as JSON
+    }); 
+}
+
+  public saveUser(user: User): void {
+    // Make sure 'user' is the complete object from the backend
+    localStorage.setItem('currentUser', JSON.stringify(user));
+}
+
+  public logout(): void {
+    localStorage.removeItem('currentUser');
+    // If you use a separate token, remove that too
+    // localStorage.removeItem('authToken'); 
+}
   
 }

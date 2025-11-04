@@ -11,18 +11,28 @@
 
       <div class="input-group">
         <span class="icon"><i class="fa fa-envelope"></i></span>
-        <input type="email" placeholder="E-mail" name="email" [(ngModel)]="user.email" id="email" required />
+        <input type="email" placeholder="E-mail" name="email" [(ngModel)]="user.email" id="email"  pattern=".*@gmail\.com$" 
+          #emailInput="ngModel"required />
+        <div *ngIf="emailInput.errors?.['pattern'] && emailInput.touched" class="error-message">
+          Email must end with @gmail.com.
+        </div>
       </div>
 
       <div class="input-group">
         <span class="icon"><i class="fa fa-lock"></i></span>
-        <input type="password" placeholder="Password" name="password" [(ngModel)]="user.password" required />
+        <input type="password" placeholder="Password (max 8 characters)" name="password" [(ngModel)]="user.password" maxlength="8" 
+          #passwordInput="ngModel" required />
         <span class="toggle-eye"><i class="fa fa-eye"></i></span>
+        <!-- Display error message for password -->
+        <div *ngIf="passwordInput.errors?.['maxlength'] && passwordInput.touched" class="error-message">
+          Password must be a maximum of 8 characters.
+        </div>
       </div>
 
       <div class="input-group">
         <span class="icon"><i class="fa fa-phone"></i></span>
-        <input type="Tel" pattern="[0-9]{10}" maxlength="10" placeholder="Contact Number" name="contact" [(ngModel)]="user.contact" required />
+        <input type="Tel" pattern="[0-9]{10}" maxlength="10" placeholder="Contact Number(10 digits only)" name="contact" [(ngModel)]="user.contact" required #contactInput="ngModel" />
+        <div *ngIf="contactInput.invalid && contactInput.touched" class="error-message">Contact number must be exactly 10 digits (numbers only).</div>
       </div>
 
       <div class="input-group select-group" >

@@ -1,0 +1,61 @@
+<!-- <div class="container mt-5">
+    
+    <div class="row">
+        <div class="col-12">
+            <h2>Feedback Submissions ✨</h2>
+            <p class="text-muted">Review of all student star ratings.</p>
+            <hr>
+        </div>
+    </div>
+
+    <div *ngIf="loading" class="text-center p-5">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-2">Loading feedback data...</p>
+    </div>
+
+    <div *ngIf="error" class="alert alert-danger" role="alert">
+        <strong>Error:</strong> {{ error }}
+    </div>
+    
+    <div *ngIf="!loading && feedbacks.length === 0 && !error" class="alert alert-info" role="alert">
+        No feedback has been submitted yet.
+    </div>
+
+    <div *ngIf="!loading && feedbacks.length > 0" class="table-responsive">
+        <table class="table table-striped table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>#ID</th>
+                    <th>User ID</th>
+                    <th>Star Rating</th>
+                    <th>Submitted At</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let feedback of feedbacks">
+                    <td>{{ feedback.id }}</td>
+                    
+                    <td>
+                        <span class="badge bg-secondary">
+                            {{ feedback.user?.id || 'N/A' }}
+                        </span>
+                    </td>
+                    
+                    <td>
+                        <span class="text-warning">
+                            <i *ngFor="let star of [].constructor(feedback.starRating)" class="bi bi-star-fill">★</i>
+                            ({{ feedback.starRating }}/5)
+                        </span>
+                    </td>
+                    
+                    <td>
+                        {{ feedback.createdAt | data: 'medium' }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div> -->
