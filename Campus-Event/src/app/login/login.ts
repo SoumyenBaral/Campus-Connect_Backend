@@ -20,20 +20,24 @@ export class Login {
 
   onSubmit(): void {
     this.authService.login(this.loginData).subscribe({
-      next: (user: User) => {
-        console.log('Login Successful:', user);
-        localStorage.setItem('currentUser',JSON.stringify(user));
-
-        const redirectRoute = this.authService.getDashboardRoute();
-        
-        this.router.navigate([redirectRoute]);
-        this.errorMessage = '';
-      },
-      error: (err: any) => {
-        console.error('Login Failed:', err);
-        this.errorMessage = 'Invalid email or password. Please try again.';
-      }
-    });   
+        next: (user: User) => {
+            console.log('Login Successful:', user);
+            
+            // 1. Keep the high-level service call to save the user
+            this.authService.saveUser(user); 
+            // 2. Remove the redundant localStorage.setItem() call
+            
+            const redirectRoute = this.authService.getDashboardRoute();
+            this.router.navigate([redirectRoute]);
+            // 3. Remove the second redundant this.router.navigate() call
+            
+            this.errorMessage = '';
+        },
+        error: (err: any) => {
+            console.error('Login Failed:', err);
+            this.errorMessage = 'Invalid email or password. Please try again.';
+        }
+    }); 
 
     
 }

@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from '../services/auth.service'; 
 import { FeedbackService } from '../feedback.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -19,7 +20,8 @@ export class Feedback {
 
     constructor(
       private authService: AuthService, 
-      private feedbackService: FeedbackService 
+      private feedbackService: FeedbackService,
+      private router: Router 
     ) {}
 
     
@@ -43,6 +45,10 @@ export class Feedback {
         next: (response) => {
           console.log('Feedback submitted:', response);
           alert("Thank you for your feedback!");
+
+          this.currentRate = 0; 
+                this.router.navigate(['/']);
+
         },
         error: (error) => {
           console.error('Submission failed:', error);
@@ -50,7 +56,6 @@ export class Feedback {
         },
         complete: () => {
           this.isLoading = false;
-          this.currentRate = 0; 
         }
       });
     }
