@@ -14,9 +14,11 @@ public interface UsersService{
     
 	//read
 	    List<Users> getAllUsers();
+//delete 
 	    
-	//Deletes a user by their ID.
-//	    String deleteUser(Long id);  
+	        String deleteAllUsers();
+	        // other service method declarations
+	    
 	    
 	 // NEW: For retrieving user by email
 		Optional<Users> findByEmail(String email); 

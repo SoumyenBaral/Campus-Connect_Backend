@@ -25,23 +25,27 @@ public class EventController {
 	
 	
 	@PostMapping("/postevent")
-	// CRITICAL FIX: Removed the hardcoded hostId = 4L. 
-	// Now uses ResponseEntity for proper status codes based on service response.
-	public ResponseEntity<String> addEvent(@RequestBody Events eventDetails ) {
-        String result = eventsService.CreateEvent(eventDetails);
-        
-        // Check if the service returned an error message
-        if (result.startsWith("Error:")) {
-            // Return 400 Bad Request for business logic errors (e.g., unauthorized host)
-            return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
+	public ResponseEntity<String> addEvent(@RequestBody Events eventDetails) {
+        try {
+            String result = eventsService.CreateEvent(eventDetails);
+            
+            if (result.startsWith("Error:")) {
+                return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
+            }
+            
+            return new ResponseEntity<>(result, HttpStatus.CREATED);  // 201 for successful creation
+        } catch (Exception e) {
+            return new ResponseEntity<>("Error: Internal server error - " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        
-        // Return 200 OK on success
-        return new ResponseEntity<>(result, HttpStatus.OK);
-	}
+    }
     
 	@GetMapping("/getAllevents")
-	public List<Events> getEvents(){
-		return eventsService.getAllEvents();
-	}
+	public ResponseEntity<List<Events>> getEvents() {
+        try {
+            List<Events> events = eventsService.getAllEvents();
+            return new ResponseEntity<>(events, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }

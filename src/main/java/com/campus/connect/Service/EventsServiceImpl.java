@@ -28,8 +28,17 @@ public class EventsServiceImpl implements EventsService {
 	public String CreateEvent(Events eventDetails) {
         
         // 1. Validate host ID in payload
+		if (eventDetails.getTitle() == null || eventDetails.getTitle().trim().isEmpty()) {
+            return "Error: Event title is required.";
+        }
+        if (eventDetails.getLocation() == null || eventDetails.getLocation().trim().isEmpty()) {
+            return "Error: Event location is required.";
+        }
+        if (eventDetails.getEventDate() == null) {
+            return "Error: Event date is required.";
+        }
         if (eventDetails.getHost() == null || eventDetails.getHost().getId() == null) {
-            return "Error: Host ID is missing in the event details.";
+            return "Error: Host ID is missing.";
         }
         
         Long hostId = eventDetails.getHost().getId();
@@ -42,8 +51,11 @@ public class EventsServiceImpl implements EventsService {
         Users host = hostOptional.get();
         
         // 2. CRITICAL SECURITY/BUSINESS LOGIC CHECK: Ensure user is authorized to host
-        if (host.getRole() != Role.HOST && host.getRole() != Role.ADMIN && host.getRole() != Role.COORDINATOR) {
-            return "Error: User with ID " + hostId + " is not authorized to create events (Role: " + host.getRole() + ").";
+        if (host.getRole() != Role.HOST) {
+            return "Error: Only users with HOST role can create events.";
+        }
+        if (!host.isApproved()) {
+            return "Error: Host is not approved by admin. Contact admin for approval.";
         }
         
         // 3. Set the managed host entity
