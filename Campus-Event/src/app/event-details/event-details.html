@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>Event Details</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Location</th>
+        <th>Event Date</th>
+        <th>Status</th>
+        <th>Host Name</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let event of events">
+        <td>{{ event.id }}</td>
+        <td>{{ event.title }}</td>
+        <td>{{ event.location }}</td>
+        <td>{{ event.eventDate }}</td>
+        <td>{{ event.status }}</td>
+        <td>{{ event.host?.name || 'N/A' }}</td>
+      </tr>
+    </tbody>
+     </table>
+</div>

@@ -8,7 +8,7 @@ import { Feedback } from "../feedback/feedback";
 
 @Component({
   selector: 'app-host',
-  imports: [Footer, CustomPipe, RouterOutlet, RouterLink, Navbar, Feedback],
+  imports: [Footer, CustomPipe, RouterOutlet, RouterLink, Navbar],
   templateUrl: './host.html',
   styleUrl: './host.css'
 })
