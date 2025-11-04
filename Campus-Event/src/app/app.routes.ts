@@ -91,56 +91,168 @@ export const routes: Routes = [
         path: 'Ongoing-Events',
         component: OngoingEvents,
 
-    },
-    {
-        path: 'Upcoming-Events',
-        component: UpcomingEvents,
-    },
-    {
-        path: 'register',
-        component: RegisterPage,
-    },
-    {
-        path:'feedback',
-        component: Feedback,
-    },
-    {
-        path: 'admin-manual',
-        component: AdminGuide,
-    },
-    {
-        path: 'coordinator-manual',
-        component: CoordinatorGuide,
-    },
-    {
-        path: 'user-manual',
-        component: UserGuide,
-    },
-    {
-        path: 'host-manual',
-        component: HostGuide,
-    },
-    {
-        path:'dance-gallery',
-        component:DanceGallery,
-    },
-    {
-        path:'music-gallery',
-        component:MusicGallery,
-    },
-    {
-        path:'tech-gallery',
-        component:TechGallery,
-    },
-    {
-        path:'login',
-        component:Login
-    },
-    {
-        path:'event',
-        component:CreateEvent
-    }
+    // --- Public Routes ---
+    {
+        path: 'contact-us',
+        component: ContactUs,
+    },
+    {
+        path: 'SignUp',
+        component: SignUp,
+    },
+    {
+        path: 'helpcenter',
+        component: Helpcenter,
+    },
+    {
+        path: 'gallery',
+        component: HomeGallery,
+    },
+    {
+        path: 'Ongoing-Events',
+        component: OngoingEvents,
+    },
+    {
+        path: 'Upcoming-Events',
+        component: UpcomingEvents,
+    },
+    {
+        path: 'register',
+        component: RegisterPage,
+    },
+    {
+        path: 'admin-manual',
+        component: AdminGuide,
+    },
+    {
+        path: 'coordinator-manual',
+        component: CoordinatorGuide,
+    },
+    {
+        path: 'user-manual',
+        component: UserGuide,
+    },
+    {
+        path: 'host-manual',
+        component: HostGuide,
+    },
+    {
+        path:'dance-gallery',
+        component:DanceGallery,
+    },
+    {
+        path:'music-gallery',
+        component:MusicGallery,
+    },
+    {
+        path:'tech-gallery',
+        component:TechGallery,
+    },
+    {
+        path:'login',
+        component:Login
+    }
+ 
+    // },
+    // {
+    //     path: 'Upcoming-Events',
+    //     component: UpcomingEvents,
+    // },
+    // {
+    //     path: 'register',
+    //     component: RegisterPage,
+    // },
+    // {
+    //     path:'feedback',
+    //     component: Feedback,
+    // },
+    // {
+    //     path: 'admin-manual',
+    //     component: AdminGuide,
+    // },
+    // {
+    //     path: 'coordinator-manual',
+    //     component: CoordinatorGuide,
+    // },
+    // {
+    //     path: 'user-manual',
+    //     component: UserGuide,
+    // },
+    // {
+    //     path: 'host-manual',
+    //     component: HostGuide,
+    // },
+    // {
+    //     path:'dance-gallery',
+    //     component:DanceGallery,
+    // },
+    // {
+    //     path:'music-gallery',
+    //     component:MusicGallery,
+    // },
+    // {
+    //     path:'tech-gallery',
+    //     component:TechGallery,
+    // },
+    // {
+    //     path:'login',
+    //     component:Login
+    // },
+    // {
+    //     path:'event',
+    //     component:CreateEvent
+
+//     },
+//     {
+//         path: 'Upcoming-Events',
+//         component: UpcomingEvents,
+//     },
+//     {
+//         path: 'register',
+//         component: RegisterPage,
+//     },
+//     {
+//         path:'feedback',
+//         component: Feedback,
+//     },
+//     {
+//         path: 'admin-manual',
+//         component: AdminGuide,
+//     },
+//     {
+//         path: 'coordinator-manual',
+//         component: CoordinatorGuide,
+//     },
+//     {
+//         path: 'user-manual',
+//         component: UserGuide,
+//     },
+//     {
+//         path: 'host-manual',
+//         component: HostGuide,
+//     },
+//     {
+//         path:'dance-gallery',
+//         component:DanceGallery,
+//     },
+//     {
+//         path:'music-gallery',
+//         component:MusicGallery,
+//     },
+//     {
+//         path:'tech-gallery',
+//         component:TechGallery,
+//     },
+//     {
+//         path:'login',
+//         component:Login
+//     },
+//     {
+//         path:'event',
+//         component:CreateEvent
+//     }
     
+
 ];
 
 @NgModule({
