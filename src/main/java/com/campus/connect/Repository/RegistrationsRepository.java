@@ -3,7 +3,6 @@ package com.campus.connect.Repository;
 import java.util.List;
 import java.util.Optional;
 
-import org.apache.catalina.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.campus.connect.Entity.Events;
@@ -14,7 +13,7 @@ public interface RegistrationsRepository extends JpaRepository<Registrations, Lo
 
 	
 	 // Find all registrations for a specific student (User)
-    List<Registrations> findByStudent(User student);
+    List<Registrations> findByStudent(Users student);
 
 	
  // Find a registration by a specific student and event combination (for checking duplicates)
