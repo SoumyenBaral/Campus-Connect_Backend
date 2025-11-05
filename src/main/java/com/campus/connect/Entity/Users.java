@@ -6,6 +6,7 @@ import java.util.List;
 
 
 import com.campus.connect.Entity.Enum.Role;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -27,8 +28,7 @@ public class Users{
 
     private String email;
 
-  
-    private String password;
+      private String password;
 
     @Enumerated(EnumType.STRING)
     private Role role;
@@ -36,38 +36,37 @@ public class Users{
     private String contact;
 
     private LocalDateTime createdAt = LocalDateTime.now();
+     private boolean isApproved;
 
-    // Relationships
+    public Users(boolean isApproved) {
+		super();
+		this.isApproved = isApproved;
+	}
+
+	public boolean isApproved() {
+		return isApproved;
+	}
+
+	 public void setApproved(boolean isApproved) {
+		 this.isApproved = isApproved;
+	 }
+
+	// Relationships
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Registrations> registrations;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Feedbacks> feedbacks;
 
     @OneToMany(mappedBy = "host", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Events> hostedEvents;
 
     public String getUsername() {
         // Use email for the Spring Security 'username' field
         return email; 
-    }
-    
-    
-    
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-    
-    public boolean isEnabled() {
-        return true;
     }
 
 	public Long getId() {
@@ -145,13 +144,13 @@ public class Users{
 	public List<Events> getHostedEvents() {
 		return hostedEvents;
 	}
-
+	
 	public void setHostedEvents(List<Events> hostedEvents) {
 		this.hostedEvents = hostedEvents;
 	}
 
 	public Users(Long id, String name, String email, String password, Role role, String contact,
-			LocalDateTime createdAt, List<Registrations> registrations, List<Feedbacks> feedbacks,
+			LocalDateTime createdAt, boolean isApproved, List<Registrations> registrations, List<Feedbacks> feedbacks,
 			List<Events> hostedEvents) {
 		super();
 		this.id = id;
@@ -161,6 +160,7 @@ public class Users{
 		this.role = role;
 		this.contact = contact;
 		this.createdAt = createdAt;
+		this.isApproved = isApproved;
 		this.registrations = registrations;
 		this.feedbacks = feedbacks;
 		this.hostedEvents = hostedEvents;
@@ -170,15 +170,12 @@ public class Users{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
+	
 	@Override
 	public String toString() {
 		return "Users [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", role=" + role
-				+ ", contact=" + contact + ", createdAt=" + createdAt + ", registrations=" + registrations
-				+ ", feedbacks=" + feedbacks + ", hostedEvents=" + hostedEvents + "]";
+				+ ", contact=" + contact + ", createdAt=" + createdAt + ", isApproved=" + isApproved
+				+ ", registrations=" + registrations + ", feedbacks=" + feedbacks + ", hostedEvents=" + hostedEvents
+				+ "]";
 	}
-	
-
-    
-    
 }

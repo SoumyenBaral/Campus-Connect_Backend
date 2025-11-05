@@ -25,14 +25,15 @@ public class FeedbacksController{
 	private  String addFeedback(@RequestBody Feedbacks feedbacks) {
 	return feedbacksService.createFeedback(feedbacks);
 }
-//
-//@GetMapping("/getfeedback")
-//	private List<Feedbacks> getAllUserFeedbacks(){
-//	return feedbacksService.getAllUserFeedback();
-//}
+
+@GetMapping("/getfeedback")
+private List<Feedbacks> getAllUserFeedbacks(){
+return feedbacksService.getAllUserFeedback();
+}
+
 //@DeleteMapping("/deletefeedback/{id}")
 //public String deleteFeedback(@PathVariable Long id) {
-//	return feedbacksService.deleteFeedback(id);
+//return feedbacksService.deleteFeedback(id);
 //}
 
 

@@ -13,6 +13,7 @@ public class RegistrationsServiceImpl  implements RegistrationsService{
 	
 	@Autowired
 private RegistrationsRepository registrationsRepository;
+	
 
 	@Override
 	public String CreateRegistration(Registrations registration) {

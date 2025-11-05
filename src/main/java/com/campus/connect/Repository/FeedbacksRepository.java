@@ -6,4 +6,5 @@ import com.campus.connect.Entity.Feedbacks;
 
 public interface FeedbacksRepository extends JpaRepository<Feedbacks, Long> {
 
+	long countByUserId(Long userId);
 }
