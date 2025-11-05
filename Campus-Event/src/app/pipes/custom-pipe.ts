@@ -1,12 +1,16 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'custom'
+  name: 'filterByCategory'
 })
-export class CustomPipe implements PipeTransform {
+export class filterByCategoryPipe implements PipeTransform {
 
-  transform(value: string, ...args: unknown[]): unknown {
-    return 'Welcome '+" "+value  ;
+  transform(items: any[], category: string): any[] {
+    if (!items || !category) {
+      return items;
+    }
+    // Assumes 'category' is a property on the event object
+    return items.filter(item => item.category === category);
   }
 
 }

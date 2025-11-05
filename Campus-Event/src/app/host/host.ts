@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Footer } from '../footer/footer';
-import { CustomPipe } from '../pipes/custom-pipe';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { Navbar } from '../navbar/navbar';
 import { Feedback } from "../feedback/feedback";
@@ -8,7 +7,7 @@ import { Feedback } from "../feedback/feedback";
 
 @Component({
   selector: 'app-host',
-  imports: [Footer, CustomPipe, RouterOutlet, RouterLink, Navbar],
+  imports: [Footer, RouterOutlet, RouterLink, Navbar],
   templateUrl: './host.html',
   styleUrl: './host.css'
 })
