@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-register-page',
-  imports: [Footer,FormsModule, CommonModule],
+  imports: [Footer, FormsModule, CommonModule],
   templateUrl: './register-page.html',
   styleUrl: './register-page.css'
 })
@@ -25,9 +25,9 @@ export class RegisterPage implements OnInit {
     event: { id: null as number | null }
   };
 
-constructor( private http:HttpClient){}
+  constructor(private http: HttpClient) { }
 
-ngOnInit() {
+  ngOnInit() {
     this.loadAvailableEvents();
     this.setCurrentUser();  // Assuming you have auth service to get current user ID
   }
@@ -35,7 +35,7 @@ ngOnInit() {
   loadAvailableEvents() {
     this.http.get<any[]>('http://localhost:8080/api/available-events').subscribe({
       next: (events) => {
-        this.availableEvents = events;
+        this.availableEvents = events; //update the event in an array
       },
       error: (err) => console.error('Error loading events:', err)
     });
@@ -63,7 +63,7 @@ ngOnInit() {
       next: (res) => {
         alert(res);
         // Reset form or redirect
-        this.registrationData = { ...this.registrationData, fullName: '', emailAddress: '', mobileNumber: '', organization: '',event: { id: null } };
+        this.registrationData = { ...this.registrationData, fullName: '', emailAddress: '', mobileNumber: '', organization: '', event: { id: null } };
       },
       error: (err) => {
         alert('Registration failed: ' + (err.error || err.message));

@@ -8,8 +8,6 @@ import { ContactUs } from './contact-us/contact-us';
 import { Login } from './login/login';
 import { Helpcenter } from './helpcenter/helpcenter';
 import { HomeGallery } from './home-gallery/home-gallery';
-import { OngoingEvents } from './ongoing-events/ongoing-events';
-import { UpcomingEvents } from './upcoming-events/upcoming-events';
 import { RegisterPage } from './register-page/register-page';
 import { AdminGuide } from './admin-guide/admin-guide';
 import { CoordinatorGuide } from './coordinator-guide/coordinator-guide';
@@ -28,14 +26,16 @@ import { HostDetails } from './host-details/host-details';
 import { CoordinatorDetails } from './coordinator-details/coordinator-details';
 import { StudentDetails } from './student-details/student-details';
 import { EventDetails } from './event-details/event-details';
+import { Allevents } from './allevents/allevents';
+
 
 
 export const routes: Routes = [
-    
+
     {
         path: '',
         component: Home,
-        pathMatch:'full',
+        pathMatch: 'full',
     },
     {
         path: 'home',
@@ -88,176 +88,59 @@ export const routes: Routes = [
         component: HomeGallery,
     },
     {
-        path: 'Ongoing-Events',
-        component: OngoingEvents,
-
-    // --- Public Routes ---
-    {
-        path: 'contact-us',
-        component: ContactUs,
-    },
-    {
-        path: 'SignUp',
-        component: SignUp,
-    },
-    {
-        path: 'helpcenter',
-        component: Helpcenter,
-    },
-    {
-        path: 'gallery',
-        component: HomeGallery,
-    },
-    {
-        path: 'Ongoing-Events',
-        component: OngoingEvents,
-    },
-    {
-        path: 'Upcoming-Events',
-        component: UpcomingEvents,
-    },
-    {
-        path: 'register',
-        component: RegisterPage,
-    },
-    {
-        path: 'admin-manual',
-        component: AdminGuide,
-    },
-    {
-        path: 'coordinator-manual',
-        component: CoordinatorGuide,
-    },
-    {
-        path: 'user-manual',
-        component: UserGuide,
-    },
-    {
-        path: 'host-manual',
-        component: HostGuide,
-    },
-    {
-        path:'dance-gallery',
-        component:DanceGallery,
-    },
-    {
-        path:'music-gallery',
-        component:MusicGallery,
-    },
-    {
-        path:'tech-gallery',
-        component:TechGallery,
-    },
-    {
-        path:'login',
-        component:Login
-    }
- 
-    // },
-    // {
-    //     path: 'Upcoming-Events',
-    //     component: UpcomingEvents,
-    // },
-    // {
-    //     path: 'register',
-    //     component: RegisterPage,
-    // },
-    // {
-    //     path:'feedback',
-    //     component: Feedback,
-    // },
-    // {
-    //     path: 'admin-manual',
-    //     component: AdminGuide,
-    // },
-    // {
-    //     path: 'coordinator-manual',
-    //     component: CoordinatorGuide,
-    // },
-    // {
-    //     path: 'user-manual',
-    //     component: UserGuide,
-    // },
-    // {
-    //     path: 'host-manual',
-    //     component: HostGuide,
-    // },
-    // {
-    //     path:'dance-gallery',
-    //     component:DanceGallery,
-    // },
-    // {
-    //     path:'music-gallery',
-    //     component:MusicGallery,
-    // },
-    // {
-    //     path:'tech-gallery',
-    //     component:TechGallery,
-    // },
-    // {
-    //     path:'login',
-    //     component:Login
-    // },
-    // {
-    //     path:'event',
-    //     component:CreateEvent
-
-//     },
-//     {
-//         path: 'Upcoming-Events',
-//         component: UpcomingEvents,
-//     },
-//     {
-//         path: 'register',
-//         component: RegisterPage,
-//     },
-//     {
-//         path:'feedback',
-//         component: Feedback,
-//     },
-//     {
-//         path: 'admin-manual',
-//         component: AdminGuide,
-//     },
-//     {
-//         path: 'coordinator-manual',
-//         component: CoordinatorGuide,
-//     },
-//     {
-//         path: 'user-manual',
-//         component: UserGuide,
-//     },
-//     {
-//         path: 'host-manual',
-//         component: HostGuide,
-//     },
-//     {
-//         path:'dance-gallery',
-//         component:DanceGallery,
-//     },
-//     {
-//         path:'music-gallery',
-//         component:MusicGallery,
-//     },
-//     {
-//         path:'tech-gallery',
-//         component:TechGallery,
-//     },
-//     {
-//         path:'login',
-//         component:Login
-//     },
-//     {
-//         path:'event',
-//         component:CreateEvent
-//     }
-    
+        path: 'register',
+        component: RegisterPage,
+    },
+    {
+        path: 'feedback',
+        component: Feedback,
+    },
+    {
+        path: 'admin-manual',
+        component: AdminGuide,
+    },
+    {
+        path: 'coordinator-manual',
+        component: CoordinatorGuide,
+    },
+    {
+        path: 'user-manual',
+        component: UserGuide,
+    },
+    {
+        path: 'host-manual',
+        component: HostGuide,
+    },
+    {
+        path: 'dance-gallery',
+        component: DanceGallery,
+    },
+    {
+        path: 'music-gallery',
+        component: MusicGallery,
+    },
+    {
+        path: 'tech-gallery',
+        component: TechGallery,
+    },
+    {
+        path: 'login',
+        component: Login
+    },
+    {
+        path: 'event',
+        component: CreateEvent
+    },
+    {
+        path: 'allevents',
+        component: Allevents
+    }
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 
-export class AppRoutingModule {}
+export class AppRoutingModule { }
