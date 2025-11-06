@@ -3,10 +3,11 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { Footer } from '../footer/footer';
 import { Feedback } from '../feedback/feedback';
 import { Navbar } from "../navbar/navbar";
+import { UserGuide } from '../user-guide/user-guide';
 
 @Component({
   selector: 'app-student',
-  imports: [Footer, Feedback, RouterLink, RouterOutlet, Navbar],
+  imports: [Footer, Feedback, RouterLink, RouterOutlet, Navbar,UserGuide],
   templateUrl: './student.html',
   styleUrl: './student.css'
 })
