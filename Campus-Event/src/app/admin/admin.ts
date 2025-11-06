@@ -4,10 +4,11 @@ import { HomeGallery } from '../home-gallery/home-gallery';
 import { Footer } from '../footer/footer';
 import { Navbar } from '../navbar/navbar';
 import { HttpClient } from '@angular/common/http';
+import { AdminGuide } from '../admin-guide/admin-guide';
 
 @Component({
   selector: 'app-admin',
-  imports: [RouterLink, HomeGallery, RouterOutlet, Footer, Navbar],
+  imports: [RouterLink, HomeGallery, RouterOutlet, Footer, Navbar,AdminGuide],
 
   templateUrl: './admin.html',
   styleUrl: './admin.css'

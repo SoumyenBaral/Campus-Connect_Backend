@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Footer } from '../footer/footer';
 import { RouterOutlet } from '@angular/router';
+import { DatePipe, LowerCasePipe } from '@angular/common';
 
 
 interface Event{id: number;
@@ -13,7 +14,7 @@ interface Event{id: number;
 
 @Component({
   selector: 'app-allevents',
-  imports: [Footer,RouterOutlet],
+  imports: [Footer,RouterOutlet,DatePipe,LowerCasePipe],
   templateUrl: './allevents.html',
   styleUrl: './allevents.css'
 })
