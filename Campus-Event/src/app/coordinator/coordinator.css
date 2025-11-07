@@ -23,6 +23,8 @@ a{
     color: var(--text-color);
     font-family: Arial, sans-serif;
     line-height: 1.6;
+        overflow: hidden;
+    
 }
 
 .sidebar {
@@ -59,6 +61,28 @@ a{
     color: #b0a0c0; 
 }
 
+.content {
+    height: 40vh;
+    width: 80%;
+}
+.dashboard {
+    height: 150px;
+    display: flex;
+    gap: 30px;
+    padding: 50px;
+
+}
+
+#d2 {
+    height: 25vh;
+    width: 100vh;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    padding: 15px;
+    justify-content: center;
+}
 .nav-links {
     list-style: none;
     padding: 0;
@@ -151,7 +175,6 @@ a{
 }
 
 .view-all {
-    position: absolute;
     top: 5px;
     right: 0;
     color: #9c27b0; 
@@ -161,9 +184,9 @@ a{
 }
 
 .events-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
+    display: flex;
     gap: 20px;
+    
 }
 
 .event-card {
