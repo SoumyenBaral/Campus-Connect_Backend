@@ -43,10 +43,8 @@ a {
     transform: translateX(20px);
 }
 
-.content {
-    height: 125vh;
-    width: 70%;
-}
+    <section class="content">
+
 
 .dashboard {
     height: 150px;
