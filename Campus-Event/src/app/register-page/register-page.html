@@ -1,43 +1,40 @@
 <section>
     <div class="regis-form">
-
         <div style="padding: 10px;">
             <h3 class="head"><b>Event Registration</b></h3>
-            
             <form #registrationForm="ngForm" (ngSubmit)="submitRegistration()">
                 <fieldset>
                     <legend>Registration Details</legend>
-                    <h6>Please fill in your details to complete registration</h6>
-
-
-                    <label for="event">Select Event:</label>
-                    <select id="event" name="event" required [(ngModel)]="registrationData.event.id">
-                        <option value="">-- Select an Event --</option>
-                        <option *ngFor="let event of availableEvents" [value]="event.id">{{ event.title }} ({{ event.location }})</option>
-                    </select>
-
-                    <label for="fullName">Name:</label>
-                    <input type="text" id="fullName" name="fullName" required placeholder=" Enter Your First Name" [(ngModel)]="registrationData.fullName">
-
-                    <label for="emailAddress">Email Address:</label>
-                    <input type="email" id="emailAddress"name="emailAddress" placeholder="abc@gmail.com" required [(ngModel)]="registrationData.emailAddress">
-
+                    <h6>Please confirm your registration for the selected event.</h6>
+                    
+                    <!-- Pre-filled User Details (Read-Only for Transparency) -->
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" [(ngModel)]="registrationData.fullName" readonly>
+                    
+                    <label for="emailAddress">Email:</label>
+                    <input type="email" id="emailAddress" name="emailAddress" [(ngModel)]="registrationData.emailAddress" readonly>
+                    
                     <label for="mobileNumber">Mobile Number:</label>
-                    <input type="number" id="mobileNumber" name="mobileNumber" required placeholder="Enter Your Mobile Number" [(ngModel)]="registrationData.mobileNumber">
-
+                    <input type="text" id="mobileNumber" name="mobileNumber" [(ngModel)]="registrationData.mobileNumber" readonly>
+                    
+                    <!-- Event Selector -->
+                    <label for="event">Select Event:</label>
+                    <select id="event" name="event" [(ngModel)]="registrationData.event.id" required>
+                        <option [ngValue]="null">Choose an event</option>
+                        <option *ngFor="let event of availableEvents" [value]="event.id">{{ event.title }}</option>
+                    </select>
+                    
                     <label for="organization">Organization/Institute/Company:</label>
-                    <input type="text" id="organization" name="organization" required placeholder=" Enter Your organization" [(ngModel)]="registrationData.organization">
-                    <br>
-                    <br>
-                 <button type="submit" [disabled]="!registrationForm.valid"><b>Submit</b></button>
+                    <input type="text" id="organization" name="organization" required placeholder="Enter Your Organization" [(ngModel)]="registrationData.organization">
+                    
+                    <br><br>
+                    <button type="submit" [disabled]="!registrationForm.valid"><b>Submit</b></button>
                 </fieldset>
             </form>
         </div>
-
     </div>
-
-
 </section>
 
-<app-footer></app-footer>
-    
+
+
+     <app-footer></app-footer>

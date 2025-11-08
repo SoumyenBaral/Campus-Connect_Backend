@@ -9,10 +9,21 @@
           <label for="date">Date</label><br>
           <input type="datetime-local" name="date" id="date" placeholder="Select date"  [(ngModel)]="eventData.eventDate"><br><br>
 
+           <!-- Category Dropdown (New Feature) -->
+  <label for="category">Category<span>*</span></label><br>
+  <select name="category" id="category" required [(ngModel)]="eventData.category">
+    <!-- Iterate over the categories defined in the component -->
+    <option *ngFor="let cat of categories" [value]="cat">{{ cat | titlecase }}</option>
+  </select><br><br>
+
           <label for="location">Location <span>*</span></label><br>
           <input type="text" name="location" id="location" placeholder="Enter your location" required [(ngModel)]="eventData.location" ><br><br>
 
           <button type="submit" [disabled]="!eventForm.valid"><b>Create Event</b></button>
++
+           <div *ngIf="submissionMessage" [ngClass]="{'success': submissionMessage.includes('successfully'), 'error': submissionMessage.includes('Error')}">
+            <p>{{ submissionMessage }}</p>
+          </div>
         </fieldset>
       </form>
     </div>

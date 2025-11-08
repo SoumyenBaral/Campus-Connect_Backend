@@ -1,10 +1,11 @@
 <!-- <div class="container">
     <br>
     <br>
+
     <div id="event-filter-toggle" class="event-toggle-container">
         <a (click)="switchView('Ongoing')" class="toggle-segment"
             [ngClass]="{'active-segment': currentView === 'Ongoing'}">
-            Ongoing Events
+            Ongoing/Past Events
         </a>
 
         <a (click)="switchView('Upcoming')" class="toggle-segment"
@@ -19,7 +20,7 @@
         </div>
         <br>
 
-        <ng-container *ngFor="let category of ['MUSIC', 'DANCE', 'TECH']">
+        <ng-container *ngFor="let category of categories">
             <h6><B>{{ category }} EVENTS</B></h6>
             <div class="eve">
                 <ng-container *ngIf="(upcomingEvents | filterByCategory: category).length > 0; else noUpcomingEvents">
@@ -28,13 +29,13 @@
                         <p id="d1">
                             <b>{{ event.title }}</b>
                             <br>
-                            Date: {{ event.date | date: 'longDate' }}
+                            Date: {{ event.eventDate | date: 'longDate' }}
                             <br>
-                            Time: {{ event.time }}
+                            Time: {{ event.eventDate | date: 'shortTime' }}
                             <br>
-                            Venue: {{ event.venue }}
+                            Venue: {{ event.location }}
                         </p>
-                        <button routerLink="/register"><b>REGISTER</b></button>
+                        <!-- <button routerLink="/register"><b>REGISTER</b></button> -->
                     </div>
                 </ng-container>
                 <ng-template #noUpcomingEvents>
@@ -49,27 +50,30 @@
         <div class="line">
             <h4><i>Here you can view all Ongoing and Past events!</i></h4>
         </div>
-        <ng-container *ngFor="let category of ['MUSIC', 'DANCE', 'TECH']">
+        <ng-container *ngFor="let category of categories">
             <h6><B>{{ category }} EVENTS</B></h6>
             <div class="eve">
+                <ng-container *ngIf="(ongoingEvents | filterByCategory: category).length > 0; else noOngoingEvents">
                 <div class="events" *ngFor="let event of (ongoingEvents | filterByCategory: category)">
                     <img [src]="event.imageUrl" [alt]="event.title">
                     <p id="d1">
                         <b>{{ event.title }}</b>
                         <br>
-                        Date: {{ event.date | date: 'longDate' }}
+                        Date: {{ event.eventDate | date: 'longDate' }}
                         <br>
-                        Time: {{ event.time }}
+                        Time: {{ event.eventDate | date:'shortTime' }}
                         <br>
-                        Venue: {{ event.venue }}
+                        Venue: {{ event.location }}
                     </p>
-                    <button >
-                        REGISTER
-                    </button>
+                    <!-- <button routerLink="/register"> <b>REGISTER</b></button> -->
                 </div>
-            </div>
-            <hr>
         </ng-container>
+        <ng-template #noOngoingEvents>
+                    <p>No ongoing or past {{ category | lowercase }} events found.</p>
+        </ng-template>
+    </div>
+    <hr>
+    </ng-container>
     </div>
 </div>
 

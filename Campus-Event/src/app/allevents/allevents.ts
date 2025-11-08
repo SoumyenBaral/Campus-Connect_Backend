@@ -1,46 +1,85 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Footer } from '../footer/footer';
-import { RouterOutlet } from '@angular/router';
-import { DatePipe, LowerCasePipe } from '@angular/common';
+import { RouterOutlet, RouterLink, Router, NavigationEnd } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { filterByCategoryPipe } from '../pipes/custom-pipe';
+import { CommonModule } from '@angular/common';
+import { filter, interval, startWith, Subscription, switchMap } from 'rxjs';
 
 
-interface Event{id: number;
+interface Event {
+  id: number;
   title: string;
-  date: Date; // Use JavaScript Date objects for easy comparison
-  time: string;
-  venue: string;
-  category: 'MUSIC' | 'DANCE' | 'TECH';
-  imageUrl: string;}
+  location: string;
+  eventDate: string; // ISO string from backend (e.g., "2026-06-20T11:00:00")
+  status: 'UPCOMING' | 'ONGOING' | 'COMPLETED';
+  category: 'MUSIC' | 'DANCE' | 'TECH'; // Ensure this field exists in your Events entity
+  imageUrl: string; // Placeholder for image URL
+}
 
 @Component({
   selector: 'app-allevents',
-  imports: [Footer,RouterOutlet,DatePipe,LowerCasePipe],
+  standalone: true,
+  imports: [Footer, RouterOutlet, CommonModule, HttpClientModule, filterByCategoryPipe, RouterLink],
   templateUrl: './allevents.html',
-  styleUrl: './allevents.css'
+  styleUrl: './allevents.css',
 })
-export class Allevents   implements OnInit {
- // This variable controls which div block is visible in the HTML (using *ngIf)
-  // It is initialized to show Ongoing/Past events first.
+export class Allevents   implements OnInit, OnDestroy{
+ 
   currentView: 'Ongoing' | 'Upcoming' = 'Ongoing';
 
-  constructor() { }
+  allEvents: Event[] = [];
+  ongoingEvents: Event[] = [];
+  upcomingEvents: Event[] = [];
 
-  ngOnInit(): void {
-    // You could potentially check the current route here and set currentView accordingly
-    // For this combined approach, initializing to 'Ongoing' is typical.
+  categories = ['MUSIC', 'DANCE', 'TECH']; // Use an array for iteration
+
+  private pollingSubscription!: Subscription;
+
+  constructor(private http: HttpClient, private router: Router) { }
+
+ ngOnInit(): void {
+    const pollingIntervalMs = 10000; // Poll every 10 seconds
+    
+    this.pollingSubscription = interval(pollingIntervalMs)
+      .pipe(
+        startWith(0), // Ensures it runs immediately on load
+        switchMap(() => this.http.get<Event[]>('http://localhost:8080/api/getAllevents',{ responseType: 'json' })) // <-- NOTE: Use your correct endpoint /getAllevents here
+      )
+      .subscribe({
+        next: (events) => {
+          this.allEvents = events;
+          this.splitEvents(events);
+        },
+        error: (err) => console.error('Error fetching events via polling:', err)
+      });
+  }
+
+   ngOnDestroy(): void {
+      if (this.pollingSubscription) {
+          this.pollingSubscription.unsubscribe();
+      }
+      // NEW: Unsubscribe from the polling timer
+      if (this.pollingSubscription) {
+          this.pollingSubscription.unsubscribe();
+      }
   }
 
-  /**
-   * Switches the active event view based on the button clicked.
-   * @param view The view to switch to ('Ongoing' or 'Upcoming').
-   */
+  splitEvents(events: Event[]): void {
+    this.ongoingEvents = [];
+    this.upcomingEvents = [];
+
+    events.forEach(event => {
+      if (event.status === 'UPCOMING') {
+        this.upcomingEvents.push(event);
+      } else if (event.status === 'ONGOING' || event.status === 'COMPLETED') {
+        this.ongoingEvents.push(event);
+      }
+    });
+  }
+
+  
   switchView(view: 'Ongoing' | 'Upcoming'): void {
     this.currentView = view;
-    console.log(`Switched event view to: ${this.currentView}`);
-
-    // Optional: You could update the URL here without navigating away if needed (using Router)
-    // this.router.navigate([], { queryParams: { view: view } });
   }
-
-
 }
