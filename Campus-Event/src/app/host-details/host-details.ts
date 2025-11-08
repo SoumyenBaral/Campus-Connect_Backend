@@ -14,6 +14,9 @@ hosts: any[] = [];
   unapprovedHosts: any[] = [];
   constructor(private http: HttpClient){}
   ngOnInit(): void {
+    this.fetchAllHostData();
+  }
+  fetchAllHostData() {
     this.fetchHosts();
     this.fetchUnapprovedHosts();
   }
@@ -38,7 +41,7 @@ hosts: any[] = [];
     this.http.put(`http://localhost:8080/api/approve/${id}?approve=true`, {}, { responseType: 'text' }).subscribe({
       next: (res) => {
         alert(res);
-        this.fetchUnapprovedHosts();  // Refresh list
+        this.fetchAllHostData();  // Refresh list
       },
       error: (err) => alert('Error: ' + err.error)
     });
@@ -48,11 +51,9 @@ hosts: any[] = [];
     this.http.put(`http://localhost:8080/api/approve/${id}?approve=false`, {}, { responseType: 'text' }).subscribe({
       next: (res) => {
         alert(res);
-        this.fetchUnapprovedHosts();  // Refresh list
+        this.fetchAllHostData();  // Refresh list
       },
       error: (err) => alert('Error: ' + err.error)
     });
   }
-
-
 }
