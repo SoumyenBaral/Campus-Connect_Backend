@@ -4,8 +4,10 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import com.campus.connect.Entity.Enum.EventStatus;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -17,29 +19,33 @@ import jakarta.persistence.OneToMany;
 
 @Entity  
 public class Events {
-	
-	
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	 private Long id;
 
 	    private String title;
 
+	    private  String location;
 	    
-private  String location;
+        @Column(name = "event_date", nullable = false)
 	    private LocalDateTime eventDate;
+        
+     // NEW FIELD ADDED: Must match the data sent by Angular
+        @Column(name = "category", nullable = false)
+        private String category;
 
 	    @Enumerated(EnumType.STRING)
 	    private EventStatus status;
 	    
 	    @ManyToOne
 	    private Users host;
-
+	    
 	    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
+	    @JsonManagedReference("event-registrations")
 	    private List<Registrations> registrations;
 
 	    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
+	    @JsonManagedReference("event-registrations")
 	    private List<Invitations> invitations;
 
 		public Long getId() {
@@ -74,6 +80,14 @@ private  String location;
 			this.eventDate = eventDate;
 		}
 
+		public String getCategory() {
+			return category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
 		public EventStatus getStatus() {
 			return status;
 		}
@@ -106,13 +120,14 @@ private  String location;
 			this.invitations = invitations;
 		}
 
-		public Events(Long id, String title, String location, LocalDateTime eventDate, EventStatus status, Users host,
-				List<Registrations> registrations, List<Invitations> invitations) {
+		public Events(Long id, String title, String location, LocalDateTime eventDate, String category,
+				EventStatus status, Users host, List<Registrations> registrations, List<Invitations> invitations) {
 			super();
 			this.id = id;
 			this.title = title;
 			this.location = location;
 			this.eventDate = eventDate;
+			this.category = category;
 			this.status = status;
 			this.host = host;
 			this.registrations = registrations;
@@ -127,11 +142,7 @@ private  String location;
 		@Override
 		public String toString() {
 			return "Events [id=" + id + ", title=" + title + ", location=" + location + ", eventDate=" + eventDate
-					+ ", status=" + status + ", host=" + host + ", registrations=" + registrations + ", invitations="
-					+ invitations + "]";
+					+ ", category=" + category + ", status=" + status + ", host=" + host + ", registrations="
+					+ registrations + ", invitations=" + invitations + "]";
 		}
-
-
-    
-    
 }

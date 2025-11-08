@@ -86,6 +86,20 @@ private ResponseEntity<String>  addUser(@RequestBody Users user) {
 	}
 }
 
+@GetMapping("/getuser/{id}") // <-- ADD {id} PATH VARIABLE HERE
+public ResponseEntity<Users> getUserById(@PathVariable Long id){
+    Optional<Users> userOpt = usersRepository.findById(id);
+    
+    if (userOpt.isEmpty()) {
+        // Return 404 if the user doesn't exist
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND); 
+    }
+    
+    // Return the User object (which is the UserDetail interface in the frontend)
+    return new ResponseEntity<>(userOpt.get(), HttpStatus.OK); 
+}
+
+
 @GetMapping("/getuser")
 public  List<Users> getAllUsers(){
 	return usersService.getAllUsers();

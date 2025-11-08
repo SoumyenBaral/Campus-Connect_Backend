@@ -2,10 +2,14 @@ package com.campus.connect.Entity;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
@@ -14,17 +18,30 @@ public class Registrations {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    
+   @Column(name = "fullName")
    private String fullName;
+   
+   @Column(name = "emailAddress")
    private String emailAddress;
-   private long mobileNumber;
+   
+   @Column(name = "mobileNumber")
+   private String mobileNumber;
+   
+   @Column(name = "organization")
    private String organization;
+   
+   @Column(name = "regDate")
     private LocalDateTime regDate = LocalDateTime.now();
 
     @ManyToOne
+    @JoinColumn(name = "student_id")
+    @JsonBackReference("user-registrations")
     private Users student;
 
     @ManyToOne
+    @JoinColumn(name = "event_id")
+    @JsonBackReference("event-registrations")
     private Events event;
 
 	public Long getId() {
@@ -51,11 +68,11 @@ public class Registrations {
 		this.emailAddress = emailAddress;
 	}
 
-	public long getMobileNumber() {
+	public String getMobileNumber() {
 		return mobileNumber;
 	}
 
-	public void setMobileNumber(long mobileNumber) {
+	public void setMobileNumber(String mobileNumber) {
 		this.mobileNumber = mobileNumber;
 	}
 
@@ -91,7 +108,7 @@ public class Registrations {
 		this.event = event;
 	}
 
-	public Registrations(Long id, String fullName, String emailAddress, long mobileNumber, String organization,
+	public Registrations(Long id, String fullName, String emailAddress, String mobileNumber, String organization,
 			LocalDateTime regDate, Users student, Events event) {
 		super();
 		this.id = id;

@@ -7,8 +7,10 @@ import java.util.List;
 
 import com.campus.connect.Entity.Enum.Role;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -35,7 +37,9 @@ public class Users{
 
     private String contact;
 
-    private LocalDateTime createdAt = LocalDateTime.now();
+    private LocalDateTime created_at = LocalDateTime.now();
+    
+     @Column(name = "is_approved")
      private boolean isApproved;
 
     public Users(boolean isApproved) {
@@ -53,7 +57,8 @@ public class Users{
 
 	// Relationships
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
-    @JsonIgnore
+    
+    @JsonManagedReference("user-registrations")
     private List<Registrations> registrations;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
@@ -118,11 +123,11 @@ public class Users{
 	}
 
 	public LocalDateTime getCreatedAt() {
-		return createdAt;
+		return created_at;
 	}
 
 	public void setCreatedAt(LocalDateTime createdAt) {
-		this.createdAt = createdAt;
+		this.created_at = createdAt;
 	}
 
 	public List<Registrations> getRegistrations() {
@@ -159,7 +164,7 @@ public class Users{
 		this.password = password;
 		this.role = role;
 		this.contact = contact;
-		this.createdAt = createdAt;
+		this.created_at = createdAt;
 		this.isApproved = isApproved;
 		this.registrations = registrations;
 		this.feedbacks = feedbacks;
@@ -174,7 +179,7 @@ public class Users{
 	@Override
 	public String toString() {
 		return "Users [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", role=" + role
-				+ ", contact=" + contact + ", createdAt=" + createdAt + ", isApproved=" + isApproved
+				+ ", contact=" + contact + ", createdAt=" + created_at + ", isApproved=" + isApproved
 				+ ", registrations=" + registrations + ", feedbacks=" + feedbacks + ", hostedEvents=" + hostedEvents
 				+ "]";
 	}

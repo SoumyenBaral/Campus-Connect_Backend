@@ -14,9 +14,10 @@ public interface UsersService{
     
 	//read
 	    List<Users> getAllUsers();
-//delete 
 	    
-	        String deleteAllUsers();
+	    
+	//delete 
+    String deleteAllUsers();
 	        // other service method declarations
 	    
 	    

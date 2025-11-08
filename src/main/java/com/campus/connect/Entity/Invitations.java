@@ -1,5 +1,7 @@
 package com.campus.connect.Entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,9 +21,11 @@ public class Invitations {
 	    
 
 	    @ManyToOne
+	    @JsonBackReference
 	    private Events event;
 
 	    @ManyToOne
+	    @JsonBackReference
 	    private Users user;  // sender
 
 		public Long getId() {

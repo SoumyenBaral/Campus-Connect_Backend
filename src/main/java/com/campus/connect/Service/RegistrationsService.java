@@ -11,7 +11,7 @@ public interface RegistrationsService {
 
 	
 	//post
-	String CreateRegistration(Registrations registration);
+	String CreateRegistration(Registrations registration) throws IllegalArgumentException; 
 	
 	
 	
