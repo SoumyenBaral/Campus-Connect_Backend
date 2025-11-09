@@ -137,6 +137,10 @@ export const routes: Routes = [
     {
         path: 'allevents',
         component: Allevents
+    },
+    {
+        path:'hostdetails',
+        component:HostDetails
     }
 
 ];

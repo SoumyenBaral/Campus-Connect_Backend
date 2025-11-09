@@ -1,5 +1,45 @@
 <app-navbar></app-navbar>
 <nav>
+    <div class="c1">
+
+        <h2><b>Welcome to CampusConnect Admin!
+
+            </b></h2>
+    </div>
+    <br>
+    <div class="dashboard">
+
+        <div id="d2" style="background-color: blue;">
+            <div>
+                <h5>Total Hosts</h5>
+                <h3>{{ counts.hostCount || 0 }}</h3>
+
+            </div>
+            <div><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-people"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4" />
+                </svg></div>
+        </div>
+        <div id="d2" style="background-color: blueviolet;">
+            <div>
+                <h5>Total Coordinators</h5>
+                <h3>{{ counts.coordinatorCount || 0 }}</h3>
+
+            </div>
+            <div><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                    class="bi bi-person-badge" viewBox="0 0 16 16">
+                    <path d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                    <path
+                        d="M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v11.793l-1.646-1.647a.5.5 0 0 0-.708 0L9 13.293l-1.646-1.646a.5.5 0 0 0-.708 0L5 13.293l-1.646-1.646a.5.5 0 0 0-.708 0L1 13.293V2.5A1.5 1.5 0 0 1 2.5 1h1A1.5 1.5 0 0 1 5 2.5v1A1.5 1.5 0 0 1 3.5 5h-1A1.5 1.5 0 0 1 1 3.5v-1z" />
+                </svg></div>
+        </div>
+        <div id="d2" style="background-color: green;">
+            <div>
+                <h5>Total Events</h5>
+                <h3>{{ counts.eventCount || 0 }}</h3>
+
+=======
 
     <section class="content">
         <div class="dashboard">
@@ -16,70 +56,91 @@
                         <path
                             d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4" />
                     </svg></div>
+
             </div>
-            <div id="d2" style="background-color: blueviolet;">
-                <div>
-                    <h5>Total Coordinators</h5>
-                    <h3>{{ counts.coordinatorCount || 0 }}</h3>
-                    <br>
-                    <h5>View coordinator details.</h5>
-                </div>
-                <div><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                        class="bi bi-person-badge" viewBox="0 0 16 16">
-                        <path d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                        <path
-                            d="M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v11.793l-1.646-1.647a.5.5 0 0 0-.708 0L9 13.293l-1.646-1.646a.5.5 0 0 0-.708 0L5 13.293l-1.646-1.646a.5.5 0 0 0-.708 0L1 13.293V2.5A1.5 1.5 0 0 1 2.5 1h1A1.5 1.5 0 0 1 5 2.5v1A1.5 1.5 0 0 1 3.5 5h-1A1.5 1.5 0 0 1 1 3.5v-1z" />
-                    </svg></div>
-            </div>
-            <div id="d2" style="background-color: green;">
-                <div>
-                    <h5>Total Events</h5>
-                    <h3>{{ counts.eventCount || 0 }}</h3>
-                    <br>
-                    <h5>View all events.</h5>
-                </div>
-                <div><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                        class="bi bi-calendar2-fill" viewBox="0 0 16 16">
-                        <path
-                            d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM2.545 3h10.91c.3 0 .545.224.545.5v1c0 .276-.244.5-.546.5H2.545C2.245 5 2 4.776 2 4.5v-1c0-.276.244-.5.545-.5" />
-                    </svg></div>
-            </div>
-            <div id="d2" style="background-color: orange;">
-                <div>
-                    <h5>Total Students</h5>
-                    <h3>{{ counts.studentCount || 0 }}</h3>
-                    <br>
-                    <h5>View student details.</h5>
-                </div>
-                <div><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                        class="bi bi-mortarboard" viewBox="0 0 16 16">
-                        <path
-                            d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 4.5a.5.5 0 0 0 .479-.006l7.5-4.5a.5.5 0 0 0 .025-.917zM8 10.5v3.939l-.817.433a.5.5 0 0 1-.479-.006L5 14.5v-3.939l2.5 1.5z" />
-                        <path
-                            d="M14.5 13.5v-8L7 8.5v8c0 .276-.224.5-.5.5s-.5-.224-.5-.5V9L.5 5.5v8c0 .276.224.5.5.5s.5-.224.5-.5V6l6.5 3.5V13c0 .276.224.5.5.5s.5-.224-.5-.5" />
-                    </svg></div>
-            </div>
+            <div><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                    class="bi bi-calendar2-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM2.545 3h10.91c.3 0 .545.224.545.5v1c0 .276-.244.5-.546.5H2.545C2.245 5 2 4.776 2 4.5v-1c0-.276.244-.5.545-.5" />
+                </svg></div>
         </div>
-        <!-- Redirect cards -->
-        <section class="redirect-cards">
-            <div class="card" routerLink="/admin/host-details">
+        <div id="d2" style="background-color: orange;">
+            <div>
+                <h5>Total Students</h5>
+                <h3>{{ counts.studentCount || 0 }}</h3>
+
+            </div>
+            <div><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                    class="bi bi-mortarboard" viewBox="0 0 16 16">
+                    <path
+                        d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 4.5a.5.5 0 0 0 .479-.006l7.5-4.5a.5.5 0 0 0 .025-.917zM8 10.5v3.939l-.817.433a.5.5 0 0 1-.479-.006L5 14.5v-3.939l2.5 1.5z" />
+                    <path
+                        d="M14.5 13.5v-8L7 8.5v8c0 .276-.224.5-.5.5s-.5-.224-.5-.5V9L.5 5.5v8c0 .276.224.5.5.5s.5-.224.5-.5V6l6.5 3.5V13c0 .276.224.5.5.5s.5-.224-.5-.5" />
+                </svg></div>
+        </div>
+    </div>
+
+
+
+    <div class="quickaction">
+        <div id="d3">
+            <div>
+
+                <a routerLink="/gallery"><b>Gallery</b></a>
+            </div>
+            <div><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                    class="bi bi-calendar2-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM2.545 3h10.91c.3 0 .545.224.545.5v1c0 .276-.244.5-.546.5H2.545C2.245 5 2 4.776 2 4.5v-1c0-.276.244-.5.545-.5" />
+                </svg></div>
+        </div>
+
+        <div id="d3">
+            <div>
+                <a routerLink="/admin-manual"><b>help</b></a>
+
+            </div>
+            <div><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                    class="bi bi-calendar2-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM2.545 3h10.91c.3 0 .545.224.545.5v1c0 .276-.244.5-.546.5H2.545C2.245 5 2 4.776 2 4.5v-1c0-.276.244-.5.545-.5" />
+                </svg></div>
+        </div>
+    </div>
+    <div class="allevent">
+        <div class="item1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                class="bi bi-calendar-fill" viewBox="0 0 16 16">
+                <path
+                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5" />
+            </svg>
+            <h4><a class="dashboard-menu" routerLink="/allevents"><b>View All Events</b></a> </h4>
+
+        </div>
+    </div>
+    <!-- Redirect cards -->
+    <section class="redirect-cards">
+            <div class="card" routerLink="/admin/host-details"  style="background-color:olivedrab;">
                 <h5>Host Details</h5>
                 <p>Approve or reject hosts.</p>
             </div>
-            <div class="card" routerLink="/admin/coordinator-details">
+            <br>
+            <div class="card" routerLink="/admin/coordinator-details" style="background-color: orangered;">
                 <h5>Coordinator Details</h5>
                 <p>View coordinator information.</p>
             </div>
-            <div class="card" routerLink="/admin/student-details">
+            <br>
+            <div class="card" routerLink="/admin/student-details" style="background-color: #5279B3;">
                 <h5>Student Details</h5>
                 <p>View student table.</p>
             </div>
-            <div class="card" routerLink="/admin/event-details">
+            <br>
+            <div class="card" routerLink="/admin/event-details" style="background-color: #9c27b0;">
                 <h5>Event Details</h5>
                 <p>View all events.</p>
             </div>
         </section>
-    </section>
+
 </nav>
 <app-footer></app-footer>
 <router-outlet></router-outlet>
