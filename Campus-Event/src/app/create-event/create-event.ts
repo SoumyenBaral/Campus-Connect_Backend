@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -30,13 +30,13 @@ export class CreateEvent {
   constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit() {
-    // Fetch current logged-in user's ID dynamically
-    // Replace this with your actual auth service logic (e.g., from token or AuthService)
+
     const currentUserId = this.getCurrentUserId();  // Placeholder function
     if (currentUserId) {
       this.eventData.host.id = currentUserId;
     } else {
-      console.error('No logged-in user found. Redirect to login?');
+      this.submissionMessage = 'Error: No logged-in user found. Please log in.';
+    this.router.navigate(['/login']);
       // Optionally: this.router.navigate(['/login']);
     }
   }
@@ -60,6 +60,10 @@ export class CreateEvent {
     };
 
 
+    // const headers = new HttpHeaders({
+    //   'Content-Type': 'application/json' // Explicitly tell the server we are sending JSON
+    // });
+
     this.http.post('http://localhost:8080/api/postevent', eventPayload, { responseType: 'text' }).subscribe({
       next: (res: string) => {
         console.log('Event submitted successfully:', res);
@@ -67,13 +71,12 @@ export class CreateEvent {
         
         // Reset the form data after success
         const hostId = this.eventData.host.id;
-        this.eventData = { title: '', location: '', eventDate: '',category: this.categories[0], host: { id: hostId } }; 
+        this.eventData = { title: '', location: '', eventDate: '', category: this.categories[0], host: { id: hostId } }; 
         
-        // Navigate after a slight delay to let user read success message
+        // Navigate to event list
         setTimeout(() => {
-             this.router.navigate(['/allevents']);
+          this.router.navigate(['/allevents']);
         }, 1500);
-
       },
       error: (err) => {
         console.error('Submission failed:', err);
@@ -83,7 +86,19 @@ export class CreateEvent {
       }
     });
   }
-  private getCurrentUserId(): number | null{
-    return 4;
+ 
+private getCurrentUserId(): number | null {
+  const userJson = localStorage.getItem('currentUser');
+  if (userJson) {
+    try {
+      const user = JSON.parse(userJson);
+      return user.id || null;  // Return the ID field from stored user object
+    } catch (err) {
+      console.error('Error parsing user from storage', err);
+      return null;
+    }
   }
+  return null;
+}
+
 }

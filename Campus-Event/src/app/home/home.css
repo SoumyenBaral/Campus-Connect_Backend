@@ -1,11 +1,13 @@
 .content {
-    height: 55vh;
+    height: 65vh;
     width: 100%;
     background-color: black;
     color: white;
     display: flex;
     gap: 10px;
-
+    filter: brightness(80%);
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/024/234/201/small/elegant-golden-stage-horizontal-glowing-with-lighting-effect-sparkle-on-dark-background-template-premium-award-design-vector.jpg');
+    /* opacity: 0.5; */
 }
 
 .about {
@@ -18,6 +20,7 @@
     font-size: 19px;
     animation: projectanim 1s ease forwards;
     padding: 15px;
+    z-index: 1000;
 }
 
 
@@ -27,7 +30,7 @@
 }
 
 .oneplace {
-    color: #4b4b84;
+    color: rgb(180, 50, 141);
 }
 
 @keyframes projectanim {
