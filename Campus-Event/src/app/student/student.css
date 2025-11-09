@@ -1,62 +1,32 @@
 .container {
-    height: 120vh;
+    height: 130vh;
     width: 100%;
-    display: flex;
-    gap: 30px;
+    justify-items: center;
 }
 
-.Student-Dashboard {
-    margin-top: 50px;
-    height: 50vh;
-    width: 25%;
-    border-radius: 15px;
+.c1 {
+    margin-top: 10px;
+    height: 150px;
+    width: 80%;
+  background-color:  #886BAA;
+
+    border-radius: 8px;
+    align-content: center;
+    justify-items: center;
 }
 
-.dashboard-menu {
-    color: white;
-    text-decoration: none;
-}
 
-.item1 {
-    display: flex;
-    gap: 20px;
-    padding: 10px;
-    align-items: center;
-    color: white;
-    border-radius: 10px;
-}
-
-.item {
-    display: flex;
-    gap: 20px;
-    padding: 10px;
-    align-items: center;
-    color: white;
-    border-radius: 10px;
-    transition: 2s ease;
-}
-
-.item:hover {
-    background-color: #4a148c;
-    transform: translateX(20px);
-
-}
-
-.totalEvent-RecentEvent {
-    margin-top: 50px;
-    height: 100vh;
-    width: 40%;
-
-}
 
 .totalEvent {
     height: 150px;
+    width: 80%;
     background-color: #7f7fd5;
     border-radius: 8px;
     padding: 15px;
     display: flex;
-    gap: 280px;
+    gap: 20px;
     align-items: center;
+    justify-content: center;
     transition: 2s ease;
 }
 
@@ -64,51 +34,8 @@
     transform: scale(1.1);
 }
 
-.recentEvent {
-    height: 95vh;
-
-}
-
-.c1 {
-    display: flex;
-    gap: 30px;
-    padding: 10px;
-    align-items: center;
-}
-
-.recentEvent1 {
-    justify-content: center;
-    display: flex;
-    gap: 20px;
-    align-content: center;
-    background-color: white;
-    border-radius: 8px;
-    color: black;
-    padding: 10px;
-    transition: 2s ease;
-}
-
-.recentEvent1:hover {
-    transform: scale(1.1);
-}
-
-.totalEvent-upcommingEvent {
-    margin-top: 50px;
-    height: 100vh;
-    width: 40%;
-
-
-}
-
-.upcommingEvent {
-    height: 95vh;
-
-
-}
-
 .totalAttendance {
     height: 150px;
-    background-color: #86a8e7;
     border-radius: 8px;
     padding: 15px;
     display: flex;
@@ -119,4 +46,87 @@
 
 .totalAttendance:hover {
     transform: scale(1.1);
+}
+
+.quickaction {
+    display: flex;
+    gap: 100px;
+    margin-top: 10px;
+    height: 250px;
+    width: 80%;
+
+
+}
+
+a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.item {
+    margin-top: 10px;
+    height: 200px;
+    width: 50%;
+    border-radius: 8px;
+    transition: 2s ease;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+ background: linear-gradient(to bottom, rgb(84, 84, 222), rgb(187, 48, 187));
+}
+
+.item:hover {
+    transform: scale(1.1);
+
+}
+
+.allevent {
+    height: 250px;
+    width: 80%;
+}
+
+.item1 {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 100%;
+  background: linear-gradient(
+  270deg, 
+  #5279B3 0%, 
+  #886BAA 50%, 
+  #6E518E 100%
+);
+    border-radius: 8px;
+    transition: 2s ease;
+}
+
+.item1:hover {
+    transform: scale(1.1);
+
+}
+
+.register {
+    height: 250px;
+    width: 80%;
+}
+
+.item2 {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 100%;
+    border-radius: 8px;
+    transition: 2s ease;
+    background-color: hsl(314, 49%, 45%);
+
+}
+
+.item2:hover {
+    transform: scale(1.1);
+
 }

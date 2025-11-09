@@ -1,113 +1,86 @@
- <app-navbar></app-navbar>
- <div class="dashboard-container">
-    <nav class="sidebar">
-        <div class="sidebar-header">
-            
-            <div class="title-text">Dashboard</div>
-        </div>
-        <div class="sidebar-welcome">
-            Welcome! Here's what's happening with your events.
-        </div>
-        <ul class="nav-links">
-            <li class="nav-item"><a routerLink="/Ongoing-Events"><b>Events</b></a></li>
-            <li class="nav-item"><a routerLink="/gallery"><b>Gallery</b></a></li>
-            <li class="nav-item"><a routerLink="/coordinator-manual"><b>help</b></a></li>
-        </ul>
-    </nav>
+<app-navbar></app-navbar>
+<div class="dashboard-container">
 
-    <div class="main-content">
-            <section class="content">
 
-       <div class="dashboard">
-            <!-- Dynamic count cards -->
-            
-            
-            <div id="d2" style="background-color: green;">
-                <div>
-                    <h5>Total Events</h5>
-                    <h3>{{ counts.eventCount || 0 }}</h3>
-               
-                </div>
-                <div><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                        class="bi bi-calendar2-fill" viewBox="0 0 16 16">
-                        <path
-                            d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM2.545 3h10.91c.3 0 .545.224.545.5v1c0 .276-.244.5-.546.5H2.545C2.245 5 2 4.776 2 4.5v-1c0-.276.244-.5.545-.5" />
-                    </svg></div>
-            </div>
-            <div id="d2" style="background-color: orange;">
-                <div>
-                    <h5>Total Students</h5>
-                    <h3>{{ counts.studentCount || 0 }}</h3>
-                </div>
-                <div><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                        class="bi bi-mortarboard" viewBox="0 0 16 16">
-                        <path
-                            d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 4.5a.5.5 0 0 0 .479-.006l7.5-4.5a.5.5 0 0 0 .025-.917zM8 10.5v3.939l-.817.433a.5.5 0 0 1-.479-.006L5 14.5v-3.939l2.5 1.5z" />
-                        <path
-                            d="M14.5 13.5v-8L7 8.5v8c0 .276-.224.5-.5.5s-.5-.224-.5-.5V9L.5 5.5v8c0 .276.224.5.5.5s.5-.224.5-.5V6l6.5 3.5V13c0 .276.224.5.5.5s.5-.224-.5-.5" />
-                    </svg></div>
-            </div>
-        </div>
-</section>
-        <section class="recent-events">
-            <h3><b>Recent Events</b></h3>
-            <a routerLink="/Ongoing-Events" class="view-all">View all →</a>
-            <div class="events-grid">
-                <div class="event-card">
-                    <span class="calendar-icon">🗓️</span>
-                    <div class="event-details">
-                        <div class="event-title">Summer Beats Concert</div>
-                        <div class="event-time">
-                            <span class="icon">🕖</span> 7:30PM, Sept 7-10, 2025
-                        </div>
-                        <div class="event-location">
-                            <span class="icon">📍</span> Mumbai
-                        </div>
-                    </div>
-                </div>
+    <div class="c1">
 
-                <div class="event-card">
-                    <span class="calendar-icon">🗓️</span>
-                    <div class="event-details">
-                        <div class="event-title">Classical Dance Festival</div>
-                        <div class="event-time">
-                            <span class="icon">🕦</span> 11:00AM, Sept 10-13, 2025
-                        </div>
-                        <div class="event-location">
-                            <span class="icon">📍</span> Bhubaneswar
-                        </div>
-                    </div>
-                </div>
+        <h2><b>Welcome to CampusConnect Coordinator!
 
-                <div class="event-card">
-                    <span class="preview-tag">Preview</span>
-                    <span class="calendar-icon">🗓️</span>
-                    <div class="event-details">
-                        <div class="event-title">AI & Future Tech Summit</div>
-                        <div class="event-time">
-                            <span class="icon">🕐</span> 1:00PM, Nov 8-11, 2025
-                        </div>
-                        <div class="event-location">
-                            <span class="icon">📍</span> Bengaluru
-                        </div>
-                    </div>
-                </div>
-
-                <div class="event-card">
-                    <span class="calendar-icon">🗓️</span>
-                    <div class="event-details">
-                        <div class="event-title">Acoustic Nights</div>
-                        <div class="event-time">
-                            <span class="icon">🕖</span> 7:00PM, Sept 24, 2025
-                        </div>
-                        <div class="event-location">
-                            <span class="icon">📍</span> Delhi
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </b></h2>
     </div>
+    <br>
+    <div class="dashboard">
+
+
+        <div id="d2" style="background-color: green;">
+            <div>
+                <h5>Total Events</h5>
+                <h3>{{ counts.eventCount || 0 }}</h3>
+
+            </div>
+            <div><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                    class="bi bi-calendar2-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM2.545 3h10.91c.3 0 .545.224.545.5v1c0 .276-.244.5-.546.5H2.545C2.245 5 2 4.776 2 4.5v-1c0-.276.244-.5.545-.5" />
+                </svg></div>
+        </div>
+        <div id="d2" style="background-color: orange;">
+            <div>
+                <h5>Total Students</h5>
+                <h3>{{ counts.studentCount || 0 }}</h3>
+            </div>
+            <div><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                    class="bi bi-mortarboard" viewBox="0 0 16 16">
+                    <path
+                        d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 4.5a.5.5 0 0 0 .479-.006l7.5-4.5a.5.5 0 0 0 .025-.917zM8 10.5v3.939l-.817.433a.5.5 0 0 1-.479-.006L5 14.5v-3.939l2.5 1.5z" />
+                    <path
+                        d="M14.5 13.5v-8L7 8.5v8c0 .276-.224.5-.5.5s-.5-.224-.5-.5V9L.5 5.5v8c0 .276.224.5.5.5s.5-.224.5-.5V6l6.5 3.5V13c0 .276.224.5.5.5s.5-.224-.5-.5" />
+                </svg></div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <div class="dashboard1">
+        <div id="d3" >
+            <div>
+
+                <a routerLink="/gallery"><b>Gallery</b></a>
+            </div>
+            <div><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                    class="bi bi-calendar2-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM2.545 3h10.91c.3 0 .545.224.545.5v1c0 .276-.244.5-.546.5H2.545C2.245 5 2 4.776 2 4.5v-1c0-.276.244-.5.545-.5" />
+                </svg></div>
+        </div>
+
+        <div id="d3" >
+            <div>
+                <a routerLink="/coordinator-manual"><b>help</b></a>
+
+            </div>
+            <div><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                    class="bi bi-calendar2-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM2.545 3h10.91c.3 0 .545.224.545.5v1c0 .276-.244.5-.546.5H2.545C2.245 5 2 4.776 2 4.5v-1c0-.276.244-.5.545-.5" />
+                </svg></div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="allevent">
+        <div class="item1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                class="bi bi-calendar-fill" viewBox="0 0 16 16">
+                <path
+                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5" />
+            </svg>
+            <h4><a class="dashboard-menu" routerLink="/allevents"><b>View All Events</b></a> </h4>
+
+        </div>
+    </div>
+
 </div>
 <app-footer></app-footer>
-<router-outlet></router-outlet> 
+<router-outlet></router-outlet>
