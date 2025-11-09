@@ -45,7 +45,7 @@ public class Events {
 	    private List<Registrations> registrations;
 
 	    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
-	    @JsonManagedReference("event-registrations")
+	    @JsonManagedReference("event-invitations")
 	    private List<Invitations> invitations;
 
 		public Long getId() {

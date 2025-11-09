@@ -42,6 +42,7 @@ public class EventsServiceImpl implements EventsService {
             return "Error: Host ID is missing.";
         }
         
+        
         Long hostId = eventDetails.getHost().getId();
         Optional<Users> hostOptional = usersRepository.findById(hostId);
         
@@ -74,13 +75,6 @@ public class EventsServiceImpl implements EventsService {
         eventDetails.setStatus(EventStatus.UPCOMING); 
         
         
-//        LocalDateTime now = LocalDateTime.now();
-//        if (eventDetails.getEventDate().isBefore(now.minusMinutes(1))) {
-//            eventDetails.setStatus(EventStatus.COMPLETED);  // Set to COMPLETED if past
-//            System.out.println("Event created with past date - status set to COMPLETED: " + eventDetails.getTitle());
-//        } else if (eventDetails.getEventDate().isBefore(now.plusHours(1))) {
-//            eventDetails.setStatus(EventStatus.ONGOING);  // If within 1 hour, set to ONGOING
-//        }
         
         // 5. Save to the database
         eventsRepository.save(eventDetails);
@@ -125,16 +119,7 @@ public class EventsServiceImpl implements EventsService {
         
     }
     
- // NEW: Helper to update a single event's status
-//    private void updateSingleEventStatus(Events event) {
-//        LocalDateTime now = LocalDateTime.now();
-//        if (event.getEventDate().isBefore(now.minusMinutes(1)) && event.getStatus() != EventStatus.COMPLETED) {
-//            event.setStatus(EventStatus.COMPLETED);
-//            System.out.println("Single event updated to COMPLETED: " + event.getTitle());
-//        } else if (event.getEventDate().isBefore(now.plusHours(1)) && event.getEventDate().isAfter(now.minusMinutes(1)) && event.getStatus() != EventStatus.ONGOING) {
-//            event.setStatus(EventStatus.ONGOING);
-//        }
-//    }
+ 
 
 	@Override
 	public long getTotalEventCount() {

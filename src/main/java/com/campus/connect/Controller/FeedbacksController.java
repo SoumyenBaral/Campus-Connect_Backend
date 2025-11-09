@@ -3,6 +3,7 @@ package com.campus.connect.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,8 +22,8 @@ public class FeedbacksController{
 @Autowired
 	private FeedbacksService feedbacksService;
 
-@PostMapping("/postfeedback")
-	private  String addFeedback(@RequestBody Feedbacks feedbacks) {
+@PostMapping(value="/postfeedback", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public String addFeedback(@RequestBody Feedbacks feedbacks) {
 	return feedbacksService.createFeedback(feedbacks);
 }
 

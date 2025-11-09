@@ -21,7 +21,7 @@ public class Invitations {
 	    
 
 	    @ManyToOne
-	    @JsonBackReference
+	    @JsonBackReference("event-invitations")
 	    private Events event;
 
 	    @ManyToOne
