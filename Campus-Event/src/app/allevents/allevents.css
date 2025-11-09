@@ -6,7 +6,7 @@
     margin-bottom: 20px;
     padding: 5px;
     border-radius: 8px;
-    background-color: #f0f0f0; /* Light background for the toggle area */
+    background: linear-gradient(90deg, #ff4081, #9c27b0);/* Light background for the toggle area */
 }
 
 /* Style for each toggle button segment */
@@ -24,7 +24,16 @@
     flex-grow: 1; /* Allows buttons to take up equal space */
     max-width: 250px; /* Max width for a clean look */
 }
-
+.event-block{
+    background-color: #9c27b0;
+    height:30px;
+    border:5px;
+}
+.event-block1{
+    background-color: #ff4081;
+    height:30px;
+    border:5px;
+}
 /* Hover state for non-active segments */
 .toggle-segment:hover {
     background-color: #e0e0e0;
@@ -33,9 +42,9 @@
 
 /* --- ACTIVE STATE STYLING (Crucial part) --- */
 .toggle-segment.active-segment {
-    background-color: #007bff; /* Primary brand color when active */
+    background-color: #9c27b0; /* Primary brand color when active */
     color: #ffffff; /* White text when active */
-    border-color: #007bff;
+    border-color:#9c27b0;
     font-weight: bold;
     box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
 }

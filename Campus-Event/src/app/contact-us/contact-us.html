@@ -18,9 +18,13 @@
                 <br>
                 <label for="email">email </label>
                 <br>
-                <input type="email" name="email" id="email" placeholder="Your Email" required [(ngModel)]="userData.email">
+                <input type="email" name="email" id="email" placeholder="Your Email" pattern=".*@gmail\.com$" 
+                 #emailInput="ngModel"  required [(ngModel)]="userData.email">
+                 <div *ngIf="emailInput.errors?.['pattern'] && emailInput.touched" class="error-message">
+                Email must end with @gmail.com.
+                </div>
                 <br>
-                <br>
+                
                 <label for="message">message</label><br>
                 <textarea name="message" id="message" placeholder="Your Message" required   [(ngModel)]="userData.message"> </textarea  >
                 <br>
