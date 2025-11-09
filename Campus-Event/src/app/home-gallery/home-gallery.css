@@ -38,7 +38,7 @@
 }
 
 .item:hover {
-    background: linear-gradient(90deg, #7B68EE, #40E0D0);
+    background: linear-gradient(90deg, #ff4081, #9c27b0);
     transform: translateX(30px);
 }
 

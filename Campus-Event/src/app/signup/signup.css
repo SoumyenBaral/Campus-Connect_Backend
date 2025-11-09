@@ -1,39 +1,3 @@
-/* .body {
-    margin: 0;
-    display: flex;
-    gap: 20px;
-
-}
-
-
-
-.body>.signup {
-    height: 500px;
-    width: 600px;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding:  50px;
-}
-
-input {
-    border-radius: 10px;
-    width: 100%;
-    height: 6vh;
-    border: 1px solid gray;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-button {
-    padding: 10px 20px;
-    background-color: red;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    width: 100%;
-}
-#d1{
-    text-align: center;
-} */
 
 
 /* Container Layout */

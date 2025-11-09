@@ -94,6 +94,55 @@ input {
 } */
 
 
+/* Right Side */
+.part-1 {
+  flex: 1.2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top:25px;
+}
+
+.welcome-card {
+  background: rgba(20, 10, 30, 0.9);
+  padding: 2.5rem;
+  border-radius: 20px;
+  text-align: left;
+  box-shadow: 0 0 30px rgba(255, 0, 128, 0.15);
+  width: 90%;
+  
+}
+
+.welcome-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.welcome-card p {
+  color: #ccc;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.welcome-card img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+
+
+.container{
+    display:flex;
+    padding:100px;
+    gap:50px;
+}
+
+.part-2{
+    background-color:white;
+}
+
+
 section {
     /* Reduced height as the form is shorter (removed 3 input fields) */
     width: 100%;

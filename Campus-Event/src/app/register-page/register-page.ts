@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Footer } from "../footer/footer";
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -16,7 +15,7 @@ interface UserDetail{
 
 @Component({
   selector: 'app-register-page',
-  imports: [Footer, FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './register-page.html',
   styleUrl: './register-page.css'
 })
