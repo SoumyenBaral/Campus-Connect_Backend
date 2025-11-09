@@ -10,12 +10,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './host-details.css'
 })
 export class HostDetails implements OnInit {
-hosts: any[] = [];
+  hosts: any[] = [];
   unapprovedHosts: any[] = [];
+
   constructor(private http: HttpClient){}
+
   ngOnInit(): void {
     this.fetchAllHostData();
   }
+  
   fetchAllHostData() {
     this.fetchHosts();
     this.fetchUnapprovedHosts();
