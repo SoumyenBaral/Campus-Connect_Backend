@@ -101,4 +101,6 @@ a {
     cursor: pointer;
     color: aliceblue;
     text-align: center;
+    align-content: center;
+    padding: 8px;
 }
