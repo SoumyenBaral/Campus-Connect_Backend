@@ -27,7 +27,6 @@ import { CoordinatorDetails } from './coordinator-details/coordinator-details';
 import { StudentDetails } from './student-details/student-details';
 import { EventDetails } from './event-details/event-details';
 import { Allevents } from './allevents/allevents';
-import { Dashboard } from './dashboard/dashboard';
 
 
 
@@ -48,11 +47,10 @@ export const routes: Routes = [
         canActivate: [RoleGuard],
         data: { expectedRole: 'ADMIN' },
         children: [
-
             { path: 'host-details', component: HostDetails },
             { path: 'coordinator-details', component: CoordinatorDetails },
             { path: 'student-details', component: StudentDetails },
-            { path: 'event-details', component: EventDetails }
+            { path: 'event-details', component: EventDetails },
         ]
     },
     

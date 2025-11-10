@@ -32,7 +32,7 @@ export class Allevents   implements OnInit, OnDestroy{
   ongoingEvents: Event[] = [];
   upcomingEvents: Event[] = [];
 
-  categories = ['MUSIC', 'DANCE', 'TECH']; // Use an array for iteration
+  categories = ['MUSIC', 'DANCE', 'TECH'];
 
   private pollingSubscription!: Subscription;
 
@@ -44,7 +44,7 @@ export class Allevents   implements OnInit, OnDestroy{
     this.pollingSubscription = interval(pollingIntervalMs)
       .pipe(
         startWith(0), // Ensures it runs immediately on load
-        switchMap(() => this.http.get<Event[]>('http://localhost:8080/api/getAllevents',{ responseType: 'json' })) // <-- NOTE: Use your correct endpoint /getAllevents here
+        switchMap(() => this.http.get<Event[]>('http://localhost:8080/api/getAllevents',{ responseType: 'json' })) 
       )
       .subscribe({
         next: (events) => {
@@ -56,10 +56,6 @@ export class Allevents   implements OnInit, OnDestroy{
   }
 
    ngOnDestroy(): void {
-      if (this.pollingSubscription) {
-          this.pollingSubscription.unsubscribe();
-      }
-      // NEW: Unsubscribe from the polling timer
       if (this.pollingSubscription) {
           this.pollingSubscription.unsubscribe();
       }
