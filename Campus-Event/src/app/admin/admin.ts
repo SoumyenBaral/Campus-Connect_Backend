@@ -14,10 +14,11 @@ import { AdminGuide } from '../admin-guide/admin-guide';
   styleUrl: './admin.css'
 })
 export class Admin {
-  name: string = "Admin";
+  // name: string = "Admin";
   counts: any = {};
 
   constructor(private http: HttpClient) { }
+
   ngOnInit() {
     this.fetchCounts();
   }
