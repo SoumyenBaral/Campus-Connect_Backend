@@ -29,8 +29,7 @@ export class RegisterPage implements OnInit {
     mobileNumber: '',
     organization: '',
     agreeToTerms: false,
-    // receiveUpdates: false,agreeToTerms: false,
-    // receiveUpdates: false,
+  
     student: { id: null as number | null },  // Set dynamically from logged-in user
     event: { id: null as number | null }
   };
