@@ -57,7 +57,6 @@ public class Users{
 
 	// Relationships
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
-    
     @JsonManagedReference("user-registrations")
     private List<Registrations> registrations;
 

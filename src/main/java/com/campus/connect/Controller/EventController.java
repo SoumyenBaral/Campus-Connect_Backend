@@ -45,7 +45,7 @@ import org.springframework.http.ResponseEntity;
                    return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
                }
                
-               return new ResponseEntity<>(result, HttpStatus.OK);  // 201 for successful creation
+               return new ResponseEntity<>(result, HttpStatus.OK);  // 200 for successful creation
            } catch (Exception e) {
                return new ResponseEntity<>("Error: Internal server error - " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
            }
@@ -63,7 +63,6 @@ import org.springframework.http.ResponseEntity;
    	@GetMapping("/admin/event/total-count")
    	public ResponseEntity<Long> getTotalEventsCount() {
    	    try {
-   	        // You might add authorization logic here later (e.g., only Admin role can access)
    	        long count = eventsService.getTotalEventCount();
    	        return new ResponseEntity<>(count, HttpStatus.OK);
    	    } catch (Exception e) {

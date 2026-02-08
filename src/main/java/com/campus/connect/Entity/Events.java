@@ -30,7 +30,6 @@ public class Events {
         @Column(name = "event_date", nullable = false)
 	    private LocalDateTime eventDate;
         
-     // NEW FIELD ADDED: Must match the data sent by Angular
         @Column(name = "category", nullable = false)
         private String category;
 

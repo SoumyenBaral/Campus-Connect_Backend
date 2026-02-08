@@ -28,7 +28,7 @@ public class EventsServiceImpl implements EventsService {
     @Transactional
 	public String CreateEvent(Events eventDetails) {
         
-        // 1. Validate host ID in payload
+        // 1. Validate inputs
 		if (eventDetails.getTitle() == null || eventDetails.getTitle().trim().isEmpty()) {
             return "Error: Event title is required.";
         }
@@ -42,7 +42,7 @@ public class EventsServiceImpl implements EventsService {
             return "Error: Host ID is missing.";
         }
         
-        
+        //validates host
         Long hostId = eventDetails.getHost().getId();
         Optional<Users> hostOptional = usersRepository.findById(hostId);
         
@@ -51,22 +51,18 @@ public class EventsServiceImpl implements EventsService {
         }
         
         Users host = hostOptional.get();
-        
-        // 2. CRITICAL SECURITY/BUSINESS LOGIC CHECK: Ensure user is authorized to host
+   
         if (host.getRole() != Role.HOST) {
             return "Error: Only users with HOST role can create events.";
         }
         if (!host.isApproved()) {
             return "Error: Host is not approved by admin. Contact admin for approval.";
         }
-        
-     // --- NEW VALIDATION CHECK ---
+    
         LocalDateTime now = LocalDateTime.now();
         if (eventDetails.getEventDate().isBefore(now.plusMinutes(5))) { // Adding a small buffer (e.g., 5 mins)
             return "Error: Event date must be in the future. Please schedule at least 5 minutes from now.";
         }
-        // --- END NEW VALIDATION CHECK ---
-        
         
         // 3. Set the managed host entity
         eventDetails.setHost(host); 
@@ -74,11 +70,8 @@ public class EventsServiceImpl implements EventsService {
         // 4. Set the initial status 
         eventDetails.setStatus(EventStatus.UPCOMING); 
         
-        
-        
         // 5. Save to the database
         eventsRepository.save(eventDetails);
-        
         return "Event created successfully!";
 	}
 
@@ -110,7 +103,6 @@ public class EventsServiceImpl implements EventsService {
                 event.setStatus(EventStatus.ONGOING);
                 updated = true;
             }
-            
             }
             // UPCOMING remains if not matching above
         if (updated) {

@@ -2,10 +2,12 @@ package com.campus.connect.Entity;
 
 import java.time.LocalDateTime;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
@@ -14,14 +16,17 @@ public class Feedbacks {
 	
 	   @Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	    private Long id;
+	    
+	   	private Long id;
 
 	    @ManyToOne // Maps to user_id in DB
+	    @JoinColumn(name = "user_id")
 	    private Users user;
-
+	    
+	    @Column(name = "star_rating")
 	    private Integer starRating; // CHECK(star_rating BETWEEN 1 AND 5)
 	    
-
+	    @Column(name = "created_at")
 	    private LocalDateTime createdAt = LocalDateTime.now();
 
 

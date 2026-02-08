@@ -68,9 +68,9 @@ public class RegistrationsController {
             Users verifiedStudent = studentOpt.get();
             
          // 2. OVERWRITE registration details with the verified User's details
-            registration.setFullName(verifiedStudent.getName());     // Get Name from Users entity
-            registration.setEmailAddress(verifiedStudent.getEmail()); // Get Email from Users entity
-            registration.setMobileNumber(verifiedStudent.getContact()); // Get Contact from Users entity (assuming it's a String that needs parsing)
+            registration.setFullName(verifiedStudent.getName());     
+            registration.setEmailAddress(verifiedStudent.getEmail()); 
+            registration.setMobileNumber(verifiedStudent.getContact()); 
             
             // 3. Set the managed Users entity back into the registration object
             registration.setStudent(verifiedStudent); 

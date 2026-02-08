@@ -20,7 +20,7 @@ public class ContactUsServiceImpl implements ContactUsService{
 	public String submitContactForm(ContactUs contactUs) {
 		// TODO Auto-generated method stub
 
-contactUsRepository.save(contactUs);
+			contactUsRepository.save(contactUs);
 		
 		// Return a String message as requested by the structure
 		return "Contact form submitted successfully!";

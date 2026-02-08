@@ -41,8 +41,8 @@ private ContactUsService contactUsService;
 	
 	
 	@DeleteMapping("/deletecontactus/{id}")
-public String deletecontact(@PathVariable  Long id) {
-return	contactUsService.deleteContactus(id);
+	public String deletecontact(@PathVariable  Long id) {
+		return	contactUsService.deleteContactus(id);
 	
 }
 	
