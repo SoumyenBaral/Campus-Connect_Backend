@@ -32,7 +32,7 @@ throw new Error('Method not implemented.');
     isApproved: false
   };
 adddata() {
-  // Add client-side check for exactly 10 digits
+  
     const contactPattern = /^\d{10}$/;
     if (!contactPattern.test(this.user.contact)) {
       alert('Contact number must be exactly 10 digits (numbers only).');
@@ -44,7 +44,7 @@ adddata() {
         password: this.user.password,
         contact: this.user.contact,
         role: this.user.role 
-        // Note: id, createdAt, isApproved are omitted
+        
     };
     this.http.post("http://localhost:8080/api/postuser", payload, {responseType: 'text'}).subscribe({
       next: (res) => {

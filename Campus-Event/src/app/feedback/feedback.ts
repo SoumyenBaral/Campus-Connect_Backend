@@ -47,7 +47,7 @@ export class Feedback {
           alert("Thank you for your feedback!");
 
           this.currentRate = 0; 
-                this.router.navigate(['/']);
+                // this.router.navigate(['/']);
 
         },
         error: (error) => {

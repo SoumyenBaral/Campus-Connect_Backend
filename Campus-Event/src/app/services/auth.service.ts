@@ -70,7 +70,7 @@ export class AuthService {
     // Pass the standard headers but crucially add responseType: 'json'
     return this.http.post<User>(loginUrl, credentials, { 
         headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-        responseType: 'json' as 'json' // <<< FIX: Forces parsing as JSON
+        responseType: 'json' as 'json' 
     }); 
 }
 
@@ -81,8 +81,7 @@ export class AuthService {
 
   public logout(): void {
     localStorage.removeItem('currentUser');
-    // If you use a separate token, remove that too
-    // localStorage.removeItem('authToken'); 
+    
 }
   
 }
