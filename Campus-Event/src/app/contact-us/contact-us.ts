@@ -4,10 +4,11 @@ import { RouterOutlet } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Navbar } from "../navbar/navbar";
 
 @Component({
   selector: 'app-contact-us',
-  imports: [Footer,RouterOutlet,CommonModule, FormsModule, HttpClientModule],
+  imports: [Footer, RouterOutlet, CommonModule, FormsModule, HttpClientModule, Navbar],
   templateUrl: './contact-us.html',
   styleUrl: './contact-us.css'
 })
