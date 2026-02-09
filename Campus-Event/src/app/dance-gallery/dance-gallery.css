@@ -26,7 +26,6 @@
 
 .item {
     display: flex;
-    gap: 20px;
     padding: 10px;
     align-items: center;
     height: 50px;
@@ -37,7 +36,7 @@
 }
 
 .item:hover {
-    background: linear-gradient(90deg, #7B68EE, #40E0D0);
+    background: linear-gradient(90deg, #ff4081, #9c27b0);
     transform: translateX(30px);
 }
 .img-row-1 {
@@ -45,6 +44,7 @@
     flex-direction: row;
     gap: 50px;
     justify-content: center;
+    margin-bottom: 30px;
 }
 
 .row-1 {
@@ -53,14 +53,23 @@
     border: 2px solid black;
     border-radius: 15px;
 }
+.row-1:hover{
+    box-shadow: 0px 4px 8px rgba(83, 228, 43, 0.886);
+    transition: 0.75s ease;
+}
 .images{
     margin-top: 50px;
 }
+
 img {
-    height: 230px;
-    width: 298px;
-    border-radius: 15px;
+    height: 245px;
+    width: 294px;
+    border-radius: 8px;
+    transition: 2s ease-out;
 }
+img:hover{
+transform: scale(1.01); 
+ }
 
 .img-row-2 {
     display: flex;
@@ -74,5 +83,8 @@ img {
     width: 300px;
     border: 2px solid black;
     border-radius: 15px;
-
+}
+.row-2:hover{
+    box-shadow: 0px 4px 8px rgba(83, 228, 43, 0.886);
+    transition: 0.75s ease;
 }
