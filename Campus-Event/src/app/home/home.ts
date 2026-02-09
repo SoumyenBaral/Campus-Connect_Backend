@@ -10,7 +10,7 @@ import { Host } from "../host/host";
 
 @Component({
   selector: 'app-home',
-  imports: [Footer, Navbar, CreateEvent, RouterOutlet, SignUp, Coordinator, Host, Navbar],
+  imports: [Footer, Navbar, CreateEvent, RouterOutlet, SignUp, Coordinator, Host],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
