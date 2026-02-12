@@ -48,7 +48,8 @@
 
       <div *ngIf="otpSent" class="input-group">
   <span class="icon"><i class="fa fa-key"></i></span>
-  <input type="text" placeholder="Enter OTP" [(ngModel)]="enteredOtp" name="otp"  [required]="otpSent"/>
+  <input type="text" placeholder="Enter OTP" [(ngModel)]="enteredOtp" name="otp" maxlength="6"
+  pattern="\d{6}" [required]="otpSent"/>
 </div>
 <!-- resend -->
 <div *ngIf="otpSent" class="resend-section">

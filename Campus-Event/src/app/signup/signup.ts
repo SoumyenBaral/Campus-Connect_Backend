@@ -39,6 +39,9 @@ export class SignUp {
       return;
     }
 
+
+  
+
     // 🟢 STEP 1 → SEND OTP (First Click)
     if (!this.otpSent) {
 
@@ -62,12 +65,14 @@ export class SignUp {
 
     // 🔵 STEP 2 → VERIFY OTP + REGISTER (Second Click)
     else {
-
-
       if (!this.enteredOtp) {
       alert("Please enter OTP");
       return;
     }
+    if (!/^\d{6}$/.test(this.enteredOtp)) {
+  alert("OTP must be exactly 6 digits");
+  return;
+}
       this.http.post("http://localhost:8080/api/verify-otp",
         null,
         {
@@ -78,7 +83,9 @@ export class SignUp {
           responseType: 'text'
         }
       ).subscribe({
-        next: () => {
+        next: (res) => {
+
+   
 
           // OTP verified → Now register user
           const payload = {
