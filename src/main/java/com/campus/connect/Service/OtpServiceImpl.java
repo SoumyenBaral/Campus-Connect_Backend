@@ -23,7 +23,7 @@ public class OtpServiceImpl  implements OtpService{
     private JavaMailSender mailSender;
 
     // OTP validity in minutes
-    private static final int OTP_EXPIRY_MINUTES = 5;
+    private static final int OTP_EXPIRY_MINUTES = 2;
 
     @Override
     public void sendOtp(String email) {
@@ -90,7 +90,7 @@ public class OtpServiceImpl  implements OtpService{
         message.setSubject("CampusConnect - Email Verification OTP");
         message.setText(
                 "Your OTP for email verification is: " + otp +
-                "\n\nThis OTP is valid for 5 minutes." +
+                "\n\nThis OTP is valid for 2 minutes." +
                 "\n\nDo not share this OTP with anyone."
         );
 
