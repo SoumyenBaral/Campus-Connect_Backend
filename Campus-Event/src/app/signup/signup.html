@@ -12,11 +12,12 @@
       <div class="input-group">
         <span class="icon"><i class="fa fa-envelope"></i></span>
         <input type="email" placeholder="E-mail" name="email" [(ngModel)]="user.email" id="email"  pattern=".*@gmail\.com$" 
-          #emailInput="ngModel"required />
+          #emailInput="ngModel"   [disabled]="otpSent"  required />
         <div *ngIf="emailInput.errors?.['pattern'] && emailInput.touched" class="error-message">
           Email must end with @gmail.com.
         </div>
       </div>
+      
 
       <div class="input-group">
         <span class="icon"><i class="fa fa-lock"></i></span>
@@ -37,15 +38,24 @@
 
       <div class="input-group select-group" >
         <select    name="role" [(ngModel)]="user.role"required>
-          <option value="" disabled selected>Select Role</option>
-          <option value="STUDENT">Student</option>
+          <option  value="SELECT ROLE"  disabled >Select Role</option>
+          <option value="USER">User</option>
           <option value="HOST">Host</option>
           <option value="COORDINATOR">Coordinator</option>
           <option value="ADMIN">Admin</option>
         </select>
       </div>
 
-      <button type="submit" class="signup-btn">SIGN UP</button>
+      <div *ngIf="otpSent" class="input-group">
+  <span class="icon"><i class="fa fa-key"></i></span>
+  <input type="text" placeholder="Enter OTP" [(ngModel)]="enteredOtp" name="otp"  required/>
+</div>
+
+<div *ngIf="otpSent" class="resend-section">
+  <button type="button" (click)="resendOtp()">Resend OTP</button>
+</div>
+
+      <button type="submit" class="signup-btn">{{ otpSent ? 'VERIFY & SGNUP' : 'SEND OTP' }}</button>
     </form>
 
     <p class="signin-link">
