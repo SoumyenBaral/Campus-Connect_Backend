@@ -3,7 +3,7 @@
     <h2>Create Account</h2>
     <p>Join us today</p>
 
-    <form (ngSubmit)="adddata()">
+    <form  #signupForm="ngForm"    (ngSubmit)="adddata()"  >
       <div class="input-group">
         <span class="icon"><i class="fa fa-user"></i></span>
         <input type="text" placeholder="Full Name" name="name" [(ngModel)]="user.name" required />
@@ -38,7 +38,7 @@
 
       <div class="input-group select-group" >
         <select    name="role" [(ngModel)]="user.role"required>
-          <option  value="SELECT ROLE"  disabled >Select Role</option>
+          <option  value=""  disabled >Select Role</option>
           <option value="USER">User</option>
           <option value="HOST">Host</option>
           <option value="COORDINATOR">Coordinator</option>
@@ -48,14 +48,14 @@
 
       <div *ngIf="otpSent" class="input-group">
   <span class="icon"><i class="fa fa-key"></i></span>
-  <input type="text" placeholder="Enter OTP" [(ngModel)]="enteredOtp" name="otp"  required/>
+  <input type="text" placeholder="Enter OTP" [(ngModel)]="enteredOtp" name="otp"  [required]="otpSent"/>
 </div>
-
+<!-- resend -->
 <div *ngIf="otpSent" class="resend-section">
   <button type="button" (click)="resendOtp()">Resend OTP</button>
 </div>
-
-      <button type="submit" class="signup-btn">{{ otpSent ? 'VERIFY & SGNUP' : 'SEND OTP' }}</button>
+<!-- main button -->
+      <button type="submit" class="signup-btn"  [disabled]="!otpSent && signupForm.invalid">{{ otpSent ? 'VERIFY & SGNUP' : 'SEND OTP' }}</button>
     </form>
 
     <p class="signin-link">
@@ -74,4 +74,3 @@
     </div>
   </div>
 </div>
-<router-outlet></router-outlet>

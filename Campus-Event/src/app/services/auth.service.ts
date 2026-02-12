@@ -43,8 +43,8 @@ export class AuthService {
     }
     
     switch (user.role) {
-      case 'STUDENT':
-        return '/student';
+      case 'USER':
+        return '/userrole';
       case 'ADMIN':
         return '/admin';
       case 'COORDINATOR':
