@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
 import { Navbar } from '../navbar/navbar';
-import { Navbar } from "../navbar/navbar";
 import { CommonModule } from '@angular/common';
 import { Footer } from '../footer/footer';
 

@@ -1,6 +1,6 @@
 
 // Define the TypeScript union type that mirrorsJava Enum
-export type Role = 'STUDENT' | 'ADMIN' | 'COORDINATOR' | 'HOST';
+export type Role = 'USER' | 'ADMIN' | 'COORDINATOR' | 'HOST';
 
 export interface User {
 

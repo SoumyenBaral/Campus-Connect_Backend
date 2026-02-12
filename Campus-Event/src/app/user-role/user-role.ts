@@ -1,18 +1,17 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
 import { Footer } from '../footer/footer';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { Feedback } from '../feedback/feedback';
-import { Navbar } from "../navbar/navbar";
-import { UserGuide } from '../user-guide/user-guide';
+import { Navbar } from '../navbar/navbar';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-student',
-  imports: [Footer, Feedback, RouterLink, RouterOutlet, Navbar,UserGuide],
-  templateUrl: './student.html',
-  styleUrl: './student.css'
+  selector: 'app-user-role',
+  imports: [Footer, Feedback, RouterLink, RouterOutlet, Navbar],
+  templateUrl: './user-role.html',
+  styleUrl: './user-role.css'
 })
-export class Student {
+export class UserRole {
    counts: any = {};
 
   constructor(private http: HttpClient) { }
@@ -27,7 +26,7 @@ export class Student {
       error: (err) => {
         console.error('Error fetching counts:', err);
         // Fallback to defaults if needed
-        this.counts = { hostCount: 0, coordinatorCount: 0, studentCount: 0, eventCount: 0 };
+        this.counts = { hostCount: 0, coordinatorCount: 0, usersCount: 0, eventCount: 0 };
       }
     });
 }

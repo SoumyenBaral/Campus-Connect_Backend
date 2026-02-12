@@ -3,7 +3,6 @@ import { Home } from './home/home';
 import { Admin } from './admin/admin';
 import { Host } from './host/host';
 import { Coordinator } from './coordinator/coordinator';
-import { Student } from './student/student';
 import { ContactUs } from './contact-us/contact-us';
 import { Login } from './login/login';
 import { Helpcenter } from './helpcenter/helpcenter';
@@ -24,11 +23,10 @@ import { CreateEvent } from './create-event/create-event';
 import { Feedback } from './feedback/feedback';
 import { HostDetails } from './host-details/host-details';
 import { CoordinatorDetails } from './coordinator-details/coordinator-details';
-import { StudentDetails } from './student-details/student-details';
 import { EventDetails } from './event-details/event-details';
 import { Allevents } from './allevents/allevents';
-
-
+import { UserRole } from './user-role/user-role';
+import { UserDetails } from './user-details/user-details';
 
 export const routes: Routes = [
 
@@ -49,7 +47,7 @@ export const routes: Routes = [
         children: [
             { path: 'host-details', component: HostDetails },
             { path: 'coordinator-details', component: CoordinatorDetails },
-            { path: 'student-details', component: StudentDetails },
+            { path: 'users-details', component: UserDetails},
             { path: 'event-details', component: EventDetails },
         ]
     },
@@ -61,10 +59,10 @@ export const routes: Routes = [
         data: { expectedRole: 'COORDINATOR' }
     },
     {
-        path: 'student',
-        component: Student,
+        path: 'userrole',
+        component: UserRole,
         canActivate: [AuthGuard],
-        data: { expectedRole: 'STUDENT' }
+        data: { expectedRole: 'USER' }
     },
     {
         path: 'host',
