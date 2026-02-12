@@ -43,7 +43,7 @@ private UsersRepository usersRepository;
         }
         // Save the registration
         registrationsRepository.save(registration);
-        logger.info("Registration successful for student ID: {} and event ID: {}", 
+        logger.info("Registration successful for user ID: {} and event ID: {}", 
                     registration.getStudent().getId(), event.getId());
         return "Registration successful!";
 	}

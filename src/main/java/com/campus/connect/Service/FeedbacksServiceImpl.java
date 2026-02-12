@@ -39,7 +39,7 @@ public class FeedbacksServiceImpl implements FeedbacksService {
         }
         
         // 3. CHECK: Role Guard (Only Students allowed) 👨‍🎓
-        if (user.getRole() != Role.STUDENT) { 
+        if (user.getRole() != Role.USER) { 
             return "Error: Only students are allowed to post star ratings.";
         }
         

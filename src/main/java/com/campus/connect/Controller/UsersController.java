@@ -45,7 +45,7 @@ private EventsRepository eventsRepository;
 public ResponseEntity<?> getCounts() {
     long hostCount = usersRepository.countByRole(Role.HOST);
     long coordinatorCount = usersRepository.countByRole(Role.COORDINATOR);
-    long studentCount = usersRepository.countByRole(Role.STUDENT);
+    long studentCount = usersRepository.countByRole(Role.USER);
     long eventCount = eventsRepository.count();  // Count total events
     return ResponseEntity.ok(Map.of(
     		"hostCount", hostCount, 

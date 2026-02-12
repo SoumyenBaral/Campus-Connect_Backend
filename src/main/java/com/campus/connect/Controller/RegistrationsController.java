@@ -60,7 +60,7 @@ public class RegistrationsController {
 	            }
 			// Validate student exists and is a STUDENT
             Optional<Users> studentOpt = usersRepository.findById(registration.getStudent().getId());
-            if (studentOpt.isEmpty() || studentOpt.get().getRole() != Role.STUDENT) {
+            if (studentOpt.isEmpty() || studentOpt.get().getRole() != Role.USER) {
             	logger.warn("Unauthorized registration attempt for user ID: {}", studentId);
                 return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Only students are authorized to register for events.");
             }
