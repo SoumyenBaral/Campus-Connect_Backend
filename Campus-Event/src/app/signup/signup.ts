@@ -40,8 +40,6 @@ export class SignUp {
     }
 
 
-  
-
     // 🟢 STEP 1 → SEND OTP (First Click)
     if (!this.otpSent) {
 
@@ -100,10 +98,32 @@ export class SignUp {
             payload,
             { responseType: 'text' }
           ).subscribe({
-            next: () => {
-              alert("Signup successful!");
-              this.router.navigate(['/login']);
-            },
+           next: () => {
+
+  // 🔥 CALL CONFIRMATION MAIL API
+  this.http.post(
+    "http://localhost:8080/api/confirm-mail",
+    {
+    name: this.user.name,
+    email: this.user.email,
+    password: this.user.password,
+    contact: this.user.contact,
+    role: this.user.role
+  },
+  { responseType: 'text' }
+  ).subscribe({
+    next: () => {
+      alert("Signup successful! Confirmation email sent.");
+      this.router.navigate(['/login']);
+    },
+    error: (err) => {
+      console.error("Confirmation mail failed", err);
+      alert("Signup successful but email not sent.");
+      this.router.navigate(['/login']);
+    }
+  });
+
+},
             error: (err) => console.error("User save failed", err)
           });
 
