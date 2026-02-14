@@ -30,8 +30,10 @@ public class OtpController {
 	    return ResponseEntity.ok("OTP sent successfully");
 	}
 
+		
 	@PostMapping("/verify-otp")
 	public ResponseEntity<?> verifyOtp(
+			
 	        @RequestParam String email,
 	        @RequestParam String otp) {
 
