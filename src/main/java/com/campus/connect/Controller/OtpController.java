@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -49,4 +50,15 @@ public class OtpController {
 
 	    return ResponseEntity.ok("OTP verified successfully");
 	}
+	
+	@PostMapping("/confirm-mail")
+	public ResponseEntity<?> sendConfirmMail(@RequestBody Users user) {
+
+
+	    // 🔥 Send welcome email AFTER successful save
+	    otpService.sendWelcomeEmail(user.getEmail(), user.getName());
+
+	    return ResponseEntity.ok("User registered successfully");
+	}
+	
 }
