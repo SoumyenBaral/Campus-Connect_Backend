@@ -52,7 +52,7 @@
 }
 .profile:hover{
   /* opacity: 0.5; */
-  background-color:black;
-  color:white;
+  background-color:rgb(158, 43, 43);
+  color:#0c0707;
   border: 2px black;
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -8,9 +8,27 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './navbar.css'
 })
 export class Navbar {
- menuOpen: boolean = false;
+  menuOpen: boolean = false;
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
   }
+
+  constructor(private router: Router) { }
+  
+
+ isLoggedIn = false;
+
+ngOnInit() {
+  this.isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+}
+
+logout() {
+  localStorage.clear();
+  this.isLoggedIn = false;
+  this.router.navigate(['/login']);
+}
+
+
+
 }
