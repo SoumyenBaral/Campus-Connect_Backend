@@ -5,9 +5,10 @@ import { AuthService } from '../services/auth.service';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Navbar } from '../navbar/navbar';
 @Component({
     selector: 'app-login',
-    imports: [RouterLink, RouterOutlet, FormsModule],
+    imports: [RouterLink, RouterOutlet, FormsModule,Navbar],
     templateUrl: './login.html',
     styleUrl: './login.css'
 })

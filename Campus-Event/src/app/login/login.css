@@ -1,15 +1,10 @@
-
-
-
- 
 .login-container {
   display: flex;
   height: 100vh;
   width: 80%;
   justify-content:center;
   margin:auto;
-  background: radial-gradient(circle at 20% 50%, #0b0b14, #000);
-  color: white;
+  color: #181818;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -28,14 +23,13 @@
 }
 
 .login-left p {
-  color: #b5b5b5;
+  color: hsl(0, 8%, 5%);
   margin-bottom: 2rem;
 }
 
 .input-group {
   position: relative;
   width: 350px;
-  background: #111;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -105,7 +99,6 @@
 }
 
 .welcome-card {
-  background: rgba(20, 10, 30, 0.9);
   padding: 2.5rem;
   border-radius: 20px;
   text-align: left;
@@ -119,7 +112,7 @@
 }
 
 .welcome-card p {
-  color: #ccc;
+  color: hsl(0, 0%, 7%);
   line-height: 1.5;
   margin-bottom: 1.5rem;
 }

@@ -27,6 +27,7 @@ import { EventDetails } from './event-details/event-details';
 import { Allevents } from './allevents/allevents';
 import { UserRole } from './user-role/user-role';
 import { UserDetails } from './user-details/user-details';
+import { AboutUs } from './about-us/about-us';
 
 export const routes: Routes = [
 
@@ -137,6 +138,10 @@ export const routes: Routes = [
     {
         path:'hostdetails',
         component:HostDetails
+    },
+    {
+        path:'aboutUs',
+        component:AboutUs
     }
 
 ];
