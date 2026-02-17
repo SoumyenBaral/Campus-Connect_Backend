@@ -4,11 +4,12 @@ import { Router, RouterLink } from '@angular/router';
 import { Role, User } from '../user/user';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Navbar } from '../navbar/navbar';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [ RouterLink, CommonModule, FormsModule, HttpClientModule],
+  imports: [ RouterLink, CommonModule, FormsModule, HttpClientModule,Navbar],
   templateUrl: './signup.html',
   styleUrl: './signup.css',
 })
