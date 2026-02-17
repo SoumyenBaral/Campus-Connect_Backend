@@ -3,22 +3,27 @@ section {
     height: 100vh;
     justify-content: center;
     align-content: center;
-    background: linear-gradient(135deg, #1e1b3a, #03343c);
 
 }
 
 .container {
-    border: 1.5px solid #7f7fd5;
+    border: 1.5px ;
     height: 85vh;
     width: 30%;
     background-color: white;
     color: black;
     padding: 20px;
     border-radius: 15px;
+
+}
+
+.container:hover {
+    box-shadow: 0 0 100px rgba(255, 0, 128, 0.15);
+
 }
 
 span {
-    color:#5796d9;
+    color: #5796d9;
 }
 
 input {

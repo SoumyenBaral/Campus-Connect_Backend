@@ -26,7 +26,7 @@
 }
 
 .signup-left p {
-  color: #b5b5b5;
+  color: hsl(0, 5%, 16%);
   margin-bottom: 2rem;
 }
 
@@ -59,7 +59,7 @@
 }
 
 .select-group select option {
-  color: #ede9e9;
+  color: hsl(0, 3%, 8%);
 }
 
 .toggle-eye {
