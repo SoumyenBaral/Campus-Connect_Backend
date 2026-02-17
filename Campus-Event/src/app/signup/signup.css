@@ -137,3 +137,7 @@
   border-radius: 10px;
   object-fit: cover;
 }
+
+.error-message{
+  color:rgb(243, 39, 39);
+}
