@@ -28,6 +28,7 @@ import { Allevents } from './allevents/allevents';
 import { UserRole } from './user-role/user-role';
 import { UserDetails } from './user-details/user-details';
 import { AboutUs } from './about-us/about-us';
+import { ForgotPassword } from './forgot-password/forgot-password';
 
 export const routes: Routes = [
 
@@ -142,6 +143,10 @@ export const routes: Routes = [
     {
         path:'aboutUs',
         component:AboutUs
+    },
+    {
+         path: 'forgot-password', 
+         component: ForgotPassword 
     }
 
 ];
