@@ -37,7 +37,19 @@
         <div *ngIf="emailInput.invalid && emailInput.touched"
              class="error-message">
           Email must end with @gmail.com
+
+        <input type="email" placeholder="E-mail" name="email" [(ngModel)]="user.email" id="email"  pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})*$"
+          #emailInput="ngModel" autocomplete="email" maxlength="254" email  [disabled]="otpSent"  required />
+         <div *ngIf="emailInput.errors?.['required'] && emailInput.touched"
+        class="error-message">
+        Email is required.
+
         </div>
+
+      <div *ngIf="emailInput.errors?.['email'] && emailInput.touched"
+          class="error-message">
+        Please enter a valid email format.
+      </div>
       </div>
 
       <!-- Password -->

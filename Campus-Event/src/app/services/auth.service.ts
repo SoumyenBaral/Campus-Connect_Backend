@@ -8,6 +8,16 @@ import { User } from '../User.interface';
   providedIn: 'root'
 })
 export class AuthService {
+  forgotPassword(email: string) {
+  return this.http.post('http://localhost:8080/api/auth/forgot-password', { email });
+  }
+
+  resetPassword(token: string, password: string) {
+  return this.http.post('http://localhost:8080/api/auth/reset-password', {
+    token,
+    password
+  });
+}
   
   private apiUrl = 'http://localhost:8080/api';  
   
