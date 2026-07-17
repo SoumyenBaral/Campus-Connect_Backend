@@ -5,16 +5,16 @@ import { Role, User } from '../user/user';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Navbar } from '../navbar/navbar';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [ RouterLink, CommonModule, FormsModule, HttpClientModule,Navbar],
+  imports: [RouterLink, CommonModule, FormsModule, HttpClientModule, Navbar],
   templateUrl: './signup.html',
   styleUrl: './signup.css',
 })
 export class SignUp {
-
   constructor(private http: HttpClient, private router: Router) {}
 
   user: User = {
@@ -25,127 +25,158 @@ export class SignUp {
     role: '' as Role,
     id: 0,
     createdAt: '',
-    isApproved: false
+    isApproved: false,
   };
 
   otpSent: boolean = false;
   enteredOtp: string = '';
+  isLoading: boolean = false;
 
-  // 🔹 MAIN BUTTON FUNCTION
-  adddata() {
+  message: string = '';
+
+  // 🔁 Resend OTP variables
+  resendDisabled: boolean = false;
+  countdown: number = 0;
+  timer: any;
+
+  // ====================================
+  // MAIN SIGNUP FUNCTION
+  // ====================================
+  async adddata() {
+    this.message = '';
+    this.isLoading = true;
 
     const contactPattern = /^\d{10}$/;
     if (!contactPattern.test(this.user.contact)) {
-      alert('Contact number must be exactly 10 digits.');
+      this.message = 'Contact number must be exactly 10 digits.';
+      this.isLoading = false;
       return;
     }
 
+    try {
+      // ==========================
+      // STEP 1: SEND OTP
+      // ==========================
+      if (!this.otpSent) {
+        await firstValueFrom(
+          this.http.post('http://localhost:8080/api/send-otp', null, {
+            params: { email: this.user.email },
+            responseType: 'text',
+          })
+        );
 
-    // 🟢 STEP 1 → SEND OTP (First Click)
-    if (!this.otpSent) {
+        // 🔥 This makes OTP input appear
+        this.otpSent = true;
 
-      this.http.post("http://localhost:8080/api/send-otp",
-        null,
-        {
-          params: { email: this.user.email },
-          responseType: 'text'
+        // Start resend countdown
+        this.startCountdown(30);
+
+        this.message = 'OTP sent to your email.';
+      }
+
+      // ==========================
+      // STEP 2: VERIFY OTP & REGISTER
+      // ==========================
+      else {
+        if (!/^\d{6}$/.test(this.enteredOtp)) {
+          this.message = 'OTP must be exactly 6 digits.';
+          this.isLoading = false;
+          return;
         }
-      ).subscribe({
-        next: () => {
-          alert("OTP sent to your email");
-          this.otpSent = true;  // show OTP field
-        },
-        error: (err) => {
-          console.error("OTP send failed", err);
-        }
-      });
 
-    }
+        // 1️⃣ Verify OTP
+        await firstValueFrom(
+          this.http.post('http://localhost:8080/api/verify-otp', null, {
+            params: {
+              email: this.user.email,
+              otp: this.enteredOtp,
+            },
+            responseType: 'text',
+          })
+        );
 
-    // 🔵 STEP 2 → VERIFY OTP + REGISTER (Second Click)
-    else {
-      if (!this.enteredOtp) {
-      alert("Please enter OTP");
-      return;
-    }
-    if (!/^\d{6}$/.test(this.enteredOtp)) {
-  alert("OTP must be exactly 6 digits");
-  return;
-}
-      this.http.post("http://localhost:8080/api/verify-otp",
-        null,
-        {
-          params: {
-            email: this.user.email,
-            otp: this.enteredOtp
-          },
-          responseType: 'text'
-        }
-      ).subscribe({
-        next: (res) => {
+        const payload = {
+          name: this.user.name,
+          email: this.user.email,
+          password: this.user.password,
+          contact: this.user.contact,
+          role: this.user.role,
+        };
 
-   
+        // 2️⃣ Save user to DB
+        await firstValueFrom(
+          this.http.post('http://localhost:8080/api/postuser', payload, {
+            responseType: 'text',
+          })
+        );
 
-          // OTP verified → Now register user
-          const payload = {
-            name: this.user.name,
-            email: this.user.email,
-            password: this.user.password,
-            contact: this.user.contact,
-            role: this.user.role
-          };
+        // 3️⃣ Send confirmation email (background)
+        this.http.post(
+          'http://localhost:8080/api/confirm-mail',
+          payload,
+          { responseType: 'text' }
+        ).subscribe();
 
-          this.http.post("http://localhost:8080/api/postuser",
-            payload,
-            { responseType: 'text' }
-          ).subscribe({
-           next: () => {
+        this.message = 'Signup successful! Redirecting...';
 
-  // 🔥 CALL CONFIRMATION MAIL API
-  this.http.post(
-    "http://localhost:8080/api/confirm-mail",
-    {
-    name: this.user.name,
-    email: this.user.email,
-    password: this.user.password,
-    contact: this.user.contact,
-    role: this.user.role
-  },
-  { responseType: 'text' }
-  ).subscribe({
-    next: () => {
-      alert("Signup successful! Confirmation email sent.");
-      this.router.navigate(['/login']);
-    },
-    error: (err) => {
-      console.error("Confirmation mail failed", err);
-      alert("Signup successful but email not sent.");
-      this.router.navigate(['/login']);
-    }
-  });
+        setTimeout(() => {
+          this.router.navigate(['/login']);
+        }, 1500);
+      }
 
-},
-            error: (err) => console.error("User save failed", err)
-          });
-
-        },
-        error: (err) => {
-          alert("Invalid OTP! Please try again.");
-          console.error("OTP verification failed", err);
-        }
-      });
-
+    } catch (err: any) {
+      console.error(err);
+      this.message = err?.error || 'Something went wrong. Please try again.';
+    } finally {
+      this.isLoading = false;
     }
   }
 
-  // 🔁 RESEND OTP
-  resendOtp() {
-    this.http.post("http://localhost:8080/api/send-otp",
-      null,
-      { params: { email: this.user.email }, responseType: 'text' }
-    ).subscribe({
-      next: () => alert("OTP resent successfully"),
-      error: (err) => console.error("Resend failed", err)
-    });
+  // ====================================
+  // RESEND OTP
+  // ====================================
+  async resendOtp() {
+    if (this.resendDisabled) return;
+
+    this.isLoading = true;
+    this.message = '';
+
+    try {
+      await firstValueFrom(
+        this.http.post('http://localhost:8080/api/send-otp', null, {
+          params: { email: this.user.email },
+          responseType: 'text',
+        })
+      );
+
+      this.message = 'OTP resent successfully.';
+      this.startCountdown(30);
+
+    } catch (err) {
+      this.message = 'Failed to resend OTP.';
+    } finally {
+      this.isLoading = false;
+    }
+  }
+
+  // ====================================
+  // COUNTDOWN TIMER
+  // ====================================
+  startCountdown(seconds: number) {
+    this.resendDisabled = true;
+    this.countdown = seconds;
+
+    if (this.timer) {
+      clearInterval(this.timer);
+    }
+
+    this.timer = setInterval(() => {
+      this.countdown--;
+
+      if (this.countdown <= 0) {
+        clearInterval(this.timer);
+        this.resendDisabled = false;
+      }
+    }, 1000);
   }
 }

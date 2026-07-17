@@ -7,7 +7,6 @@
     gap: 10px;
     filter: brightness(80%);
     background-image: url('https://static.vecteezy.com/system/resources/thumbnails/024/234/201/small/elegant-golden-stage-horizontal-glowing-with-lighting-effect-sparkle-on-dark-background-template-premium-award-design-vector.jpg');
-    /* opacity: 0.5; */
 }
 
 .about {
@@ -123,7 +122,7 @@ img {
 }
 
 /*sponser*/
-.sponsors {
+/* .sponsors {
     height: 50vh;
     width: 100%;
 }
@@ -142,7 +141,7 @@ img {
 
 .s1 h4:hover {
     transform: scale(1.5);
-}
+} */
 
 /* Feedback Section */
 .Clients-feedback {

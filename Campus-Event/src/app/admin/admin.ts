@@ -1,40 +1,45 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { HomeGallery } from '../home-gallery/home-gallery';
 import { Footer } from '../footer/footer';
 import { Navbar } from '../navbar/navbar';
 import { HttpClient } from '@angular/common/http';
 import { AdminGuide } from '../admin-guide/admin-guide';
+import { CommonModule } from '@angular/common'; // Required for *ngIf
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-admin',
-  imports: [RouterLink, HomeGallery, RouterOutlet, Footer, Navbar,AdminGuide],
-
+  standalone: true,
+  // Add CommonModule to imports to use *ngIf in your template
+  imports: [RouterLink, HomeGallery, RouterOutlet, Footer, Navbar, AdminGuide, CommonModule],
   templateUrl: './admin.html',
   styleUrl: './admin.css'
 })
-export class Admin {
-  // name: string = "Admin";
-  counts: any = {};
+export class Admin implements OnInit {
+  counts: any = { hostCount: 0, coordinatorCount: 0, studentCount: 0, eventCount: 0 };
+  isLoading: boolean = true; // Set to true by default
 
   constructor(private http: HttpClient) { }
 
-  ngOnInit() {
-    this.fetchCounts();
-  }
-  fetchCounts() {
-    this.http.get<any[]>('http://localhost:8080/api/counts').subscribe({
-      next: (data) => {
-        this.counts = data;
-      },
-      error: (err) => {
-        console.error('Error fetching counts:', err);
-        // Fallback to defaults if needed
-        this.counts = { hostCount: 0, coordinatorCount: 0, studentCount: 0, eventCount: 0 };
-      }
-    });
+  async ngOnInit() {
+    await this.fetchCounts();
   }
 
-
-
+  async fetchCounts() {
+    this.isLoading = true; // Start loading
+    try {
+      // firstValueFrom handles the observable and converts it to a Promise
+      const data = await firstValueFrom(
+        this.http.get<any>('http://localhost:8080/api/counts')
+      );
+      this.counts = data;
+    } catch (err) {
+      console.error('Error fetching counts:', err);
+      // Fallback defaults stay as initialized
+    } finally {
+      // This runs regardless of success or failure
+      this.isLoading = false; 
+    }
+  }
 }

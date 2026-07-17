@@ -4,19 +4,46 @@
     <h2>Create Account</h2>
     <p>Join us today</p>
 
-    <form  #signupForm="ngForm"    (ngSubmit)="adddata()"  >
+    <!-- Message Display -->
+    <div *ngIf="message" class="message-box">
+      {{ message }}
+    </div>
+
+    <form #signupForm="ngForm" (ngSubmit)="adddata()">
+
+      <!-- Full Name -->
       <div class="input-group">
         <span class="icon"><i class="fa fa-user"></i></span>
-        <input type="text" placeholder="Full Name" name="name" [(ngModel)]="user.name" required />
+        <input type="text"
+               placeholder="Full Name"
+               name="name"
+               [(ngModel)]="user.name"
+               [disabled]="isLoading"
+               required />
       </div>
 
+      <!-- Email -->
       <div class="input-group">
         <span class="icon"><i class="fa fa-envelope"></i></span>
+        <input type="email"
+               placeholder="E-mail"
+               name="email"
+               [(ngModel)]="user.email"
+               pattern=".*@gmail\.com$"
+               #emailInput="ngModel"
+               [disabled]="otpSent || isLoading"
+               required />
+
+        <div *ngIf="emailInput.invalid && emailInput.touched"
+             class="error-message">
+          Email must end with @gmail.com
+
         <input type="email" placeholder="E-mail" name="email" [(ngModel)]="user.email" id="email"  pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})*$"
           #emailInput="ngModel" autocomplete="email" maxlength="254" email  [disabled]="otpSent"  required />
          <div *ngIf="emailInput.errors?.['required'] && emailInput.touched"
         class="error-message">
         Email is required.
+
         </div>
 
       <div *ngIf="emailInput.errors?.['email'] && emailInput.touched"
@@ -24,28 +51,39 @@
         Please enter a valid email format.
       </div>
       </div>
-      
 
+      <!-- Password -->
       <div class="input-group">
         <span class="icon"><i class="fa fa-lock"></i></span>
-        <input type="password" placeholder="Password (max 8 characters)" name="password" [(ngModel)]="user.password" maxlength="8" 
-          #passwordInput="ngModel" required />
-        <span class="toggle-eye"><i class="fa fa-eye"></i></span>
-        <!-- Display error message for password -->
-        <div *ngIf="passwordInput.errors?.['maxlength'] && passwordInput.touched" class="error-message">
-          Password must be a maximum of 8 characters.
-        </div>
+        <input type="password"
+               placeholder="Password"
+               name="password"
+               [(ngModel)]="user.password"
+               maxlength="8"
+               [disabled]="isLoading"
+               required />
       </div>
 
+      <!-- Contact -->
       <div class="input-group">
         <span class="icon"><i class="fa fa-phone"></i></span>
-        <input type="Tel" pattern="[0-9]{10}" maxlength="10" placeholder="Contact Number(10 digits only)" name="contact" [(ngModel)]="user.contact" required #contactInput="ngModel" />
-        <div *ngIf="contactInput.invalid && contactInput.touched" class="error-message">Contact number must be exactly 10 digits (numbers only).</div>
+        <input type="tel"
+               placeholder="Contact Number"
+               name="contact"
+               [(ngModel)]="user.contact"
+               pattern="[0-9]{10}"
+               maxlength="10"
+               [disabled]="isLoading"
+               required />
       </div>
 
-      <div class="input-group select-group" >
-        <select    name="role" [(ngModel)]="user.role"required>
-          <option  value=""  disabled >Select Role</option>
+      <!-- Role -->
+      <div class="input-group select-group">
+        <select name="role"
+                [(ngModel)]="user.role"
+                [disabled]="isLoading"
+                required>
+          <option value="" disabled>Select Role</option>
           <option value="USER">User</option>
           <option value="HOST">Host</option>
           <option value="COORDINATOR">Coordinator</option>
@@ -53,32 +91,71 @@
         </select>
       </div>
 
-      <div *ngIf="otpSent" class="input-group">
-  <span class="icon"><i class="fa fa-key"></i></span>
-  <input type="text" placeholder="Enter OTP" [(ngModel)]="enteredOtp" name="otp" maxlength="6"
-  pattern="\d{6}" [required]="otpSent"/>
-</div>
-<!-- resend -->
-<div *ngIf="otpSent" class="resend-section">
-  <button type="button" (click)="resendOtp()">Resend OTP</button>
-</div>
-<!-- main button -->
-      <button type="submit" class="signup-btn"  [disabled]="!otpSent && signupForm.invalid">{{ otpSent ? 'VERIFY & SGNUP' : 'SEND OTP' }}</button>
+      <!-- OTP SECTION -->
+      <div *ngIf="otpSent" class="otp-verification-area">
+
+        <div class="input-group">
+          <span class="icon"><i class="fa fa-key"></i></span>
+          <input type="text"
+                 placeholder="Enter 6-digit OTP"
+                 [(ngModel)]="enteredOtp"
+                 name="otp"
+                 maxlength="6"
+                 [disabled]="isLoading"
+                 [required]="otpSent" />
+        </div>
+
+        <!-- Resend with Countdown -->
+        <div class="resend-link">
+          <button type="button"
+                  (click)="resendOtp()"
+                  [disabled]="isLoading || resendDisabled"
+                  class="link-style-btn">
+
+            <span *ngIf="isLoading">Sending...</span>
+
+            <span *ngIf="!isLoading && resendDisabled">
+              Resend in {{ countdown }}s
+            </span>
+
+            <span *ngIf="!isLoading && !resendDisabled">
+              Resend OTP
+            </span>
+
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit"
+              class="signup-btn"
+              [disabled]="isLoading || (!otpSent && signupForm.invalid)">
+
+        <span *ngIf="isLoading" class="spinner"></span>
+
+        {{ isLoading
+            ? 'PLEASE WAIT...'
+            : (otpSent ? 'VERIFY & SIGNUP' : 'SEND OTP') }}
+
+      </button>
+
     </form>
 
     <p class="signin-link">
-      Already have an account? <a routerLink="/login">Sign In</a>
+      Already have an account?
+      <a routerLink="/login">Sign In</a>
     </p>
+
   </div>
 
+  <!-- Right Section -->
   <div class="signup-right">
     <div class="welcome-card">
       <h3>Welcome!</h3>
-      <p>
-        Join our community today and unlock exclusive features. Create your account to get started with
-        a personalized experience tailored just for you. We're excited to have you on board!
-      </p>
-      <img src="https://img.freepik.com/free-vector/group-people-jeans-shirts_52683-34818.jpg" alt="Welcome Image" />
+      <p>Join our community today and unlock exclusive features.</p>
+      <img src="https://img.freepik.com/free-vector/group-people-jeans-shirts_52683-34818.jpg"
+           alt="Welcome Image" />
     </div>
   </div>
 </div>
