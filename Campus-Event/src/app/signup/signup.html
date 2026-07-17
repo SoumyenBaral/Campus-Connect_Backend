@@ -1,0 +1,161 @@
+<app-navbar></app-navbar>
+<div class="signup-container">
+  <div class="signup-left">
+    <h2>Create Account</h2>
+    <p>Join us today</p>
+
+    <!-- Message Display -->
+    <div *ngIf="message" class="message-box">
+      {{ message }}
+    </div>
+
+    <!-- <form #signupForm="ngForm" (ngSubmit)="adddata()"> -->
+
+      <!-- Full Name -->
+      <div class="input-group">
+        <span class="icon"><i class="fa fa-user"></i></span>
+        <input type="text"
+               placeholder="Full Name"
+               name="name"
+               [(ngModel)]="user.name"
+               [disabled]="isLoading"
+               required />
+      </div>
+
+      <!-- Email -->
+      <div class="input-group">
+        <span class="icon"><i class="fa fa-envelope"></i></span>
+        <input type="email"
+               placeholder="E-mail"
+               name="email"
+               [(ngModel)]="user.email"
+               pattern=".*@gmail\.com$"
+               #emailInput="ngModel"
+               [disabled]="otpSent || isLoading"
+               required />
+
+        <div *ngIf="emailInput.invalid && emailInput.touched"
+             class="error-message">
+          Email must end with @gmail.com
+
+        <input type="email" placeholder="E-mail" name="email" [(ngModel)]="user.email" id="email"  pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})*$"
+          #emailInput="ngModel" autocomplete="email" maxlength="254" email  [disabled]="otpSent"  required />
+         <div *ngIf="emailInput.errors?.['required'] && emailInput.touched"
+        class="error-message">
+        Email is required.
+
+        </div>
+
+      <div *ngIf="emailInput.errors?.['email'] && emailInput.touched"
+          class="error-message">
+        Please enter a valid email format.
+      </div>
+      </div>
+
+      <!-- Password -->
+      <div class="input-group">
+        <span class="icon"><i class="fa fa-lock"></i></span>
+        <input type="password"
+               placeholder="Password"
+               name="password"
+               [(ngModel)]="user.password"
+               maxlength="8"
+               [disabled]="isLoading"
+               required />
+      </div>
+
+      <!-- Contact -->
+      <div class="input-group">
+        <span class="icon"><i class="fa fa-phone"></i></span>
+        <input type="tel"
+               placeholder="Contact Number"
+               name="contact"
+               [(ngModel)]="user.contact"
+               pattern="[0-9]{10}"
+               maxlength="10"
+               [disabled]="isLoading"
+               required />
+      </div>
+
+      <!-- Role -->
+      <div class="input-group select-group">
+        <select name="role"
+                [(ngModel)]="user.role"
+                [disabled]="isLoading"
+                required>
+          <option value="" disabled>Select Role</option>
+          <option value="USER">User</option>
+          <option value="HOST">Host</option>
+          <option value="COORDINATOR">Coordinator</option>
+          <option value="ADMIN">Admin</option>
+        </select>
+      </div>
+
+      <!-- OTP SECTION -->
+      <div *ngIf="otpSent" class="otp-verification-area">
+
+        <div class="input-group">
+          <span class="icon"><i class="fa fa-key"></i></span>
+          <input type="text"
+                 placeholder="Enter 6-digit OTP"
+                 [(ngModel)]="enteredOtp"
+                 name="otp"
+                 maxlength="6"
+                 [disabled]="isLoading"
+                 [required]="otpSent" />
+        </div>
+
+        <!-- Resend with Countdown -->
+        <div class="resend-link">
+          <button type="button"
+                  (click)="resendOtp()"
+                  [disabled]="isLoading || resendDisabled"
+                  class="link-style-btn">
+
+            <span *ngIf="isLoading">Sending...</span>
+
+            <span *ngIf="!isLoading && resendDisabled">
+              Resend in {{ countdown }}s
+            </span>
+
+            <span *ngIf="!isLoading && !resendDisabled">
+              Resend OTP
+            </span>
+
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit"
+              class="signup-btn"
+              [disabled]="isLoading || (!otpSent && signupForm.invalid)">
+
+        <span *ngIf="isLoading" class="spinner"></span>
+
+        {{ isLoading
+            ? 'PLEASE WAIT...'
+            : (otpSent ? 'VERIFY & SIGNUP' : 'SEND OTP') }}
+
+      </button>
+
+    <!-- </form> -->
+
+    <p class="signin-link">
+      Already have an account?
+      <a routerLink="/login">Sign In</a>
+    </p>
+
+  </div>
+
+  <!-- Right Section -->
+  <div class="signup-right">
+    <div class="welcome-card">
+      <h3>Welcome!</h3>
+      <p>Join our community today and unlock exclusive features.</p>
+      <img src="https://img.freepik.com/free-vector/group-people-jeans-shirts_52683-34818.jpg"
+           alt="Welcome Image" />
+    </div>
+  </div>
+</div>
