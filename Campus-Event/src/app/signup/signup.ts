@@ -15,6 +15,7 @@ import { firstValueFrom } from 'rxjs';
   styleUrl: './signup.css',
 })
 export class SignUp {
+signupForm: any;
   constructor(private http: HttpClient, private router: Router) {}
 
   user: User = {

@@ -2,7 +2,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Footer } from "../footer/footer";
 import { Navbar } from "../navbar/navbar";
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLink } from '@angular/router';
 import { CreateEvent } from '../create-event/create-event';
 import { SignUp } from '../signup/signup';
 import { Coordinator } from '../coordinator/coordinator';
@@ -17,8 +17,9 @@ import { Host } from "../host/host";
     RouterOutlet,
     SignUp,
     Coordinator,
-    Host
-  ],
+    Host,
+    RouterLink
+],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })

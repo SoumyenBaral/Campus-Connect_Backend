@@ -1,50 +1,54 @@
+nav {
+    height: 50px;
+    width: 100vw;
+    color: hsl(0, 8%, 91%);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(8, 8, 8);
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    position: sticky;
+    overflow-x: hidden;
+}
+
 .logo {
-  height: 50px;
-  margin-left: 20px;
-  align-content: center;
-  margin-top: 15px;
-  border: 2px;
-  border-radius: 10px;
-  padding: 10px;
+    margin-left: 10px;
 }
 
-
-.nav-item {
-  display: flex;
-  gap: 330px;
-  height: 80px;
-  width: 100%;
-  top: 0;
-  background: linear-gradient(to right, rgb(43, 43, 140), rgb(211, 107, 211));
-  color: aliceblue;
-  position: sticky;
-  z-index: 1000;
+.logo-name {
+    background: linear-gradient(to right, #7a3cff, #1dc8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.navbar {
+.nav-links {
   display: flex;
-  gap: 440px;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
+  gap: 20px;
   position: relative;
-  z-index: 1000;
-  size: 100vh;
+  font-family: sans-serif;
 }
 
-.navbar-center {
-  display: flex;
-  gap: 55px;
-  height: 25px;
-  align-items: center;
-  padding-left: 24px;
-}
-
-.profile button{
-  padding: 8px;
-  width: 73px;
-  color: #171717;
+.nav-links a {
+  text-decoration: none;
+  color: hsl(0, 9%, 96%);
+  padding: 8px 12px;
   position: relative;
-  border-radius: 8px;
+}
+
+.login-btn{
+    height:30px;
+    width:80px;
+    margin-left: 700px;
+    color: white;
+    border-radius: 8px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+    background: linear-gradient(to right, #7A65FF 20%, #38B2FE 100%);
+    border:none;
+
+}
+.login-btn:hover{
+    box-shadow: 0 5px 10px  #5ebffb;
 
 }
