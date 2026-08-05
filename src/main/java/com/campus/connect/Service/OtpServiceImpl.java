@@ -98,8 +98,20 @@ public class OtpServiceImpl  implements OtpService{
     }
 
 
+    public void sendWelcomeEmail(String email, String name) {
 
-		
-       
-}  
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setTo(email);
+        message.setSubject("Welcome to CampusConnect 🎉");
+        message.setText(
+                "Hi " + name + ",\n\n" +
+                "You have successfully registered on CampusConnect.\n" +
+                "Now you can continue participating in different events, " +
+                "explore opportunities, and connect with others.\n\n" +
+                "We're excited to have you onboard!\n\n" +
+                "Team CampusConnect"
+        );
 
+        mailSender.send(message);
+    }
+}
