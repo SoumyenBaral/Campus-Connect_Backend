@@ -17,6 +17,13 @@ import { firstValueFrom } from 'rxjs';
   styleUrl: './admin.css'
 })
 export class Admin implements OnInit {
+
+  sidebarOpen = false;
+
+  toggleSidebar() {
+    this.sidebarOpen = !this.sidebarOpen;
+  }
+
   counts: any = { hostCount: 0, coordinatorCount: 0, studentCount: 0, eventCount: 0 };
   isLoading: boolean = true; // Set to true by default
 
@@ -39,7 +46,7 @@ export class Admin implements OnInit {
       // Fallback defaults stay as initialized
     } finally {
       // This runs regardless of success or failure
-      this.isLoading = false; 
+      this.isLoading = false;
     }
   }
 }

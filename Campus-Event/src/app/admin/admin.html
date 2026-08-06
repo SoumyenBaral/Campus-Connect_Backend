@@ -1,4 +1,4 @@
-
+<!-- 
 
 <app-navbar></app-navbar>
 <nav>
@@ -102,7 +102,7 @@
 
         </div>
     </div>
-    <!-- Redirect cards -->
+
     <section class="redirect-cards">
             <div class="card" routerLink="/admin/host-details"  style="background-color:olivedrab;">
                 <h5>Host Details</h5>
@@ -126,5 +126,164 @@
         </section>
 
 </nav>
+<app-footer></app-footer>
+<router-outlet></router-outlet> -->
+
+
+
+
+
+
+
+
+<app-navbar></app-navbar>
+<!-- full-dashboard -->
+<div class="dashboard">
+    <!-- sidebar -->
+
+    <!-- <script src="admin.js" defer></script> -->
+
+    <!-- //<button class="toggle-btn" onclick="toggleSidebar()">☰</button> -->
+    <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+
+
+    <div class="sidebar" [class.active]="sidebarOpen" id="sidebar">
+
+        <section class="sidebar-menu">
+            <ul type="none">
+                <li>
+                    <h1 class="logo">CAMPUSCONNECT</h1>
+                </li>
+                <li>Dashboard</li>
+                <li routerLink="/admin/coordinator-details">
+                    Coordinators
+                </li>
+
+                <li routerLink="/admin/student-details">
+                    Students
+                </li>
+                <li routerLink="/admin/host-details">
+                    Hosts
+                </li>
+                <li routerLink="/admin/event-details">
+                    Events
+                </li>
+                <li><a routerLink="/gallery"><b>Gallery</b></a></li>
+                <li> <a routerLink="/admin-manual"><b>help</b></a></li>
+            </ul>
+
+        </section>
+        <div class="sidebar-footer">
+            <p>Logged in as</p>
+            <h5>Admin</h5>
+        </div>
+    </div>
+
+    <!-- main content -->
+    <div class="main-content" id="mainContent" [class.shifted]="sidebarOpen">
+
+        <div class="sec-1">
+            <section>
+                <h1 class="heading">ADMIN <span class="d1">DASHBOARD</span></h1>
+                <p class="subheading"><i>Overview of every host, coordinator, student and event on
+                        CampusConnect.</i></p>
+            </section>
+
+            <section class="admin-icon">
+                <button class="admin-btn">
+                    <div class="avatar-circle">A</div>
+                    <span class="btn-text">Admin</span>
+                </button>
+            </section>
+        </div>
+
+        <div class="sec-2">
+            <div class="box-element">
+                <div>
+                    <p class="head-line header">TOTAL HOSTS</p>
+                    <H1 class="counts">{{ counts.hostCount || 0 }}</H1>
+                    <p class="sub-line">across all societies</p>
+                </div>
+                <div class="avatar-circle">G</div>
+            </div>
+            <div class="box-element">
+                <div>
+                    <p class="head-line header">TOTAL EVENTS</p>
+                    <H1 class="counts">{{ counts.eventCount || 0 }}</H1>
+                    <p class="sub-line">live, upcoming and past</p>
+                </div>
+                <div class="avatar-circle">G</div>
+            </div>
+            <div class="box-element" id="coordinator">
+                <div>
+                    <p class="head-line header" id="coordinators">TOTAL COORDINATORS</p>
+                    <H1 class="counts">{{ counts.coordinatorCount || 0 }}</H1>
+                    <p class="sub-line">managing events</p>
+                </div>
+                <div class="avatar-circle">G</div>
+            </div>
+            <div class="box-element">
+                <div>
+                    <p class="head-line header">TOTAL STUDENTS</p>
+                    <H1 class="counts">{{ counts.studentCount || 0 }}</H1>
+                    <p class="sub-line">registered on platform</p>
+                </div>
+                <div class="avatar-circle">G</div>
+            </div>
+
+        </div>
+        <div class="sec-3">
+            <button class="tool-box">
+                <div class="avatar-circle">G</div>
+                <div class="tool-box-data">
+                    <p class="head-line">Event Gallery</p>
+                    <p class="sub-line">Browse photos from every past event</p>
+                </div>
+
+            </button>
+            <button class="tool-box">
+                <div class="avatar-circle">H</div>
+                <div class="tool-box-data">
+                    <p class="head-line">Help</p>
+                    <p class="sub-line">Guides,FAQs and supprt tickets</p>
+                </div>
+
+            </button>
+        </div>
+
+        <div class="sec-2">
+            <div class="box-element">
+                <div>
+                    <p class="head-line header">HOST DETAILS</p>
+                    <p class="sub-line">Approve or reject hosts.</p>
+                </div>
+                <div class="avatar-circle">G</div>
+            </div>
+            <div class="box-element">
+                <div>
+                    <p class="head-line header">COORDINATOR DETAILS</p>
+                    <p class="sub-line">View coordinator information.</p>
+                </div>
+                <div class="avatar-circle">G</div>
+            </div>
+            <div class="box-element" id="coordinator">
+                <div>
+                    <p class="head-line header" id="coordinators">STUDENT DETAILS</p>
+                    <p class="sub-line">View registered students.</p>
+                </div>
+                <div class="avatar-circle">G</div>
+            </div>
+            <div class="box-element">
+                <div>
+                    <p class="head-line header">EVENT DETAILS</p>
+                    <p class="sub-line">View all events.</p>
+                </div>
+                <div class="avatar-circle">G</div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
 <app-footer></app-footer>
 <router-outlet></router-outlet>
