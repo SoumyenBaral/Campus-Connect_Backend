@@ -31,7 +31,7 @@ public class Users{
     private String email;
 
       private String password;
-
+      
     @Enumerated(EnumType.STRING)
     private Role role;
 
@@ -39,13 +39,32 @@ public class Users{
 
     private LocalDateTime created_at = LocalDateTime.now();
     
-     @Column(name = "is_approved")
-     private boolean isApproved;
+    @Column(name = "is_approved")
+    private boolean isApproved;
+   
+    @Column(name = "reset_token")
+    private String resetToken;
 
-    public Users(boolean isApproved) {
-		super();
-		this.isApproved = isApproved;
+    @Column(name = "token_expiry")
+    private LocalDateTime tokenExpiry;
+    
+
+	 public String getResetToken() {
+		return resetToken;
 	}
+
+	public void setResetToken(String resetToken) {
+		this.resetToken = resetToken;
+	}
+
+	public LocalDateTime getTokenExpiry() {
+		return tokenExpiry;
+	}
+
+	public void setTokenExpiry(LocalDateTime tokenExpiry) {
+		this.tokenExpiry = tokenExpiry;
+	}
+
 
 	public boolean isApproved() {
 		return isApproved;
@@ -154,7 +173,7 @@ public class Users{
 	}
 
 	public Users(Long id, String name, String email, String password, Role role, String contact,
-			LocalDateTime createdAt, boolean isApproved, List<Registrations> registrations, List<Feedbacks> feedbacks,
+			LocalDateTime createdAt, boolean isApproved,String resetToken, LocalDateTime tokenExpiry, List<Registrations> registrations, List<Feedbacks> feedbacks,
 			List<Events> hostedEvents) {
 		super();
 		this.id = id;
@@ -168,22 +187,24 @@ public class Users{
 		this.registrations = registrations;
 		this.feedbacks = feedbacks;
 		this.hostedEvents = hostedEvents;
+		this.resetToken = resetToken;
+		this.tokenExpiry = tokenExpiry;
 	}
+	
 
 	public Users() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	  @Override
+		public String toString() {
+			return "Users [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", role=" + role
+					+ ", contact=" + contact + ", created_at=" + created_at + ", resetToken=" + resetToken
+					+ ", tokenExpiry=" + tokenExpiry + ", isApproved=" + isApproved + ", registrations=" + registrations
+					+ ", feedbacks=" + feedbacks + ", hostedEvents=" + hostedEvents + "]";
+		}
 	
-	@Override
-	public String toString() {
-		return "Users [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", role=" + role
-				+ ", contact=" + contact + ", createdAt=" + created_at + ", isApproved=" + isApproved
-				+ ", registrations=" + registrations + ", feedbacks=" + feedbacks + ", hostedEvents=" + hostedEvents
-				+ "]";
-	}
 }
 
 
 
-//Code pushed 

@@ -18,5 +18,6 @@ public interface UsersRepository extends JpaRepository<Users, Long> {
 		 // For admin approval: Get unapproved hosts
 	    List<Users> findByRoleAndIsApproved(Role role, boolean isApproved);
 		
+	    Optional<Users> findByResetToken(String resetToken);
 		
 }

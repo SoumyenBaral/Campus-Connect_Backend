@@ -13,19 +13,24 @@ public interface UsersService{
 	
     
 	//read
-	    List<Users> getAllUsers();
+	List<Users> getAllUsers();
 	    
 	    
 	//delete 
     String deleteAllUsers();
-	        // other service method declarations
+	        
 	    
 	    
-	 // NEW: For retrieving user by email
-		Optional<Users> findByEmail(String email); 
+	//For retrieving user by email
+	Optional<Users> findByEmail(String email); 
 		
-		// NEW: Login logic - returns the user object if successful, null otherwise
-		Users loginUser(String email, String password); 
+	//Login logic - returns the user object if successful, null otherwise
+	Users loginUser(String email, String password); 
+		
+	//Fogot password
+	void forgotPassword(String email);
+	//Reset password
+	void resetPassword(String token, String newPassword);
 	    
 	    
 }

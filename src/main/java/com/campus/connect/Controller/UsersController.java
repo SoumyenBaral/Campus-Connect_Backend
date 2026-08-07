@@ -127,4 +127,25 @@ public ResponseEntity<?> loginUser(@RequestBody LoginRequest loginRequest) {
         return new ResponseEntity<>(errorResponse, HttpStatus.UNAUTHORIZED); // (401)
     }
 }
+
+@PostMapping("/forgot-password")
+public ResponseEntity<?> forgotPassword(@RequestBody Map<String, String> request) {
+
+    String email = request.get("email");
+    usersService.forgotPassword(email);
+
+    return ResponseEntity.ok("If email exists, reset link sent.");
+}
+
+@PostMapping("/reset-password")
+public ResponseEntity<?> resetPassword(@RequestBody Map<String, String> request) {
+
+    String token = request.get("token");
+    String password = request.get("password");
+
+    usersService.resetPassword(token, password);
+
+    return ResponseEntity.ok("Password updated successfully");
+}
+
 }
