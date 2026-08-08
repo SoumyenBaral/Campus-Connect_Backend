@@ -1,0 +1,485 @@
+/* hero section */
+/* ========================================= */
+/* START OF SCROLL REVEAL ANIMATION CODE     */
+/* ========================================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px); /* Pushes the element down by 40px */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform; /* Helps the browser animate smoothly */
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0); /* Lifts the element back to its normal spot */
+}
+/* ========================================= */
+/* END OF SCROLL REVEAL ANIMATION CODE       */
+/* ========================================= */
+
+.sec-2 {
+    height: 400px;
+    width: 100%;
+    box-sizing:border-box;
+    color: white;
+    padding: 50px 20px 0px 80px;
+    background-image: url('/assets/hero2.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+.slide-in{  
+  animation: slideIn 1.2s ease-out forwards;
+}
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px); /* Starts 100px to the left */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* Stops at its normal layout position */
+  }
+}
+
+#head-line {
+    font-size: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#sub-line {
+    color: rgb(198, 198, 192);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+.hero-btn{
+    border-radius: 25px;
+    height:50px;
+    width:170px;
+    font-size:14px;
+    background: linear-gradient(to right, #7A65FF 20%, #38B2FE 100%);
+    border:none;
+}
+.hero-btn:hover{
+    box-shadow: 0 5px 10px  #5ebffb;
+    transition: 0.4s;
+    transform: translateY(-2px);
+
+}
+
+
+
+/* new section */
+.stats-container {
+    background-color: #F8F9FA;
+    display: flex;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.stat-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    border-right: 1px solid #E2E8F0;
+    text-align: center;
+}
+
+/* Remove border from the last item */
+.stat-box:last-child {
+    border-right: none;
+}
+
+.stat-value {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    /* Creating the purple-to-blue gradient text */
+    background: linear-gradient(90deg, #7A65FF 0%, #38B2FE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-number, .stat-plus {
+    font-family: 'Space Mono', monospace; /* Used for the stylistic zero and tech look */
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.stat-label {
+    color: #79879A;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .stats-container {
+        flex-direction: column;
+    }
+    .stat-box {
+        border-right: none;
+        border-bottom: 1px solid #E2E8F0;
+        padding: 30px 20px;
+    }
+    .stat-box:last-child {
+        border-bottom: none;
+    }
+}
+
+
+
+/* Section-3 WHY CAMPUSCONNECT? */
+.sec-3 {
+    height: 75vh;
+    margin: 70px 50px 150px 50px;
+}
+
+
+.heading {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 38px;
+    margin-bottom:15px;
+}
+
+.subheading {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    margin-top:-10px;
+}
+
+.d1 {
+    background: linear-gradient(to right, #7a3cff, #1dc8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#rows {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    justify-content: center;
+}
+.row-2{
+    margin-top:20px;
+    
+}
+.all-box-element{
+    margin-top:50px;
+    
+}
+.box-element {
+    height: 160px;
+    width: 320px;
+    padding: 8px 5px 8px 10px ;
+    border: 1px solid rgb(205, 208, 212);
+    border-radius: 15px;
+    background: linear-gradient(to top left, #f1fcfc, #fef4fe);
+    box-shadow:1px 1px 2px 1px rgba(242, 238, 238, 0.952);
+
+}
+
+.box-element:hover {
+    background: linear-gradient(to top left, #1dc8ff, #7a3cff);
+    color: black;
+    transition: 0.8s;
+    cursor: pointer;
+    transform: translateY(-10px);
+}
+
+.feature-head {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    /* font-weight:800px; */
+}
+
+.feature-desc {
+    font-size: 15px;
+    color: rgb(59, 58, 58);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* section 4 STEPS OF CAMPUSCONNECT */
+
+.sec-4 {
+    height: 100vh;
+    margin: 70px 50px 220px 50px;
+}
+
+.process {
+    width: 90%;
+    max-width: 800px;
+    margin: 80px auto;
+
+    /* Switched from Grid to Flexbox for a vertical layout */
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    /* Space between the steps */
+
+    position: relative;
+}
+
+/* Vertical Line */
+.process::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 28px;
+    /* Aligns line with the exact center of the 58px circle */
+    width: 3px;
+    height: 100%;
+
+    /* Changed gradient to bottom */
+    background: linear-gradient(to bottom, #7a3cff, #1dc8ff);
+    z-index: 0;
+}
+
+/* Step Container */
+.step {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+/* Circle */
+.circle {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 22px;
+    font-weight: bold;
+    color: #18c5ff;
+    flex-shrink: 0;
+    /* Prevents the circle from squishing */
+}
+
+/* New wrapper to keep text aligned cleanly next to circle */
+.step-text {
+    padding-top: 8px;
+}
+
+/* Heading */
+.step h2 {
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #0b1033;
+}
+
+/* Paragraph */
+.step p {
+    color: #616161;
+    line-height: 1.8;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+/* Airplane Animation Styling */
+.airplane {
+    position: absolute;
+    left: 17px;
+    /* Centers the 24px icon perfectly over the 3px line */
+    width: 25px;
+    height: 25px;
+    fill: #7a3cff;
+    /* Matches the top gradient color */
+    z-index: 3;
+    pointer-events: none;
+
+    /* Animation setup */
+    animation: flyDown 7s ease-in-out infinite;
+}
+
+/* Keyframes for the downward flight */
+@keyframes flyDown {
+    0% {
+        top: 0;
+        transform: rotate(180deg) scale(0.8);
+        /* Rotate 180deg to point down */
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+        transform: rotate(180deg) scale(1);
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 100%;
+        transform: rotate(180deg) scale(0.8);
+        opacity: 0;
+    }
+}
+
+/* section-5 */
+
+
+.sec-5 {
+    height: 70vh;
+    line-height: 1.0;
+    margin: 50px;
+}
+
+.c5 {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    margin-top:30px;
+    
+}
+
+.d3 {
+    border: 2px solid black;
+    height: 50vh;
+    /* width: 80vh; */
+    width:280px;
+    /* flex-shrink:0; */
+    flex:1;
+}
+
+.d3 img {
+    width: 100%;
+}
+
+/* section -6 */
+
+.sec-6 {
+    height: 70vh;
+    width: 100%;
+    line-height: 1.0;
+    margin: 50px;
+}
+
+.images {
+    display: flex;
+    gap: 30px;
+    width: 93%;
+    margin-top:50px;
+    margin-left:20px;
+}
+
+.img {
+    height: 250px;
+    /* width: 50vh; */
+    width:250px;
+    flex:1;
+}
+
+.images img {
+    width: 100%;
+    height: 100%;
+
+}
+
+
+.view-more-btn{
+    height: 50px;
+    width: 50px;
+    font-size:25px;
+    margin-top:100px;
+    border-radius: 50%;
+    cursor: pointer;
+    border:none;
+    color:rgb(143, 4, 170);
+    background: linear-gradient( #a8d1e7, #bfb3d8);
+
+    
+}
+
+.view-more-btn:hover {
+    background: linear-gradient( #88b5cd, #b19ae3);
+
+}
+
+/* Testimonials */
+.testimonials{
+height: 50vh;
+margin: 20px 50px 100px 50px;
+
+}
+.review-box{
+    height:220px;
+    width:350px;
+    margin-top:20px;
+    padding:5px 10px 35px 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    background: linear-gradient(to top left, #f1fcfc, #fef4fe);
+    box-shadow:1px 1px 2px 1px rgba(242, 238, 238, 0.952);
+}
+.review-box:hover{
+    background: linear-gradient(to top left,#edfbfb, #fceefc);
+    border: 1px solid rgb(205, 208, 212);
+    color: black;
+    transition: 0.8s;
+    cursor: pointer;
+    transform: translateY(-10px);
+}
+.review-box h4{
+    margin-bottom:5px;
+}
+.designation{
+    margin-top:-10px;
+}
+
+
+  /* section -7 */
+.sec-7 {
+    height: 50vh;
+    width: 100%;
+    box-sizing:border-box;
+    align-content: center;
+    background-color: black;
+    color: white;
+    /* padding-left:80px; */
+    padding-left:5%;
+    padding-top:-5px;
+    display:flex;
+}
+
+.sec-7 h1 {
+    /* justify-content: center; */
+    font-size:80px;
+    /* background: linear-gradient(to right, #7a3cff, #1dc8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+
+.sec-7 button {
+    margin-left:250px;
+    margin-top:90px;
+    height: 150px;
+    width:150px;
+    color: black;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size:15px;
+    font-family:cursive;
+
+
+}
+

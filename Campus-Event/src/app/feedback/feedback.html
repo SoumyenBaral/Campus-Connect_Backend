@@ -1,0 +1,31 @@
+<nav>
+    <div class="container">
+        <h4>We'd love your feedback 🙌</h4>
+        <h5>Help us improve by sharing your experience with us</h5>
+        <form > 
+            <div class="star-container">
+            <h6><b>How would you rate your experience?</b></h6>
+            <ngb-rating [max]="5" [(rate)]="currentRate" [readonly]="false"></ngb-rating>
+            @if(currentRate == 1){
+            <h6>bad😒</h6>
+            }@else if(currentRate == 5){
+            <h6>Excellent🤩🤩🤩🤩🤩</h6>
+            }@else {
+            <h6 style="color: red;">rate us</h6>
+            }
+        </div>
+        <button 
+                type="button"  (click)="handleSubmit()"
+                [disabled]="currentRate === 0 || isLoading"
+                class="btn btn-primary mt-3">
+                
+                @if (isLoading) {
+                    Submitting...
+                } @else {
+                    Submit Feedback
+                }
+            </button>
+        </form>
+        
+    </div>
+</nav>

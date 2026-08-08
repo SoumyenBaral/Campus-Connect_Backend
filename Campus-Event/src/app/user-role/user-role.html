@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+<nav class="container">
+    <div class="c1">
+    <h3><b>Welcome to CampusConnect, Student!</b><br></h3>
+    <p><i>Your centralized hub for all campus activities, events and resources</i></p>
+    </div>
+    <br>
+    
+
+    <div class="quickaction">
+        <div class="item">
+
+            <h4><a class="dashboard-menu" routerLink="/gallery"><b>Gallery</b></a></h4><br>
+            <p><i>Click here to browse event photo albums and save into your memories.</i></p>
+
+        </div>
+        <div class="item">
+
+            <h4><a class="dashboard-menu" routerLink="/user-manual"><b>Help</b></a></h4><br>
+            <p><i>Questions Answered. We're Here to Keep You Moving.</i></p>
+        </div>
+    </div>
+    <div class="allevent">
+        <div class="item1">           
+            <h3><a class="dashboard-menu" routerLink="/allevents"><b>View All Events</b></a></h3>                                                                                                          
+            <p><i>Tap to view the full, updated event roster and plan your week.</i></p>
+        </div>
+        <div class="item1" id="item1">           
+            <h3><a class="dashboard-menu" routerLink="/register"><b>Register Now</b></a></h3>
+            <p><i>Your Spot Awaits. Lock In Your Participation Now.</i></p>
+        </div>
+    </div>
+</nav>
+
+<app-feedback></app-feedback>
+<app-footer></app-footer>
+<router-outlet></router-outlet>

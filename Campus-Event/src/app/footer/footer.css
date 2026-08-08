@@ -1,0 +1,28 @@
+.footer-section{
+    padding-top:30px;
+    padding-left: 50px;
+    height: 300px;
+    color:#0b1033;
+    background-image: linear-gradient(to top left, #f1fafc, #ece7f6);
+    overflow: hidden;
+}
+.footer{
+    display:flex;
+    gap:80px;
+}
+#footer-title{
+    font-size:25px;
+}
+.footer-elements{
+    display:flex;
+    gap:120px;
+    margin-bottom:30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.footer-columns li{
+    margin-bottom:20px;
+}
+.copyright-reserved{
+    display:flex;
+    /* margin-top:30px; */
+}

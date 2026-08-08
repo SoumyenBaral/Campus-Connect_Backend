@@ -1,0 +1,53 @@
+<div class="container">
+<div class="part-1">
+    <div class="welcome-card">
+      <h3>Welcome to Registration!</h3>
+      <p>
+        We are thrilled you're joining us! Please fill out the form completely to secure your place. Remember to select the correct event from the list on the right. Registration grants you access to exclusive expert sessions, valuable resources, and great networking opportunities. We handle all personal details confidentially and will only use them for event-related updates. Get ready for an inspiring experience!
+      </p>
+      <img src="https://media.istockphoto.com/id/1303860322/vector/vector-illustration-register-now-speech-bubble-label.jpg?s=612x612&w=0&k=20&c=gOtVI0FayIfjaDVYL66XIbbMp1VXX_1Hsc8kFNKabAk=" alt="Welcome Image" />
+    </div>
+  </div>
+
+
+  <div class="part-2">
+    <section>
+    <div class="regis-form">
+        <div style="padding: 10px;">
+            <h3 class="head"><b>Event Registration</b></h3>
+            <form #registrationForm="ngForm" (ngSubmit)="submitRegistration()">
+                <fieldset>
+                    <legend>Registration Details</legend>
+                    <h6>Please confirm your registration for the selected event.</h6>
+                    
+                    <!-- Pre-filled User Details (Read-Only for Transparency) -->
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" [(ngModel)]="registrationData.fullName" readonly>
+                    
+                    <label for="emailAddress">Email:</label>
+                    <input type="email" id="emailAddress" name="emailAddress" [(ngModel)]="registrationData.emailAddress" readonly>
+                    
+                    <label for="mobileNumber">Mobile Number:</label>
+                    <input type="text" id="mobileNumber" name="mobileNumber" [(ngModel)]="registrationData.mobileNumber" readonly>
+                    
+                    <!-- Event Selector -->
+                    <label for="event">Select Event:</label>
+                    <select id="event" name="event" [(ngModel)]="registrationData.event.id" required>
+                        <option [ngValue]="null">Choose an event</option>
+                        <option *ngFor="let event of availableEvents" [value]="event.id">{{ event.title }}</option>
+                    </select>
+                    
+                    <label for="organization">Organization/Institute/Company:</label>
+                    <input type="text" id="organization" name="organization" required placeholder="Enter Your Organization" [(ngModel)]="registrationData.organization">
+                    
+                    <br><br>
+                    <button type="submit" [disabled]="!registrationForm.valid"><b>Submit</b></button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</section>
+</div>
+
+
+</div>

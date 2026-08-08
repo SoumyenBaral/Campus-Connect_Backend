@@ -1,0 +1,20 @@
+  <nav>
+        <div class="logo">
+            <h4 class="logo-name">CAMPUSCONNECT</h4>
+        </div>
+
+        <div class="nav-links">
+            <a routerLink="/home">HOME</a>
+            <a routerLink="/gallery">GALLERY</a>
+            <a routerLink="/contact-us">CONTACTUS</a>
+        </div>
+ <div >
+      @if (isLoggedIn) {
+      <button (click)="logout()" class="login-btn">Logout</button>
+      } @else {
+      <button routerLink="/login" class="login-btn">Login</button>
+      }
+
+    </div>
+      </nav>
+<router-outlet></router-outlet>
