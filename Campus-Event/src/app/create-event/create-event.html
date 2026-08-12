@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+<section>
+  <div class="container">
+    <div class="welcome-card">
+      <h3>Welcome!</h3>
+      <p>
+        We are thrilled to know that you are creating a new event for our participants! Please fill out the form to create a new event. Remember to fill the details correctly.
+      </p>
+      <img src="https://thumbs.dreamstime.com/b/business-team-holding-hands-empty-banners-happy-flat-people-characters-advertising-blank-billboards-presentation-anno-138939081.jpg" alt="Welcome Image" height="300px" width="350px"/>
+    </div>
+    <div class="part-2">
+      <div class="registrationform">
+      <h3 style="color:rgb(136, 72, 197)"><b>Create A New Event</b></h3>
+      <p><i>where students can engage, participate and have fun!</i></p>
+      <form #eventForm="ngForm" (ngSubmit)="addevent()">
+        <fieldset>
+          <label for="title">Title<span>*</span></label><br>
+          <input type="text" name="title" id="title" placeholder="Enter event name" required [(ngModel)]="eventData.title" ><br><br>
+
+          <label for="date">Date</label><br>
+          <input type="datetime-local" name="date" id="date" placeholder="Select date"  [(ngModel)]="eventData.eventDate"><br><br>
+
+           <!-- Category Dropdown (New Feature) -->
+  <label for="category">Category<span>*</span></label><br>
+  <select name="category" id="category" required [(ngModel)]="eventData.category">
+    <!-- Iterate over the categories defined in the component -->
+    <option *ngFor="let cat of categories" [value]="cat">{{ cat | titlecase }}</option>
+  </select><br><br>
+
+          <label for="location">Location <span>*</span></label><br>
+          <input type="text" name="location" id="location" placeholder="Enter your location" required [(ngModel)]="eventData.location" ><br><br>
+
+          <button type="submit" [disabled]="!eventForm.valid"><b>Create Event</b></button>
+           <div *ngIf="submissionMessage" [ngClass]="{'success': submissionMessage.includes('successfully'), 'error': submissionMessage.includes('Error')}">
+            <p>{{ submissionMessage }}</p>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+    
+  </div>
+</section>
+<app-footer></app-footer>
+<router-outlet></router-outlet>

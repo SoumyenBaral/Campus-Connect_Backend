@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+<section>
+<div class="container">
+        <div class="text">
+        <h2><span>Contact</span>us
+            <br>Get in <span>Touch</span>
+        </h2>
+        <h6>Send us your query and we'll get back to you
+            <br>    
+            within 2-4 business hours.</h6>
+    </div>
+    <div class="registrationform">
+        <form action="/submit-contact-form" method="POST">
+            <fieldset>
+                <label for="name">name </label>
+                <br>
+                <input type="text" name="name" id="name" placeholder="Your Name" required [(ngModel)]="userData.name">
+                <br>
+                <br>
+                <label for="email">email </label>
+                <br>
+                <input type="email" name="email" id="email" placeholder="Your Email" pattern=".*@gmail\.com$" 
+                 #emailInput="ngModel"  required [(ngModel)]="userData.email">
+                 <div *ngIf="emailInput.errors?.['pattern'] && emailInput.touched" class="error-message">
+                Email must end with @gmail.com.
+                </div>
+                <br>
+                
+                <label for="message">message</label><br>
+                <textarea name="message" id="message" placeholder="Your Message" required   [(ngModel)]="userData.message"> </textarea  >
+                <br>
+                <br>
+                <button (click)="adddata()" onclick="alert('Your request is submitted!')" type="submit"><b>SUBMIT</b></button>
+            </fieldset>
+        </form>
+    </div>
+</div>
+</section>
+<app-footer></app-footer>
+<router-outlet></router-outlet>

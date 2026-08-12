@@ -1,0 +1,75 @@
+section {
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-content: center;
+    background: linear-gradient(135deg, #1e1b3a, #03343c);
+
+}
+
+.container {
+    border: 1.5px solid #7f7fd5;
+    height: 85vh;
+    width:70%;
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 15px;
+    display:flex;
+    gap:80px;
+}
+.welcome-card {
+  background:rgb(246, 224, 224);
+  padding: 2.5rem;
+  border-radius: 20px;
+  text-align: left;
+  box-shadow: 0 0 30px rgba(255, 0, 128, 0.15);
+  width: 50%;
+  
+}
+
+.welcome-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.welcome-card p {
+  color:black;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.welcome-card img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+span {
+    color: #5796d9;
+}
+
+input {
+    height: 8vh;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+textarea {
+    height: 15vh;
+    width: 100%;
+    border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+button {
+    background-color: rgb(15, 143, 15);
+    padding: 10px;
+    width: 100%;
+    color: white;
+    border-radius: 5px;
+    border-color: white;
+}

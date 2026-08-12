@@ -1,0 +1,90 @@
+<app-navbar></app-navbar>
+<div class="dashboard-container">
+    <div class="c1">
+        <h2><b>Welcome to CampusConnect Host!
+            </b></h2>
+    </div>
+    <br>
+    <div class="carousel-slide">
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="1000">
+                    <img src="https://images.pexels.com/photos/29708258/pexels-photo-29708258.jpeg"  alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="1000">
+                    <img src="https://images.pexels.com/photos/4889278/pexels-photo-4889278.jpeg"  alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="1000">
+                    <img src="https://images.pexels.com/photos/1916816/pexels-photo-1916816.jpeg"    alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <br>
+    <div class="main-content">
+
+        <section class="create-event-banner pink-purple">
+            <span class="icon">+</span>
+            <div class="banner-text">
+                <a routerLink="/event"> <strong>Create New Event!</strong></a>
+                <span>Start planning your next amazing event</span>
+            </div>
+            <span class="arrow-icon">→</span>
+        </section>
+        <section class="quick-actions">
+            <h3><b>Quick Actions</b></h3>
+            <div class="actions-grid">
+                <!-- <div class="action-card pink-action">
+                    <span class="icon">✉️</span>
+                    <div class="action-text">
+                        <h5>Total Students</h5>
+                <h3>{{ counts.studentCount || 0 }}</h3>
+                      
+                    </div>
+                </div> -->
+                <div class="action-card blue-action">
+                    <span class="icon">📄</span>
+                    <div class="action-text">
+
+                        <a routerLink="/host-manual">Help</a>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+    <div class="item1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-calendar-fill"
+            viewBox="0 0 16 16">
+            <path
+                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5" />
+        </svg>
+        <h4><a class="dashboard-menu" routerLink="/allevents"><b>View All Events</b></a> </h4>
+
+    </div>
+    <br>
+    <div class="item2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-calendar-fill"
+            viewBox="0 0 16 16">
+            <path
+                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5" />
+        </svg>
+        <h4><a class="dashboard-menu" routerLink="/gallery"><b>Gallery</b></a> </h4>
+
+    </div>
+</div>
+<app-footer></app-footer>
+<router-outlet></router-outlet>

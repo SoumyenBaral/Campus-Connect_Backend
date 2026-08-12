@@ -1,0 +1,250 @@
+/* 
+section{
+    width: 100%;
+    height: 130vh;
+    justify-content: center;
+    align-content: center;
+    background: linear-gradient(135deg, #1e1b3a, #03343c);
+}
+.regis-form{
+    background-color:#fff;
+    padding:20px;
+    border-radius:8px;
+    max-width:500px;
+    margin:auto;
+    margin-top:50px;
+  
+}
+legend{
+    color:#5796d9;
+}
+.head{
+    color:rgb(6, 24, 66);
+    align-items: center;
+}
+h3{
+    text-align:center;
+    margin-bottom:5px;
+}
+
+h6{
+    text-align: center;
+    margin-bottom: 20px;
+    color:#555;
+}
+
+fieldset{
+    border:1px solid #ddd;
+    padding:20px;
+    border-radius:8px;
+    color: #555;
+}
+
+
+
+legend{
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+}
+.checkbox-group {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.checkbox-group input{
+    width: 16px;
+    height: 16px;
+}
+
+.checkbox-group label {
+    margin-bottom: 10px;
+
+}
+
+.submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.submit:hover{
+    background-color: #45a049;
+} */
+
+
+/* Right Side */
+.part-1 {
+  flex: 1.2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top:25px;
+}
+
+.welcome-card {
+  background: rgba(20, 10, 30, 0.9);
+  padding: 2.5rem;
+  border-radius: 20px;
+  text-align: left;
+  box-shadow: 0 0 30px rgba(255, 0, 128, 0.15);
+  width: 90%;
+  
+}
+
+.welcome-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.welcome-card p {
+  color: #ccc;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.welcome-card img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+
+
+.container{
+    display:flex;
+    padding:100px;
+    gap:50px;
+}
+
+.part-2{
+    background-color:white;
+}
+
+
+section {
+    /* Reduced height as the form is shorter (removed 3 input fields) */
+    width: 100%;
+    height: 70vh; /* Adjusted height */
+    
+    /* Center content vertically and horizontally */
+    display: flex; /* Added display flex for alignment */
+    justify-content: center;
+    align-items: center; /* Changed align-content to align-items for flex */
+    
+    background: linear-gradient(135deg, #1e1b3a, #03343c);
+}
+
+.regis-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: auto;
+    /* Removed margin-top: 50px as the section is now using flex for center alignment */
+}
+
+legend {
+    color: #5796d9;
+}
+
+.head {
+    color: rgb(6, 24, 66);
+    /* Removed align-items: center; as it doesn't apply here */
+}
+
+h3 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+h6 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    color: #555;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Styling for Input and Select elements */
+input[type="text"], 
+input[type="email"], 
+input[type="number"],
+select { /* <-- Added 'select' here */
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* Ensure select height matches input height */
+    height: 40px; 
+    box-sizing: border-box; /* Ensures padding doesn't affect total width */
+}
+
+/* Styling for the confirmation paragraph */
+.regis-form p {
+    text-align: center;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* Ensure button styling targets the HTML button element */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none; /* Added border: none for a cleaner look */
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px; /* Added margin for separation */
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Removed unused classes like .checkbox-group and .submit (replaced by button[type="submit"]) */

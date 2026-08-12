@@ -1,0 +1,54 @@
+nav {
+    height: 50px;
+    width: 100vw;
+    color: hsl(0, 8%, 91%);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(8, 8, 8);
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    position: sticky;
+    overflow-x: hidden;
+}
+
+.logo {
+    margin-left: 10px;
+}
+
+.logo-name {
+    background: linear-gradient(to right, #7a3cff, #1dc8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  font-family: sans-serif;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: hsl(0, 9%, 96%);
+  padding: 8px 12px;
+  position: relative;
+}
+
+.login-btn{
+    height:30px;
+    width:80px;
+    margin-left: 700px;
+    color: white;
+    border-radius: 8px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+    background: linear-gradient(to right, #7A65FF 20%, #38B2FE 100%);
+    border:none;
+
+}
+.login-btn:hover{
+    box-shadow: 0 5px 10px  #5ebffb;
+
+}

@@ -1,0 +1,50 @@
+<div class="container">
+  <h2>Host Details</h2>
+  <h3>All Hosts</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Contact</th>
+        <th>Approved</th>
+      </tr>
+      </thead>
+    <tbody>
+      <tr *ngFor="let host of hosts">
+        <td>{{ host.id }}</td>
+        <td>{{ host.name }}</td>
+        <td>{{ host.email }}</td>
+        <td>{{ host.contact }}</td>
+        <td>{{ host.isApproved ? 'Yes' : 'No' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Unapproved Hosts (Pending Approval)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Contact</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let host of unapprovedHosts">
+        <td>{{ host.id }}</td>
+        <td>{{ host.name }}</td>
+        <td>{{ host.email }}</td>
+        <td>{{ host.contact }}</td>
+        <td>
+          <button (click)="approveHost(host.id)">Approve</button>
+          <button (click)="rejectHost(host.id)">Reject</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Unapproved Hosts Loaded: {{ unapprovedHosts?.length }}</p>
+  </div>

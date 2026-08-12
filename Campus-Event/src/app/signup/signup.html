@@ -1,0 +1,188 @@
+<div class="signup-container">
+
+  <!-- Left Section -->
+  <div class="signup-left">
+
+    <h2>Create Account</h2>
+    <p>Register to CampusConnect and start your journey.</p>
+
+    <!-- Success/Error Message -->
+    <div *ngIf="message" class="message-box">
+      {{ message }}
+    </div>
+
+    <form #signupForm="ngForm" (ngSubmit)="onSubmit()">
+
+      <!-- Name -->
+      <div class="input-group">
+        <input
+          type="text"
+          placeholder="Full Name"
+          name="name"
+          [(ngModel)]="user.name"
+          required
+          [disabled]="isLoading">
+      </div>
+
+      <!-- Email -->
+      <div class="input-group">
+
+        <input
+          type="email"
+          placeholder="Email Address"
+          name="email"
+          [(ngModel)]="user.email"
+          email
+          required
+          #emailInput="ngModel"
+          [disabled]="otpSent || isLoading">
+
+      </div>
+
+      <small
+        class="error-message"
+        *ngIf="emailInput.invalid && emailInput.touched">
+
+        Please enter a valid email.
+
+      </small>
+
+      <!-- Password -->
+
+      <div class="input-group">
+
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          maxlength="8"
+          [(ngModel)]="user.password"
+          required
+          [disabled]="isLoading">
+
+      </div>
+
+      <!-- Contact -->
+
+      <div class="input-group">
+
+        <input
+          type="tel"
+          placeholder="Contact Number"
+          name="contact"
+          maxlength="10"
+          pattern="[0-9]{10}"
+          [(ngModel)]="user.contact"
+          required
+          [disabled]="isLoading">
+
+      </div>
+
+      <!-- Role -->
+
+      <div class="input-group select-group">
+
+        <select
+          name="role"
+          [(ngModel)]="user.role"
+          required
+          [disabled]="isLoading">
+
+          <option value="" disabled selected>Select Role</option>
+          <option>User</option>
+          <option>Host</option>
+          <option>Coordinator</option>
+          <option>Admin</option>
+
+        </select>
+
+      </div>
+
+      <!-- OTP -->
+
+      <div *ngIf="otpSent">
+
+        <div class="input-group">
+
+          <input
+            type="text"
+            placeholder="Enter OTP"
+            maxlength="6"
+            name="otp"
+            [(ngModel)]="enteredOtp">
+
+        </div>
+
+        <button
+          type="button"
+          class="link-style-btn"
+          (click)="resendOtp()"
+          [disabled]="resendDisabled || isLoading">
+
+          <span *ngIf="!resendDisabled">
+            Resend OTP
+          </span>
+
+          <span *ngIf="resendDisabled">
+            Resend in {{countdown}}s
+          </span>
+
+        </button>
+
+      </div>
+
+      <!-- Submit -->
+
+      <button
+        class="signup-btn"
+        type="submit"
+        [disabled]="isLoading || (!otpSent && signupForm.invalid)">
+
+        <span
+          *ngIf="isLoading"
+          class="spinner-border">
+
+        </span>
+
+        {{ isLoading
+            ? 'PLEASE WAIT...'
+            : (otpSent ? 'VERIFY & SIGNUP' : 'SEND OTP') }}
+
+      </button>
+
+    </form>
+
+    <p class="signin-link">
+
+      Already have an account?
+
+      <a routerLink="/login">
+        Sign In
+      </a>
+
+    </p>
+
+  </div>
+
+  <!-- Right Section -->
+
+  <div class="signup-right">
+
+    <div class="welcome-card">
+
+      <h3>Welcome!</h3>
+
+      <p>
+        Join our community today and unlock exclusive
+        features with CampusConnect.
+      </p>
+
+      <img
+        src="https://img.freepik.com/free-vector/group-people-jeans-shirts_52683-34818.jpg"
+        alt="Welcome">
+
+    </div>
+
+  </div>
+
+</div>

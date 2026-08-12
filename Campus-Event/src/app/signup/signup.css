@@ -1,0 +1,222 @@
+/* Main Container */
+
+.signup-container{
+
+    display:flex;
+    min-height:100vh;
+    background:#f8f9ff;
+}
+
+/* Left */
+
+.signup-left{
+
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+    padding:60px 80px;
+}
+
+.signup-left h2{
+
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.signup-left p{
+
+    color:#555;
+    margin-bottom:30px;
+}
+
+/* Input */
+
+.input-group{
+
+    width:360px;
+    margin-bottom:18px;
+}
+
+.input-group input,
+.input-group select{
+
+    width:100%;
+    padding:14px;
+    border-radius:10px;
+    border:1px solid #ddd;
+    background:#f3f3f3;
+    outline:none;
+    font-size:15px;
+}
+
+.input-group input:focus,
+.input-group select:focus{
+
+    border-color:#7f00ff;
+}
+
+/* Button */
+
+.signup-btn{
+
+    width:360px;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(to right,#007bff,#7f00ff);
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.signup-btn:hover{
+
+    opacity:.9;
+}
+
+.signup-btn:disabled{
+
+    background:#ccc;
+    cursor:not-allowed;
+}
+
+/* Right */
+
+.signup-right{
+
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+}
+
+.welcome-card{
+
+    width:80%;
+    padding:35px;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+.welcome-card h3{
+
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.welcome-card p{
+
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+.welcome-card img{
+
+    width:100%;
+    border-radius:12px;
+}
+
+/* Error */
+
+.error-message{
+
+    color:red;
+    font-size:13px;
+    margin-top:-10px;
+    margin-bottom:10px;
+}
+
+/* Message */
+
+.message-box{
+
+    width:360px;
+    padding:12px;
+    background:#eaf7ea;
+    color:green;
+    border-radius:8px;
+    margin-bottom:20px;
+}
+
+/* OTP Button */
+
+.link-style-btn{
+
+    background:none;
+    border:none;
+    color:#7f00ff;
+    cursor:pointer;
+    margin-bottom:20px;
+}
+
+/* Spinner */
+
+.spinner-border{
+
+    display:inline-block;
+    width:15px;
+    height:15px;
+    border:2px solid white;
+    border-top:2px solid transparent;
+    border-radius:50%;
+    animation:spin .8s linear infinite;
+    margin-right:8px;
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* Signin */
+
+.signin-link{
+
+    margin-top:20px;
+}
+
+.signin-link a{
+
+    color:#ff0080;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.signin-link a:hover{
+
+    text-decoration:underline;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.signup-container{
+
+    flex-direction:column;
+}
+
+.signup-left,
+.signup-right{
+
+    align-items:center;
+    padding:40px;
+}
+
+.welcome-card{
+
+    width:100%;
+}
+
+}

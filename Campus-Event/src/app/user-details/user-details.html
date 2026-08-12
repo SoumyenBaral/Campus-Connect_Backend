@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>user Details</h2>
+  <table [border]="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse:collapse;">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Contact</th>
+        <th>Created At</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.contact }}</td>
+        <td>{{ user.createdAt | date:'medium' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

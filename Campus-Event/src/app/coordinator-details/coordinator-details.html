@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Coordinator Details</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Contact</th>
+        <th>Created At</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let coord of coordinators">
+        <td>{{ coord.id }}</td>
+        <td>{{ coord.name }}</td>
+        <td>{{ coord.email }}</td>
+        <td>{{ coord.contact }}</td>
+        <td>{{ coord.createdAt }}</td>
+      </tr>
+      </tbody>
+  </table>
+</div>
