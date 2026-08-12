@@ -1,13 +1,10 @@
 package com.campus.connect.Service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,12 +16,6 @@ public class UsersServiceImpl implements UsersService {
     
 @Autowired
     private UsersRepository usersRepository;
-
-@Autowired
-private PasswordEncoder passwordEncoder;
-
-@Autowired
-private EmailService emailService;
 
 private static final Pattern CONTACT_PATTERN = Pattern.compile("^\\d{10}$");
 
@@ -42,12 +33,9 @@ public String saveUser(Users user) {
             throw new IllegalArgumentException("Only one admin is allowed.");
         }
     }
-    // Encode password here
-    user.setPassword(passwordEncoder.encode(user.getPassword()));
 
-    usersRepository.save(user);
-
-    return "created success";
+	usersRepository.save(user);
+	return "created success";
 }
 
 @Override
@@ -66,37 +54,17 @@ public Optional<Users> findByEmail(String email) {
 // NEW: Login implementation
 @Override
 public Users loginUser(String email, String password) {
-
     Optional<Users> userOptional = usersRepository.findByEmail(email);
 
     if (userOptional.isPresent()) {
         Users user = userOptional.get();
-
-        if (passwordEncoder.matches(password, user.getPassword())) {
-            return user;
+        
+        if (user.getPassword().equals(password)) {
+            return user; // Login successful
         }
     }
-
-    return null;
+    return null; // User not found or password incorrect
 }
-
-
-
-//@Override
-//public Users loginUser(String email, String password) {
-//    Optional<Users> userOptional = usersRepository.findByEmail(email);
-//
-//    if (userOptional.isPresent()) {
-//        Users user = userOptional.get();
-//        
-////        if (user.getPassword().equals(password)) {
-////            return user; // Login successful
-////        }
-//        if (passwordEncoder.matches(password, user.getPassword())) {
-//        }
-//    }
-//    return null; // User not found or password incorrect
-//}
 
 @Override
 @Transactional
@@ -107,48 +75,14 @@ public String deleteAllUsers() {
 
 @Override
 public void forgotPassword(String email) {
-	 Optional<Users> optionalUser = usersRepository.findByEmail(email);
-
-	    if (optionalUser.isEmpty()) {
-	        return; // Don't reveal if email exists
-	    }
-
-	    Users user = optionalUser.get();
-
-	    String token = UUID.randomUUID().toString();
-	    user.setResetToken(token);
-	    user.setTokenExpiry(LocalDateTime.now().plusMinutes(15));
-
-	    usersRepository.save(user);
-
-	    String resetLink = "http://localhost:4200/reset-password?token=" + token;
-
-	    emailService.sendEmail(
-	    	    user.getEmail(),
-	    	    "Password Reset",
-	    	    "Click here to reset your password: " + resetLink
-	    	);
+	// TODO Auto-generated method stub
+	
 }
 
 @Override
 public void resetPassword(String token, String newPassword) {
-	  Optional<Users> optionalUser = usersRepository.findByResetToken(token);
-
-	    if (optionalUser.isEmpty()) {
-	        throw new RuntimeException("Invalid token");
-	    }
-
-	    Users user = optionalUser.get();
-
-	    if (user.getTokenExpiry().isBefore(LocalDateTime.now())) {
-	        throw new RuntimeException("Token expired");
-	    }
-
-	    user.setPassword(passwordEncoder.encode(newPassword));
-	    user.setResetToken(null);
-	    user.setTokenExpiry(null);
-
-	    usersRepository.save(user);
+	// TODO Auto-generated method stub
+	
 }
 
 	
