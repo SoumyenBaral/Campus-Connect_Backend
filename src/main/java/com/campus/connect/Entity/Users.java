@@ -9,14 +9,18 @@ import com.campus.connect.Entity.Enum.Role;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 
 
@@ -30,17 +34,26 @@ public class Users{
 
     private String email;
 
-      private String password;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private String password;
       
     @Enumerated(EnumType.STRING)
     private Role role;
 
     private String contact;
 
-    private LocalDateTime created_at = LocalDateTime.now();
+    @Column(name = "created_at")
+    private LocalDateTime createdAt = LocalDateTime.now();
     
     @Column(name = "is_approved")
     private boolean isApproved;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "organisation_id")
+    private Organisation organisation;
+
+    @Column(name = "status")
+    private String status = "ACTIVE";
    
     @Column(name = "reset_token")
     private String resetToken;
@@ -141,11 +154,11 @@ public class Users{
 	}
 
 	public LocalDateTime getCreatedAt() {
-		return created_at;
+		return createdAt;
 	}
 
 	public void setCreatedAt(LocalDateTime createdAt) {
-		this.created_at = createdAt;
+		this.createdAt = createdAt;
 	}
 
 	public List<Registrations> getRegistrations() {
@@ -164,12 +177,33 @@ public class Users{
 		this.feedbacks = feedbacks;
 	}
 
-	public List<Events> getHostedEvents() {
-		return hostedEvents;
+	public Organisation getOrganisation() {
+		return organisation;
 	}
-	
-	public void setHostedEvents(List<Events> hostedEvents) {
-		this.hostedEvents = hostedEvents;
+
+	public void setOrganisation(Organisation organisation) {
+		this.organisation = organisation;
+	}
+
+	public String getOrganisationName() {
+		return organisation != null ? organisation.getOrganisationName() : null;
+	}
+
+	public void setOrganisationName(String organisationName) {
+		if (organisationName != null && !organisationName.trim().isEmpty()) {
+			if (this.organisation == null) {
+				this.organisation = new Organisation();
+			}
+			this.organisation.setOrganisationName(organisationName.trim());
+		}
+	}
+
+	public String getStatus() {
+		return status != null ? status : "ACTIVE";
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public Users(Long id, String name, String email, String password, Role role, String contact,
@@ -182,7 +216,7 @@ public class Users{
 		this.password = password;
 		this.role = role;
 		this.contact = contact;
-		this.created_at = createdAt;
+		this.createdAt = createdAt;
 		this.isApproved = isApproved;
 		this.registrations = registrations;
 		this.feedbacks = feedbacks;
@@ -199,7 +233,7 @@ public class Users{
 	  @Override
 		public String toString() {
 			return "Users [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", role=" + role
-					+ ", contact=" + contact + ", created_at=" + created_at + ", resetToken=" + resetToken
+					+ ", contact=" + contact + ", createdAt=" + createdAt + ", resetToken=" + resetToken
 					+ ", tokenExpiry=" + tokenExpiry + ", isApproved=" + isApproved + ", registrations=" + registrations
 					+ ", feedbacks=" + feedbacks + ", hostedEvents=" + hostedEvents + "]";
 		}

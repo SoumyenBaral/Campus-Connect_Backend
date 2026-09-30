@@ -20,10 +20,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.campus.connect.Dto.AuthResponse;
 import com.campus.connect.Entity.Users;
 import com.campus.connect.Entity.Enum.Role;
 import com.campus.connect.Repository.EventsRepository;
 import com.campus.connect.Repository.UsersRepository;
+import com.campus.connect.Security.JwtService;
 import com.campus.connect.Service.UsersService;
 
 @CrossOrigin(origins= "http://localhost:4200/")
@@ -40,6 +42,9 @@ private UsersRepository usersRepository;
 
 @Autowired
 private EventsRepository eventsRepository;
+
+@Autowired
+private JwtService jwtService;
 
 @GetMapping("/counts")
 public ResponseEntity<?> getCounts() {
@@ -115,16 +120,32 @@ public String deleteAllUsers() {
 
 @PostMapping(value = "/login", produces = MediaType.APPLICATION_JSON_VALUE)
 public ResponseEntity<?> loginUser(@RequestBody LoginRequest loginRequest) {
-    Users user = usersService.loginUser(loginRequest.getEmail(), loginRequest.getPassword());
+    try {
+        Users user = usersService.loginUser(loginRequest.getEmail(), loginRequest.getPassword());
 
-    if (user != null) {
-        // SUCCESS: Returns User object (JSON)
-        return new ResponseEntity<>(user, HttpStatus.OK);
-    } else {
-        // FAILURE: Returns a structured JSON map for consistency
-        Map<String, String> errorResponse = Collections.singletonMap("error", "Invalid email or password");
-        
-        return new ResponseEntity<>(errorResponse, HttpStatus.UNAUTHORIZED); // (401)
+        if (user != null) {
+            String token = jwtService.generateToken(user);
+            AuthResponse authResponse = new AuthResponse(
+                    token,
+                    user.getId(),
+                    user.getName(),
+                    user.getEmail(),
+                    user.getRole(),
+                    user.getContact(),
+                    user.getStatus(),
+                    user.getOrganisation()
+            );
+            return new ResponseEntity<>(authResponse, HttpStatus.OK);
+        } else {
+            Map<String, String> errorResponse = Collections.singletonMap("error", "Invalid email or password");
+            return new ResponseEntity<>(errorResponse, HttpStatus.UNAUTHORIZED);
+        }
+    } catch (IllegalStateException e) {
+        return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                .body(Collections.singletonMap("error", e.getMessage()));
+    } catch (Exception e) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(Collections.singletonMap("error", "Authentication error: " + e.getMessage()));
     }
 }
 

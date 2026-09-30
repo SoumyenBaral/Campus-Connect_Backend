@@ -10,14 +10,22 @@ import com.campus.connect.Entity.Enum.Role;
 public interface UsersRepository extends JpaRepository<Users, Long> {
 	
 	// NEW: Method to find a user by their email (used as username)
-		Optional<Users> findByEmail(String email);
-		
-		//for admin dashboard:count hosts
-		long countByRole(Role role);
-		
-		 // For admin approval: Get unapproved hosts
-	    List<Users> findByRoleAndIsApproved(Role role, boolean isApproved);
-		
-	    Optional<Users> findByResetToken(String resetToken);
-		
+	Optional<Users> findByEmail(String email);
+	
+	boolean existsByEmail(String email);
+	
+	// Query users by role
+	List<Users> findByRole(Role role);
+	
+	List<Users> findByRoleOrderByCreatedAtDesc(Role role);
+	
+	//for admin dashboard:count hosts
+	long countByRole(Role role);
+	
+	// For admin approval: Get unapproved hosts
+	List<Users> findByRoleAndIsApproved(Role role, boolean isApproved);
+	
+	Optional<Users> findByResetToken(String resetToken);
+
+	List<Users> findByOrganisationId(Long organisationId);
 }
