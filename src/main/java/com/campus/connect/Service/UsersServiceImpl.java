@@ -13,6 +13,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.campus.connect.Dto.AdminCreateRequest;
+import com.campus.connect.Dto.CoordinatorCreateRequest;
+import com.campus.connect.Dto.HostCreateRequest;
 import com.campus.connect.Dto.SuperAdminCreateRequest;
 import com.campus.connect.Dto.UserUpdateRequest;
 import com.campus.connect.Entity.Organisation;
@@ -259,6 +261,10 @@ public class UsersServiceImpl implements UsersService {
 
     @Override
     public Users createSuperAdmin(SuperAdminCreateRequest request) {
+        if (usersRepository.countByRole(Role.SUPER_ADMIN) >= 1) {
+            throw new IllegalArgumentException("Security Policy: Only one Super Admin account is permitted in the system.");
+        }
+
         if (request.getContact() == null || !CONTACT_PATTERN.matcher(request.getContact()).matches()) {
             throw new IllegalArgumentException("Contact number must be exactly 10 digits.");
         }
@@ -303,6 +309,9 @@ public class UsersServiceImpl implements UsersService {
         }
 
         if (request.getStatus() != null && !request.getStatus().trim().isEmpty()) {
+            if ("INACTIVE".equalsIgnoreCase(request.getStatus().trim())) {
+                throw new IllegalArgumentException("Security Policy: The single Super Admin account cannot be deactivated.");
+            }
             superAdmin.setStatus(request.getStatus().trim().toUpperCase());
         }
 
@@ -318,8 +327,138 @@ public class UsersServiceImpl implements UsersService {
             throw new IllegalArgumentException("User is not a Super Admin.");
         }
 
+        if ("INACTIVE".equalsIgnoreCase(status)) {
+            throw new IllegalArgumentException("Security Policy: The single Super Admin account cannot be deactivated.");
+        }
+
         superAdmin.setStatus(status.toUpperCase());
         return usersRepository.save(superAdmin);
+    }
+
+    // ==========================================
+    // HOST MANAGEMENT (SUPER ADMIN)
+    // ==========================================
+
+    @Override
+    public List<Users> getAllHosts() {
+        return usersRepository.findByRoleOrderByCreatedAtDesc(Role.HOST);
+    }
+
+    @Override
+    public List<Users> getUnapprovedHosts() {
+        return usersRepository.findByRoleAndIsApproved(Role.HOST, false);
+    }
+
+    @Override
+    public Users approveHost(Long id, boolean approve) {
+        Users host = usersRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Host with ID " + id + " not found."));
+        if (host.getRole() != Role.HOST) {
+            throw new IllegalArgumentException("User is not a Host.");
+        }
+        host.setApproved(approve);
+        return usersRepository.save(host);
+    }
+
+    @Override
+    public Users createHost(HostCreateRequest request) {
+        if (request.getContact() == null || !CONTACT_PATTERN.matcher(request.getContact()).matches()) {
+            throw new IllegalArgumentException("Contact number must be exactly 10 digits.");
+        }
+
+        String normalizedEmail = request.getEmail().trim().toLowerCase();
+        if (usersRepository.existsByEmail(normalizedEmail)) {
+            throw new IllegalArgumentException("An account with email " + normalizedEmail + " already exists.");
+        }
+
+        Users host = new Users();
+        host.setName(request.getName().trim());
+        host.setEmail(normalizedEmail);
+        host.setPassword(passwordEncoder.encode(request.getPassword()));
+        host.setContact(request.getContact().trim());
+        host.setRole(Role.HOST);
+        host.setOrganisation(null);
+        host.setStatus("ACTIVE");
+        host.setApproved(true);
+        host.setCreatedAt(LocalDateTime.now());
+
+        return usersRepository.save(host);
+    }
+
+    @Override
+    public Users setHostStatus(Long id, String status) {
+        Users host = usersRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Host with ID " + id + " not found."));
+        if (host.getRole() != Role.HOST) {
+            throw new IllegalArgumentException("User is not a Host.");
+        }
+        host.setStatus(status.toUpperCase());
+        return usersRepository.save(host);
+    }
+
+    @Override
+    public void deleteHost(Long id) {
+        Users host = usersRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Host with ID " + id + " not found."));
+        if (host.getRole() != Role.HOST) {
+            throw new IllegalArgumentException("User is not a Host.");
+        }
+        usersRepository.delete(host);
+    }
+
+    // ==========================================
+    // COORDINATOR MANAGEMENT (SUPER ADMIN)
+    // ==========================================
+
+    @Override
+    public List<Users> getAllCoordinators() {
+        return usersRepository.findByRoleOrderByCreatedAtDesc(Role.COORDINATOR);
+    }
+
+    @Override
+    public Users createCoordinator(CoordinatorCreateRequest request) {
+        if (request.getContact() == null || !CONTACT_PATTERN.matcher(request.getContact()).matches()) {
+            throw new IllegalArgumentException("Contact number must be exactly 10 digits.");
+        }
+
+        String normalizedEmail = request.getEmail().trim().toLowerCase();
+        if (usersRepository.existsByEmail(normalizedEmail)) {
+            throw new IllegalArgumentException("An account with email " + normalizedEmail + " already exists.");
+        }
+
+        Users coordinator = new Users();
+        coordinator.setName(request.getName().trim());
+        coordinator.setEmail(normalizedEmail);
+        coordinator.setPassword(passwordEncoder.encode(request.getPassword()));
+        coordinator.setContact(request.getContact().trim());
+        coordinator.setRole(Role.COORDINATOR);
+        coordinator.setOrganisation(null);
+        coordinator.setStatus("ACTIVE");
+        coordinator.setApproved(true);
+        coordinator.setCreatedAt(LocalDateTime.now());
+
+        return usersRepository.save(coordinator);
+    }
+
+    @Override
+    public Users setCoordinatorStatus(Long id, String status) {
+        Users coordinator = usersRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Coordinator with ID " + id + " not found."));
+        if (coordinator.getRole() != Role.COORDINATOR) {
+            throw new IllegalArgumentException("User is not a Coordinator.");
+        }
+        coordinator.setStatus(status.toUpperCase());
+        return usersRepository.save(coordinator);
+    }
+
+    @Override
+    public void deleteCoordinator(Long id) {
+        Users coordinator = usersRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Coordinator with ID " + id + " not found."));
+        if (coordinator.getRole() != Role.COORDINATOR) {
+            throw new IllegalArgumentException("User is not a Coordinator.");
+        }
+        usersRepository.delete(coordinator);
     }
 
     // ==========================================

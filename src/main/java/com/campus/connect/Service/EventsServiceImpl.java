@@ -52,10 +52,10 @@ public class EventsServiceImpl implements EventsService {
         
         Users host = hostOptional.get();
    
-        if (host.getRole() != Role.HOST) {
-            return "Error: Only users with HOST role can create events.";
+        if (host.getRole() != Role.HOST && host.getRole() != Role.SUPER_ADMIN && host.getRole() != Role.ADMIN) {
+            return "Error: Only users with HOST, ADMIN, or SUPER_ADMIN role can create events.";
         }
-        if (!host.isApproved()) {
+        if (host.getRole() == Role.HOST && !host.isApproved()) {
             return "Error: Host is not approved by admin. Contact admin for approval.";
         }
     
@@ -116,6 +116,11 @@ public class EventsServiceImpl implements EventsService {
 	@Override
 	public long getTotalEventCount() {
 		return eventsRepository.count();
-	}  
-    
+	}
+
+	@Override
+	@Transactional
+	public void deleteEvent(Long id) {
+		eventsRepository.deleteById(id);
+	}
 }

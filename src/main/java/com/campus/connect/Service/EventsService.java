@@ -7,7 +7,6 @@ import com.campus.connect.Entity.Events;
 
 public interface EventsService {
 
-	
 	String CreateEvent(Events events);
 	
 	List<Events> getAllEvents();
@@ -15,7 +14,6 @@ public interface EventsService {
 	Optional<Events> getEventById(Long id);
 	
 	long getTotalEventCount();
-	
-	
-	
+
+	void deleteEvent(Long id);
 }

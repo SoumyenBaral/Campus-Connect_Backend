@@ -25,34 +25,26 @@ public class DataInitializer implements CommandLineRunner {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @Value("${app.superadmin.dev1.name:Super Admin 1}")
-    private String dev1Name;
+    @Value("${app.superadmin.name:Soumyen Baral}")
+    private String superAdminName;
 
-    @Value("${app.superadmin.dev1.email:superadmin1@campusconnect.com}")
-    private String dev1Email;
+    @Value("${app.superadmin.email:soumyenbaral620@gmail.com}")
+    private String superAdminEmail;
 
-    @Value("${app.superadmin.dev1.password:Admin@Dev1!2026}")
-    private String dev1Password;
+    @Value("${app.superadmin.password:Admin@2026!}")
+    private String superAdminPassword;
 
-    @Value("${app.superadmin.dev1.contact:9876543210}")
-    private String dev1Contact;
-
-    @Value("${app.superadmin.dev2.name:Super Admin 2}")
-    private String dev2Name;
-
-    @Value("${app.superadmin.dev2.email:superadmin2@campusconnect.com}")
-    private String dev2Email;
-
-    @Value("${app.superadmin.dev2.password:Admin@Dev2!2026}")
-    private String dev2Password;
-
-    @Value("${app.superadmin.dev2.contact:9876543211}")
-    private String dev2Contact;
+    @Value("${app.superadmin.contact:9876543210}")
+    private String superAdminContact;
 
     @Override
     public void run(String... args) {
-        initSuperAdmin(dev1Name, dev1Email, dev1Password, dev1Contact);
-        initSuperAdmin(dev2Name, dev2Email, dev2Password, dev2Contact);
+        long superAdminCount = usersRepository.countByRole(Role.SUPER_ADMIN);
+        if (superAdminCount == 0) {
+            initSuperAdmin(superAdminName, superAdminEmail, superAdminPassword, superAdminContact);
+        } else {
+            logger.info("Security Policy: Single Super Admin policy active. Existing Super Admin count: {}. No additional Super Admin initialized.", superAdminCount);
+        }
     }
 
     private void initSuperAdmin(String name, String email, String rawPassword, String contact) {

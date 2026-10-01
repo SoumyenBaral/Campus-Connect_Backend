@@ -5,6 +5,8 @@ import java.util.Map;
 import java.util.Optional;
 
 import com.campus.connect.Dto.AdminCreateRequest;
+import com.campus.connect.Dto.CoordinatorCreateRequest;
+import com.campus.connect.Dto.HostCreateRequest;
 import com.campus.connect.Dto.SuperAdminCreateRequest;
 import com.campus.connect.Dto.UserUpdateRequest;
 import com.campus.connect.Entity.Organisation;
@@ -48,6 +50,20 @@ public interface UsersService {
     Users createSuperAdmin(SuperAdminCreateRequest request);
     Users updateSuperAdmin(Long id, UserUpdateRequest request);
     Users setSuperAdminStatus(Long id, String status);
+
+    // Host Management (by Super Admin / Admin)
+    List<Users> getAllHosts();
+    List<Users> getUnapprovedHosts();
+    Users approveHost(Long id, boolean approve);
+    Users createHost(HostCreateRequest request);
+    Users setHostStatus(Long id, String status);
+    void deleteHost(Long id);
+
+    // Coordinator Management (by Super Admin / Admin)
+    List<Users> getAllCoordinators();
+    Users createCoordinator(CoordinatorCreateRequest request);
+    Users setCoordinatorStatus(Long id, String status);
+    void deleteCoordinator(Long id);
 
     // System Overview Stats
     Map<String, Object> getSystemStats();
